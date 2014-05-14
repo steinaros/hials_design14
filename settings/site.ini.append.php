@@ -5,7 +5,7 @@
 
 [TemplateSettings]
 #Debug=enabled
-ExtensionAutoloadPath[]=hials_design14
+#ExtensionAutoloadPath[]=hials_design14
 
 [RegionalSettings]
 TranslationExtensions[]=hials_design14
