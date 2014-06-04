@@ -1,30 +1,111 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$site.http_equiv.Content-language|extract_left(2)|wash}" lang="{$site.http_equiv.Content-language|extract_left(2)|wash}">
-  <head>
+<!--[if lt IE 9 ]><html class="unsupported-ie ie" lang="{$site.http_equiv.Content-language|wash}"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="{$site.http_equiv.Content-language|wash}"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="{$site.http_equiv.Content-language|wash}"><!--<![endif]-->
+<head>
+    {def $basket_is_empty   = cond( $current_user.is_logged_in, fetch( shop, basket ).is_empty, 1 )
+         $user_hash         = concat( $current_user.role_id_list|implode( ',' ), ',', $current_user.limited_assignment_value_list|implode( ',' ) )}
+         
+{include uri='design:page_head_displaystyles.tpl'}
+
+{if is_set( $extra_cache_key )|not}
+    {def $extra_cache_key = ''}
+{/if}
+
+{def $pagedata        = ezpagedata()
+     $inner_column_size = $pagedata.inner_column_size
+     $outer_column_size = $pagedata.outer_column_size}
+
+{cache-block keys=array( $module_result.uri, $basket_is_empty, $current_user.contentobject_id, $extra_cache_key )}
+{def $pagestyle        = $pagedata.css_classes
+     $locales          = fetch( 'content', 'translation_list' )
+     $current_node_id  = $pagedata.node_id}
+     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
-    {include uri='design:page_head.tpl'}
-    <!-- Bootstrap -->
-    {ezcss_load( array( 'bootstrap.css' ) )}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-    <!-- Main area content: START -->
-    {$module_result.content}
-    <!-- Main area content: END -->
+{include uri='design:page_head.tpl'}
+{include uri='design:page_head_style.tpl'}
+{include uri='design:page_head_script.tpl'}
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    {ezscript_load( array( 'bootstrap.min.js' ) )}
-  </body>
+</head>
+<body>
+<!-- Complete page area: START -->
+
+<div id="page" class="{$pagestyle}">
+
+    {if and( is_set( $pagedata.persistent_variable.extra_template_list ),
+             $pagedata.persistent_variable.extra_template_list|count() )}
+    {foreach $pagedata.persistent_variable.extra_template_list as $extra_template}
+        {include uri=concat('design:extra/', $extra_template)}
+    {/foreach}
+    {/if}
+
+    <!-- Header area: START -->
+    {include uri='design:page_header.tpl'}
+    <!-- Header area: END -->
+
+    {cache-block keys=array( $module_result.uri, $user_hash, $extra_cache_key )}
+
+    <div class="navbar main-navi">
+        <!-- Top menu area: START -->
+        {if $pagedata.top_menu}
+            {include uri='design:page_topmenu.tpl'}
+        {/if}
+        <!-- Top menu area: END -->
+
+        <!-- Path area: START -->
+        {if $pagedata.show_path}
+            {include uri='design:page_toppath.tpl'}
+        {/if}
+        <!-- Path area: END -->
+    </div>
+
+    <!-- Toolbar area: START -->
+    {if and( $pagedata.website_toolbar, $pagedata.is_edit|not)}
+        {include uri='design:page_toolbar.tpl'}
+    {/if}
+    <!-- Toolbar area: END -->
+
+    <!-- Columns area: START -->
+    <div class="container">
+        <div class="row">
+            <!-- Side menu area: START -->
+            {if $pagedata.left_menu}
+                {include uri='design:page_leftmenu.tpl'}
+            {/if}
+            <!-- Side menu area: END -->
+    {/cache-block}
+    {/cache-block}
+            <!-- Main area: START -->
+            {include uri='design:page_mainarea.tpl'}
+            <!-- Main area: END -->
+            {cache-block keys=array( $module_result.uri, $user_hash, $access_type.name, $extra_cache_key )}
+
+            <!-- Extra area: START -->
+            {if $pagedata.extra_menu}
+                {include uri='design:page_extramenu.tpl'}
+            {/if}
+            <!-- Extra area: END -->
+        </div>
+    </div>
+    <!-- Columns area: END -->
+
+    <!-- Footer area: START -->
+    {include uri='design:page_footer.tpl'}
+    <!-- Footer area: END -->
+
+</div>
+<!-- Complete page area: END -->
+
+<!-- Footer script area: START -->
+{include uri='design:page_footer_script.tpl'}
+<!-- Footer script area: END -->
+
+{/cache-block}
+
+{* This comment will be replaced with actual debug report (if debug is on). *}
+<!--DEBUG_REPORT-->
+</body>
 </html>

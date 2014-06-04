@@ -3,11 +3,22 @@
 [ExtensionSettings]
 DesignExtensions[]=hials_design14
 
-#[StylesheetSettings]
-#CSSFileList[]=nxchials.css
+# List of javascripts to use in footer
+[JavaScriptSettings]
+JavaScriptList[]
 
-#[JavaScriptSettings]
-#JavaScriptList[]=core-hials.js
-#JavaScriptList[]=nxccreateobjectdialog.js
+FrontendJavaScriptList[]
+
+JavaScriptFooterList[]
+JavaScriptFooterList[]=https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js
+JavaScriptFooterList[]=bootstrap.min.js
+
+
+[StyleSheetSettings]
+CSSFileList[]
+FrontendCSSFileList[]
+
+ClassesCSS=
+SiteCSS=
 
 */ ?>
