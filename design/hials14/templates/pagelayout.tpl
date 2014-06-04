@@ -3,8 +3,7 @@
 <!--[if IE 9 ]><html class="ie ie9" lang="{$site.http_equiv.Content-language|wash}"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="{$site.http_equiv.Content-language|wash}"><!--<![endif]-->
 <head>
-    {def $basket_is_empty   = cond( $current_user.is_logged_in, fetch( shop, basket ).is_empty, 1 )
-         $user_hash         = concat( $current_user.role_id_list|implode( ',' ), ',', $current_user.limited_assignment_value_list|implode( ',' ) )}
+{def $user_hash         = concat( $current_user.role_id_list|implode( ',' ), ',', $current_user.limited_assignment_value_list|implode( ',' ) )}
          
 {include uri='design:page_head_displaystyles.tpl'}
 
@@ -24,24 +23,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 {include uri='design:page_head.tpl'}
 {include uri='design:page_head_style.tpl'}
 {include uri='design:page_head_script.tpl'}
 
 </head>
 <body>
+<!-- Pagedata:
+{$pagedata|attribute('show', 2, 'text')}
+-->
 <!-- Complete page area: START -->
+<a class="sr-only" href="#content">{"Skip to main content"|i18n('design/hials/pagelayout')}</a>
 
-<div id="page" class="{$pagestyle}">
-
-    {if and( is_set( $pagedata.persistent_variable.extra_template_list ),
-             $pagedata.persistent_variable.extra_template_list|count() )}
-    {foreach $pagedata.persistent_variable.extra_template_list as $extra_template}
-        {include uri=concat('design:extra/', $extra_template)}
-    {/foreach}
-    {/if}
-
+<div id="page" class="container {$pagestyle}">
     <!-- Header area: START -->
     {include uri='design:page_header.tpl'}
     <!-- Header area: END -->
