@@ -1,6 +1,6 @@
 <header>
     <div class="container">
-        <div class="navbar extra-navi">
+        <div class="navbar" id="hials-extranav">
             <div class="navbar-collapse row">
                 {include uri='design:page_header_links.tpl'}
             </div>

@@ -1,4 +1,4 @@
-<ul class="nav nav-pills">
+<ul class="nav navbar-nav navbar-right" role="navigation">
     <li id="contact"><a href={""|ezurl} title="{'Contact us'|i18n('design/hials/pagelayout')}">{'Contact us'|i18n('design/hials/pagelayout')}</a></li>
     <li id="positions"><a href={""|ezurl} title="{'Vacant positions'|i18n('design/hials/pagelayout')}">{'Vacant positions'|i18n('design/hials/pagelayout')}</a></li>
     <li id="sitemap"><a href={concat("/content/view/sitemap/", $pagedata.root_node)|ezurl} title="{'Site map'|i18n('design/hials/pagelayout')}">{'Site map'|i18n('design/hials/pagelayout')}</a></li>
@@ -8,7 +8,7 @@
 {else}
     <li id="login" class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">{'Login'|i18n('design/hials/pagelayout')}<span class="caret"></span></a>
-        <form class="dropdown-menu col-md-3" action="{'/user/login'|ezurl( 'no' )}" method="post">
+        <form class="dropdown-menu" action="{'/user/login'|ezurl( 'no' )}" method="post">
             <fieldset>
                 <label>
                     <span class="hidden">{'Username'|i18n('design/hials/pagelayout')}</span>
