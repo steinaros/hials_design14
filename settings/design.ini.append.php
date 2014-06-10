@@ -16,6 +16,7 @@ JavaScriptFooterList[]=bootstrap.min.js
 
 [StyleSheetSettings]
 CSSFileList[]
+CSSFileList[]=hials.css
 FrontendCSSFileList[]
 
 ClassesCSS=

@@ -1,0 +1,37 @@
+.navbar .nav {
+  position: relative;
+  left: 0;
+  display: block;
+  float: right;
+  margin: 0 10px 0 0;
+  min-height: 33px;
+}
+.navbar .nav.pull-right {
+  float: right;
+}
+.navbar .nav > li {
+  display: block;
+  float: left;
+  border-left: 1px solid rgba(0, 135, 178, 0.52);
+  border-right: 1px solid rgba(13, 92, 120, 0.42);
+}
+.navbar .nav > li:first-child {
+  border-left: none;
+}
+.navbar .nav > li:last-child {
+  border-right: none;
+}
+.navbar .sublevel .nav > li {
+  border-left-color: #f9f9f9;
+  border-right-color: #dbdbdc;
+}
+.navbar .breadcrumb-wrapper {
+  border-bottom: 1px solid #ebebeb;
+}
+.navbar.extra-navi {
+  position: relative;
+}
+.navbar.extra-navi .nav > li {
+  border: none;
+  position: relative;
+}
