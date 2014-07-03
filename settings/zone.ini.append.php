@@ -5,6 +5,7 @@
 # block.ini for block definitions.
 
 [General]
+AllowedTypes[]
 AllowedTypes[]=GlobalZoneLayout
 AllowedTypes[]=2ZonesLayout1
 AllowedTypes[]=2ZonesLayout2
@@ -12,6 +13,7 @@ AllowedTypes[]=2ZonesLayout3
 AllowedTypes[]=3ZonesLayout1
 AllowedTypes[]=3ZonesLayout2
 AllowedTypes[]=CallForActionLayout
+AllowedTypes[]=UtdanningBoksLayout
 
 [GlobalZoneLayout]
 ZoneTypeName=Global zone layout
