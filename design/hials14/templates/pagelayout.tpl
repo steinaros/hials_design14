@@ -37,7 +37,7 @@
 
 <div id="page" class="container {$pagestyle}">
     <!-- Header area: START -->
-    {include uri='design:page_header.tpl'}
+    {* TEMP include uri='design:page_header.tpl'*}
     <!-- Header area: END -->
 
     {cache-block keys=array( $module_result.uri, $user_hash, $extra_cache_key )}
@@ -88,7 +88,7 @@
     <!-- Columns area: END -->
 
     <!-- Footer area: START -->
-    {include uri='design:page_footer.tpl'}
+    {* TEMP include uri='design:page_footer.tpl'*}
     <!-- Footer area: END -->
 
 </div>
