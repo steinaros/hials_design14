@@ -95,6 +95,6 @@ Zones[]=main
 ZoneName[main]=Utdanningsboks zone
 ZoneThumbnail=utdanningsboks_layout.gif
 Template=utdanningsbokslayout.tpl
-AvailableForClasses[]=utdanningstilbud
+AvailableForClasses[]=hials_utdanningstilbud
 
 */ ?>
