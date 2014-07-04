@@ -4,6 +4,10 @@
 <section class="content-view-full">
     <article class="class-utdanningstilbud row">
         <div class="span8">
+            <div class="attribute-banner">
+                {attribute_view_gui attribute=$node.data_map.banner}
+            </div>
+            
             <div class="attribute-header">
                 <h1>{$node.data_map.title.content|wash()}</h1>
             </div>
