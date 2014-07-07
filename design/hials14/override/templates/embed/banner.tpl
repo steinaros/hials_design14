@@ -18,6 +18,9 @@
     {else}
         <img src={$object.data_map.image.content[$size].full_path|ezroot} alt="{$alternative_text}" width="{$object.data_map.image.content[$size].width}" height="{$object.data_map.image.content[$size].height}" />
     {/if}
+    {if $object.data_map.quote.content}
+    <blockquote>{attribute_view_gui attribute=$object.data_map.quote}{if $object.data_map.quote_from.content}<cite><span class="quote_from">{$object.data_map.quote_from.content|wash()}</span>{if $object.data_map.quote_title.content}<br><span class="quote_title">{$object.data_map.quote_title.content|wash()}</span>{/if}</cite>{/if}</blockquote>
+    {/if}
 {/if}
 </div>
 </div>
