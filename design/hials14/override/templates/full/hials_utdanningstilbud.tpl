@@ -2,7 +2,12 @@
 {set scope=global persistent_variable=hash('left_menu', false(),
                                            'extra_menu', false())}
 {set parent_node=fetch('content', 'node', hash( 'node_id', $node.parent_node_id ) )}
-{set fagomrade=$parent_node.data_map.name}                                           
+{set fagomrade=$parent_node.data_map.name.content}
+
+<!--
+{$parent_node|attribute('show',2,'text')}
+-->
+                                           
 <section class="content-view-full">
     <article class="class-hials_utdanningstilbud row">
         <div class="span8">
@@ -12,7 +17,7 @@
             </div>
 
             <div class="attribute-subheader">
-                <h2><span class="utdanningsnivaa">{$node.data_map.nivaa.content}</span> innen <span class="fagomraade">{$fagomrade|wash()}</span></h2>
+                <h2><span class="utdanningsnivaa">{$node.data_map.nivaa.content[0]}</span> innen <span class="fagomraade">{$fagomrade|wash()}</span></h2>
             </div>
 
             {if $node.data_map.intro.content.is_empty|not}

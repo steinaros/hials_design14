@@ -23,35 +23,24 @@
                 </div>
             {/if}
 
-            {if $node.object.data_map.show_children.data_int}
-                {def $classes = array('hials_utdanningstilbud')
-                     $children = array()
-                     $children_count = ''}
+            {def $classes = array('hials_utdanningstilbud')
+                 $children = array()
+                 $children_count = ''}
 
-                {set $children_count=fetch_alias( 'children_count', hash( 'parent_node_id', $node.node_id,
-                                                                          'class_filter_type', 'include',
-                                                                          'class_filter_array', $classes ) )}
-                <section class="content-view-children">
-                    {if $children_count}
-                        {foreach fetch_alias( 'children', hash( 'parent_node_id', $node.node_id,
-                                                                'offset', $view_parameters.offset,
-                                                                'sort_by', $node.sort_array,
-                                                                'class_filter_type', 'include',
-                                                                'class_filter_array', $classes,
-                                                                'limit', $page_limit ) ) as $child }
-                            {node_view_gui view='line' content_node=$child fagomrade=$node.data_map.name}
-                        {/foreach}
-                    {/if}
-                </section>
-
-                {include name=navigator
-                         uri='design:navigator/google.tpl'
-                         page_uri=$node.url_alias
-                         item_count=$children_count
-                         view_parameters=$view_parameters
-                         item_limit=$page_limit}
-
-            {/if}
+            {set $children_count=fetch( 'content', 'list_count', hash( 'parent_node_id', $node.node_id,
+                                                                      'class_filter_type', 'include',
+                                                                      'class_filter_array', $classes ) )}
+            <section class="content-view-children">
+                {if $children_count}
+                    {foreach fetch( 'content', 'list', hash( 'parent_node_id', $node.node_id,
+                                                            'offset', $view_parameters.offset,
+                                                            'sort_by', $node.sort_array,
+                                                            'class_filter_type', 'include',
+                                                            'class_filter_array', $classes ) ) as $child }
+                        {node_view_gui view='line' content_node=$child fagomrade=$node.data_map.name}
+                    {/foreach}
+                {/if}
+            </section>
         </div>
     </div>
 </section>

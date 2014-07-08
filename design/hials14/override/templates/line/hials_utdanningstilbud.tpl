@@ -1,7 +1,7 @@
 {* hials_utdanningstilbud - Line view *}
 {def $content_size = '8'}
 
-<div class="content-view-line">
+<div class="node-view-line">
     <article class="class-hials_utdanningstilbud row">
 
     {if $node.data_map.banner.has_content}
