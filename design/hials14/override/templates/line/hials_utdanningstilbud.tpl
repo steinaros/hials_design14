@@ -16,7 +16,7 @@
     <div class="span{$content_size}">
         <div class="attribute-header">
             <h2>
-                <a href="{$node.url_alias|ezurl( 'no' )}" class="teaser-link">{$node.data_map.title.content|wash()} - {$node.data_map.nivaa[0]} innen {$fagomrade|wash()}</a>
+                <a href="{$node.url_alias|ezurl( 'no' )}" class="teaser-link">{$node.data_map.title.content|wash()} - {$node.data_map.nivaa.class_content.options[$node.data_map.nivaa.content[0]].name|wash()} innen {$node.parent.data_map.name.content|wash()}</a>
             </h2>
         </div>
 
