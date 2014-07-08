@@ -32,9 +32,6 @@
 <!-- ########### DEBUG ############
 Pagedata:
 {$pagedata|attribute('show', 2, 'text')}
-
-Module_result.content:
-{$module_result|attribute('show', 2, 'text')}
      ######### END DEBUG ##########
 -->
 <!-- Complete page area: START -->

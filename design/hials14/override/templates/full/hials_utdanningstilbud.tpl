@@ -5,6 +5,10 @@
 {set fagomrade=$parent_node.data_map.name.content}
 
 <!--
+Node:
+{$node|attribute('show',2,'text')}
+
+Parent node:
 {$parent_node|attribute('show',2,'text')}
 -->
                                            
@@ -17,7 +21,7 @@
             </div>
 
             <div class="attribute-subheader">
-                <h2><span class="utdanningsnivaa">{$node.data_map.nivaa.content[0]}</span> innen <span class="fagomraade">{$fagomrade|wash()}</span></h2>
+                <h2><span class="utdanningsnivaa">{$node.data_map.nivaa[0]}</span> innen <span class="fagomraade">{$fagomrade|wash()}</span></h2>
             </div>
 
             {if $node.data_map.intro.content.is_empty|not}
