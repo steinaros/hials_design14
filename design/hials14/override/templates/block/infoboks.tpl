@@ -7,10 +7,10 @@
             <span>Opptakskrav: </span>{attribute_view_gui attribute=$container_node.data_map.opptakskrav }
         </div>
         <div class="attribute-short">
-            <span>S&oslash;knadsfrist: </span>{$container_node.data_map.soknadsfrist|wash()}
+            <span>S&oslash;knadsfrist: </span>{$container_node.data_map.soknadsfrist.content|wash()}
         </div>
         <div class="attribute-short">
-            <span>Studiepoeng: </span>{$container_node.data_map.cdm_studiepoeng|wash()}
+            <span>Studiepoeng: </span>{$container_node.data_map.cdm_studiepoeng.content|wash()}
         </div> 
     </article>
 </div>
