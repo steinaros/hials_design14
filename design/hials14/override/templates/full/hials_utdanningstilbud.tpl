@@ -27,7 +27,7 @@
 	        
 	        <aside>
 	            <section class="content-view-aside">
-                    <div class="attribute-call-for-action">
+                    <div class="attribute-bokser">
                         {attribute_view_gui attribute=$node.data_map.bokser}
                     </div>
                 </section>
