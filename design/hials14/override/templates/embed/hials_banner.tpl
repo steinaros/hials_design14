@@ -28,6 +28,5 @@
 	{if $object.data_map.quote.content}
 	<blockquote class="col-sm-6">{attribute_view_gui attribute=$object.data_map.quote}{if $object.data_map.quote_from.content}<cite><span class="quote-name">{$object.data_map.quote_from.content|wash()}</span>{if $object.data_map.quote_title.content}<br><span class="quote-title">{$object.data_map.quote_title.content|wash()}</span>{/if}</cite>{/if}</blockquote>
 	{/if}
-	{/if}
 	</div>
 </div>
