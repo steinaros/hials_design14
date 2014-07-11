@@ -1,5 +1,4 @@
-<div class="span{$inner_column_size} main-content">
-    <!-- Main area content: START -->
+
+<main role="main">
     {$module_result.content}
-    <!-- Main area content: END -->
-</div>
+</main>

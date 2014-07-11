@@ -169,8 +169,18 @@ ViewName[default]=Default
 [ExternalVideo]
 Name=External Video
 ManualAddingOfItems=disabled
-CustomAttributes[]=code
-CustomAttributeTypes[code]=text
+CustomAttributes[]=source
+CustomAttributes[]=width
+CustomAttributes[]=aspectratio
+CustomAttributeTypes[source]=text
+CustomAttributeTypes[width]=select
+CustomAttributeTypes[aspectratio]=select
+CustomAttributeSelection_width[]
+CustomAttributeSelection_width[1_col]=1 Col
+CustomAttributeSelection_width[2_col]=2 Col
+CustomAttributeSelection_aspectratio[]
+CustomAttributeSelection_aspectratio[16by9]=16:9
+CustomAttributeSelection_aspectratio[4by3]=4:3
 ViewList[]
 ViewList[]=default
 ViewName[default]=Default
@@ -179,10 +189,15 @@ ViewName[default]=Default
 Name=Information Boks
 ManualAddingOfItems=disabled
 CustomAttributes[]=color
+CustomAttributes[]=width
 CustomAttributeTypes[color]=select
+CustomAttributeTypes[width]=select
 CustomAttributeSelection_color[]
 CustomAttributeSelection_color[white]=White
 CustomAttributeSelection_color[gray]=Gray
+CustomAttributeSelection_width[]
+CustomAttributeSelection_width[1_col]=1 Col
+CustomAttributeSelection_width[2_col]=2 Col
 ViewList[]
 ViewList[]=default
 ViewName[default]=Default
