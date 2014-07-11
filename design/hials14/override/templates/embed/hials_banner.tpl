@@ -1,4 +1,4 @@
-{def $size = "banner"
+{def $size = "original"
      $alternative_text = $object.data_map.name.content
      $img_col_width = "12" }
 

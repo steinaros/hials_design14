@@ -8,7 +8,7 @@
     </div>
     {/if}
     
-    <article class="class-hials_utdanningstilbud row col-sm-6">
+    <article class="class-hials_utdanningstilbud col-sm-6">
         <h1>{$node.data_map.title.content|wash()}</h1>
         <h2><span class="utdanningsnivaa">{$node.data_map.nivaa.class_content.options[$node.data_map.nivaa.content[0]].name|wash()}</span> innen <span class="fagomraade">{$node.parent.data_map.name.content|wash()}</span></h2>
 
