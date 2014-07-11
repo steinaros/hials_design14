@@ -1,4 +1,6 @@
-<header>
+<header role="banner">
+    {include uri='design:page_header_logo.tpl'}
+{*
     <div class="container">
         <nav class="navbar navbar-default" role="navigation" id="hials-extranav">
             <div class="navbar-collapse row">
@@ -19,4 +21,5 @@
             {include uri='design:parts/top_buttons'}
         </div>
     </div>
+    *}
 </header>

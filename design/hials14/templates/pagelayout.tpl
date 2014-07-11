@@ -39,7 +39,7 @@ Pagedata:
 
 <div id="page" class="container {$pagestyle}">
     <!-- Header area: START -->
-    {* TEMP include uri='design:page_header.tpl'*}
+    {include uri='design:page_header.tpl'}
     <!-- Header area: END -->
 
     {cache-block keys=array( $module_result.uri, $user_hash, $extra_cache_key )}
@@ -64,7 +64,7 @@ Pagedata:
         {include uri='design:page_toolbar.tpl'}
     {/if}
     <!-- Toolbar area: END -->
-
+{*
     <!-- Columns area: START -->
     <div class="container">
         <div class="row">
@@ -72,14 +72,14 @@ Pagedata:
             {if $pagedata.left_menu}
                 {include uri='design:page_leftmenu.tpl'}
             {/if}
-            <!-- Side menu area: END -->
+            <!-- Side menu area: END -->*}
     {/cache-block}
     {/cache-block}
             <!-- Main area: START -->
             {include uri='design:page_mainarea.tpl'}
             <!-- Main area: END -->
             {cache-block keys=array( $module_result.uri, $user_hash, $access_type.name, $extra_cache_key )}
-
+{*
             <!-- Extra area: START -->
             {if $pagedata.extra_menu}
                 {include uri='design:page_extramenu.tpl'}
@@ -88,7 +88,7 @@ Pagedata:
         </div>
     </div>
     <!-- Columns area: END -->
-
+*}
     <!-- Footer area: START -->
     {* TEMP include uri='design:page_footer.tpl'*}
     <!-- Footer area: END -->
