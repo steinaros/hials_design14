@@ -1,16 +1,17 @@
 {* hials_utdanningstilbud - Line view *}
-{def $content_size = '8'}
+{def $content_size = '12'}
 
 <div class="node-view-line">
-    <article class="class-hials_utdanningstilbud row">
+    <article class="class-hials_utdanningstilbud">
 
     {if $node.data_map.banner.has_content}
-    <div class="span2">
+    <!-- Banner: {$node.data_map.banner|attribute('show', 2, 'text')} -->
+    <div class="span4">
         <div class="attribute-image">
-            {attribute_view_gui image_class=articlethumbnail href=$node.url_alias|ezurl attribute=$node.data_map.banner}
+            {attribute_view_gui image_class=articlethumbnail href=$node.url_alias|ezurl attribute=$node.data_map.banner.data_map.image}
         </div>
     </div>
-        {set $content_size = '6'}
+        {set $content_size = '8'}
     {/if}
 
     <div class="span{$content_size}">

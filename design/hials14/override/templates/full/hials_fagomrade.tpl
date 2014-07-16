@@ -4,8 +4,8 @@
 
 {def $rss_export = fetch( 'rss', 'export_by_node', hash( 'node_id', $node.node_id ) )}
 
-<section class="content-view-full">
-    <div class="class-hials_fagomrade row">
+<section class="content-view-full container">
+    <div class="class-hials_fagomrade">
         <div class="span8">
             {if $rss_export}
             <div class="attribute-rss-icon">

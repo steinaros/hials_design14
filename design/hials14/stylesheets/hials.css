@@ -1,9 +1,19 @@
 body {
     font-size: 12px;
+    color: #5B5755;
 }
 
 #page {
 	background-color: #f1f1f1;
+}
+
+h1 {
+	color: #851348;
+	text-transform: uppercase;
+}
+
+h2 {
+	text-transform: uppercase;
 }
 
 header {
@@ -27,6 +37,15 @@ header {
     height: 55px;	
     padding-top: 15px;
     padding-bottom:15px;
+}
+
+.box-white {
+	background-color: #fff;
+}
+
+.box-gray {
+	background-color: #5B5755;
+	color: #fff;
 }
 
 .navbar {
