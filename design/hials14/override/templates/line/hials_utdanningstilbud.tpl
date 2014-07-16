@@ -5,16 +5,15 @@
     <article class="class-hials_utdanningstilbud">
 
     {if $node.data_map.banner.has_content}
-    <!-- Banner: {$node.data_map.banner|attribute('show', 2, 'text')} -->
-    <div class="span4">
+    <div class="col-sm-4">
         <div class="attribute-image">
-            {attribute_view_gui image_class=articlethumbnail href=$node.url_alias|ezurl attribute=$node.data_map.banner.data_map.image}
+            {attribute_view_gui image_class=articlethumbnail href=$node.url_alias|ezurl attribute=$node.data_map.banner.object.data_map.image}
         </div>
     </div>
         {set $content_size = '8'}
     {/if}
 
-    <div class="span{$content_size}">
+    <div class="col-sm-{$content_size}">
         <div class="attribute-header">
             <h2>
                 <a href="{$node.url_alias|ezurl( 'no' )}" class="teaser-link">{$node.data_map.title.content|wash()} - {$node.data_map.nivaa.class_content.options[$node.data_map.nivaa.content[0]].name|wash()} innen {$node.parent.data_map.name.content|wash()}</a>
