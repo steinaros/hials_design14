@@ -3,9 +3,7 @@
                                            'extra_menu', false())}                                       
 <section class="content-view-full">
     {if $node.data_map.banner.content.is_empty|not}
-    <div class="attribute-banner">
-        {attribute_view_gui attribute=$node.data_map.banner}
-    </div>
+    <div class="attribute-banner">{attribute_view_gui attribute=$node.data_map.banner}</div>
     {/if}
     
     <article class="class-hials_utdanningstilbud col-sm-6">
@@ -28,4 +26,3 @@
         </div>
     </aside>   
 </section>
-
