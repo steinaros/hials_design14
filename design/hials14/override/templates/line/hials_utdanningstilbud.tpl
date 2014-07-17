@@ -5,6 +5,12 @@
     <article class="class-hials_utdanningstilbud">
 
     {if $node.data_map.banner.has_content}
+    
+    <!-- Banner: {$node.data_map.banner|attribute('show', 2, 'text')} -->
+    {set $banner_object = $node.data_map.banner.object}
+    
+    <!-- Object: {$banner_object|attribute('show', 2, 'text')} -->
+    
     <div class="col-sm-4">
         <div class="attribute-image">
             {attribute_view_gui image_class=articlethumbnail href=$node.url_alias|ezurl attribute=$node.data_map.banner.object.data_map.image}
