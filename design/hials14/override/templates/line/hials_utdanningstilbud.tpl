@@ -6,10 +6,11 @@
 
     {if $node.data_map.banner.has_content}
     
-    <!-- Banner: {$node.data_map.banner|attribute('show', 2, 'text')} -->
-    {set $banner_object = $node.data_map.banner.object}
+    <!-- Banner: {$node.data_map.banner.object|attribute('show', 1, 'text')} -->
     
-    <!-- Object: {$banner_object|attribute('show', 2, 'text')} -->
+    <!-- Data_map: {$node.data_map.banner.object.data_map|attribute('show', 1, 'text')} -->
+    
+    <!-- Object_ID: {$node.data_map.banner.object.id} -->
     
     <div class="col-sm-4">
         <div class="attribute-image">
