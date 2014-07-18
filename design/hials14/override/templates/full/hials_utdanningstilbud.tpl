@@ -23,7 +23,7 @@
         </div>
         {/if}
         
-        {if $spesialiseringer|count()}
+        {if $spesialieringer|count()}
         <h3>Tilgjengelige spesialiseringer:</h3>
         <ul>
         {foreach $spesialiseringer as $item}
