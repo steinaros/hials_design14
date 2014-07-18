@@ -3,7 +3,7 @@
                                            'extra_menu', false())}
 {set spesialieringer = fetch('content', 'list', hash( 'parent_node_id', $node.node_id,
                                                       'class_filter_type', 'include',
-                                                      'class_filter_array', array( 'hials_spesialisering' ) ) )
+                                                      'class_filter_array', array( 'hials_spesialisering' ) ) )}
 <section class="content-view-full">
     {if $node.data_map.banner.content.is_empty|not}
     <div class="attribute-banner">{attribute_view_gui attribute=$node.data_map.banner}</div>
