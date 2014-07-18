@@ -1,9 +1,11 @@
 {* Utdanningstilbud - Full view *}
 {set scope=global persistent_variable=hash('left_menu', false(),
                                            'extra_menu', false())}
-{set spesialieringer = fetch('content', 'list', hash( 'parent_node_id', $node.node_id,
+{def spesialieringer = fetch('content', 'list', hash( 'parent_node_id', $node.node_id,
                                                       'class_filter_type', 'include',
                                                       'class_filter_array', array( 'hials_spesialisering' ) ) )}
+                                                      
+<!--{$spesialieringer|attribute('show', 1, 'text')}-->                                                      
 <section class="content-view-full">
     {if $node.data_map.banner.content.is_empty|not}
     <div class="attribute-banner">{attribute_view_gui attribute=$node.data_map.banner}</div>
@@ -38,3 +40,4 @@
         </div>
     </aside>   
 </section>
+{undef $spesialieringer}
