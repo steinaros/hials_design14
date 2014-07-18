@@ -4,9 +4,8 @@
 {def $spesialiseringer = fetch_alias('children', hash( 'parent_node_id', $node.node_id,
                                               'class_filter_type', 'include',
                                               'class_filter_array', array( 'hials_spesialisering' ) ) )}
-                                                      
 <section class="content-view-full">
-    {if $node.data_map.banner.content.is_empty|not}
+    {if $node.data_map.banner.content}
     <div class="attribute-banner">{attribute_view_gui attribute=$node.data_map.banner}</div>
     {/if}
     
@@ -24,7 +23,7 @@
         </div>
         {/if}
         
-        {if $spesialieringer|count()}
+        {if $spesialiseringer|count()}
         <h3>Tilgjengelige spesialiseringer:</h3>
         <ul>
         {foreach $spesialiseringer as $item}
