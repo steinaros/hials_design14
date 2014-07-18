@@ -5,7 +5,8 @@
                                                       'class_filter_type', 'include',
                                                       'class_filter_array', array( 'hials_spesialisering' ) ) )}
                                                       
-<!--{$spesialieringer|attribute('show', 1, 'text')}-->                                                      
+<!--NodeID: {$node.node_id}
+    {$spesialieringer|attribute('show', 1, 'text')}-->                                                      
 <section class="content-view-full">
     {if $node.data_map.banner.content.is_empty|not}
     <div class="attribute-banner">{attribute_view_gui attribute=$node.data_map.banner}</div>
