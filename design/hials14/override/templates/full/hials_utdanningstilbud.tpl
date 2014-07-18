@@ -1,6 +1,9 @@
 {* Utdanningstilbud - Full view *}
 {set scope=global persistent_variable=hash('left_menu', false(),
-                                           'extra_menu', false())}                                       
+                                           'extra_menu', false())}
+{set spesialieringer = fetch('content', 'list', hash( 'parent_node_id', $node.node_id,
+                                                      'class_filter_type', 'include',
+                                                      'class_filter_array', array( 'hials_spesialisering' ) ) )
 <section class="content-view-full">
     {if $node.data_map.banner.content.is_empty|not}
     <div class="attribute-banner">{attribute_view_gui attribute=$node.data_map.banner}</div>
@@ -13,12 +16,21 @@
         {if $node.data_map.intro.content.is_empty|not}
         {attribute_view_gui attribute=$node.data_map.intro}
         {/if}
-        
+            
         {if $node.data_map.description.content.is_empty|not}
         <div class="attribute-long">
             {attribute_view_gui attribute=$node.data_map.description}
         </div>
-        {/if}             
+        {/if}
+        
+        {if $spesialiseringer|count()}
+        <h3>Tilgjengelige spesialiseringer:</h3>
+        <ul>
+        {foreach $spesialiseringer as $item}
+            <li><a href="{$item.url_alias|ezurl( 'no' )}">{$item.name|wash()}</a></li>
+        {/foreach}
+        </ul>
+        {/if}
     </article>
     <aside>
         <div class="attribute-bokser">

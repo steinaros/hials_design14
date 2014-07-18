@@ -15,7 +15,11 @@ AllowedTypes[]=Banner
 #AllowedTypes[]=FeedbackForm
 #AllowedTypes[]=HighlightedItem
 AllowedTypes[]=ExternalVideo
-AllowedTypes[]=InfoBoks
+AllowedTypes[]=ApplicationInfo
+AllowedTypes[]=ApplyHere
+AllowedTypes[]=SingleItem
+AllowedTypes[]=ContactList
+
 
 [PushToBlock]
 # List of content classes using Layout datatype
@@ -185,8 +189,8 @@ ViewList[]
 ViewList[]=default
 ViewName[default]=Default
 
-[InfoBoks]
-Name=Information Boks
+[ApplicationInfo]
+Name=Application Information
 ManualAddingOfItems=disabled
 CustomAttributes[]=color
 CustomAttributes[]=width
@@ -202,5 +206,37 @@ ViewList[]
 ViewList[]=default
 ViewName[default]=Default
 
+[ApplyHere]
+Name=Apply here
+ManualAddingOfItems=disabled
+ViewList[]
+ViewList[]=default
+ViewList[]=1col
+ViewName[default]=Default
+ViewName[1col]=1 Column
+
+[SingleItem]
+Name=Single item
+NumberOfValidItems=1
+ManualAddingOfItems=enabled
+CustomAttributes[]=color
+CustomAttributeSelection_color[]
+CustomAttributeSelection_color[white]=White
+CustomAttributeSelection_color[gray]=Gray
+ViewList[]
+ViewList[]=default
+ViewList[]=2col
+ViewName[default]=Default
+ViewName[2col]=2 Column
+
+[ContactList]
+Name=Contact list
+NumberOfValidItems=5
+ManualAddingOfItems=enabled
+AllowedClasses[]
+AllowedClasses[]=user
+ViewList[]
+ViewList[]=default
+ViewName[default]=Default
 
 */ ?>

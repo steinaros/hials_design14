@@ -43,22 +43,22 @@ Pagedata:
     <!-- Header area: END -->
 
     {cache-block keys=array( $module_result.uri, $user_hash, $extra_cache_key )}
-{*
+
     <div class="navbar main-navi">
-    
+{*    
         <!-- Top menu area: START -->
         {if $pagedata.top_menu}
             {include uri='design:page_topmenu.tpl'}
         {/if}
         <!-- Top menu area: END -->
-  
+*}  
         <!-- Path area: START -->
         {if $pagedata.show_path}
             {include uri='design:page_toppath.tpl'}
         {/if}
         <!-- Path area: END -->
     </div>
-*}
+
     <!-- Toolbar area: START -->
     {if and( $pagedata.website_toolbar, $pagedata.is_edit|not)}
         {include uri='design:page_toolbar.tpl'}
