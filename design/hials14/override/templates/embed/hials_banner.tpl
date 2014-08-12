@@ -14,6 +14,7 @@
     {set $img_col_width = "6"}
 {/if}
 
+<!-- {$object.data_map.image.content|attribute('show') } -->
 <div class="content-view-embed">
 	<div class="class-banner clearfix">
 	<div class="col-sm-{$img_col_width}">

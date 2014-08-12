@@ -24,7 +24,8 @@ AllowedTypes[]=ContactList
 [PushToBlock]
 # List of content classes using Layout datatype
 ContentClasses[]=hials_portal_page
-ContentClasses[]=hials_utdanningstilbud 
+ContentClasses[]=hials_utdanningstilbud
+ContentClasses[]=hials_contentpage
 # The subtree node ID from which to fetch objects with Layout datatype
 RootSubtree=1
 

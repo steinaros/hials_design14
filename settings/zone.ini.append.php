@@ -99,4 +99,12 @@ ZoneThumbnail=utdanningsboks_layout.gif
 Template=utdanningsbokslayout.tpl
 AvailableForClasses[]=hials_utdanningstilbud
 
+[InnholdssideBoksLayout]
+ZoneTypeName=Innholsside zone layout
+Zones[]=main
+ZoneName[main]=Innholdssideboks zone
+ZoneThumbnail=innholdssideboks_layout.gif
+Template=innholdssidebokslayout.tpl
+AvailableForClasses[]=hials_contentpage
+
 */ ?>
