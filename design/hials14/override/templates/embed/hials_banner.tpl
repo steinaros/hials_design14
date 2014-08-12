@@ -15,7 +15,6 @@
     {set $alternative_text = $object.data_map.image.content[$size].alternative_text}
 {/if}
 
-<!-- {$object.data_map.image.content|attribute('show') } -->
 <div class="content-view-embed">
 	<div class="class-banner clearfix">
 	<div class="col-sm-{$img_col_width}">
