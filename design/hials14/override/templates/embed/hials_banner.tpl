@@ -1,6 +1,11 @@
-{def $size = "original"
+{def $size = "banner_full"
      $alternative_text = $object.data_map.name.content
      $img_col_width = "12" }
+     
+{if $object.data_map.quote.content}
+    {set $img_col_width = "6"
+         $size = "banner_half" }
+{/if}
 
 {if is_set( $object_parameters.size )}
     {set $size = $object_parameters.size}
@@ -8,10 +13,6 @@
 
 {if is_set( $object.data_map.image.content[$size].alternative_text )}
     {set $alternative_text = $object.data_map.image.content[$size].alternative_text}
-{/if}
-
-{if $object.data_map.quote.content}
-    {set $img_col_width = "6"}
 {/if}
 
 <!-- {$object.data_map.image.content|attribute('show') } -->
