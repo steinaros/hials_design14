@@ -9,7 +9,9 @@
     {case match='2col'}{set $box_width_class = "col-sm-6"}{/case}
     {case match='default'}{set $box_width_class = "col-sm-3"}{/case}
 {/switch}
-<div class="block-type-single-item {$box_width_class} {$box_style_class}">
+<div class="block-type-single-item {$box_width_class}">
+    <div class="{$box_style_class}">
     {node_view_gui view='block_item' content_node=$node}
+    </div>
 </div>
 {undef $node}
