@@ -40,9 +40,12 @@ header {
 }
 
 .box, .call-to-action {
-    display: table;
-    width: 100%;
     height: 200px;
+}
+
+.call-to-action {
+	display: table;
+    width: 100%;	
 }
 
 .box-white {
@@ -67,6 +70,10 @@ header {
 
 .box dt, .box dd, .box dd p {
 	display: inline;
+}
+
+.box dd:after{
+	clear: none;
 }
 
 .call-to-action a {
