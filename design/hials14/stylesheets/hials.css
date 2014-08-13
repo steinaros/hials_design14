@@ -73,7 +73,7 @@ header {
 }
 
 .box dl dt:after {
-    content: ': ';
+    content: ':&nbsp;';
 }
 
 .box dl dd p {
