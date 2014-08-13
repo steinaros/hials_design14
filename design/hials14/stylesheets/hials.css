@@ -70,10 +70,11 @@ header {
 
 .box dl dt {
 	float: left;
+	margin-right: 0.25em;
 }
 
 .box dl dt:after {
-    content: ':&nbsp;';
+    content: ':';
 }
 
 .box dl dd p {
