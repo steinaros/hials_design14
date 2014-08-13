@@ -11,6 +11,8 @@
     {case match='white'}{set $box_style_class = "box-white"}{/case}
     {case match='gray'}{set $box_style_class = "box-gray"}{/case}
 {/switch}
+<!-- {$soknad_selection} -->
+<!-- {$container_node.data_map.soknad_til.content|attribute('show',2,'text')} -->
 {switch match=$soknad_selection}
     {case match=1}
         {set $soknad_text = $container_node.data_map.soknad_til.class_content.options[$soknad_selection].name|wash}
@@ -30,7 +32,7 @@
     {/case}
 {/switch}
 
-<div class="block-type-infoboks {$box_width_class}">
+<div class="block-type-infoboks box {$box_width_class}">
     <div class="{$box_style_class}">
 	    <h3>{$block.name|wash()}</h3>
 	    <dl>

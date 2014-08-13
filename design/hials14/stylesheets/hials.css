@@ -47,16 +47,26 @@ header {
 
 .box-white {
 	background-color: #fff;
+	padding: 7px;
 }
 
 .box-gray {
 	background-color: #5B5755;
 	color: #fff;
+	padding: 7px;
 }
 
 .box-yellow {
     background-color: #FDED00;
     color:#5B5755;
+}
+
+.box-white h3, .box-gray h3 {
+	margin-top:0;
+}
+
+.box dt, .box dd, .box dd p {
+	display: inline;
 }
 
 .call-to-action a {
