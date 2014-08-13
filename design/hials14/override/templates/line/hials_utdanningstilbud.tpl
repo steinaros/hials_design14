@@ -8,7 +8,7 @@
     
 <!-- Banner node id: {$node.data_map.banner.content.relation_list.0.node_id} -->    
     
-    {set $banner = fetch( 'content', 'node', hash( 'node_id', $node.data_map.banner.content.relation_list.0.node_id ) ) }
+    {def $banner = fetch( 'content', 'node', hash( 'node_id', $node.data_map.banner.content.relation_list.0.node_id ) ) }
     
 <!-- Banner: {$banner|attribute('show', 2, 'text')} -->
     
@@ -37,4 +37,4 @@
     </article>
 </div>
 
-{undef $content_size}
+{undef $content_size $banner}
