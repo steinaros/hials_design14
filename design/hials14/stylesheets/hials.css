@@ -70,7 +70,10 @@ header {
 
 .box dl dt {
 	float: left;
-	margin-right: 10px;
+}
+
+.box dl dt:after {
+    content: ': ';
 }
 
 .box dl dd p {

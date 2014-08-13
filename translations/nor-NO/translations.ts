@@ -2,6 +2,7 @@
 <TS>
   <context>
     <name>design/hials/pagelayout</name>
+    <message>
       <source>Skip to main content</source>
       <translation>Hopp til hovedinnhold</translation>
     </message>
@@ -41,5 +42,24 @@
       <source>Forgot your password?</source>
       <translation>Glemt passordet ditt?</translation>
     </message>
+  </context>
+  <context>
+    <name>design/hials/utdanning</name>
+    <message>
+        <source>Requirements</source>
+        <translation>Opptakskrav</translation>
+    </message>
+    <message>
+        <source>Application to</source>
+        <translation>S&oslash;knad</translation>
+    </message>
+    <message>
+        <source>Application deadline</source>
+        <translation>S&oslash;knadsfrist</translation>
+    </message>
+    <message>
+        <source>Credits</source>
+        <translation>Studiepoeng</translation>
+    </message>      
   </context>
 </TS>
