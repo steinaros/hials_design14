@@ -6,15 +6,11 @@
 
     {if $node.data_map.banner.has_content}
     
-<!-- Banner node id: {$node.data_map.banner.content.relation_list.0.node_id} -->    
-    
     {def $banner = fetch( 'content', 'node', hash( 'node_id', $node.data_map.banner.content.relation_list.0.node_id ) ) }
-    
-<!-- Banner: {$banner|attribute('show', 2, 'text')} -->
-    
+
     <div class="col-sm-4">
         <div class="attribute-image">
-            {attribute_view_gui image_class=articlethumbnail href=$node.url_alias|ezurl attribute=$banner.image}
+            {attribute_view_gui image_class=articlethumbnail href=$node.url_alias|ezurl attribute=$banner.data_map.image}
         </div>
     </div>
         {set $content_size = '8'}
