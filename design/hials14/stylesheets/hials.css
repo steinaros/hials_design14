@@ -48,6 +48,21 @@ header {
 	color: #fff;
 }
 
+.box-yellow {
+    background-color: #FDED00;
+    color:#5B5755;
+}
+
+.call-to-action a {
+    font-size: 2.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: inherit;
+}
+
 .navbar {
 	border-radius: none;
 }

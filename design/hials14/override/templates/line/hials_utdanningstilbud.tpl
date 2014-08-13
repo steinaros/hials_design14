@@ -8,12 +8,12 @@
     
     {def $banner = fetch( 'content', 'node', hash( 'node_id', $node.data_map.banner.content.relation_list.0.node_id ) ) }
 
-    <div class="col-sm-4">
+    <div class="col-sm-2">
         <div class="attribute-image">
             {attribute_view_gui image_class=articlethumbnail href=$node.url_alias|ezurl attribute=$banner.data_map.image}
         </div>
     </div>
-        {set $content_size = '8'}
+        {set $content_size = '10'}
     {/if}
 
     <div class="col-sm-{$content_size}">
