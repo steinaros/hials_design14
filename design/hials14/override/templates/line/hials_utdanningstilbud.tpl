@@ -5,16 +5,10 @@
     <article class="class-hials_utdanningstilbud">
 
     {if $node.data_map.banner.has_content}
-    
-    <!-- Banner: {$node.data_map.banner.object|attribute('show', 1, 'text')} -->
-    
-    <!-- Data_map: {$node.data_map.banner.object.data_map|attribute('show', 1, 'text')} -->
-    
-    <!-- Object_ID: {$node.data_map.banner.object.id} -->
-    
+    {set $banner = fetch( 'content', 'node', hash( 'node_id', $node.data_map.banner.content.relation_list.0.node_id ) ) }
     <div class="col-sm-4">
         <div class="attribute-image">
-            {attribute_view_gui image_class=articlethumbnail href=$node.url_alias|ezurl attribute=$node.data_map.banner.object.data_map.image}
+            {attribute_view_gui image_class=articlethumbnail href=$node.url_alias|ezurl attribute=$banner}
         </div>
     </div>
         {set $content_size = '8'}
