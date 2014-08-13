@@ -68,12 +68,13 @@ header {
 	margin-top:0;
 }
 
-.box dt, .box dd, .box dd p {
-	display: inline;
+.box dl dt {
+	float: left;
+	margin-right: 10px;
 }
 
-.box dd:after{
-	clear: none;
+.box dl dd p {
+	display: inline;
 }
 
 .call-to-action a {

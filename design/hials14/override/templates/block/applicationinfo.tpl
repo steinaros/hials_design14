@@ -1,6 +1,6 @@
 {def $box_width_class = "col-sm-3"}
 {def $box_style_class = "box-white"}
-{def $soknad_selection = $container_node.data_map.soknad_til.content.0|dec}
+{def $soknad_selection = $container_node.data_map.soknad_til.content.0}
 {def $soknad_text = false()}
 {def $soknad_link = false()}
 {switch match=$block.custom_attributes.width}
@@ -11,8 +11,6 @@
     {case match='white'}{set $box_style_class = "box-white"}{/case}
     {case match='gray'}{set $box_style_class = "box-gray"}{/case}
 {/switch}
-<!-- {$soknad_selection} -->
-<!-- {$container_node.data_map.soknad_til.content|attribute('show',2,'text')} -->
 {switch match=$soknad_selection}
     {case match=1}
         {set $soknad_text = $container_node.data_map.soknad_til.class_content.options[$soknad_selection].name|wash}
