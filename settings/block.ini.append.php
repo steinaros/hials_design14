@@ -221,6 +221,7 @@ Name=Single item
 NumberOfValidItems=1
 ManualAddingOfItems=enabled
 CustomAttributes[]=color
+CustomAttributeTypes[color]=select
 CustomAttributeSelection_color[]
 CustomAttributeSelection_color[white]=White
 CustomAttributeSelection_color[gray]=Gray
