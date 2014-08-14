@@ -1,6 +1,7 @@
 {def $check_visibility = ezini( 'SiteAccessSettings', 'ShowHiddenNodes' )|ne( 'true' )
      $content = false()
      $has_readable_related = false()}
+<!-- {$attribute.content.relation_list|attribute(show, 2, text)} -->
 {foreach $attribute.content.relation_list as $relation}
 {if $relation.in_trash|not()}
     {set $content = fetch( content, object, hash( object_id, $relation.contentobject_id ) )}
