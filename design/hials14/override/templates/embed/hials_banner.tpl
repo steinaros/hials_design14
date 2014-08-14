@@ -35,3 +35,4 @@
 		{/if}
 	</div>
 </div>
+{undef $size $alternative_text $img_col_width}
