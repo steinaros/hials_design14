@@ -6,7 +6,6 @@
     <div id="address-{$block.zone_id}-{$block.id}">
     {block_view_gui block=$block container_node=$container_node}
     </div>
-    <div class="block-separator"></div>
 {/if}
 
 {include uri='design:parts/zone_block_bottom.tpl'}
