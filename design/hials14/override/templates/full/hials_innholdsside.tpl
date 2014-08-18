@@ -7,7 +7,7 @@
             {attribute_view_gui attribute=$node.data_map.bokser container_node=$node}
         </div>
     </aside>   
-    {if $node.data_map.banner.content}
+    {if ne($node.data_map.banner.content.relation_list|count(),0)}
     <div class="attribute-banner">{attribute_view_gui attribute=$node.data_map.banner}</div>
     {/if}
     

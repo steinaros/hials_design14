@@ -30,7 +30,7 @@
     {/case}
 {/switch}
 
-<div class="block-type-infoboks box {$box_width_class}">
+<div class="block-type-infoboks boks {$box_width_class}">
     <div class="{$box_style_class}">
 	    <h3>{$block.name|wash()}</h3>
 	    <dl>
