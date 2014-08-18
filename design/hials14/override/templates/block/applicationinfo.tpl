@@ -1,5 +1,5 @@
 {def $box_width_class = "col-sm-3"}
-{def $box_style_class = "box-white"}
+{def $box_style_class = "boks-white"}
 {def $soknad_selection = $container_node.data_map.soknad_til.content.0}
 {def $soknad_text = false()}
 {def $soknad_link = false()}
@@ -8,8 +8,8 @@
     {case match='2_col'}{set $box_width_class = "col-sm-6"}{/case}
 {/switch}
 {switch match=$block.custom_attributes.color}
-    {case match='white'}{set $box_style_class = "box-white"}{/case}
-    {case match='gray'}{set $box_style_class = "box-gray"}{/case}
+    {case match='white'}{set $box_style_class = "boks-white"}{/case}
+    {case match='gray'}{set $box_style_class = "boks-gray"}{/case}
 {/switch}
 {switch match=$soknad_selection}
     {case match=1}

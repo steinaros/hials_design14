@@ -1,5 +1,5 @@
 <div class="block-item-user">
-<div class="col-sm-3 box-white">
+<div class="col-sm-3 boks-white">
     <div>
         <strong>{$node.data_map.first_name|wash()} {$node.data_map.last_name|wash()}</strong>
     </div 

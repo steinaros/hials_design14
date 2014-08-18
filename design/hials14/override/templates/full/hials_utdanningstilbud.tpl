@@ -7,6 +7,7 @@
 <section class="content-view-full">
     {if $node.data_map.banner.content}
     <div class="attribute-banner">{attribute_view_gui attribute=$node.data_map.banner}</div>
+    <div class="clearfix"></div>
     {/if}
     
     <article class="class-hials_utdanningstilbud col-sm-6">
@@ -14,7 +15,9 @@
         <h2><span class="utdanningsnivaa">{$node.data_map.nivaa.class_content.options[$node.data_map.nivaa.content[0]].name|wash()}</span> innen <span class="fagomraade">{$node.parent.data_map.name.content|wash()}</span></h2>
 
         {if $node.data_map.intro.content.is_empty|not}
-        {attribute_view_gui attribute=$node.data_map.intro}
+        <div class="intro">
+            {attribute_view_gui attribute=$node.data_map.intro}
+        </div>
         {/if}
             
         {if $node.data_map.description.content.is_empty|not}

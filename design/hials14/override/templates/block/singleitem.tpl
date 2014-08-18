@@ -1,9 +1,9 @@
 {def $node = $block.valid_nodes[0]}
 {def $box_width_class = "col-sm-3"}
-{def $box_style_class = "box-white"}
+{def $box_style_class = "boks-white"}
 {switch match=$block.custom_attributes.color}
-    {case match='white'}{set $box_style_class = "box-white"}{/case}
-    {case match='gray'}{set $box_style_class = "box-gray"}{/case}
+    {case match='white'}{set $box_style_class = "boks-white"}{/case}
+    {case match='gray'}{set $box_style_class = "boks-gray"}{/case}
 {/switch}
 {switch match=$block.view}
     {case match='2col'}{set $box_width_class = "col-sm-6"}{/case}

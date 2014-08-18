@@ -77,7 +77,7 @@ aside {
     padding: 8px;
 }
 
-.box {
+.boks {
     display: table;
     height: 18rem;
     border-spacing: 8px;
@@ -90,38 +90,38 @@ aside {
     width:100%;
 }
 
-.box-white {
+.boks-white {
     background-color: #fff;
     display: table-cell;
     padding: 15px 15px 5px 15px;
 }
 
-.box-gray {
+.boks-gray {
     background-color: #5B5755;
     color: #fff;
     display: table-cell;
     padding: 15px 15px 5px 15px;
 }
 
-.box-yellow {
+.boks-yellow {
     background-color: #FDED00;
     color:#5B5755;
 }
 
-.box-white h3, .box-gray h3 {
+.boks-white h3, .boks-gray h3 {
     margin-top:0;
 }
 
-.box dl dt {
+.boks dl dt {
     float: left;
     margin-right: 0.25em;
 }
 
-.box dl dt:after {
+.boks dl dt:after {
     content: ':';
 }
 
-.box dl dd p {
+.boks dl dd p {
     display: inline;
 }
 
