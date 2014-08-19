@@ -14,9 +14,12 @@
     {if ne($node.data_map.banner.content.relation_list|count(),0)}
     <div class="attribute-banner">{attribute_view_gui attribute=$node.data_map.banner}</div>
     {/if}
+    
+    <!-- {$node.data_map.bilde|attribute(show, 2, text)} -->
+    
     {if $node.data_map.bilde.has_content}
     <aside class="col-sm-6">
-        {attribute_view_gui attribute=$node.data_map.bilde image_class="banner_half"}
+        {attribute_view_gui attribute=$node.data_map.bilde image_class=banner_half}
         {if $children|count()}
         <h3>Undersider</h3>
         <ul>
