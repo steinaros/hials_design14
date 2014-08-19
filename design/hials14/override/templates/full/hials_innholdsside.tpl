@@ -1,7 +1,7 @@
 {* Innholdsside - Full view *}
 {set scope=global persistent_variable=hash('left_menu', false(),
                                            'extra_menu', false())}
-{def children=fetch( content, list, hash( parent_node_id, $node.node_id,
+{def $children=fetch( content, list, hash( parent_node_id, $node.node_id,
                                           class_filter_type, include,
                                           class_filter_array, array( 'hials_contentpage' ),
                                           sort_by, $node.sort_array ) )}

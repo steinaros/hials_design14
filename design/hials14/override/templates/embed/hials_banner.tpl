@@ -7,6 +7,8 @@
          $size = "banner_half" }
 {/if}
 
+<!-- {$object.data_map.quote|attribute(show, 2, text)} -->
+
 {if is_set( $object_parameters.size )}
     {set $size = $object_parameters.size}
 {/if}
