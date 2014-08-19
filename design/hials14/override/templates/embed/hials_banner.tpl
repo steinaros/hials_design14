@@ -26,7 +26,7 @@
 		    <img class="img-responsive" src={$object.data_map.image.content[$size].full_path|ezroot} alt="{$alternative_text}" />
 		{/if}
 		</div>
-		{if $object.data_map.quote.content}
+		{if not($object.data_map.quote.content.is_empty)}
 		<div class="col-sm-6">
 			<div class="quote-wrapper">
 			   <blockquote>{attribute_view_gui attribute=$object.data_map.quote}{if $object.data_map.quote_from.content}<cite><span class="quote-name">{$object.data_map.quote_from.content|wash()}</span>{if $object.data_map.quote_title.content}<br><span class="quote-title">{$object.data_map.quote_title.content|wash()}</span>{/if}</cite>{/if}</blockquote>
