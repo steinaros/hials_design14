@@ -2,12 +2,10 @@
      $alternative_text = $object.data_map.name.content
      $img_col_width = "12" }
      
-{if $object.data_map.quote.content.is_empty}
+{if $object.data_map.quote.has_content}
     {set $img_col_width = "6"
          $size = "banner_half" }
 {/if}
-
-<!-- {$object.data_map.quote|attribute(show, 2, text)} -->
 
 {if is_set( $object_parameters.size )}
     {set $size = $object_parameters.size}
