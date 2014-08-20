@@ -28,8 +28,6 @@ Input:
 
 {if $image_content.is_valid}
 
-    <!-- {$attribute|attribute(show, 2, text)} -->
-
     {let image        = $image_content[$image_class]
          inline_style = ''}
 

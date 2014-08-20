@@ -103,8 +103,8 @@ AvailableForClasses[]=hials_utdanningstilbud
 ZoneTypeName=Innholsside zone layout
 Zones[]=main
 ZoneName[main]=Innholdssideboks zone
-ZoneThumbnail=innholdssideboks_layout.gif
-Template=innholdssidebokslayout.tpl
+ZoneThumbnail=hials_contentpage_layout.gif
+Template=hials_contentpagelayout.tpl
 AvailableForClasses[]=hials_contentpage
 
 */ ?>
