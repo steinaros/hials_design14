@@ -38,10 +38,10 @@ Input:
     {/if}
     {switch match=$alignment}
     {case match='left'}
-        <figure class="imageleft">
+        <div class="imageleft">
     {/case}
     {case match='right'}
-        <figure class="imageright">
+        <div class="imageright">
     {/case}
     {/switch}
 
@@ -77,10 +77,10 @@ Input:
 
     {switch match=$alignment}
     {case match='left'}
-        </figure>
+        </div>
     {/case}
     {case match='right'}
-        </figure>
+        </div>
     {/case}
     {/switch}
 
