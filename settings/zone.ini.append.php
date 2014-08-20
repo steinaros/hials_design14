@@ -14,6 +14,7 @@ AllowedTypes[]=3ZonesLayout1
 AllowedTypes[]=3ZonesLayout2
 AllowedTypes[]=CallForActionLayout
 AllowedTypes[]=UtdanningBoksLayout
+AllowedTypes[]=InnholdssideBoksLayout
 
 [GlobalZoneLayout]
 ZoneTypeName=Global zone layout
