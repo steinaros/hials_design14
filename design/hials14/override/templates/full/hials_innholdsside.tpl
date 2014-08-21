@@ -7,11 +7,13 @@
                                           sort_by, $node.sort_array ) )}
 <section class="content-view-full">
     <!-- {$node.data_map.bokser|attribute(show, 2, text)} -->
+    {if $node.data_map.bokser.has_content}
     <aside>
         <div class="attribute-bokser">
             {attribute_view_gui attribute=$node.data_map.bokser container_node=$node}
         </div>
-    </aside>   
+    </aside>
+    {/if}
     {if ne($node.data_map.banner.content.relation_list|count(),0)}
     <div class="attribute-banner">{attribute_view_gui attribute=$node.data_map.banner}</div>
     {/if}
