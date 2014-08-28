@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
-  <context>
+<TS version="2.0"> 
+<context>
     <name>design/hials/pagelayout</name>
     <message>
       <source>Skip to main content</source>
@@ -43,8 +43,8 @@
       <source>Forgot your password?</source>
       <translation>Glemt passordet ditt?</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>design/hials/utdanning</name>
     <message>
         <source>Requirements</source>
@@ -62,5 +62,5 @@
         <source>Credits</source>
         <translation>Studiepoeng</translation>
     </message>      
-  </context>
+</context>
 </TS>

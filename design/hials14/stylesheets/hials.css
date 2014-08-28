@@ -77,35 +77,32 @@ aside {
     padding: 8px;
 }
 
-.boks {
-    display: table;
-    height: 18rem;
-    border-spacing: 8px;
-    padding: 0;
+.breadcrumb {
+	margin-bottom: 0;
+	background: transparent;
 }
 
-.call-to-action {
-    display: table;
-    height: 18rem;
-    width:100%;
+.boks {
+    display: table-cell;
+    min-height: 18rem;
+    padding: 0;
 }
 
 .boks-white {
     background-color: #fff;
-    display: table-cell;
     padding: 15px 15px 5px 15px;
 }
 
 .boks-gray {
     background-color: #5B5755;
     color: #fff;
-    display: table-cell;
     padding: 15px 15px 5px 15px;
 }
 
 .boks-yellow {
     background-color: #FDED00;
     color:#5B5755;
+    padding: 15px 15px 5px 15px;  
 }
 
 .boks-white h3, .boks-gray h3 {
@@ -125,12 +122,26 @@ aside {
     display: inline;
 }
 
+.boks-25 {
+	width: 25%;
+}
+
+.boks-50 {
+	width: 50%;
+}
+
+.boks-100 {
+	width: 100%;
+}
+
+.call-to-action {
+    vertical-align: middle;
+}
+
 .call-to-action a {
     font-size: 2.4rem;
     font-weight: bold;
     text-transform: uppercase;
-    display: table-cell;
-    vertical-align: middle;
     text-align: center;
     color: inherit;
 }

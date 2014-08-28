@@ -10,7 +10,7 @@
 
     <div class="row">
     {foreach $valid_nodes as $valid_node max 4}
-        <div class="col-sm-3">
+        <div class="boks boks-3-col">
         {node_view_gui view='block_item' image_class='contentgrid' content_node=$valid_node}
         </div>
     {/foreach}
