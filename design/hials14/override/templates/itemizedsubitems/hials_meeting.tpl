@@ -23,18 +23,18 @@
     {if $children|count()}
     <dl>
         {foreach $children as $child}
-        <dt><time datetime="{$child.data_map.dato|datetime('custom', '%Y-%m-%d')}">{$child.data_map.dato|l10n('date')}</time></dt>
+        <dt><time datetime="{$child.data_map.dato.content.timestamp|datetime('custom', '%Y-%m-%d')}">{$child.data_map.dato.content.timestamp|l10n('date')}</time></dt>
         <dd>
         {if or($child.data_map.sakliste.has_content, $child.data_map.sakliste.has_content)}
             <ul>
             {def $file = $child.data_map.sakliste}        
             {if $file.has_content}
-                <li><div class="attribute-{$file.content.mime_type_part}"><a href={concat("content/download/", $file.contentobject_id, "/", $file.id, "/file/", $file.content.original_filename)|ezurl} title="{concat('Agenda'|i18n('design/hials/meeting'),' ',$child.data_map.type|wash()|downcase(),' ',$child.data_map.dato|l10n('date'))}">{'Agenda'|i18n('design/hials/meeting')} ({$file.content.filesize|si(byte)})</a></li>
+                <li><div class="attribute-{$file.content.mime_type_part}"><a href={concat("content/download/", $file.contentobject_id, "/", $file.id, "/file/", $file.content.original_filename)|ezurl} title="{concat('Agenda'|i18n('design/hials/meeting'),' ',$child.data_map.type|wash()|downcase(),' ',$child.data_map.dato.content.timestamp|l10n('date'))}">{'Agenda'|i18n('design/hials/meeting')} ({$file.content.filesize|si(byte)})</a></li>
             {/if}
             {undef $file}
             {def $file = $child.data_map.protokoll}        
             {if $file.has_content}
-                <li><div class="attribute-{$file.content.mime_type_part}"><a href={concat("content/download/", $file.contentobject_id, "/", $file.id, "/file/", $file.content.original_filename)|ezurl} title="{concat('Minutes'|i18n('design/hials/meeting'),' ',$child.data_map.type|wash()|downcase(),' ',$child.data_map.dato|l10n('date'))}">{'Minutes'|i18n('design/hials/meeting')} ({$file.content.filesize|si(byte)})</a></li>
+                <li><div class="attribute-{$file.content.mime_type_part}"><a href={concat("content/download/", $file.contentobject_id, "/", $file.id, "/file/", $file.content.original_filename)|ezurl} title="{concat('Minutes'|i18n('design/hials/meeting'),' ',$child.data_map.type|wash()|downcase(),' ',$child.data_map.dato.content.timestamp|l10n('date'))}">{'Minutes'|i18n('design/hials/meeting')} ({$file.content.filesize|si(byte)})</a></li>
             {/if}
             {undef $file}          
         {else}
