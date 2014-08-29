@@ -63,4 +63,19 @@
         <translation>Studiepoeng</translation>
     </message>      
 </context>
+<context>
+    <name>design/hials/meeting</name>
+    <message>
+        <source>Agenda</source>
+        <translation>Sakliste</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation>Protokoll</translation>
+    </message>
+    <message>
+        <source>No documents are published for this meeting</source>
+        <translation>Ingen dokumenter er publisert for dette m&oslash;tet</translation>
+    </message>
+</context>
 </TS>

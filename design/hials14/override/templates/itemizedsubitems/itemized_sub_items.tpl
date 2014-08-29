@@ -1,10 +1,10 @@
 <div class="content-view-embed">
     <div class="class-{$object.class_identifier}">
 
-    <h2>{$object.name|wash()}</h2>
+    <h2><a href={$object.main_node.url_alias|ezurl}>{$object.name|wash()}</a></h2>
 
     {def $children = array()
-         $limit = 3
+         $limit = 5
          $offset = 0}
 
     {if is_set( $object_parameters.limit )}
@@ -20,16 +20,15 @@
                                                'offset', $offset,
                                                'sort_by', $object.main_node.sort_array ) ) }
 
-    <div class="content-view-children float-break">
     {if $children|count()}
+    
+    <ul>
     {foreach $children as $child}
-         {node_view_gui view=line content_node=$child}
-         {delimiter}
-             {include uri='design:content/datatype/view/ezxmltags/separator.tpl'}
-         {/delimiter}
+       <li><div><a href={$child.url_alias|ezurl}>{$child.name|wash()}</a></div></li>
     {/foreach}
+    </ul>
+    
     {/if}
-    </div>
 
     </div>
 </div>
