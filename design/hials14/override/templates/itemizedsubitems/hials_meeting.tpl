@@ -6,7 +6,11 @@
          $offset = 0
          $year = 0}
     {if is_set( $object_parameters.limit )}
-        {set $limit = $object_parameters.limit}
+        {if lt($object_parameters.limit, 0)}
+            {set $limit = false()}
+        {else}
+            {set $limit = $object_parameters.limit}
+        {/if}
     {/if}
     {if is_set( $object_parameters.offset )}
         {set $offset = $object_parameters.offset}
