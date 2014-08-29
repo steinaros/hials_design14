@@ -52,11 +52,11 @@
 	    </message>
 	    <message>
 	        <source>Application to</source>
-	        <translation>S&oslash;knad</translation>
+	        <translation>Søknad</translation>
 	    </message>
 	    <message>
 	        <source>Application deadline</source>
-	        <translation>S&oslash;knadsfrist</translation>
+	        <translation>Søknadsfrist</translation>
 	    </message>
 	    <message>
 	        <source>Credits</source>
@@ -75,7 +75,7 @@
 	    </message>
 	    <message>
 	        <source>No documents are published for this meeting</source>
-	        <translation>Ingen dokumenter er publisert for dette m&oslash;tet</translation>
+	        <translation>Ingen dokumenter er publisert for dette møtet</translation>
 	    </message>
 	</context>    
 </TS>
