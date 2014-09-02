@@ -61,7 +61,11 @@
 	    <message>
 	        <source>Credits</source>
 	        <translation>Studiepoeng</translation>
-	    </message>      
+	    </message>
+        <message>
+            <source>Contact</source>
+            <translation>Kontaktperson</translation>
+        </message>         
 	</context>
 	<context>
 	    <name>design/hials/meeting</name>
