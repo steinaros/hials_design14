@@ -39,7 +39,7 @@
         <div class="attribute-bokser">
             {attribute_view_gui attribute=$node.data_map.bokser container_node=$node}
         </div>
-        <!-- {$node.data_map.contacts.content|attribute('show',2,'text')} -->
+        <!-- {$node.data_map.contacts.content.relation_list|attribute('show',2,'text')} -->
         {if $node.data_map.contacts.has_content}
         <div class="attribute-contacts">
             {attribute_view_gui attribute=$node.data_map.contacts}
