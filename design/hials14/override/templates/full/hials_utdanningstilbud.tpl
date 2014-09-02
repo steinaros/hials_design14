@@ -5,7 +5,7 @@
                                               'class_filter_type', 'include',
                                               'class_filter_array', array( 'hials_spesialisering' ) ) )}
 <section class="content-view-full">
-    {if $node.data_map.banner.content}
+    {if $node.data_map.banner.has_content}
     <div class="attribute-banner">{attribute_view_gui attribute=$node.data_map.banner}</div>
     <div class="clearfix"></div>
     {/if}
@@ -39,8 +39,8 @@
         <div class="attribute-bokser">
             {attribute_view_gui attribute=$node.data_map.bokser container_node=$node}
         </div>
-        <!-- {$node.data_map.contacts|attribute('show',2,'text')} -->
-        {if $node.data_map.contacts.content}
+        <!-- {$node.data_map.contacts.content|attribute('show',2,'text')} -->
+        {if $node.data_map.contacts.has_content}
         <div class="attribute-contacts">
             {attribute_view_gui attribute=$node.data_map.contacts}
         </div>
