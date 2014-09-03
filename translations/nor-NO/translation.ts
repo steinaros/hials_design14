@@ -65,7 +65,11 @@
         <message>
             <source>Contact</source>
             <translation>Kontaktperson</translation>
-        </message>         
+        </message>
+        <message>
+            <source>Contacts</source>
+            <translation>Kontaktpersoner</translation>
+        </message>                          
 	</context>
 	<context>
 	    <name>design/hials/meeting</name>

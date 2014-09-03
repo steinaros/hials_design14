@@ -6,11 +6,10 @@
 <div class="content-view-embed">
     <div class="class-person h-card vcard">
         <div class="col-sm-3 boks-white">
-	        <h3>{'Contact'|i18n('hials/design/utdanning')}</h3>
 	        <p class="p-name fn">{$object.data_map.first_name.content|wash()} {$object.data_map.last_name.content|wash()}</p>
 	        <p class="p-job-title title">{$object.data_map.jobtitle.content|wash()}</p>
 	        <p class="p-tel tel">{$phone|wash()}</p>
-	        <p class="u-email email"></p>
+	        <p class="u-email email">{$object.data_map.email.content|wash|autolink()}</p>
 	    </div> 
 		<div class="col-sm-3">
 		    {if $object.data_map.image.has_content}
