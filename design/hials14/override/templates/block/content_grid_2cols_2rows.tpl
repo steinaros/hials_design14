@@ -1,6 +1,4 @@
 {def $valid_nodes = $block.valid_nodes}
-{def $color_selection = false()}
-{def $color_class='hials-box-cell-white'}
 
 <div class="block-type-content-grid block-view-{$block.view}">
 
@@ -19,12 +17,16 @@
         {case match=2}{set $color_class='hials-box-cell-yellow'}{/case}
         {case match=3}{set $color_class='hials-box-cell-red'}{/case}
         {/switch}
-        <div class="hials-box-cell-3 {$color_class}">
+        <div class="hials-box-cell-6 {$color_class}">
         {node_view_gui view='block_item' image_class='contentgrid' content_node=$valid_node}
         </div>
+        
+        {delimiter modulo=2}
+        </div>
+        <div class="hials-box-wrapper">
+        {/delimiter}        
     {/foreach}
     </div>
-
 </div>
 
 {undef $valid_nodes $color_selection $color_class}

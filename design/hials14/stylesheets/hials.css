@@ -22,14 +22,14 @@ header {
     border-top: 1px solid #5B5755;  
     margin: 3rem -15px auto -15px;
 }
-
+/*
 .quote-wrapper {
 	display: table;
 	width: 100%;
 	background-color: #fff;
 	height: 502px;
 }
-
+*/
 blockquote {
     border: none;
     quotes: "\"" "\"";
@@ -72,16 +72,17 @@ blockquote p:before, blockquote p:after {
     padding-top: 15px;
     padding-bottom:15px;
 }
-
+/*
 aside {
     padding: 8px;
 }
+*/
 
 .breadcrumb {
 	margin-bottom: 0;
 	background: transparent;
 }
-
+/*
 .boks {
     display: table-cell;
     min-height: 18rem;
@@ -108,7 +109,7 @@ aside {
 .boks-white h3, .boks-gray h3 {
     margin-top:0;
 }
-
+*/
 .boks dl dt {
     float: left;
     margin-right: 0.25em;
@@ -184,4 +185,53 @@ form.dropdown-menu {
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;	
+}
+
+.hials-box-wrapper {
+    display:table;
+    border-spacing: 15px 0;
+    width: 100%;
+    margin-bottom: 15px;
+    min-height: 18rem;
+}
+
+.hials-box-cell-12 {
+    display:table-cell;
+    width:100%;
+    vertical-align:middle;
+}
+
+.hials-box-cell-6 {
+    display:table-cell;
+    width:50%;
+    vertical-align:middle;
+}
+
+.hials-box-cell-3 {
+    display:table-cell;
+    width:25%;
+    vertical-align:middle;
+}
+
+.hials-box-cell-white {
+    background-color: #fff;
+    padding: 15px 15px 5px 15px;
+}
+
+.hials-box-cell-gray {
+    background-color: #5B5755;
+    color: #fff;
+    padding: 15px 15px 5px 15px;
+}
+
+.hials-box-cell-yellow {
+    background-color: #FDED00;
+    color:#5B5755;
+    padding: 15px 15px 5px 15px;  
+}
+
+.hials-box-cell-red {
+    background-color: #851348; 
+	color:#fff;
+	padding: 15px 15px 5px 15px;
 }

@@ -11,8 +11,8 @@
     {/if}
     
     <article class="class-hials_utdanningstilbud col-sm-6">
-        <h1>{$node.data_map.title.content|wash()}</h1>
         <h2><span class="utdanningsnivaa">{$node.data_map.nivaa.class_content.options[$node.data_map.nivaa.content[0]].name|wash()}</span> innen <span class="fagomraade">{$node.parent.data_map.name.content|wash()}</span></h2>
+        <h1>{$node.data_map.title.content|wash()}</h1>
 
         {if $node.data_map.intro.content.is_empty|not}
         <div class="intro">
@@ -35,7 +35,7 @@
         </ul>
         {/if}
     </article>
-    <aside>
+    <aside class="col-sm-6">
         <div class="attribute-bokser">
             {attribute_view_gui attribute=$node.data_map.bokser container_node=$node}
         </div>
