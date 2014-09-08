@@ -11,6 +11,7 @@
     <div class="hials-box-wrapper">
     {foreach $valid_nodes as $valid_node max 2}
         {set $color_selection = $valid_node.data_map.boxcolor.content.0}
+        <!-- {$valid_node|attribute('show', 3, 'text')} -->
         {switch match=$color_selection}
         {case match=0}{set $color_class='hials-box-cell-white'}{/case}
         {case match=1}{set $color_class='hials-box-cell-gray'}{/case}
