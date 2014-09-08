@@ -16,8 +16,8 @@
         {switch match=$color_selection}
         {case match=0}{set $color_class='hials-box-cell-white'}{/case}
         {case match=1}{set $color_class='hials-box-cell-gray'}{/case}
-        {case match=2}{set $color_class='hials-box-cell-yellow'}{/case}
-        {case match=3}{set $color_class='hials-box-cell-red'}{/case}
+        {case match=2}{set $color_class='hials-box-cell-red'}{/case}
+        {case match=3}{set $color_class='hials-box-cell-yellow'}{/case}
         {/switch}
         <div class="hials-box-cell-6 {$color_class}">
         {node_view_gui view='block_item' image_class='contentgrid' content_node=$valid_node container_node=$container_node}

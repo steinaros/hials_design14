@@ -1,4 +1,4 @@
 
-<main role="main" class="row">
+<main role="main">
     {$module_result.content}
 </main>

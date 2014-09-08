@@ -23,7 +23,7 @@ ZoneName[main]=Global zone
 ZoneThumbnail=globalzone_layout.gif
 Template=globalzonelayout.tpl
 AvailableForClasses[]=global_layout
-AvailableForClasses[]=portal_page
+AvailableForClasses[]=hials_portal_page
 
 [2ZonesLayout1]
 ZoneTypeName=2 zones (layout 1)
