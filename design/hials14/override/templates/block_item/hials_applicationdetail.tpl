@@ -19,7 +19,6 @@
         {/if}  
     {/case}
 {/switch}
-<!-- {$container_node|attribute('show', 3, 'text')} -->
 <div class="class-hials_applicationdetail">
     <h3>{$node.name|wash()}</h3>
     <dl>

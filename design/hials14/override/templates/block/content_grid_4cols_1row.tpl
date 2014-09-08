@@ -20,7 +20,7 @@
         {case match=3}{set $color_class='hials-box-cell-red'}{/case}
         {/switch}
         <div class="hials-box-cell-3 {$color_class}">
-        {node_view_gui view='block_item' image_class='contentgrid' content_node=$valid_node}
+        {node_view_gui view='block_item' image_class='contentgrid' content_node=$valid_node container_node=$container_node}
         </div>
     {/foreach}
     </div>

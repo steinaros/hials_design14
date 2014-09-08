@@ -1,4 +1,6 @@
 {def $valid_nodes = $block.valid_nodes}
+{def $color_selection = false()}
+{def $color_class='hials-box-cell-white'}
 
 <div class="block-type-content-grid block-view-{$block.view}">
 
@@ -18,7 +20,7 @@
         {case match=3}{set $color_class='hials-box-cell-red'}{/case}
         {/switch}
         <div class="hials-box-cell-12 {$color_class}">
-        {node_view_gui view='block_item' image_class='contentgrid' content_node=$valid_node}
+        {node_view_gui view='block_item' image_class='contentgrid' content_node=$valid_node container_node=$container_node}
         </div>
     </div>
     {/foreach}
