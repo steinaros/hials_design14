@@ -4,11 +4,11 @@
 
 <div class="block-type-content-grid block-view-{$block.view}">
 
-    {if ne( $block.name, '' )}
+    {* if ne( $block.name, '' )}
     <div class="attribute-header">
         <h2>{$block.name|wash()}</h2>
     </div>
-    {/if}
+    {/if *}
 
     <div class="hials-box-wrapper">
     {foreach $valid_nodes as $valid_node max 4}
