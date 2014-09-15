@@ -166,6 +166,10 @@ blockquote p:after {
 .boks dl dd p {
     display: inline;
 }
+
+colspacing {
+	border-spacing: 15px;
+}
     
 /* columns of same height styles */
 .container-xs-height {

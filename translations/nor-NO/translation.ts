@@ -2,6 +2,17 @@
 <!DOCTYPE TS>
 <TS version="2.0">
     <context>
+        <name>hials/design</name>
+        <message>
+            <source>Modified</source>
+            <translation>Endret</translation>
+        </message>
+        <message>
+            <source>Share</source>
+            <translation>Del</translation>
+        </message>
+    </context>
+    <context>
         <name>hials/design/pagelayout</name>
         <message>
             <source>Skip to main content</source>
