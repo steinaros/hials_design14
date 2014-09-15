@@ -195,7 +195,7 @@ blockquote p:after {
 .wrapper .col-xs-6:first-child {
     border-right: 7.5px solid #f1f1f1;
 }
-.wrapper .col-xs-6:first-child {
+.wrapper .col-xs-6:last-child {
     border-left: 7.5px solid #f1f1f1;
 }
 
@@ -206,6 +206,7 @@ blockquote p:after {
         padding-left:0px;
         padding-right:0px;
         width: 100%;
+        height: 180px;
         min-height: 180px;
         margin-bottom: 15px;
     }
@@ -223,7 +224,7 @@ blockquote p:after {
     .wrapper .col-sm-6:first-child {
         border-right: 7.5px solid #f1f1f1;
 	}
-	.wrapper .col-sm-6:first-child {
+	.wrapper .col-sm-6:last-child {
 	    border-left: 7.5px solid #f1f1f1;
 	}
 }
@@ -232,7 +233,8 @@ blockquote p:after {
         display:table;
         padding-left:0px;
         padding-right:0px;
-        width: 100%;        
+        width: 100%;      
+        height: 180px;  
         min-height: 180px;
         margin-bottom: 15px;
 }
@@ -246,7 +248,7 @@ blockquote p:after {
     .wrapper .col-md-6:first-child {
         border-right: 7.5px solid #f1f1f1;
     }
-    .wrapper .col-md-6:first-child {
+    .wrapper .col-md-6:last-child {
         border-left: 7.5px solid #f1f1f1;
     }    
 }
@@ -256,6 +258,7 @@ blockquote p:after {
         padding-left:0px;
         padding-right:0px;
         width: 100%;
+        height:180px;
         min-height: 180px;
         margin-bottom: 15px;
     }
@@ -269,7 +272,7 @@ blockquote p:after {
     .wrapper .col-lg-6:first-child {
         border-right: 7.5px solid #f1f1f1;
     }
-    .wrapper .col-lg-6:first-child {
+    .wrapper .col-lg-6:last-child {
         border-left: 7.5px solid #f1f1f1;
     }    
 }
