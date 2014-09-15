@@ -21,13 +21,13 @@
 	        {/if}
 	        
 	        <section class="byline">
-                <p><span class="articlemodified">{'Modified'|i18n('design/hials')} <time>{$node.modified|l18n('shortdatetime')}</time></span>&emsp;<span class="sharebuttons">{'Share'|i18n('design/hials')} <i class="fa fa-share-alt"></i></span></p>	           
+                <p><span class="articlemodified">{'Modified'|i18n('design/hials')} <time>{$node.modified|l10n('shortdatetime')}</time></span>&emsp;<span class="sharebuttons">{'Share'|i18n('design/hials')} <i class="fa fa-share-alt"></i></span></p>	           
 	        </section>
 	            
 	        {if $node.data_map.description.content.is_empty|not}
 	        <section class="bodytext">
 	            {attribute_view_gui attribute=$node.data_map.description}
-	        </div>
+	        </section>
 	        {/if}
 	        
 	        {if $spesialiseringer|count()}
