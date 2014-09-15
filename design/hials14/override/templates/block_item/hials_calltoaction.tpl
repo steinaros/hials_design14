@@ -17,6 +17,6 @@
 {/switch}
 
 <div class="class-hials_calltoaction">
-    <p class="h3"><a href={$soknad_link}>{$node.name|wash()}</a></p>
+    <p class="call-to-action"><a href={$soknad_link}>{$node.name|wash()}</a></p>
 </div>
 {undef $soknad_selection $soknad_link}

@@ -1,7 +1,7 @@
 {* hials_utdanningstilbud - Line view *}
 {def $content_size = '12'}
 
-<div class="node-view-line">
+<div class="node-view-line clearfix">
     <article class="class-hials_utdanningstilbud">
 
     {if $node.data_map.banner.has_content}

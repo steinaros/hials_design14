@@ -6,8 +6,7 @@
                                               'class_filter_array', array( 'hials_spesialisering' ) ) )}
 <section class="content-view-full">
     {if $node.data_map.banner.has_content}
-    <div class="attribute-banner row">{attribute_view_gui attribute=$node.data_map.banner}</div>
-    <div class="clearfix"></div>
+    <div class="attribute-banner row equal">{attribute_view_gui attribute=$node.data_map.banner}</div>
     {/if}
     
     <div class="row">
@@ -42,11 +41,6 @@
 	        </div>
 	        {if $node.data_map.contacts.has_content}
 	        <div class="attribute-contacts">
-	            {if gt($node.data_map.contacts.content.relation_list|count(),1)}
-	            <h3>{'Contacts'|i18n('design/hials/utdanning')}</h3>
-	            {else}
-	            <h3>{'Contact'|i18n('design/hials/utdanning')}</h3>
-	            {/if}
 	            {attribute_view_gui attribute=$node.data_map.contacts}
 	        </div>
 	        {/if}
