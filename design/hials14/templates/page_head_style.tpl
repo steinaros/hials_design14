@@ -21,3 +21,5 @@
 <link rel="stylesheet" type="text/css" href={ezini('StylesheetSettings','SiteCSS','design.ini')|ezroot()} />
 {/if}
 {*<link rel="stylesheet" type="text/css" href={"stylesheets/print.css"|ezdesign} media="print" />*}
+
+<link href='http://fonts.googleapis.com/css?family=Roboto:900,400italic,400,700,500' rel='stylesheet' type='text/css'>
