@@ -13,7 +13,7 @@
 	        {case match=2}{set $color_class='bg-red'}{/case}
 	        {case match=3}{set $color_class='bg-yellow'}{/case}
 	        {/switch}
-	        {set $cell_class = concat('col-sm-12 boks col-sm-height', ' ', $color_class)} 
+	        {set $cell_class = concat('col-sm-12 boks col-sm-height', $color_class)} 
 	        {node_view_gui view='block_item' content_node=$node container_node=$container_node css_class=$cell_class}      
 	    </div>
 	</div>
