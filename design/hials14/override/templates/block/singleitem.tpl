@@ -2,7 +2,6 @@
 {def $color_selection = false()}
 {def $color_class='bg-white'}
 {def $cell_class = false()}
-
 <div class="block-type-single-item row equal">
     <div class="container-sm-height wrapper">
         <div class="row-sm-height">
@@ -18,5 +17,4 @@
 	    </div>
 	</div>
 </div>
-
 {undef $node $color_selection $color_class}
