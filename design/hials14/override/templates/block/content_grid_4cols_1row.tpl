@@ -21,7 +21,7 @@
 		        {node_view_gui view='block_item' image_class='contentgrid' content_node=$valid_node container_node=$container_node css_class=$cell_class}
 		    {/foreach}
 		    {set $ant_bokser = $valid_nodes|count()}
-		    {set $manglende_bokser = (4|sub($ant_bokser))
+		    {set $manglende_bokser = 4|sub($ant_bokser)}
 		    {if lt($ant_bokser, 4)}
                 {for 1 to $manglende_bokser as $counter}
                     <div class="col-sm-3 boks col-sm-height tom_boks">&nbsp;</div>
