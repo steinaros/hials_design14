@@ -104,7 +104,12 @@ form.dropdown-menu {
 
 .fa-share-alt:before{content:"\f1e0"}
 
-.call-to-action {
+.textcenter {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.call-to-action, .textcenter {
     text-align: center;
     text-transform:uppercase;
     font-weight:bold;

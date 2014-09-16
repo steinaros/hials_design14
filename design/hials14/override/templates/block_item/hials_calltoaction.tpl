@@ -1,5 +1,7 @@
 {def $soknad_selection = $container_node.data_map.soknad_til.content.0}
 {def $soknad_link = false()}
+{def $css_class=false()}
+
 {switch match=$soknad_selection}
     {case match=1}
         {set $soknad_link = "http://www.samordnaopptak.no"|ezurl}
@@ -16,7 +18,10 @@
     {/case}
 {/switch}
 
-<div class="class-hials_calltoaction">
-    <p class="call-to-action"><a href={$soknad_link}>{$node.name|wash()}</a></p>
-</div>
-{undef $soknad_selection $soknad_link}
+
+<div class="{concat($css_class,' textcenter')|wash}">
+	<div class="class-hials_calltoaction">
+	    <p class="call-to-action"><a href={$soknad_link}>{$node.name|wash()}</a></p>
+	</div>
+</div>	
+{undef $soknad_selection $soknad_link $css_class}

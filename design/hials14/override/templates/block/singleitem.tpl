@@ -1,6 +1,7 @@
 {def $node = $block.valid_nodes[0]}
 {def $color_selection = false()}
 {def $color_class='bg-white'}
+{def $cell_class = false()}
 
 <div class="block-type-single-item row equal">
     <div class="container-sm-height wrapper">
@@ -12,9 +13,8 @@
 	        {case match=2}{set $color_class='bg-red'}{/case}
 	        {case match=3}{set $color_class='bg-yellow'}{/case}
 	        {/switch}
-	        <div class="col-sm-12 boks col-sm-height col-middle {$color_class}">
-	        {node_view_gui view='block_item' content_node=$node}
-	        </div>
+	        {set $cell_class = concat('col-sm-12 boks col-sm-height', $color_class)} 
+	        {node_view_gui view='block_item' content_node=$node container_node=$container_node css_class=$cell_class}      
 	    </div>
 	</div>
 </div>

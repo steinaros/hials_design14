@@ -1,6 +1,8 @@
 {def $soknad_selection = $container_node.data_map.soknad_til.content.0}
 {def $soknad_text = false()}
 {def $soknad_object = false()}
+{def $css_class=false()}
+
 {switch match=$soknad_selection}
     {case match=1}
         {set $soknad_text = $container_node.data_map.soknad_til.class_content.options[$soknad_selection].name|wash}
@@ -17,14 +19,16 @@
         {/if}  
     {/case}
 {/switch}
-<div class="class-hials_applicationdetail">
-    <h3>{$node.name|wash()}</h3>
-    <dl>
-        <dt>{"Requirements"|i18n('design/hials/utdanning')}</dt><dd>{attribute_view_gui attribute=$container_node.data_map.opptakskrav }</dd>
-        {if $soknad_object}<dt>{"Application to"|i18n('design/hials/utdanning')}</dt><dd>{content_view_gui content_object=$soknad_object view=embed-inline}</dd>
-        {elseif $soknad_text}<dt>{"Application to"|i18n('design/hials/utdanning')}</dt><dd><a href={$soknad_link}>{$soknad_text}</a></dd>{/if}
-        <dt>{"Application deadline"|i18n('design/hials/utdanning')}</dt><dd>{$container_node.data_map.soknadsfrist.content|wash()}</dd>
-        <dt>{"Credits"|i18n('design/hials/utdanning')}</dt><dd>{$container_node.data_map.cdm_studiepoeng.content|wash()}</dd>
-    </dl>
-</div>
-{undef $soknad_selection $soknad_text $soknad_link}
+<div class="{$css_class|wash}">
+	<div class="class-hials_applicationdetail">
+	    <h3>{$node.name|wash()}</h3>
+	    <dl>
+	        <dt>{"Requirements"|i18n('design/hials/utdanning')}</dt><dd>{attribute_view_gui attribute=$container_node.data_map.opptakskrav }</dd>
+	        {if $soknad_object}<dt>{"Application to"|i18n('design/hials/utdanning')}</dt><dd>{content_view_gui content_object=$soknad_object view=embed-inline}</dd>
+	        {elseif $soknad_text}<dt>{"Application to"|i18n('design/hials/utdanning')}</dt><dd><a href={$soknad_link}>{$soknad_text}</a></dd>{/if}
+	        <dt>{"Application deadline"|i18n('design/hials/utdanning')}</dt><dd>{$container_node.data_map.soknadsfrist.content|wash()}</dd>
+	        <dt>{"Credits"|i18n('design/hials/utdanning')}</dt><dd>{$container_node.data_map.cdm_studiepoeng.content|wash()}</dd>
+	    </dl>
+	</div>
+</div>	
+{undef $soknad_selection $soknad_text $soknad_link $css_class}
