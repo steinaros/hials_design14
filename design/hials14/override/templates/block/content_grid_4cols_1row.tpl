@@ -21,7 +21,7 @@
 		    {/foreach}
 		    {set $ant_bokser = $valid_nodes|count()}
 		    {if lt($ant_bokser, 4)}
-                {for 1 to (4|sub($ant_bokser) as $counter}
+                {for 1 to (4|sub($ant_bokser)) as $counter}
                     <div class="col-sm-3 boks col-sm-height tom_boks">&nbsp;</div>
                 {/for}
 		    {/if}
