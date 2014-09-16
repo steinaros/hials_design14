@@ -6,7 +6,7 @@
 
 <div class="block-type-content-grid block-view-{$block.view}">
     <div class="row equal">
-        <div class"container-sm-height wrapper">
+        <div class="container-sm-height wrapper">
             <div class="row-sm-height">
 		    {foreach $valid_nodes as $valid_node max 4}
 		        {set $color_selection = $valid_node.data_map.boxcolor.content.0}
@@ -20,14 +20,11 @@
 		        {node_view_gui view='block_item' image_class='contentgrid' content_node=$valid_node container_node=$container_node css_class=$cell_class}
 		    {/foreach}
 		    {set $ant_bokser = $valid_nodes|count()}
-		    <!-- Antall bokser:{$ant_bokser} -->
-		    {* 
-		    {if lt($valid_nodes|count(), 4)}
-                {for 1 to (4|sub($valid_nodes|count())) as $counter}
+		    {if lt($ant_bokser, 4)}
+                {for 1 to (4|sub($ant_bokser) as $counter}
                     <div class="col-sm-3 boks col-sm-height tom_boks">&nbsp;</div>
                 {/for}
 		    {/if}
-		    *}
 		    </div>
 		</div>
     </div>
