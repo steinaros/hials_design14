@@ -1,5 +1,5 @@
 {* Link - block_item view *}
-{def $css_class=false()}
+{*def $css_class=false()*}
 
 <div class="{concat($css_class,' textcenter')|wash}">
 	<div class="class-link">
@@ -10,4 +10,4 @@
 	{/if}    
 	</div>
 </div>
-{undef $css_class}
+{*undef $css_class*}

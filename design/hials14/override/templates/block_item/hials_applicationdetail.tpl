@@ -1,7 +1,7 @@
 {def $soknad_selection = $container_node.data_map.soknad_til.content.0}
 {def $soknad_text = false()}
 {def $soknad_object = false()}
-{def $css_class=false()}
+{*def $css_class=false()*}
 
 {switch match=$soknad_selection}
     {case match=1}
@@ -31,4 +31,4 @@
 	    </dl>
 	</div>
 </div>	
-{undef $soknad_selection $soknad_text $soknad_link $css_class}
+{undef $soknad_selection $soknad_text $soknad_link}

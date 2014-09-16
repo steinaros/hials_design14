@@ -1,6 +1,6 @@
 {def $soknad_selection = $container_node.data_map.soknad_til.content.0}
 {def $soknad_link = false()}
-{def $css_class=false()}
+{*def $css_class=false()*}
 
 {switch match=$soknad_selection}
     {case match=1}
@@ -24,4 +24,4 @@
 	    <p class="call-to-action"><a href={$soknad_link}>{$node.name|wash()}</a></p>
 	</div>
 </div>	
-{undef $soknad_selection $soknad_link $css_class}
+{undef $soknad_selection $soknad_link}
