@@ -7,7 +7,6 @@
                                           sort_by, $node.sort_array ) )}
 {def $extra_class = ""}                                          
 <section class="content-view-full">
-    <!-- {$node.data_map.bokser|attribute(show, 2, text)} -->
     {if $node.data_map.bokser.has_content}
     <aside>
         <div class="attribute-bokser">
@@ -16,48 +15,49 @@
     </aside>
     {/if}
     {if ne($node.data_map.banner.content.relation_list|count(),0)}
-    <div class="attribute-banner">{attribute_view_gui attribute=$node.data_map.banner}</div>
+    <div class="attribute-banner row equal">{attribute_view_gui attribute=$node.data_map.banner}</div>
     {/if}
-    
-    {if $node.data_map.image.has_content}
-    <aside class="col-sm-6">
-        {attribute_view_gui attribute=$node.data_map.image image_class=banner_half}
-        {if $children|count()}
-        <h3>Undersider</h3>
-        <ul>
-        {foreach $children as $child_item}
-        <li><a href={$child_item.url_alias|ezurl}>{$child_item.name|wash()}</a></li>
-        {/foreach}
-        </ul>
-        {/if}
-    </aside>
-    {elseif $children|count()}
-    <aside class="col-sm-3">
-        <h3>Undersider</h3>
-        <ul>
-        {foreach $children as $child_item}
-        <li><a href={$child_item.url_alias|ezurl}>{$child_item.name|wash()}</a></li>
-        {/foreach}
-        </ul>
-    </aside>
-    {else}
-        {set $extra_class = "col-sm-offset-3"}
-    {/if}
-    <article class="class-hials_innholdsside col-sm-6 {$extra_class}">
-        <h1>{$node.data_map.title.content|wash()}</h1>
-        <h2 class="tematitle">{$node.data_map.tema_title.content|wash()}</h2>
-
-        {if $node.data_map.intro.content.is_empty|not}
-        <section class="intro">
-            {attribute_view_gui attribute=$node.data_map.intro}
-        </section>
-        {/if}
-        {include uri='design:parts/byline.tpl'}
-        
-        {if $node.data_map.description.content.is_empty|not}
-        <section class="bodytext">
-            {attribute_view_gui attribute=$node.data_map.body}
-        </section>
-        {/if}
-    </article>
+    <div class="row">
+	    {if $node.data_map.image.has_content}
+	    <aside class="col-sm-6">
+	        {attribute_view_gui attribute=$node.data_map.image image_class=banner_half}
+	        {if $children|count()}
+	        <h3>Undersider</h3>
+	        <ul>
+	        {foreach $children as $child_item}
+	        <li><a href={$child_item.url_alias|ezurl}>{$child_item.name|wash()}</a></li>
+	        {/foreach}
+	        </ul>
+	        {/if}
+	    </aside>
+	    {elseif $children|count()}
+	    <aside class="col-sm-3">
+	        <h3>Undersider</h3>
+	        <ul>
+	        {foreach $children as $child_item}
+	        <li><a href={$child_item.url_alias|ezurl}>{$child_item.name|wash()}</a></li>
+	        {/foreach}
+	        </ul>
+	    </aside>
+	    {else}
+	        {set $extra_class = "col-sm-offset-3"}
+	    {/if}
+	    <article class="class-hials_innholdsside col-sm-6 {$extra_class}">
+	        <h1>{$node.data_map.title.content|wash()}</h1>
+	        <h2 class="tematitle">{$node.data_map.tema_title.content|wash()}</h2>
+	
+	        {if $node.data_map.intro.content.is_empty|not}
+	        <section class="intro">
+	            {attribute_view_gui attribute=$node.data_map.intro}
+	        </section>
+	        {/if}
+	        {include uri='design:parts/byline.tpl'}
+	        
+	        {if $node.data_map.description.content.is_empty|not}
+	        <section class="bodytext">
+	            {attribute_view_gui attribute=$node.data_map.body}
+	        </section>
+	        {/if}
+	    </article>
+	</div>
 </section>
