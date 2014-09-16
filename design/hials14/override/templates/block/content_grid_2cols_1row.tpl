@@ -8,6 +8,8 @@
             <div class="row-sm-height">
 		    {foreach $valid_nodes as $valid_node max 2}
 		        {set $color_selection = $valid_node.data_map.boxcolor.content.0}
+		        <!-- {$color_selection|attribute('show', 2, 'text') -->
+		        <!-- {$valid_node|attribute('show', 2, 'text') -->
 		        {switch match=$color_selection}
 			        {case match=0}{set $color_class='bg-white'}{/case}
 			        {case match=1}{set $color_class='bg-gray'}{/case}
