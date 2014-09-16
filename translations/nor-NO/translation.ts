@@ -2,7 +2,7 @@
 <!DOCTYPE TS>
 <TS version="2.0">
     <context>
-        <name>hials/design</name>
+        <name>hials/design/std</name>
         <message>
             <source>Modified</source>
             <translation>Endret</translation>
