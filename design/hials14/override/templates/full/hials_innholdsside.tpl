@@ -19,8 +19,8 @@
     {/if}
     <div class="row">
 	    {if $node.data_map.image.has_content}
-	    <aside class="col-sm-6">
-	        {attribute_view_gui attribute=$node.data_map.image image_class=banner_half}
+	    <aside class="col-sm-6 col-left">
+	        {attribute_view_gui attribute=$node.data_map.image image_class=banner_half css_class=img-responsive}
 	        {if $children|count()}
 	        <h3>Undersider</h3>
 	        <ul>
@@ -31,7 +31,7 @@
 	        {/if}
 	    </aside>
 	    {elseif $children|count()}
-	    <aside class="col-sm-3">
+	    <aside class="col-sm-3 col-left">
 	        <h3>Undersider</h3>
 	        <ul>
 	        {foreach $children as $child_item}
@@ -42,7 +42,7 @@
 	    {else}
 	        {set $extra_class = "col-sm-offset-3"}
 	    {/if}
-	    <article class="class-hials_innholdsside col-sm-6 {$extra_class}">
+	    <article class="class-hials_innholdsside col-sm-6 col-right {$extra_class}">
 	        <h1>{$node.data_map.title.content|wash()}</h1>
 	        <h2 class="tematitle">{$node.data_map.tema_title.content|wash()}</h2>
 	

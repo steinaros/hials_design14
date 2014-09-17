@@ -10,7 +10,7 @@
     {/if}
     
     <div class="row">
-	    <article class="class-hials_utdanningstilbud col-sm-6">
+	    <article class="class-hials_utdanningstilbud col-sm-6 col-left">
 	        <h2><span class="utdanningsnivaa">{$node.data_map.nivaa.class_content.options[$node.data_map.nivaa.content[0]].name|wash()}</span> innen <span class="fagomraade">{$node.parent.data_map.name.content|wash()}</span></h2>
 	        <h1>{$node.data_map.title.content|wash()}</h1>
 	
@@ -37,7 +37,7 @@
 	        </ul>
 	        {/if}
 	    </article>
-	    <aside class="col-sm-6">
+	    <aside class="col-sm-6 col-right">
 	        <div class="attribute-bokser">
 	            {attribute_view_gui attribute=$node.data_map.bokser container_node=$node}
 	        </div>

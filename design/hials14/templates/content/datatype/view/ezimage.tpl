@@ -43,9 +43,9 @@ Input:
     {/case}
     {/switch}
 
-    {if $css_class}
+    {* if $css_class}
         <div class="{$css_class|wash}">
-    {/if}
+    {/if *}
 
     {if and( is_set( $image ), $image )}
         {if $alt_text|not}
@@ -65,13 +65,13 @@ Input:
             {set $inline_style = concat( $inline_style, 'margin: ', $margin_size, 'px;' )}
         {/if}
         {if $href}<a href={$href}{if and( is_set( $link_class ), $link_class )} class="{$link_class}"{/if}{if and( is_set( $link_id ), $link_id )} id="{$link_id}"{/if}{if $target} target="{$target}"{/if}{if and( is_set( $link_title ), $link_title )} title="{$link_title|wash}"{/if}>{/if}
-        <img src={$image.url|ezroot} alt="{$alt_text|wash(xhtml)}" title="{$title|wash(xhtml)}" />
+        <img src={$image.url|ezroot} alt="{$alt_text|wash(xhtml)}" title="{$title|wash(xhtml)}" class="{$css_class|wash}" />
         {if $href}</a>{/if}
     {/if}
 
-    {if $css_class}
+    {* if $css_class}
         </div>
-    {/if}
+    {/if *}
 
     {switch match=$alignment}
     {case match='left'}
