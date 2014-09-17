@@ -81,6 +81,10 @@
             <source>Contacts</source>
             <translation>Kontaktpersoner</translation>
         </message>                          
+        <message>
+            <source>in</source>
+            <translation>innen</translation>
+        </message>                          
 	</context>
 	<context>
 	    <name>design/hials/meeting</name>
