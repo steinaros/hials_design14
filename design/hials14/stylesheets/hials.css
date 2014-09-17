@@ -15,7 +15,12 @@ h1, .h1 {
 
 h2, .h2 {
 	text-transform: uppercase;
+	font-size: 20px;
+}
+
+h3, .h3 {
 	font-size: 18px;
+	font-weight: 400;
 }
 
 .class-hials_utdanningstilbud h3, .class-hials_utdanningstilbud .h3 {
@@ -100,6 +105,7 @@ form.dropdown-menu {
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;	
+	padding-right: 5px;
 }
 
 .fa-share-alt:before{content:"\f1e0"}
@@ -113,8 +119,8 @@ form.dropdown-menu {
     text-align: center;
     text-transform:uppercase;
     font-weight:bold;
-    font-size: 2.4rem;
-    color: inherit;
+    font-size: 1.8rem;
+    color: #5B5755;
 }
     
 .bg-white {
@@ -178,6 +184,10 @@ blockquote p:before {
 }
 blockquote p:after {
     content:close-quote;
+}
+
+.boks {
+	word-break: break-all;
 }
 
 .boks dl dt {
