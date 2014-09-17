@@ -29,12 +29,12 @@
             <ul>
             {def $file = $child.data_map.sakliste}        
             {if $file.has_content}
-                <li><div class="attribute-{$file.content.mime_type_part}"><a href={concat("content/download/", $file.contentobject_id, "/", $file.id, "/file/", $file.content.original_filename)|ezurl} title="{concat('Agenda'|i18n('design/hials/meeting'),' ',$child.data_map.type.content|wash|downcase,' ',$child.data_map.dato.content.timestamp|l10n('date'))}">{'Agenda'|i18n('design/hials/meeting')}</a>&nbsp;({$file.content.filesize|si(byte)})</li>
+                <li><div class="attribute-{$file.content.mime_type_part}"><a href={concat("content/download/", $file.contentobject_id, "/", $file.id, "/file/", $file.content.original_filename)|ezurl} title="{concat('Agenda'|i18n('hials/design/meeting'),' ',$child.data_map.type.content|wash|downcase,' ',$child.data_map.dato.content.timestamp|l10n('date'))}">{'Agenda'|i18n('hials/design/meeting')}</a>&nbsp;({$file.content.filesize|si(byte)})</li>
             {/if}
             {undef $file}
             {def $file = $child.data_map.protokoll}        
             {if $file.has_content}
-                <li><div class="attribute-{$file.content.mime_type_part}"><a href={concat("content/download/", $file.contentobject_id, "/", $file.id, "/file/", $file.content.original_filename)|ezurl} title="{concat('Minutes'|i18n('design/hials/meeting'),' ',$child.data_map.type.content|wash|downcase,' ',$child.data_map.dato.content.timestamp|l10n('date'))}">{'Minutes'|i18n('design/hials/meeting')}</a>&nbsp;({$file.content.filesize|si(byte)})</li>
+                <li><div class="attribute-{$file.content.mime_type_part}"><a href={concat("content/download/", $file.contentobject_id, "/", $file.id, "/file/", $file.content.original_filename)|ezurl} title="{concat('Minutes'|i18n('hials/design/meeting'),' ',$child.data_map.type.content|wash|downcase,' ',$child.data_map.dato.content.timestamp|l10n('date'))}">{'Minutes'|i18n('hials/design/meeting')}</a>&nbsp;({$file.content.filesize|si(byte)})</li>
             {/if}
             {undef $file}          
         {else}
