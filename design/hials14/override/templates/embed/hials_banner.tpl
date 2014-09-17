@@ -17,7 +17,7 @@
 {/if}
 
 <div class="content-view-embed{if $quote} container-sm-height colspacing{/if}">
-	<div class="class-banner{if $quote} row-sm-height{/if}">
+	<div class="class-banner verticalspacing{if $quote} row-sm-height{/if}">
 		<div class="col-sm-{$img_col_width}{if $quote} col-sm-height nopadding{/if}">
 		{if $object.data_map.url.content}
 		    <a href={$object.data_map.url.content|ezurl}>
