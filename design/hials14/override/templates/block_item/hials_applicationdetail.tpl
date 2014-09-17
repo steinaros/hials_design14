@@ -1,18 +1,19 @@
 {def $soknad_selection = $container_node.data_map.soknad_til.content.0}
+{def $soknad_link = false()}
 {def $soknad_text = false()}
 {def $soknad_object = false()}
 {*def $css_class=false()*}
 
 {switch match=$soknad_selection}
-    {case match=1}
+    {case match=1} {* Samordna opptak *}
         {set $soknad_text = $container_node.data_map.soknad_til.class_content.options[$soknad_selection].name|wash}
         {set $soknad_link = "http://www.samordnaopptak.no"|ezurl}
     {/case}
-    {case match=2}
+    {case match=2} {* Høgskolen i Ålesund - lokalt opptak *}
         {set $soknad_text = $container_node.data_map.soknad_til.class_content.options[$soknad_selection].name|wash}
         {set $soknad_link = "#"|ezurl}
     {/case}
-    {case match=3}
+    {case match=3} {* Egendefinert objektreferanse *}
         {if $container_node.data_map.soknad_egendefinert.has_content}
             {set $soknad_text = $container_node.data_map.soknad_egendefinert.content.name|wash}
             {set $soknad_object = $container_node.data_map.soknad_egendefinert.content}

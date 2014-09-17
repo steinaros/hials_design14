@@ -6,7 +6,7 @@
     {def $banner = fetch( 'content', 'node', hash( 'node_id', $node.data_map.banner.content.relation_list.0.node_id ) ) }
 
     <a class="pull-left" href="{$node.url_alias|ezurl( 'no' )}">
-        {attribute_view_gui image_class=articlethumbnail href=$node.url_alias|ezurl attribute=$banner.data_map.image}
+        {attribute_view_gui image_class=articlethumbnail attribute=$banner.data_map.image}
     </a>
     {/if}
 
