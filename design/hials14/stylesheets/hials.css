@@ -120,9 +120,12 @@ form.dropdown-menu {
     text-transform:uppercase;
     font-weight:bold;
     font-size: 1.8rem;
-    color: #5B5755;
 }
-    
+
+.call-to-action a, .textcenter a {
+	color: #5B5755;
+}
+	    
 .bg-white {
     background-color: #fff;
 }
@@ -187,7 +190,7 @@ blockquote p:after {
 }
 
 .boks {
-	word-break: break-all;
+	/*word-break: break-all;*/
 }
 
 .boks dl dt {
