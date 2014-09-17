@@ -38,7 +38,7 @@
             {/if}
             {undef $file}          
         {else}
-            <p>{'No documents are published for this meeting'|i18n('design/hials/meeting')}</p>
+            <p>{'No documents are published for this meeting'|i18n('hials/design/meeting')}</p>
         {/if}
         </dd>    
     {/foreach}

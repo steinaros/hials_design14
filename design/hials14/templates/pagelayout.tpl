@@ -35,7 +35,7 @@ Pagedata:
      ######### END DEBUG ##########
 -->
 <!-- Complete page area: START -->
-<a class="sr-only" href="#content">{"Skip to main content"|i18n('design/hials/pagelayout')}</a>
+<a class="sr-only" href="#content">{"Skip to main content"|i18n('hials/design/pagelayout')}</a>
 
 <div id="page" class="container {$pagestyle}">
     <!-- Header area: START -->

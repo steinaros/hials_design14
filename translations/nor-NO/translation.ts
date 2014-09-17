@@ -56,7 +56,7 @@
 		</message>        
     </context>
 	<context>
-	    <name>design/hials/utdanning</name>
+	    <name>hials/design/utdanning</name>
 	    <message>
 	        <source>Requirements</source>
 	        <translation>Opptakskrav</translation>
@@ -87,7 +87,7 @@
         </message>                          
 	</context>
 	<context>
-	    <name>design/hials/meeting</name>
+	    <name>hials/design/meeting</name>
 	    <message>
 	        <source>Agenda</source>
 	        <translation>Sakliste</translation>
