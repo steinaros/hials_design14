@@ -1,17 +1,8 @@
 {* hials_fagomrade - Full view *}
 {set scope=global persistent_variable=hash('left_menu', false(),
                                            'extra_menu', false())}
-
-{def $rss_export = fetch( 'rss', 'export_by_node', hash( 'node_id', $node.node_id ) )}
-
-<section class="content-view-full container">
-    <div class="class-hials_fagomrade">
-        {if $rss_export}
-        <div class="attribute-rss-icon">
-            <a href="{concat( '/rss/feed/', $rss_export.access_url )|ezurl( 'no' )}" title="{$rss_export.title|wash()}"><img src="{'rss-icon.gif'|ezimage( 'no' )}" alt="{$rss_export.title|wash()}" /></a>
-        </div>
-        {/if}
-
+<section class="content-view-full class-hials_fagomrade row">
+    <div class="col-sm-12">
         <div class="attribute-header">
             <h1>{attribute_view_gui attribute=$node.data_map.name}</h1>
         </div>
