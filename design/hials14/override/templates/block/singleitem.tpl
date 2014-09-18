@@ -4,7 +4,7 @@
 {def $cell_class = false()}
 
 <div class="block-type-single-item row equal">
-    <div class="container-sm-height wrapper">
+    <div class="container-sm-height height180 wrapper">
         <div class="row-sm-height">
 	        {set $color_selection = $node.data_map.boxcolor.content.0}
 	        {switch match=$color_selection}

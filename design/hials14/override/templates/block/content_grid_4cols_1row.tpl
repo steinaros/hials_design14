@@ -7,7 +7,7 @@
 
 <div class="block-type-content-grid block-view-{$block.view}">
     <div class="row equal">
-        <div class="container-sm-height colspacing">
+        <div class="container-sm-height height180 colspacing">
             <div class="row-sm-height">
 		    {foreach $valid_nodes as $valid_node max 4}
 		        {set $color_selection = $valid_node.data_map.boxcolor.content.0}

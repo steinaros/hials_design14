@@ -189,6 +189,11 @@ blockquote p:after {
     content:close-quote;
 }
 
+.height180 {
+    height: 180px;
+    min-height: 180px;
+}
+
 .boks {
 	/*word-break: break-all;*/
 }
@@ -217,8 +222,6 @@ blockquote p:after {
     padding-left:0px;
     padding-right:0px;
     width: 100%;
-    height: 180px;
-    min-height: 180px;
     margin-bottom: 15px;
 }
 .row-xs-height {
@@ -242,8 +245,6 @@ blockquote p:after {
         padding-left:0px;
         padding-right:0px;
         width: 100%;
-        height: 180px;
-        min-height: 180px;
         margin-bottom: 15px;
     }
     .row-sm-height {
@@ -276,8 +277,6 @@ blockquote p:after {
         padding-left:0px;
         padding-right:0px;
         width: 100%;      
-        height: 180px;  
-        min-height: 180px;
         margin-bottom: 15px;
 }
     .row-md-height {
@@ -308,8 +307,6 @@ blockquote p:after {
         padding-left:0px;
         padding-right:0px;
         width: 100%;
-        height:180px;
-        min-height: 180px;
         margin-bottom: 15px;
     }
     .row-lg-height {
@@ -350,7 +347,12 @@ blockquote p:after {
     width: 100%
 }
 
+footer {
+	padding-top: 2em;
+	padding-bottom: 2em;
+	border-top: 1px solid #4d4d4d;
+}
+
 footer .h-card p {
 	margin: 0;
 }
-

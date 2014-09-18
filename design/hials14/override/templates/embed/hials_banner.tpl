@@ -16,7 +16,7 @@
     {set $alternative_text = $object.data_map.image.content[$size].alternative_text}
 {/if}
 
-<div class="content-view-embed{if $quote} container-sm-height colspacing{/if}">
+<div class="content-view-embed container-sm-height{if $quote} colspacing{/if}">
 	<div class="class-banner{if $quote} row-sm-height{/if}">
 		<div class="col-sm-{$img_col_width}{if $quote} col-sm-height nopadding{/if}">
 		{if $object.data_map.url.content}

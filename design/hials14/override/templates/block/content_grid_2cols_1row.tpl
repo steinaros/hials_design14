@@ -5,7 +5,7 @@
 
 <div class="block-type-content-grid block-view-{$block.view}">
     <div class="row equal">
-        <div class="container-sm-height wrapper">
+        <div class="container-sm-height height180 wrapper">
             <div class="row-sm-height">
 		    {foreach $valid_nodes as $valid_node max 2}
 		        {set $color_selection = $valid_node.data_map.boxcolor.content.0}
