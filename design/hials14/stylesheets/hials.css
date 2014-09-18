@@ -349,3 +349,8 @@ blockquote p:after {
 .img-responsive {
     width: 100%
 }
+
+footer .h-card p {
+	margin: 0;
+}
+
