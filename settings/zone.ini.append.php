@@ -6,12 +6,13 @@
 
 [General]
 AllowedTypes[]
-AllowedTypes[]=GlobalZoneLayout
-AllowedTypes[]=2ZonesLayout1
-AllowedTypes[]=2ZonesLayout2
-AllowedTypes[]=2ZonesLayout3
-AllowedTypes[]=3ZonesLayout1
-AllowedTypes[]=3ZonesLayout2
+#AllowedTypes[]=GlobalZoneLayout
+#AllowedTypes[]=2ZonesLayout1
+#AllowedTypes[]=2ZonesLayout2
+#AllowedTypes[]=2ZonesLayout3
+#AllowedTypes[]=3ZonesLayout1
+#AllowedTypes[]=3ZonesLayout2
+AllowedTypes[]=SingleZoneLayout
 AllowedTypes[]=CallForActionLayout
 AllowedTypes[]=UtdanningBoksLayout
 AllowedTypes[]=InnholdssideBoksLayout
@@ -108,5 +109,16 @@ ZoneName[main]=Innholdssideboks zone
 ZoneThumbnail=hials_contentpage_layout.gif
 Template=hials_contentpagelayout.tpl
 AvailableForClasses[]=hials_contentpage
+
+[SingleZoneLayout]
+ZoneTypeName=Single zone layout
+Zones[]=main
+ZoneName[main]=Main zone
+ZoneThumbnail=singlezone_layout.gif
+Template=singlezonelayout.tpl
+AvailableForClasses[]=hials_portal_page
+AvailableForClasses[]=hials_avdeling
+AvailableForClasses[]=hials_contentpage
+AvailableForClasses[]=hials_utdanningstilbud
 
 */ ?>
