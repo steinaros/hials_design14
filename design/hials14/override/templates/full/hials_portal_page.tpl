@@ -13,7 +13,7 @@
         </div>
     </div>
     
-    <div class="attribute-page">
+    <div class="attribute-page row">
         {attribute_view_gui attribute=$node.object.data_map.page}
     </div>
     
@@ -25,5 +25,4 @@
     {/foreach}
     </ul>
     {/if}
-    </div>
 </div>
