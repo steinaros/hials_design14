@@ -89,7 +89,7 @@ Pagedata:
     <!-- Columns area: END -->
 *}
     <!-- Footer area: START -->
-    {* TEMP include uri='design:page_footer.tpl'*}
+    {include uri='design:page_footer.tpl'}
     <!-- Footer area: END -->
 
 </div>

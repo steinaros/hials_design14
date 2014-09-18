@@ -26,6 +26,7 @@ AllowedTypes[]=ContactList
 ContentClasses[]=hials_portal_page
 ContentClasses[]=hials_utdanningstilbud
 ContentClasses[]=hials_contentpage
+ContentClasses[]=hials_avdeling
 # The subtree node ID from which to fetch objects with Layout datatype
 RootSubtree=1
 
