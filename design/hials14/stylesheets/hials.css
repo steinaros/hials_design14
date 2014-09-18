@@ -210,11 +210,8 @@ blockquote p:after {
 	border-spacing: 15px 0;
 }
 
-.attribute-banner {
-	padding-bottom: 15px;
-}
-    
 /* columns of same height styles */
+
 .container-xs-height {
     display:table;
     padding-left:0px;
@@ -238,7 +235,6 @@ blockquote p:after {
 .wrapper .col-xs-6:last-child {
     border-left: 7.5px solid #f1f1f1;
 }
-
 
 @media (min-width: 768px) {
     .container-sm-height {
