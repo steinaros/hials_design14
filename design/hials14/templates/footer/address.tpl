@@ -1,4 +1,4 @@
-<div class="h-card col-sm-offset-6 container-sm-height">
+<address class="h-card col-sm-offset-6 container-sm-height">
     <div class="row-sm-height">
 		<div class="col-sm-4 col-sm-height col-bottom">
 		    <p class="p-name h4">H&oslash;gskolen i &Aring;lesund</p>
@@ -16,4 +16,4 @@
 	        <p class="u-email"><a href="mailto:postmottak@hials.no">postmottak@hials.no</a></p>
 	    </div>
     </div>
-</div>
+</address>

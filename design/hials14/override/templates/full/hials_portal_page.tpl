@@ -4,7 +4,7 @@
 <div class="content-view-full class-hials_portal_page">
     <div class="row">
         <div class="col-sm-offset-3 col-sm-6">
-            <h1>{$node.data_map.title.content|wash()}</h1>
+            <h1>{$node.data_map.name.content|wash()}</h1>
             {if $node.data_map.intro.content.is_empty|not}
             <section class="intro">
                 {attribute_view_gui attribute=$node.data_map.intro}
@@ -17,7 +17,7 @@
         {attribute_view_gui attribute=$node.object.data_map.page}
     </div>
     
-    <hr/>
+    {* TEMP *}
     {if $children|count()}
     <ul>
     {foreach $children as $child_item}
