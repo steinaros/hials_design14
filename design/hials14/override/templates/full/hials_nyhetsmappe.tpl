@@ -14,7 +14,7 @@
 
             {def $page_limit = 10
                  $depth = 2
-                 $classes = array('hials_nyhetsartikkel')
+                 $classes = array('hials_article')
                  $children = array()
                  $children_count = ''}
 
