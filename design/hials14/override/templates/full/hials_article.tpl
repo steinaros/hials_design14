@@ -1,10 +1,13 @@
-{* Newsarticle - Full view *}
-{set scope=global persistent_variable=hash('left_menu', false(),
-                                           'extra_menu', false())}
-{def $latest_news=fetch( content, list, hash( parent_node_id, $node.parent_node_id,
+{* hials_article - Full view *}
+{if eq($node.parent.parent.class_identifier, 'hials_nyhetsmappe')}
+    {def $root_node_id = $node.parent.parent_node_id}
+{else}
+    {def $root_node_id = $node.parent_node_id}
+{/if}
+{def $latest_news=fetch( content, list, hash( parent_node_id, $root_node_id,
                                           class_filter_type, include,
                                           class_filter_array, array( 'hials_article' ),
-                                          sort_by, $node.sort_array
+                                          sort_by, $node.sort_array,
                                           limit, 10 ) )}
 {def $extra_class = ""}                                          
 <section class="content-view-full">
