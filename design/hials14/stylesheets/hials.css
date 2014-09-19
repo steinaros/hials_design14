@@ -145,8 +145,8 @@ form.dropdown-menu {
     color: #fff;
 }
 
-.articlemodified {
-
+.articlemodified:after, .articlepublished:after {
+    content: ':';
 }
 
 .sharebuttons {

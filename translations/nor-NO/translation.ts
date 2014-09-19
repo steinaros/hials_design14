@@ -4,6 +4,10 @@
     <context>
         <name>hials/design/std</name>
         <message>
+            <source>Published</source>
+            <translation>Publisert</translation>
+        </message>
+        <message>
             <source>Modified</source>
             <translation>Endret</translation>
         </message>
