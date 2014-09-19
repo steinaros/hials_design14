@@ -61,6 +61,7 @@ ViewList[]=default
 #ViewList[]=2_columns_2_rows
 ViewList[]=1_column_2_rows
 ViewList[]=4_columns_1_row
+ViewList[]=4_columns_1_row_reg
 #ViewList[]=4_columns_2_rows
 ViewName[default]=2 columns 1 row
 #ViewName[1_column_4_rows]=1 column 4 rows
