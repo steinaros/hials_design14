@@ -3,7 +3,7 @@
                                            'extra_menu', false())}
 {def $children=fetch( content, list, hash( parent_node_id, $node.node_id,
                                           class_filter_type, include,
-                                          class_filter_array, array( 'hials_contentpage' ),
+                                          class_filter_array, array( 'hials_contentpage', 'hials_nyhetsmappe' ),
                                           sort_by, $node.sort_array ) )}
 {def $extra_class = ""}                                          
 <section class="content-view-full">
