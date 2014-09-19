@@ -3,7 +3,7 @@
 {if not(is_set( $right_max ))}{def $right_max = 6}{/if}
 {if not(is_set( $name ))}{def $name = $ViewParameter}{/if}
 
-{def $item_class    = ""
+{def $item_class    = ""}
 
 {set $page_count    = int( ceil( div( $item_count, $item_limit ) ) )
      $current_page  = min($:page_count, int( ceil( div( first_set( $view_parameters.offset, 0 ), $item_limit ) ) ) )
@@ -16,7 +16,7 @@
      
 {* Create view parameter text with the exception of offset *}
 {foreach $view_parameters as $key => $item}
-    {if and(not($key|eq('offset')), not($item|eq(''))}
+    {if and(not($key|eq('offset')), not($item|eq('')))}
         {set $view_parameter_text = concat($:view_parameter_text, '/(', $key, ')/' , $item)}
     {/if}
 {/foreach} 

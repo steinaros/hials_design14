@@ -54,7 +54,7 @@
             {* 2 levels of hials_nyhetsmappe *}
             {if eq($node.parent.class_identifier, 'hials_nyhetsmappe')}
                 {def $root_node = fetch( 'content', 'node', hash( 'node_id', $node.parent_node_id ) )}
-            {else
+            {else}
                 {def $root_node = $node}
             {/if}
             {def $menu_items = fetch( 'content', 'list', hash( 'parent_node_id', $root_node.node_id,
