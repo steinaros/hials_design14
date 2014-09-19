@@ -1,4 +1,4 @@
-<article>
+<article class="{$css_class}">
 	{* if $node.data_map.image.has_content}
     {attribute_view_gui image_class=banner_half attribute=$banner.data_map.image}
 	{/if*}
