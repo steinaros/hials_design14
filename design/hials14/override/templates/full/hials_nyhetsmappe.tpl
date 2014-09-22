@@ -18,9 +18,10 @@
                  $children = array()
                  $children_count = ''}
 
-                {set $children_count=fetch_alias( 'children_count', hash( 'parent_node_id', $node.node_id,
+                {set $children_count=fetch( 'content', 'tree_count', hash( 'parent_node_id', $node.node_id,
                                                                           'class_filter_type', 'include',
-                                                                          'class_filter_array', $classes ) )}
+                                                                          'class_filter_array', $classes ,
+                                                                          'depth', $depth ) )}
                 {include name=navigator
                          uri='design:navigator/google.tpl'
                          page_uri=$node.url_alias
