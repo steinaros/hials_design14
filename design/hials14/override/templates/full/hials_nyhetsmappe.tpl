@@ -50,30 +50,30 @@
                          item_limit=$page_limit}
         </div>
         <aside class="col-sm-3">
-            
             {* 2 levels of hials_nyhetsmappe *}
-            {if eq($node.parent.class_identifier, 'hials_nyhetsmappe')}
-                {def $root_node = fetch( 'content', 'node', hash( 'node_id', $node.parent_node_id ) )}
-            {else}
-                {def $root_node = $node}
-            {/if}
-            {def $menu_items = fetch( 'content', 'list', hash( 'parent_node_id', $root_node.node_id,
-                                                               'sort_by', $root_node.sort_array,
+			{if eq($node.parent.class_identifier, 'hials_nyhetsmappe')}
+			    {def $nyhet_root_node = fetch( 'content', 'node', hash( 'node_id', $node.parent_node_id ) )}
+			{else}
+			    {def $nyhet_root_node = $node}
+			{/if}
+            
+            {def $menu_items = fetch( 'content', 'list', hash( 'parent_node_id', $nyhet_root_node.node_id,
+                                                               'sort_by', $nyhet_root_node.sort_array,
                                                                'load_data_map', false(),
                                                                'class_filter_type', 'include',
                                                                'class_filter_array', array('hials_nyhetsmappe' ) ) )
                  $menu_items_count = $menu_items|count()}
-      
-                <h2>Arkiv</h2>
-            
-                {if $menu_items_count}
-                <ul>
-                    {foreach $menu_items as $key => $item}
-                        <li><a href="{$item.url_alias|ezurl('no')}">{$item.name|wash()}</a></li>
-                    {/foreach}
-                </ul>
-                {/if}
-                {undef $root_node $menu_items $menu_items_count}
+  
+            <h2>Arkiv</h2>
+        
+            {if $menu_items_count}
+            <ul>
+                {foreach $menu_items as $key => $item}
+                    <li><a href="{$item.url_alias|ezurl('no')}">{$item.name|wash()}</a></li>
+                {/foreach}
+            </ul>
+            {/if}
+            {undef $nyhet_root_node $menu_items $menu_items_count}
         </aside>
     </div>
 </section>
