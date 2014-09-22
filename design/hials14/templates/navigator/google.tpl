@@ -13,8 +13,13 @@
      $right_length  = max(min(sub($ViewParameter:page_count, $ViewParameter:current_page, 1), $right_max), 0)
      $view_parameter_text = ""
      $offset_text   = eq( ezini( 'ControlSettings', 'AllowUserVariables', 'template.ini' ), 'true' )|choose( '/offset/', '/(offset)/' )}
-     
+
 <!--
+Item_limit = {$item_limit}
+Item_count = {$item_count}
+view_parameters = {view_parameters}
+page_uri = {$page_uri}
+
 Page_uri_suffix = {$page_uri_suffix}
 Left_max = {$left_max}
 Right_max = {$right_max}
