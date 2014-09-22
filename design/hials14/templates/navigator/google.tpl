@@ -6,11 +6,11 @@
 {def $item_class    = ""}
 
 {def $page_count    = int( ceil( div( $item_count, $item_limit ) ) )
-     $current_page  = min($:page_count, int( ceil( div( first_set( $view_parameters.offset, 0 ), $item_limit ) ) ) )
+     $current_page  = min($page_count, int( ceil( div( first_set( $view_parameters.offset, 0 ), $item_limit ) ) ) )
      $item_previous = sub( mul( $current_page, $item_limit ), $item_limit )
      $item_next     = sum( mul( $current_page, $item_limit ), $item_limit )
-     $left_length   = min($ViewParameter:current_page, $left_max)
-     $right_length  = max(min(sub($ViewParameter:page_count, $ViewParameter:current_page, 1), $right_max), 0)
+     $left_length   = min($ViewParameter.current_page, $left_max)
+     $right_length  = max(min(sub($ViewParameter.page_count, $ViewParameter.current_page, 1), $right_max), 0)
      $view_parameter_text = ""
      $offset_text   = eq( ezini( 'ControlSettings', 'AllowUserVariables', 'template.ini' ), 'true' )|choose( '/offset/', '/(offset)/' )}
 
@@ -36,10 +36,10 @@ offset_text =  {$offset_text}
 -->     
      
 {* Create view parameter text with the exception of offset *}
-{* 
+ 
 {foreach $view_parameters as $key => $item}
     {if and(not($key|eq('offset')), not($item|eq('')))}
-        {set $view_parameter_text = concat($:view_parameter_text, '/(', $key, ')/' , $item)}
+        {set $view_parameter_text = concat($view_parameter_text, '/(', $key, ')/' , $item)}
     {/if}
 {/foreach} 
 
@@ -58,19 +58,19 @@ offset_text =  {$offset_text}
     <li><span>...</span></li>
     {/if}
     {/if}    
-
+{*
     {for 1 to $left_length as $i}
         {set $page_offset = sum(sub($ViewParameter:current_page, $ViewParameter:left_length), $i)}
         <li><a href={concat($page_uri, $page_offset|gt(0)|choose('', concat($offset_text, mul($page_offset, $item_limit))), $ViewParameter:view_parameter_text, $page_uri_suffix)|ezurl}>{$page_offset|inc}</a></li>
     {/for}
-
+*}
     <li class="active"><span>{$current_page|inc} <span class="sr-only">({"Current"|i18n('design/standard/navigator')})</span></span></li>
-
+{*
     {for 1 to $right_length as $i}
         {set $page_offset = sum($ViewParameter:current_page, 1, $i)}
          <li><a href={concat($page_uri, $page_offset|gt(0)|choose('',concat($offset_text, mul($page_offset, $item_limit))), $ViewParameter:view_parameter_text, $page_uri_suffix)|ezurl}>{$page_offset|inc}</a></li>
     {/for}
-
+*}
 	{if $page_count|gt(sum($current_page, $right_max, 1))}
 	{if sum($current_page, $right_max, 2)|lt($page_count)}
 	<li><span>...</span></li>
@@ -85,4 +85,3 @@ offset_text =  {$offset_text}
     {/if}
 </ul> 
 {/if}
-* }
