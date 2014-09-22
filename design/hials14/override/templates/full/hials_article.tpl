@@ -4,10 +4,11 @@
 {else}
     {def $root_node_id = $node.parent_node_id}
 {/if}
-{def $latest_news=fetch( content, list, hash( parent_node_id, $root_node_id,
+{def $latest_news=fetch( 'content', 'tree', hash( parent_node_id, $root_node_id,
                                           class_filter_type, include,
                                           class_filter_array, array( 'hials_article' ),
                                           sort_by, $node.sort_array,
+                                          depth, 2,
                                           limit, 10 ) )}
 {def $extra_class = ""}                                          
 <section class="content-view-full">
@@ -49,4 +50,5 @@
 	        {/if}
 	    </article>
 	</div>
+	{/if}
 </section>
