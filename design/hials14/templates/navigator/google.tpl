@@ -33,6 +33,8 @@ Left_length = {$left_length}
 Right_length = {$right_length}
 view_parameter_text = {$view_parameter_text}
 offset_text =  {$offset_text}
+
+ViewParameter = {$ViewParameter|attribute('show', 2, 'text')}
 -->     
      
 {* Create view parameter text with the exception of offset *}
@@ -58,12 +60,12 @@ offset_text =  {$offset_text}
     <li><span>...</span></li>
     {/if}
     {/if}    
-
+{*
     {for 0 to $left_length as $i}
     {set $page_offset = sum(sub($ViewParameter.current_page, $ViewParameter.left_length), $i)}
     <li><a href={concat($page_uri, $page_offset|gt(0)|choose('', concat($offset_text, mul($page_offset, $item_limit))), $ViewParameter.view_parameter_text, $page_uri_suffix)|ezurl}>{$page_offset|inc}</a></li>
     {/for}
-
+* }
     <li class="active"><span>{$current_page|inc} <span class="sr-only">({"Current"|i18n('design/standard/navigator')})</span></span></li>
 
     {for 0 to $right_length as $i}
