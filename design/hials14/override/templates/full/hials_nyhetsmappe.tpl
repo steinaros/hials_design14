@@ -59,7 +59,7 @@
 			{/if}
             
             {def $menu_items = fetch( 'content', 'list', hash( 'parent_node_id', $nyhet_root_node.node_id,
-                                                               'sort_by', $nyhet_root_node.sort_array,
+                                                               'sort_by', array('name', false()),
                                                                'load_data_map', false(),
                                                                'class_filter_type', 'include',
                                                                'class_filter_array', array('hials_nyhetsmappe' ) ) )
@@ -70,7 +70,7 @@
             {if $menu_items_count}
             <ul>
                 {foreach $menu_items as $key => $item}
-                    <li><a href="{$item.url_alias|ezurl('no')}">{$item.name|wash()}</a></li>
+                    {if $item.children_count}<li><a href="{$item.url_alias|ezurl('no')}">{$item.name|wash()}</a></li>{/if}
                 {/foreach}
             </ul>
             {/if}
