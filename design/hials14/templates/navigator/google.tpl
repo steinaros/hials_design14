@@ -2,16 +2,12 @@
      $left_max = 7
      $right_max = 6}
 
-{set name=ViewParameter $page_uri_suffix = false()
-                        $left_max = $left_max
-                        $right_max = $right_max}
-
 {def $page_count    = int( ceil( div( $item_count, $item_limit ) ) )
-     $current_page  = min($:page_count, int( ceil( div( first_set( $view_parameters.offset, 0 ), $item_limit ) ) ) )
-     $item_previous = sub( mul( $:current_page, $item_limit ), $item_limit )
-     $item_next     = sum( mul( $:current_page, $item_limit ), $item_limit )
-     $left_length   = min($ViewParameter:current_page, $:left_max)
-     $right_length  = max(min(sub($ViewParameter:page_count, $ViewParameter:current_page, 1), $:right_max), 0)
+     $current_page  = min($page_count, int( ceil( div( first_set( $view_parameters.offset, 0 ), $item_limit ) ) ) )
+     $item_previous = sub( mul( $current_page, $item_limit ), $item_limit )
+     $item_next     = sum( mul( $current_page, $item_limit ), $item_limit )
+     $left_length   = min($current_page, $left_max)
+     $right_length  = max(min(sub($page_count, $current_page, 1), $right_max), 0)
      $view_parameter_text = ""
      $offset_text   = eq( ezini( 'ControlSettings', 'AllowUserVariables', 'template.ini' ), 'true' )|choose( '/offset/', '/(offset)/' )}
 
@@ -26,7 +22,6 @@ page_uri = {$page_uri}
 Page_uri_suffix = {$page_uri_suffix}
 Left_max = {$left_max}
 Right_max = {$right_max}
-Name = {$name}
 
 Page_Count = {$page_count}
 Current_page = {$current_page}
@@ -36,18 +31,13 @@ Left_length = {$left_length}
 Right_length = {$right_length}
 view_parameter_text = {$view_parameter_text}
 offset_text =  {$offset_text}
-
-ViewParameter NS:
-ViewParameter:page_uri_suffix = {$ViewParameter:page_uri_suffix}
-ViewParameter:left_max = {$ViewParameter:left_max}
-ViewParameter:right_max = {$ViewParameter:right_max}
 -->     
      
 {* Create view parameter text with the exception of offset *}
  
 {foreach $view_parameters as $key => $item}
     {if and(not($key|eq('offset')), not($item|eq('')))}
-        {set $view_parameter_text = concat($:view_parameter_text, '/(', $key, ')/' , $item)}
+        {set $view_parameter_text = concat($view_parameter_text, '/(', $key, ')/' , $item)}
     {/if}
 {/foreach} 
 
@@ -57,7 +47,7 @@ ViewParameter:right_max = {$ViewParameter:right_max}
     {if $item_previous|lt(0)}
     <li class="previous disabled"><span>&laquo; <span class="sr-only">({"Previous"|i18n("design/standard/navigator")})</span></span></li>
     {else}
-    <li class="previous"><a href={concat($page_uri,$item_previous|gt(0)|choose('',concat($offset_text, $item_previous)), $view_parameter_text, $page_uri_suffix)|ezurl} title="{"Previous"|i18n("design/standard/navigator")}">&laquo; <span class="sr-only">({"Previous"|i18n("design/standard/navigator")})</span></a></li>        
+    <li class="previous"><a href={concat($page_uri, $item_previous|gt(0)|choose('',concat($offset_text, $item_previous)), $view_parameter_text, $page_uri_suffix)|ezurl} title="{"Previous"|i18n("design/standard/navigator")}">&laquo; <span class="sr-only">({"Previous"|i18n("design/standard/navigator")})</span></a></li>        
     {/if}
     
     {if $current_page|gt($left_max)}
@@ -75,8 +65,8 @@ ViewParameter:right_max = {$ViewParameter:right_max}
     <li class="active"><span>{$current_page|inc} <span class="sr-only">({"Current"|i18n('design/standard/navigator')})</span></span></li>
 
     {for 0 to $right_length as $i}
-    {set $page_offset = sum($ViewParameter:current_page, 1, $i)}
-    <li><a href={concat($page_uri, $page_offset|gt(0)|choose('',concat($offset_text, mul($page_offset, $item_limit))), $ViewParameter:view_parameter_text, $page_uri_suffix)|ezurl}>{$page_offset|inc}</a></li>
+    {set $page_offset = sum($current_page, 1, $i)}
+    <li><a href={concat($page_uri, $page_offset|gt(0)|choose('',concat($offset_text, mul($page_offset, $item_limit))), $view_parameter_text, $page_uri_suffix)|ezurl}>{$page_offset|inc}</a></li>
     {/for}
 
 	{if $page_count|gt(sum($current_page, $right_max, 1))}
