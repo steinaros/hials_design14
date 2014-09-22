@@ -5,7 +5,7 @@
 
 {def $item_class    = ""}
 
-{set $page_count    = int( ceil( div( $item_count, $item_limit ) ) )
+{def $page_count    = int( ceil( div( $item_count, $item_limit ) ) )
      $current_page  = min($:page_count, int( ceil( div( first_set( $view_parameters.offset, 0 ), $item_limit ) ) ) )
      $item_previous = sub( mul( $current_page, $item_limit ), $item_limit )
      $item_next     = sum( mul( $current_page, $item_limit ), $item_limit )
@@ -17,7 +17,7 @@
 <!--
 Item_limit = {$item_limit}
 Item_count = {$item_count}
-view_parameters = {$view_parameters}
+view_parameters = {$view_parameters|attribute('show', 2, 'text'}
 page_uri = {$page_uri}
 
 Page_uri_suffix = {$page_uri_suffix}
