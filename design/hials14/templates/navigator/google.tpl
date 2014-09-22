@@ -36,7 +36,7 @@ offset_text =  {$offset_text}
 -->     
      
 {* Create view parameter text with the exception of offset *}
-
+{* 
 {foreach $view_parameters as $key => $item}
     {if and(not($key|eq('offset')), not($item|eq('')))}
         {set $view_parameter_text = concat($:view_parameter_text, '/(', $key, ')/' , $item)}
@@ -85,3 +85,4 @@ offset_text =  {$offset_text}
     {/if}
 </ul> 
 {/if}
+* }
