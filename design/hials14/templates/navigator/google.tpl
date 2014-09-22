@@ -14,27 +14,7 @@
 {def $page_offset = false()
      $counter = 0
      $i = 0}
-
-<!--
-Item_limit = {$item_limit}
-Item_count = {$item_count}
-view_parameters = {$view_parameters|attribute('show', 2, 'text')}
-page_uri = {$page_uri}
-
-Page_uri_suffix = {$page_uri_suffix}
-Left_max = {$left_max}
-Right_max = {$right_max}
-
-Page_Count = {$page_count}
-Current_page = {$current_page}
-Item_previous = {$item_previous}
-Item_next = {$item_next}
-Left_length = {$left_length}
-Right_length = {$right_length}
-view_parameter_text = {$view_parameter_text}
-offset_text =  {$offset_text}
--->     
-     
+    
 {* Create view parameter text with the exception of offset *}
  
 {foreach $view_parameters as $key => $item}
@@ -76,15 +56,15 @@ offset_text =  {$offset_text}
         {set $i=inc($i)}
         {set $counter=dec($counter)}   
     {/while}
-    <!-- page_count={$page_count}/current_page={$current_page}/right_max={$right_max} -->
+
 	{if $page_count|gt(sum($current_page, $right_max, 1))}
 		{if sum($current_page, $right_max, 2)|lt($page_count)}
 		<li><span>...</span></li>
 		{/if}
 		<li><a href={concat($page_uri, $page_count|dec|gt(0)|choose('',concat($offset_text, mul($page_count|dec, $item_limit))), $view_parameter_text, $page_uri_suffix)|ezurl}>{$page_count}</a></li>
 	{/if}
-    <!-- Item_previous={$item_previous}/item_count={$item_count} -->
-    {if $item_previous|lt($item_count)}
+
+    {if $item_next|lt($item_count)}
     <li class="next"><a href={concat($page_uri, $offset_text, $item_next, $view_parameter_text, $page_uri_suffix)|ezurl} title="{"Next"|i18n("design/standard/navigator")}">&raquo; <span class="sr-only">({"Next"|i18n("design/standard/navigator")})</span></a></li>
     {else}
     <li class="next disabled"><span>&raquo; <span class="sr-only">({"Next"|i18n("design/standard/navigator")})</span></span></li>
