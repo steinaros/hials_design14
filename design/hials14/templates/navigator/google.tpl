@@ -17,7 +17,7 @@
 <!--
 Item_limit = {$item_limit}
 Item_count = {$item_count}
-view_parameters = {$view_parameters|attribute('show', 2, 'text'}
+view_parameters = {$view_parameters|attribute('show', 1, 'text'}
 page_uri = {$page_uri}
 
 Page_uri_suffix = {$page_uri_suffix}
@@ -36,13 +36,14 @@ offset_text =  {$offset_text}
 -->     
      
 {* Create view parameter text with the exception of offset *}
+{*
 {foreach $view_parameters as $key => $item}
     {if and(not($key|eq('offset')), not($item|eq('')))}
         {set $view_parameter_text = concat($:view_parameter_text, '/(', $key, ')/' , $item)}
     {/if}
 {/foreach} 
-
-{if $page_count|gt(1)}
+*}
+{if $page_count|gt(1)} {*  
 <ul class="pagination">
 
     {if $item_previous|lt(0)}
@@ -82,5 +83,5 @@ offset_text =  {$offset_text}
     {else}
     <li class="next disabled"><span>&raquo; <span class="sr-only">({"Next"|i18n("design/standard/navigator")})</span></span></li>
     {/if}
-</ul>
+</ul> *}
 {/if}
