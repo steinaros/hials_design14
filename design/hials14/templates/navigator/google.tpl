@@ -2,11 +2,9 @@
      $left_max = 7
      $right_max = 6}
 
-{if not(is_set( $page_uri_suffix ))}{def name=ViewParameter $page_uri_suffix = false()}{/if}
-{if not(is_set( $left_max ))}{def name=ViewParameter $left_max = 7}{/if}
-{if not(is_set( $right_max ))}{def name=ViewParameter $right_max = 6}{/if}
-
-{def $item_class    = ""}
+{def name=ViewParameter $page_uri_suffix = false()
+                        $left_max = $:left_max
+                        $right_max = $:right_max}
 
 {def $page_count    = int( ceil( div( $item_count, $item_limit ) ) )
      $current_page  = min($:page_count, int( ceil( div( first_set( $view_parameters.offset, 0 ), $item_limit ) ) ) )
@@ -16,6 +14,8 @@
      $right_length  = max(min(sub($ViewParameter:page_count, $ViewParameter:current_page, 1), $:right_max), 0)
      $view_parameter_text = ""
      $offset_text   = eq( ezini( 'ControlSettings', 'AllowUserVariables', 'template.ini' ), 'true' )|choose( '/offset/', '/(offset)/' )}
+
+{def $page_offset = false()}
 
 <!--
 Item_limit = {$item_limit}
