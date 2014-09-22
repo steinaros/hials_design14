@@ -30,7 +30,7 @@
 
                 <section class="content-view-children">
                 {if $children_count}
-                    {foreach fetch_alias( 'children', hash( 'parent_node_id', $node.node_id,
+                    {foreach fetch( 'content', 'list', hash( 'parent_node_id', $node.node_id,
                                                             'offset', $view_parameters.offset,
                                                             'sort_by', $node.sort_array,
                                                             'class_filter_type', 'include',
