@@ -41,9 +41,8 @@ offset_text =  {$offset_text}
     {/if}
 {/foreach} 
 
-{if $page_count|gt(1)}   
+{if $page_count|gt(1)}
 <ul class="pagination">
-
     {if $item_previous|lt(0)}
     <li class="previous disabled"><span>&laquo; <span class="sr-only">({"Previous"|i18n("design/standard/navigator")})</span></span></li>
     {else}
@@ -51,10 +50,10 @@ offset_text =  {$offset_text}
     {/if}
     
     {if $current_page|gt($left_max)}
-    <li><a href={concat($page_uri, $view_parameter_text, $page_uri_suffix)|ezurl}>1</a></li>
-    {if sub($current_page, $left_length)|gt(1)}
-    <li><span>...</span></li>
-    {/if}
+	    <li><a href={concat($page_uri, $view_parameter_text, $page_uri_suffix)|ezurl}>1</a></li>
+	    {if sub($current_page, $left_length)|gt(1)}
+	    <li><span>...</span></li>
+	    {/if}
     {/if}    
 {*
     {for 0 to $left_length as $i}
@@ -68,14 +67,14 @@ offset_text =  {$offset_text}
     {set $page_offset = sum($current_page, 1, $i)}
     <li><a href={concat($page_uri, $page_offset|gt(0)|choose('',concat($offset_text, mul($page_offset, $item_limit))), $view_parameter_text, $page_uri_suffix)|ezurl}>{$page_offset|inc}</a></li>
     {/for}
-
+    <!-- page_count={$page_count}/current_page={$current_page}/right_max={$right_max} -->
 	{if $page_count|gt(sum($current_page, $right_max, 1))}
-	{if sum($current_page, $right_max, 2)|lt($page_count)}
-	<li><span>...</span></li>
+		{if sum($current_page, $right_max, 2)|lt($page_count)}
+		<li><span>...</span></li>
+		{/if}
+		<li><a href={concat($page_uri, $page_count|dec|gt(0)|choose('',concat($offset_text, mul($page_count|dec, $item_limit))), $view_parameter_text, $page_uri_suffix)|ezurl}>{$page_count}</a></li>
 	{/if}
-	<li><a href={concat($page_uri, $page_count|dec|gt(0)|choose('',concat($offset_text, mul($page_count|dec, $item_limit))), $view_parameter_text, $page_uri_suffix)|ezurl}>{$page_count}</a></li>
-	{/if}
-
+    <!-- Item_previous={$item_previous}/item_count={$item_count} -->
     {if $item_previous|lt($item_count)}
     <li class="next"><a href={concat($page_uri, $offset_text, $item_next, $view_parameter_text, $page_uri_suffix)|ezurl} title="{"Next"|i18n("design/standard/navigator")}">&raquo; <span class="sr-only">({"Next"|i18n("design/standard/navigator")})</span></a></li>
     {else}
