@@ -17,7 +17,7 @@
 <!--
 Item_limit = {$item_limit}
 Item_count = {$item_count}
-view_parameters = {view_parameters}
+view_parameters = {$view_parameters}
 page_uri = {$page_uri}
 
 Page_uri_suffix = {$page_uri_suffix}
