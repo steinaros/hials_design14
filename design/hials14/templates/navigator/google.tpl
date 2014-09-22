@@ -2,9 +2,9 @@
      $left_max = 7
      $right_max = 6}
 
-{def name=ViewParameter $page_uri_suffix = false()
-                        $left_max = $:left_max
-                        $right_max = $:right_max}
+{set name=ViewParameter $page_uri_suffix = false()
+                        $left_max = $left_max
+                        $right_max = $right_max}
 
 {def $page_count    = int( ceil( div( $item_count, $item_limit ) ) )
      $current_page  = min($:page_count, int( ceil( div( first_set( $view_parameters.offset, 0 ), $item_limit ) ) ) )
