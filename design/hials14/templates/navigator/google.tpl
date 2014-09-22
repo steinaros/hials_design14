@@ -11,7 +11,9 @@
      $view_parameter_text = ""
      $offset_text   = eq( ezini( 'ControlSettings', 'AllowUserVariables', 'template.ini' ), 'true' )|choose( '/offset/', '/(offset)/' )}
 
-{def $page_offset = false()}
+{def $page_offset = false()
+     $counter = 0
+     $i = 0}
 
 <!--
 Item_limit = {$item_limit}
@@ -54,19 +56,26 @@ offset_text =  {$offset_text}
 	    {if sub($current_page, $left_length)|gt(1)}
 	    <li><span>...</span></li>
 	    {/if}
-    {/if}    
+    {/if}
 
-    {for 1 to $left_length as $i}
-    {set $page_offset = sum(sub($current_page, $left_length), $i)}
-    <li><a href={concat($page_uri, $page_offset|gt(0)|choose('', concat($offset_text, mul($page_offset, $item_limit))), $ViewParameter:view_parameter_text, $page_uri_suffix)|ezurl}>{$page_offset|inc}</a></li>
-    {/for}
+    {set $counter = $left_length}
+    {while $counter|gt(0)}
+        {set $page_offset = sum(sub($current_page, $left_length), $i)}
+        <li><a href={concat($page_uri, $page_offset|gt(0)|choose('', concat($offset_text, mul($page_offset, $item_limit))), $view_parameter_text, $page_uri_suffix)|ezurl}>{$page_offset|inc}</a></li>
+        {set $i=inc($i)}
+        {set $counter=dec($counter)}
+    {/while}
 
     <li class="active"><span>{$current_page|inc} <span class="sr-only">({"Current"|i18n('design/standard/navigator')})</span></span></li>
 
-    {for 1 to $right_length as $i}
-    {set $page_offset = sum($current_page, 1, $i)}
-    <li><a href={concat($page_uri, $page_offset|gt(0)|choose('',concat($offset_text, mul($page_offset, $item_limit))), $view_parameter_text, $page_uri_suffix)|ezurl}>{$page_offset|inc}</a></li>
-    {/for}
+    {set $i=0
+         $counter=$right_length}
+    {while $counter|gt(0)}
+	    {set $page_offset = sum($current_page, 1, $i)}
+	    <li><a href={concat($page_uri, $page_offset|gt(0)|choose('',concat($offset_text, mul($page_offset, $item_limit))), $view_parameter_text, $page_uri_suffix)|ezurl}>{$page_offset|inc}</a></li>
+        {set $i=inc($i)}
+        {set $counter=dec($counter)}   
+    {/while}
     <!-- page_count={$page_count}/current_page={$current_page}/right_max={$right_max} -->
 	{if $page_count|gt(sum($current_page, $right_max, 1))}
 		{if sum($current_page, $right_max, 2)|lt($page_count)}
