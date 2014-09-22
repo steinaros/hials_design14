@@ -17,18 +17,18 @@
         <div class="col-sm-3 hidden-xs pubisheddatecol">
             <time class="pull-right">{$node.object.published|l10n('shortdate')}</time>
         </div>    
-	    <article class="class-hials_article col-sm-6 col-right">
-	        <h1>{$node.data_map.title.content|wash()}</h1>
+	    <article class="class-hials_article col-sm-6 col-right" itemscope itemtype="http://schema.org/Article">
+	        <h1 itemprop="name">{$node.data_map.title.content|wash()}</h1>
 	
 	        {if $node.data_map.intro.content.is_empty|not}
-	        <section class="intro">
+	        <section class="intro" itemprop="description">
 	            {attribute_view_gui attribute=$node.data_map.intro}
 	        </section>
 	        {/if}
 	        {include uri='design:parts/byline.tpl'}
 	        
 	        {if $node.data_map.body.content.is_empty|not}
-	        <section class="bodytext">
+	        <section class="bodytext" itemprop="text">
 	            {attribute_view_gui attribute=$node.data_map.body}
 	        </section>
 	        {/if}
