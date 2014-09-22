@@ -17,7 +17,7 @@
 <!--
 Item_limit = {$item_limit}
 Item_count = {$item_count}
-view_parameters = {$view_parameters|attribute('show', 1, 'text'}
+view_parameters = {$view_parameters|attribute('show', 2, 'text'}
 page_uri = {$page_uri}
 
 Page_uri_suffix = {$page_uri_suffix}
