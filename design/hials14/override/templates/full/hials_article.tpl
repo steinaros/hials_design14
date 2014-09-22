@@ -14,8 +14,8 @@
     </div>
     {/if}
     <div class="row">
-        <div class="col-sm-3 hidden-xs">
-            <time class="h1">{$node.object.modified|l10n('shortdate')}</time>
+        <div class="col-sm-3 hidden-xs pubisheddatecol">
+            <time class="pull-right">{$node.object.published|l10n('shortdate')}</time>
         </div>    
 	    <article class="class-hials_article col-sm-6 col-right">
 	        <h1>{$node.data_map.title.content|wash()}</h1>

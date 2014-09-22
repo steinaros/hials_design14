@@ -37,6 +37,15 @@ h4, .h4 {
     font-size: 14px;
 }
 
+.pubisheddatecol {
+	padding-top: 20px;
+}
+
+.pubisheddatecol time {
+	color: #5B5755;
+	font-size: 36px;
+}
+
 header {
     border-bottom: 1px solid #5B5755;
     border-top: 1px solid #5B5755;  
