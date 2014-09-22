@@ -4,31 +4,15 @@
 {else}
     {def $root_node_id = $node.parent_node_id}
 {/if}
-{def $latest_news=fetch( 'content', 'tree', hash( parent_node_id, $root_node_id,
-                                          class_filter_type, include,
-                                          class_filter_array, array( 'hials_article' ),
-                                          sort_by, $node.sort_array,
-                                          depth, 2,
-                                          limit, 10 ) )}
-{def $extra_class = ""}                                          
 <section class="content-view-full">
     {if $node.data_map.image.has_content}
     <div class="row">
 	    <div class="col-sm-6 col-sm-offset-3 col-left">
 	        {attribute_view_gui attribute=$node.data_map.image image_class=banner_half css_class=img-responsive}
 	    </div>
-	    <aside class="col-sm-3 col-right">
-            {if $latest_news|count()}
-            <p class="h3">{"Latest news|i18n('hials/design/news'}</p>
-            <ul>
-            {foreach $latest_news as $news_item}
-            <li><a href={$news_item.url_alias|ezurl}>{$news_item.name|wash()}</a></li>
-            {/foreach}
-            </ul>
-            {/if}
-	    </aside>
+	    {include uri='design:parts/latest_news_sidebar.tpl' root_node_id=$root_node_id}
     </div>
-    {else}
+    {/if}
     <div class="row">
         <div class="col-sm-3 hidden-xs">
             <time class="h1">{$node.object.modified|l10n('shortdate')}</time>
@@ -49,6 +33,7 @@
 	        </section>
 	        {/if}
 	    </article>
+	    {if not($node.data_map.image.has_content)}{include uri='design:parts/latest_news_sidebar.tpl' root_node_id=$root_node_id}{/if}
 	</div>
-	{/if}
 </section>
+{undef $root_node_id}

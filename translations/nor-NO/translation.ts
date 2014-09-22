@@ -104,5 +104,16 @@
 	        <source>No documents are published for this meeting</source>
 	        <translation>Ingen dokumenter er publisert for dette møtet</translation>
 	    </message>
-	</context>    
+	</context>
+    <context>
+        <name>hials/design/news</name>
+        <message>
+            <source>Latest news</source>
+            <translation>Siste nytt</translation>
+        </message>
+        <message>
+            <source>Archive</source>
+            <translation>Arkiv</translation>
+        </message>
+    </context>    	
 </TS>

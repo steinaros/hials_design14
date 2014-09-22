@@ -65,7 +65,7 @@
                                                                'class_filter_array', array('hials_nyhetsmappe' ) ) )
                  $menu_items_count = $menu_items|count()}
   
-            <h2>Arkiv</h2>
+            <h2>{"Archive"|i18n('hials/design/news')}</h2>
         
             {if $menu_items_count}
             <ul>
@@ -78,3 +78,4 @@
         </aside>
     </div>
 </section>
+{undef $rss_export}
