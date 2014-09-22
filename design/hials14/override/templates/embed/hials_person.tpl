@@ -12,7 +12,7 @@
 		        <p class="p-job-title title">{$object.data_map.jobtitle.content|wash()}</p>
 		        <p class="p-tel tel">{$phone|wash()}</p>
 		        <p class="u-email email">{$object.data_map.email.content|wash|autolink()}</p>
-		        <p class="p-org org">{"Aalesund University College"|i18n('hials/design/std')}</p>
+		        <p class="p-org org hidden">{"Aalesund University College"|i18n('hials/design/std')}</p>
 		    </div> 
 			<div class="col-xs-6 boks bg-white nopadding col-xs-height col-middle">
 			    {if $object.data_map.image.has_content}

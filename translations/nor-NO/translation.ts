@@ -15,6 +15,10 @@
             <source>Share</source>
             <translation>Del</translation>
         </message>
+        <message>
+            <source>Aalesund University College</source>
+            <translation>Høgskolen i Ålesund</translation>
+        </message>
     </context>
     <context>
         <name>hials/design/pagelayout</name>
