@@ -14,6 +14,22 @@
      $view_parameter_text = ""
      $offset_text   = eq( ezini( 'ControlSettings', 'AllowUserVariables', 'template.ini' ), 'true' )|choose( '/offset/', '/(offset)/' )}
      
+<!--
+Page_uri_suffix = {$page_uri_suffix}
+Left_max = {$left_max}
+Right_max = {$right_max}
+Name = {$name}
+
+Page_Count = {$page_count}
+Current_page = {$current_page}
+Item_previous = {$item_previous}
+Item_next = {$item_next}
+Left_length = {$left_length}
+Right_length = {$right_length}
+view_parameter_text = {$view_parameter_text}
+offset_text =  {$offset_text}
+-->     
+     
 {* Create view parameter text with the exception of offset *}
 {foreach $view_parameters as $key => $item}
     {if and(not($key|eq('offset')), not($item|eq('')))}
