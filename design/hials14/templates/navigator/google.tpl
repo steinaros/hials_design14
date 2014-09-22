@@ -56,14 +56,14 @@ offset_text =  {$offset_text}
 	    {/if}
     {/if}    
 
-    {for 0 to $left_length as $i}
+    {for 1 to $left_length as $i}
     {set $page_offset = sum(sub($current_page, $left_length), $i)}
     <li><a href={concat($page_uri, $page_offset|gt(0)|choose('', concat($offset_text, mul($page_offset, $item_limit))), $ViewParameter:view_parameter_text, $page_uri_suffix)|ezurl}>{$page_offset|inc}</a></li>
     {/for}
 
     <li class="active"><span>{$current_page|inc} <span class="sr-only">({"Current"|i18n('design/standard/navigator')})</span></span></li>
 
-    {for 0 to $right_length as $i}
+    {for 1 to $right_length as $i}
     {set $page_offset = sum($current_page, 1, $i)}
     <li><a href={concat($page_uri, $page_offset|gt(0)|choose('',concat($offset_text, mul($page_offset, $item_limit))), $view_parameter_text, $page_uri_suffix)|ezurl}>{$page_offset|inc}</a></li>
     {/for}
