@@ -232,7 +232,7 @@ blockquote p:after {
     display:table;
     padding-left:0px;
     padding-right:0px;
-    /*width: 100%;*/
+    width: 100%;
     margin-bottom: 15px;
 }
 .row-xs-height {
@@ -255,7 +255,7 @@ blockquote p:after {
         display:table;
         padding-left:0px;
         padding-right:0px;
-        /*width: 100%;*/
+        width: 100%;
         margin-bottom: 15px;
     }
     .row-sm-height {
@@ -287,7 +287,7 @@ blockquote p:after {
         display:table;
         padding-left:0px;
         padding-right:0px;
-        /*width: 100%;*/      
+        width: 100%;      
         margin-bottom: 15px;
 }
     .row-md-height {
@@ -317,7 +317,7 @@ blockquote p:after {
         display:table;
         padding-left:0px;
         padding-right:0px;
-        /*width: 100%;*/
+        width: 100%;
         margin-bottom: 15px;
     }
     .row-lg-height {
