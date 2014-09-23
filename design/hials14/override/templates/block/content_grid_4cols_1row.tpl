@@ -17,7 +17,6 @@
 			        {case match=2}{set $color_class='bg-red'}{/case}
 			        {case match=3}{set $color_class='bg-yellow'}{/case}
 		        {/switch}
-		        <!-- Color_class = {$color_class|wash} -->
 		        {set $cell_class = concat('col-sm-3 boks col-sm-height ', $color_class)|trim}
 		        {node_view_gui view='block_item' image_class='contentgrid' content_node=$valid_node container_node=$container_node css_class=$cell_class}
 		    {/foreach}
