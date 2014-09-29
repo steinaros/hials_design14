@@ -1,5 +1,13 @@
 <header role="banner">
+    <section id="quicklinks" class="row hidden-xs">
+    {include uri='design:page_header_links.tpl'}
+    </section>
+    
+    <section class="row navibar">
     {include uri='design:page_header_logo.tpl'}
+    
+    {include uri='design:menu/top_menu.tpl'}
+    </section>
 {*
     <div class="container">
         <nav class="navbar navbar-default" role="navigation" id="hials-extranav">
@@ -17,7 +25,7 @@
                     {include uri='design:page_header_logo.tpl'}
                 </div>
             </div>
-            {include uri='design:menu/top_menu.tpl'}
+            
             {include uri='design:parts/top_buttons'}
         </div>
     </div>

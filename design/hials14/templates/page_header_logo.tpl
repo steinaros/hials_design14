@@ -1,1 +1,1 @@
-<a href="{'/'|ezurl( 'no' )}" title="{ezini('SiteSettings','SiteName')|wash}" class="logo"><img id="logo" src="{'hials-logo-no.svg'|ezimage( 'no' )}" alt="{ezini('SiteSettings','SiteName')|wash}" /></a>
+<div class="col-xs-6 col-sm-3"><a href="{'/'|ezurl( 'no' )}" title="{ezini('SiteSettings','SiteName')|wash}" class="logo"><img id="logo" src="{'hials-logo-no.svg'|ezimage( 'no' )}" alt="{ezini('SiteSettings','SiteName')|wash}" /></a></div>

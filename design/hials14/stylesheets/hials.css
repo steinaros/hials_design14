@@ -8,6 +8,10 @@ body {
 	background-color: #f1f1f1;
 }
 
+#quicklinks {
+    background-color: #fff;
+}
+
 h1, .h1 {
 	color: #851348;
 	text-transform: uppercase;
