@@ -52,10 +52,9 @@ h4, .h4 {
 	line-height: 1.1;
 }
 
-header {
+.navibar {
     border-bottom: 1px solid #5B5755;
     border-top: 1px solid #5B5755;  
-    margin: 3rem -15px auto -15px;
 }
 
 #logo {
