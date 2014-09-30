@@ -1,5 +1,5 @@
 {if not(is_set($subitems))}{def $subitems = array()}{/if} 
-<h3>{'Subpages'|i18n('hials/design/std')}</h3>
+<p class="leftmenu">{'Subpages'|i18n('hials/design/std')}</p>
 <ul class="leftmenu">
 {foreach $subitems as $sub_item}
 <li><a href={$sub_item.url_alias|ezurl}>{$sub_item.name|wash()}</a></li>

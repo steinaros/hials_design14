@@ -83,9 +83,29 @@ ul.submenu {
 	text-transform: uppercase;
 }
 
+.submenu > li > a {
+	color: #5B5755;
+}
+
 .breadcrumb {
 	margin-bottom: 0;
 	background: transparent;
+}
+
+ul.leftmenu {
+	list-style-type: none;
+}
+
+.leftmenu, .leftmenu > li > a {
+    color: #5B5755; 
+    font-size: 14px;
+}
+
+p.leftmenu {
+	font-size: 36px;
+	font-weight: 500;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .intro {
@@ -183,6 +203,10 @@ form.dropdown-menu {
     padding-bottom: 0.5em;
 }
 
+i.fa + label {
+	padding-left: 3px;
+}
+
 .nopadding {
     padding: 0;
 }
@@ -253,6 +277,15 @@ blockquote p:after {
 .col-xs-height {
     display:table-cell;
     float:none;
+}
+
+.highlighted {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.highlighted .media-body {
+	padding: 15px;
 }
 
 .wrapper .col-xs-6:first-child {

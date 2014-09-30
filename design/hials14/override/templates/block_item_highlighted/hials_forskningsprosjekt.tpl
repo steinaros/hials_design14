@@ -1,6 +1,6 @@
 {if $node.data_map.image.has_content}
     <a class="pull-left" href="{$node.url_alias|ezurl( 'no' )}">
-        {attribute_view_gui image_class=banner_half attribute=$node.data_map.image}
+        {attribute_view_gui css_class='img-responsive' image_class=banner_half attribute=$node.data_map.image}
     </a>
 {/if}
 <div class="media-body">
