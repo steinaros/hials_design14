@@ -111,6 +111,7 @@ p.leftmenu {
 	font-weight: 500;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	line-height: 1.1;
 }
 
 .intro {
@@ -293,7 +294,7 @@ blockquote p:after {
 	padding: 15px;
 }
 
-.higlighted .media-heading, .higlighted .media-heading a {
+.highlighted .media-heading, .highlighted .media-heading a {
 	font-size: 36px;
 	text-transform: capitalize;
 	color: #5B5755;
