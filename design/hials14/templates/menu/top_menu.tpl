@@ -24,6 +24,9 @@
 					                                              'class_filter_type', 'include',
 					                                              'class_filter_array', $top_menu_class_filter ) )
 					 $sub_items_count = $sub_items|count()}
+                {if $sub_items_count|ne(0)}
+                    {set $item_class = $item_class|append("dropdown yamm-fw")}
+                {/if}					 
 				{if $key|eq(0)}
                     {set $item_class = $item_class|append("firstli")}
 				{/if}
