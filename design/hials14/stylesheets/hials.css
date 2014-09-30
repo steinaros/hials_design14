@@ -94,6 +94,11 @@ ul.submenu {
 
 ul.leftmenu {
 	list-style-type: none;
+	padding: 0;
+}
+
+ul.leftmenu > li {
+	padding-bottom: 5px;
 }
 
 .leftmenu, .leftmenu > li > a {
@@ -203,7 +208,7 @@ form.dropdown-menu {
     padding-bottom: 0.5em;
 }
 
-i.fa + label {
+i.fa + label, i.fa + span {
 	padding-left: 3px;
 }
 
@@ -286,6 +291,14 @@ blockquote p:after {
 
 .highlighted .media-body {
 	padding: 15px;
+}
+
+.higlighted .media-heading, .higlighted .media-heading a {
+	font-size: 36px;
+	text-transform: capitalize;
+	color: #5B5755;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .wrapper .col-xs-6:first-child {
