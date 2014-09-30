@@ -3,7 +3,7 @@
     {include uri='design:page_header_links.tpl'}
     </section>
     
-    <section class="row navibar">
+    <section class="row navibar yamm">
     {include uri='design:page_header_logo.tpl'}
     
     {include uri='design:menu/top_menu.tpl'}

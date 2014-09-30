@@ -74,6 +74,15 @@ h4, .h4 {
     padding-bottom:15px;
 }
 
+ul.submenu {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.submenuhead {
+	text-transform: uppercase;
+}
+
 .breadcrumb {
 	margin-bottom: 0;
 	background: transparent;

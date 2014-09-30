@@ -14,7 +14,7 @@
      $UTDANNING_node_id = 65} {* Utdanning submenu needs special treatment *}
 <div class="col-sm-8">
     {if $top_menu_items_count}
-        <nav id="mainmenu" class="navbar-collapse collapse yamm">
+        <nav id="mainmenu" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
             {foreach $top_menu_items as $key => $item}
 				{set $item_class = array()
@@ -45,7 +45,7 @@
 				            <li><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}>{'Directly to'|i18n('hials/design/menu')} {$item.name|wash()}</a></li>
 				            <li><div class="row">{foreach $sub_items as $subkey => $subitem}
 				                <div class="{if $subkey|eq(0)}col-sm-offset-2 col-sm-2{else}col-sm-2{/if}">
-				                    <ul>
+				                    <ul class="submenu">
 				                        <li class="submenuhead"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $subitem.node_id)|ezurl}{else}{$subitem.url_alias|ezurl}{/if}>{$subitem.name|wash()}</a></li>
                                     {if $subitem.children|count()}
                                         {foreach $subitem.children as $sub2key => $sub2item}
