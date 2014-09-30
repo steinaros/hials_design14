@@ -1,9 +1,10 @@
 {* Innholdsside - Full view *}
 {set scope=global persistent_variable=hash('left_menu', false(),
                                            'extra_menu', false())}
-{def $children=fetch( content, list, hash( parent_node_id, $node.node_id,
-                                          class_filter_type, include,
-                                          class_filter_array, array( 'hials_contentpage', 'hials_nyhetsmappe' ),
+{def $leftmenu_class_filter = ezini( 'MenuContentSettings', 'LeftIdentifierList', 'menu.ini' )
+     $children=fetch( content, list, hash( parent_node_id, $node.node_id,
+                                          class_filter_type, 'include',
+                                          class_filter_array, $leftmenu_class_filter,
                                           sort_by, $node.sort_array ) )}
 {def $extra_class = ""}                                          
 <section class="content-view-full">
@@ -22,22 +23,12 @@
 	    <aside class="col-sm-6 col-left">
 	        {attribute_view_gui attribute=$node.data_map.image image_class=banner_half css_class=img-responsive}
 	        {if $children|count()}
-	        <h3>Undersider</h3>
-	        <ul>
-	        {foreach $children as $child_item}
-	        <li><a href={$child_item.url_alias|ezurl}>{$child_item.name|wash()}</a></li>
-	        {/foreach}
-	        </ul>
+	        {include uri='design:parts/leftmenu_subitems.tpl' subitems=$children}
 	        {/if}
 	    </aside>
 	    {elseif $children|count()}
 	    <aside class="col-sm-3 col-left">
-	        <h3>Undersider</h3>
-	        <ul>
-	        {foreach $children as $child_item}
-	        <li><a href={$child_item.url_alias|ezurl}>{$child_item.name|wash()}</a></li>
-	        {/foreach}
-	        </ul>
+	       {include uri='design:parts/leftmenu_subitems.tpl' subitems=$children}
 	    </aside>
 	    {else}
 	        {set $extra_class = "col-sm-offset-3"}
@@ -61,3 +52,4 @@
 	    </article>
 	</div>
 </section>
+{undef $leftmenu_class_filter $children $extra_class}

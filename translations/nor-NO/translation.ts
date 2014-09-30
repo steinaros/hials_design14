@@ -19,6 +19,14 @@
             <source>Aalesund University College</source>
             <translation>Høgskolen i Ålesund</translation>
         </message>
+        <message>
+            <source>Subpages</source>
+            <translation>Undersider</translation>
+        </message>
+        <message>
+            <source>Directly to</source>
+            <translation>Direkte til</translation>
+        </message>
     </context>
     <context>
         <name>hials/design/pagelayout</name>
