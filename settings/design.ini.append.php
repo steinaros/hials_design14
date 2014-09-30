@@ -16,6 +16,11 @@ JavaScriptFooterList[]=bootstrap.min.js
 
 [StyleSheetSettings]
 CSSFileList[]
+CSSFileList[]=bootstrap.min.css
+CSSFileList[]=font-awesome.min.css
+CSSFileList[]=yamm.css
+CSSFileList[]=hials.css
+
 FrontendCSSFileList[]
 
 ClassesCSS=

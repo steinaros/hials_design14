@@ -14,7 +14,7 @@
      $UTDANNING_node_id = 65} {* Utdanning submenu needs special treatment *}
 <div class="col-sm-8">
     {if $top_menu_items_count}
-        <nav id="mainmenu" class="navbar-collapse collapse">
+        <nav id="mainmenu" class="navbar-collapse collapse yamm">
             <ul class="nav navbar-nav">
             {foreach $top_menu_items as $key => $item}
 				{set $item_class = array()
