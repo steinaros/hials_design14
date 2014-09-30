@@ -20,7 +20,7 @@
 				{set $item_class = array()
 					 $sub_items = fetch( 'content', 'tree', hash( 'parent_node_id', $item.node_id,
 					                                              'sort_by', $item.sort_array,
-					                                              'depth', 2,
+					                                              'depth', 1,
 					                                              'class_filter_type', 'include',
 					                                              'class_filter_array', $top_menu_class_filter ) )
 					 $sub_items_count = $sub_items|count()}
