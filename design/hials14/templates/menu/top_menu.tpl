@@ -42,7 +42,7 @@
 				<li id="node_id_{$item.node_id}"{if $item_class} class="{$item_class|implode(" ")}"{/if}><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}{if $pagedata.is_edit} onclick="return false;"{/if}{if $sub_items_count} data-target="#" data-toggle="dropdown" class="dropdown-toggle"{/if}>{$item.name|wash()}</a>
 				    {if and($sub_items_count,ne($item.node_id, $UTDANNING_node_id))}
 				        <ul class="dropdown-menu">
-				            <li><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}>{'Directly to'|i18n('hials/design/menu')} {$item.name|wash()}</a></li>
+				            <li><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}>{'Directly to'|i18n('hials/design/std')} {$item.name|wash()}</a></li>
 				            <li><div class="row">{foreach $sub_items as $subkey => $subitem}
 				                <div class="{if $subkey|eq(0)}col-sm-offset-2 col-sm-2{else}col-sm-2{/if}">
 				                    <ul class="submenu">
