@@ -1,13 +1,15 @@
 {if $node.data_map.image.has_content}
-    <a class="pull-left" href="{$node.url_alias|ezurl( 'no' )}">
+<div class="col-sm-6 col-left">
+    <a href="{$node.url_alias|ezurl( 'no' )}">
         {attribute_view_gui css_class='img-responsive' image_class=banner_half attribute=$node.data_map.image}
     </a>
+</div>
 {/if}
-<div class="media-body">
+<div class="{if ne($node.data_map.image.has_content)}col-sm-offset-6{/if} col-sm-6 col-right">
     {if eq($node.parent.class_identifier,'hials_avdeling')}{$node.parent.data_map.name.content|wash()}{/if}
-    <h2 class="media-heading"><a href="{$node.url_alias|ezurl( 'no' )}" class="teaser-link">{$node.data_map.title.content|wash()}</a></h2>
+    <h2><a href="{$node.url_alias|ezurl( 'no' )}">{$node.data_map.title.content|wash()}</a></h2>
     {if $node.data_map.intro.content.is_empty|not}
-    <div class="attribute-intro">
+    <div class="intro">
         {attribute_view_gui attribute=$node.data_map.intro}
     </div>
     {/if}
