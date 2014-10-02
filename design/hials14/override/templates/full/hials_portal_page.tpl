@@ -16,13 +16,4 @@
     <div class="attribute-page row">
         {attribute_view_gui attribute=$node.object.data_map.page}
     </div>
-    
-    {* TEMP *}
-    {if $children|count()}
-    <ul>
-    {foreach $children as $child_item}
-    <li><a href={$child_item.url_alias|ezurl}>{$child_item.name|wash()}</a></li>
-    {/foreach}
-    </ul>
-    {/if}
 </div>

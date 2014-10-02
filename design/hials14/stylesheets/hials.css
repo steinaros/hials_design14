@@ -309,6 +309,11 @@ blockquote p:after {
     border-left: 7.5px solid #f1f1f1;
 }
 
+.content-view-full.class-hials_portal_page .intro {
+    padding-bottom: 2em;
+}
+
+
 @media (min-width: 768px) {
     .container-sm-height {
         display:table;
