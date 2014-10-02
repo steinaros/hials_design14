@@ -102,8 +102,6 @@ Pagedata:
 {/cache-block}
 
 {* This comment will be replaced with actual debug report (if debug is on). *}
-<div class="container">
 <!--DEBUG_REPORT-->
-</div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 	{if $node.data_map.image.has_content}
     {attribute_view_gui image_class=articleimage attribute=$node.data_map.image css_class='img-responsive'}
 	{/if}
-    {if eq($node.parent.class_identifier,'hials_avdeling')}{$node.parent.data_map.name.content|wash()}{/if}
+    {if eq($node.parent.class_identifier,'hials_avdeling')}{$node.parent.data_map.name.content|trim|wash}{/if}
     <h2 class="media-heading"><a href="{$node.url_alias|ezurl( 'no' )}" class="teaser-link">{$node.data_map.title.content|wash()}</a></h2>
     {if $node.data_map.intro.content.is_empty|not}
     <div class="attribute-intro">

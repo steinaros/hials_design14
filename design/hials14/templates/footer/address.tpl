@@ -8,11 +8,11 @@
 		    </p>
 	    </div>
 	    <div class="col-sm-4 col-sm-height col-bottom">
-            <p>Besøk- og leveringsadresse: <i class="fa fa-map-marker fa-2x" style="color:#851348;"></i><span class="p-street-address"><a href="https://www.google.no/maps/place/Larsgårdsvegen+2,+6009+Ålesund">Larsgårdsveien 2</a></span></p> 
+            <p><label>Besøk- og leveringsadresse:</label> <i class="fa fa-map-marker fa-2x" style="color:#851348;"></i>&nbsp;<span class="p-street-address"><a href="https://www.google.no/maps/place/Larsgårdsvegen+2,+6009+Ålesund">Larsgårdsveien 2</a></span></p> 
 	    </div>
 	    <div class="col-sm-4 col-sm-height col-bottom">
-	        <p>Tlf. <span class="p-tel">+47 70 16 12 00</span></p>
-	        <p>Fax. <span>+47 70 16 13 00</span></p>
+	        <p><label>Tel:</label> <span class="p-tel">+47&nbsp;70&nbsp;16&nbsp;12&nbsp;00</span></p>
+	        <p><label>Fax:</label> <span>+47&nbsp;70&nbsp;16&nbsp;13&nbsp;00</span></p>
 	        <p class="u-email"><a href="mailto:postmottak@hials.no">postmottak@hials.no</a></p>
 	    </div>
     </div>

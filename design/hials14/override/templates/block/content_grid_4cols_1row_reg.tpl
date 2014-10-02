@@ -1,5 +1,5 @@
 {def $valid_nodes = $block.valid_nodes}
-{def $cell_class = 'col-sm-3 boks col-sm-height'}
+{def $cell_class = 'col-sm-3 boks col-sm-height nopadding'}
 {def $ant_bokser = 0}
 {def $manglende_bokser = 0}
 
