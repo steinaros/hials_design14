@@ -1,6 +1,6 @@
 <div class="container-sm-height colspacing">
     <div class="row-sm-height">
-        <div class="col-sm-6 col-sm-height nopadding{/if}">
+        <div class="col-sm-6 col-sm-height nopadding">
 		{if $node.data_map.image.has_content}
 		    <a href="{$node.url_alias|ezurl( 'no' )}">
 		        {attribute_view_gui css_class='img-responsive' image_class=banner_half attribute=$node.data_map.image}
