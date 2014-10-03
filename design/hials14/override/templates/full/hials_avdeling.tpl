@@ -8,7 +8,7 @@
                                           sort_by, $node.sort_array ) )
      $projects=fetch( content, list, hash( parent_node_id, $node.node_id,
                                           class_filter_type, include,
-                                          class_filter_array, array( 'hials_forskingsprosjekt'),
+                                          class_filter_array, array( 'hials_forskningsprosjekt' ),
                                           sort_by, $node.sort_array ) )}
                                           
 {def $extra_class = ""}                                          
