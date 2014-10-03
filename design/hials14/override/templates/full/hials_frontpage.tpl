@@ -63,7 +63,7 @@
         </div>
     </div>
 </div>
-<section id=news class="row bg-white">
+<div id=news class="row bg-white">
     <p class="h1 front">Nyheter</p>
     <div class="row">
 	    <div class="container-sm-height colspacing">
@@ -96,4 +96,4 @@
 	        </div>
         </div>
     </div>
-</section>
+</div>
