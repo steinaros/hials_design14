@@ -7,7 +7,7 @@
 		    </a>
 		{/if}
         </div>
-        <div class="col-sm-6 col-sm-height nopadding">
+        <div class="col-sm-6 col-sm-height nopadding col-top">
 		    {if eq($node.parent.class_identifier,'hials_avdeling')}{$node.parent.data_map.name.content|wash()}{/if}
 		    <h2><a href="{$node.url_alias|ezurl( 'no' )}">{$node.data_map.title.content|wash()}</a></h2>
 		    {if $node.data_map.intro.content.is_empty|not}
