@@ -24,6 +24,10 @@
             <translation>Undersider</translation>
         </message>
         <message>
+            <source>Projects</source>
+            <translation>Prosjekter</translation>
+        </message>      
+        <message>
             <source>Directly to</source>
             <translation>Direkte til</translation>
         </message>
