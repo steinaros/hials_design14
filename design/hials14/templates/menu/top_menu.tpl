@@ -37,7 +37,7 @@
 		{if eq( $item.class_identifier, 'link')}
 		<li id="node_id_{$item.node_id}"{if $item_class} class="{$item_class|implode(" ")}"{/if}><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.data_map.location.content|ezurl}{if and( is_set( $item.data_map.open_in_new_window ), $item.data_map.open_in_new_window.data_int )} target="_blank"{/if}{/if}{if $pagedata.is_edit} onclick="return false;"{/if} title="{$item.data_map.location.data_text|wash}" class="menu-item-link" rel={$item.url_alias|ezurl}>{if $item.data_map.location.data_text}{$item.data_map.location.data_text|wash()}{else}{$item.name|wash()}{/if}</a></li>
 		{else}
-		<li id="node_id_{$item.node_id}"{if $item_class} class="{$item_class|implode(" ")}"{/if}><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}{if $pagedata.is_edit} onclick="return false;"{/if}{if $sub_items_count} data-target="#" data-toggle="dropdown" class="dropdown-toggle"{/if}>{$item.name|wash()}</a>
+		<li id="node_id_{$item.node_id}"{if $item_class} class="{$item_class|implode(" ")}"{/if}><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}{if $pagedata.is_edit} onclick="return false;"{/if}{if $level2_items_count} data-target="#" data-toggle="dropdown" class="dropdown-toggle"{/if}>{$item.name|wash()}</a>
 		    {if and($level2_items_count,ne($item.node_id, $UTDANNING_node_id))}
 		        <ul class="dropdown-menu">
 		            <li><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}>{'Directly to'|i18n('hials/design/std')} {$item.name|wash()}</a></li>
@@ -46,7 +46,7 @@
 		                    <ul class="submenu">
 		                        <li class="submenuhead"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $level2item.node_id)|ezurl}{else}{$level2item.url_alias|ezurl}{/if}>{$level2item.name|wash()}</a></li>
 		                    {set $level3_items = fetch( 'content', 'list', hash( 'parent_node_id', $level2item.node_id,
-			                                              'sort_by', $item.sort_array,
+			                                              'sort_by', $level2item.sort_array,
 			                                              'class_filter_type', 'include',
 			                                              'class_filter_array', $top_menu_class_filter ) )
 			 					 $level3_items_count = $level3_items|count()}
