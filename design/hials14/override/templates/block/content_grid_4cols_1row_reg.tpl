@@ -5,7 +5,7 @@
 
 <div class="block-type-content-grid block-view-{$block.view}">
     <div class="container-sm-height colspacing">
-        <div class="row-sm-height">
+        <div class="row-sm-height rowspacing">
 	    {foreach $valid_nodes as $valid_node max 4}
 	        {node_view_gui view='block_item' image_class='contentgrid' content_node=$valid_node container_node=$container_node css_class=$cell_class}
 	    {/foreach}

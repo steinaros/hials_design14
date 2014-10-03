@@ -268,6 +268,10 @@ blockquote p:after {
 	border-spacing: 15px 0;
 }
 
+.rowspacing {
+	padding-top: 15px;
+}
+
 /* columns of same height styles */
 
 .container-xs-height {
@@ -287,7 +291,7 @@ blockquote p:after {
 
 .highlighted {
 	padding-top: 15px;
-	padding-bottom: 15px;
+	/*padding-bottom: 15px;*/
 }
 /*
 .highlighted .media-body {
@@ -301,6 +305,15 @@ blockquote p:after {
 	color: #5B5755;
 	margin-top: 10px;
 	margin-bottom: 10px;
+}
+
+h2.teaser-title, h2.teaser-title a {
+    text-transform: none;
+    color: #5B5755;
+}
+
+.teaser-image {
+	margin-bottom: 15px;
 }
 
 .wrapper .col-xs-6:first-child {
