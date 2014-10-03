@@ -414,7 +414,7 @@ article.headline h2.teaser-title {
 .frontbanner figcaption {
     float: left;
     position: absolute;
-    z-index: 1000;
+    z-index: 2;
     top: 10%;
     font-size: 36px;
     color: #fff;
