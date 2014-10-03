@@ -23,12 +23,12 @@
 	    <aside class="col-sm-6 col-left">
 	        {attribute_view_gui attribute=$node.data_map.image image_class=banner_half css_class=img-responsive}
 	        {if $children|count()}
-	        {include uri='design:parts/leftmenu_subitems.tpl' subitems=$children}
+	        {include uri='design:menu/leftmenu_subitems.tpl' subitems=$children}
 	        {/if}
 	    </aside>
 	    {elseif $children|count()}
 	    <aside class="col-sm-3 col-left">
-	       {include uri='designmenu/leftmenu_subitems.tpll' subitems=$children}
+	       {include uri='design:menu/leftmenu_subitems.tpll' subitems=$children}
 	    </aside>
 	    {else}
 	        {set $extra_class = "col-sm-offset-3"}

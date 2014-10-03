@@ -3,11 +3,15 @@
     {include uri='design:page_header_links.tpl'}
     </section>
     
-    <section class="row navibar yamm">
-    {include uri='design:page_header_logo.tpl'}
-    
-    {include uri='design:menu/top_menu.tpl'}
-    </section>
+    <nav id="mainnav" role="navigation" class="row">
+        <div class="navbar navbar-hials yamm" id="myDropdown">
+            <div class="navbar-header">
+                <button type="button" data-toggle="collapse" data-target="#navbar-collapse-grid" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><i class="fa fa-bars fa-2x"></i></button>         
+                {include uri='design:page_header_logo.tpl'}
+            </div>
+            {include uri='design:menu/top_menu.tpl'}
+        </div>
+    </nav>
 {*
     <div class="container">
         <nav class="navbar navbar-default" role="navigation" id="hials-extranav">
