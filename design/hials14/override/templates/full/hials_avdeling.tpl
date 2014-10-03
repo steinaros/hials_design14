@@ -7,38 +7,17 @@
                                           sort_by, $node.sort_array ) )}
 {def $extra_class = ""}                                          
 <section class="content-view-full">
-{*
-    {if $node.data_map.bokser.has_content}
-    <aside>
-        <div class="attribute-bokser">
-            {attribute_view_gui attribute=$node.data_map.bokser container_node=$node}
-        </div>
-    </aside>
-    {/if}
-    {if ne($node.data_map.banner.content.relation_list|count(),0)}
-    <div class="attribute-banner row equal">{attribute_view_gui attribute=$node.data_map.banner}</div>
-    {/if} *}
     <div class="row">
 	    {if $node.data_map.image.has_content}
 	    <aside class="col-sm-6 col-left">
 	        {attribute_view_gui attribute=$node.data_map.image image_class=banner_half css_class=img-responsive}
 	        {if $children|count()}
-	        <h3>Undersider</h3>
-	        <ul>
-	        {foreach $children as $child_item}
-	        <li><a href={$child_item.url_alias|ezurl}>{$child_item.name|wash()}</a></li>
-	        {/foreach}
-	        </ul>
+            {include uri='design:parts/leftmenu_subitems.tpl' subitems=$children}
 	        {/if}
 	    </aside>
 	    {elseif $children|count()}
 	    <aside class="col-sm-3 col-left">
-	        <h3>Undersider</h3>
-	        <ul>
-	        {foreach $children as $child_item}
-	        <li><a href={$child_item.url_alias|ezurl}>{$child_item.name|wash()}</a></li>
-	        {/foreach}
-	        </ul>
+            {include uri='design:parts/leftmenu_subitems.tpl' subitems=$children}
 	    </aside>
 	    {else}
 	        {set $extra_class = "col-sm-offset-3"}
