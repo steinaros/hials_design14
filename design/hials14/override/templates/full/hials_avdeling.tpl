@@ -1,10 +1,16 @@
 {* Avdeling - Full view *}
 {set scope=global persistent_variable=hash('left_menu', false(),
                                            'extra_menu', false())}
-{def $children=fetch( content, list, hash( parent_node_id, $node.node_id,
+{def $leftmenu_class_filter = ezini( 'MenuContentSettings', 'LeftIdentifierList', 'menu.ini' ) 
+     $children=fetch( content, list, hash( parent_node_id, $node.node_id,
                                           class_filter_type, include,
-                                          class_filter_array, array( 'hials_forskningsprosjekt' ),
+                                          class_filter_array, $leftmenu_class_filter,
+                                          sort_by, $node.sort_array ) )
+     $projects=fetch( content, list, hash( parent_node_id, $node.node_id,
+                                          class_filter_type, include,
+                                          class_filter_array, array( 'hials_forskingsprosjekt'),
                                           sort_by, $node.sort_array ) )}
+                                          
 {def $extra_class = ""}                                          
 <section class="content-view-full">
     <div class="row">
@@ -14,10 +20,18 @@
 	        {if $children|count()}
             {include uri='design:parts/leftmenu_subitems.tpl' subitems=$children}
 	        {/if}
+            {if $projects|count()}
+            {include uri='design:parts/leftmenu_subitems.tpl' subitems=$projects title='Projects'}
+            {/if}       
 	    </aside>
-	    {elseif $children|count()}
+	    {elseif or($children|count(), $projects|count())}
 	    <aside class="col-sm-3 col-left">
+            {if $children|count()}
             {include uri='design:parts/leftmenu_subitems.tpl' subitems=$children}
+            {/if}
+            {if $projects|count()}
+            {include uri='design:parts/leftmenu_subitems.tpl' subitems=$projects title='Projects'}
+            {/if}       
 	    </aside>
 	    {else}
 	        {set $extra_class = "col-sm-offset-3"}
@@ -40,3 +54,4 @@
 	    </article>
 	</div>
 </section>
+{undef $leftmenu_class_filter $children $extra_class}
