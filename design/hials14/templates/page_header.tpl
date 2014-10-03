@@ -1,7 +1,7 @@
 <header role="banner">
-    <section id="quicklinks" class="row hidden-xs">
+    <div id="quicklinks" class="row hidden-xs">
     {include uri='design:page_header_links.tpl'}
-    </section>
+    </div>
     
     <nav id="mainnav" role="navigation" class="row">
         <div class="navbar navbar-hials yamm" id="myDropdown">

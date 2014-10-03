@@ -65,8 +65,6 @@
 		{/if}
 	{/foreach}
     </ul>
-
-
 </div>
 {/if}
 {undef $sub_items $root_node $top_menu_items $item_class $top_menu_items_count $current_node_in_path $current_node_in_path_2 $UTDANNING_node_id $sub_items_count}
