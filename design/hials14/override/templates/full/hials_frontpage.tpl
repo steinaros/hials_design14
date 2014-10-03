@@ -6,23 +6,23 @@
                 <h2 class="front">Kalender</h2>
                 <dl>
                     <dt>
-                        <time>07.04.14</time>
+                        <time datetime="2014-04-07">07.04.14</time>
                     </dt>
                     <dd>Valg i studentparlamentet</dd>
                     <dt>
-                        <time>08.04.14</time>
+                        <time datetime="2014-04-08">08.04.14</time>
                     </dt>
                     <dd>Kurs: Marine lipider</dd>
                     <dt>
-                        <time>08.04.14</time>
+                        <time datetime="2014-04-08">08.04.14</time>
                     </dt>
                     <dd>Møte i <abbr title="Hva står AMU for?">AMU</abbr></dd>
                     <dt>
-                        <time>08.04.14</time>
+                        <time datetime="2014-04-08">08.04.14</time>
                     </dt>
                     <dd>Kurs: Marine lipider</dd>
                     <dt>
-                        <time>08.04.14</time>
+                        <time datetime="2014-04-08">08.04.14</time>
                     </dt>
                     <dd>Møte i <abbr title="Hva står AMU for?">AMU</abbr></dd>
                 </dl>
