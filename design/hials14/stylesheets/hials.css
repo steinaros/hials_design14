@@ -446,3 +446,25 @@ footer {
 footer .h-card p {
 	margin: 0;
 }
+
+
+/* FORSIDE */
+
+.h1.front {
+    font-weight: 900;
+}
+
+.toolmenu {
+    list-style-type:none;
+    padding-left:0;
+}
+
+article.headline {
+    border-bottom: 1px solid #5B5755;
+}
+
+article.headline h2.teaser-title {
+    font-size: 28px;
+}
+
+/***********************************/
