@@ -28,7 +28,7 @@
 	    </aside>
 	    {elseif $children|count()}
 	    <aside class="col-sm-3 col-left">
-	       {include uri='design:parts/leftmenu_subitems.tpl' subitems=$children}
+	       {include uri='designmenu/leftmenu_subitems.tpll' subitems=$children}
 	    </aside>
 	    {else}
 	        {set $extra_class = "col-sm-offset-3"}

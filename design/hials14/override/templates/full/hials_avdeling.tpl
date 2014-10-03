@@ -18,19 +18,19 @@
 	    <aside class="col-sm-6 col-left">
 	        {attribute_view_gui attribute=$node.data_map.image image_class=banner_half css_class=img-responsive}
 	        {if $children|count()}
-            {include uri='design:parts/leftmenu_subitems.tpl' subitems=$children}
+            {include uri='design:menu/leftmenu_subitems.tpl' subitems=$children}
 	        {/if}
             {if $projects|count()}
-            {include uri='design:parts/leftmenu_subitems.tpl' subitems=$projects title='Projects'}
+            {include uri='design:menu/leftmenu_subitems.tpl' subitems=$projects title='Projects'}
             {/if}       
 	    </aside>
 	    {elseif or($children|count(), $projects|count())}
 	    <aside class="col-sm-3 col-left">
             {if $children|count()}
-            {include uri='design:parts/leftmenu_subitems.tpl' subitems=$children}
+            {include uri='design:menu/leftmenu_subitems.tpl' subitems=$children}
             {/if}
             {if $projects|count()}
-            {include uri='design:parts/leftmenu_subitems.tpl' subitems=$projects title='Projects'}
+            {include uri='design:menu/leftmenu_subitems.tpl' subitems=$projects title='Projects'}
             {/if}       
 	    </aside>
 	    {else}

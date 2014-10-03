@@ -1,7 +1,17 @@
 <div class="row">
     <div class="container-sm-height colspacing">
         <div class="row-sm-height">
-            <div class="col-sm-9 col-sm-height nopadding"> <img src="{"tmp-frontpage/img1.jpg"|ezimage('no')}" alt="Studenter" class="img-responsive"> </div>
+            <div class="col-sm-9 col-sm-height nopadding"><figure><img src="{"tmp-frontpage/OKADM_crop.jpg"|ezimage('no')}" alt="Studenter" class="img-responsive"><figcaption style="
+    float: left;
+    position: absolute;
+    z-index: 1000;
+    top: 10%;
+    font-size: 36px;
+    color: #fff;
+    font-weight: 900;
+    text-transform: uppercase;
+    left: 10%;
+">#hialsmoments</figcaption></figure></div>
             <div class="col-sm-3 col-sm-height bg-gray col-top boks">
                 <h2 class="front">Kalender</h2>
                 <dl>
