@@ -1,27 +1,17 @@
 <?php /*
 
 [MenuContentSettings]
-TopIdentifierList[]=folder
-#TopIdentifierList[]=feedback_form
-#TopIdentifierList[]=gallery
-#TopIdentifierList[]=forum
-#TopIdentifierList[]=wiki_page
-#TopIdentifierList[]=forums
-#TopIdentifierList[]=event_calendar
+TopIdentifierList[]=event_calendar
 TopIdentifierList[]=link
-#TopIdentifierList[]=blog
+TopIdentifierList[]=hials_portal_page
 TopIdentifierList[]=landing_page
+TopIdentifierList[]=hials_avdeling
+TopIdentifierList[]=hials_contentpage
 
-LeftIdentifierList[]=folder
-LeftIdentifierList[]=feedback_form
-LeftIdentifierList[]=gallery
-LeftIdentifierList[]=forum
-LeftIdentifierList[]=wiki_page
-LeftIdentifierList[]=forums
-LeftIdentifierList[]=event_calendar
-LeftIdentifierList[]=link
-LeftIdentifierList[]=blog
+LeftIdentifierList[]=hials_portal_page
 LeftIdentifierList[]=landing_page
+LeftIdentifierList[]=hials_contentpage
+LeftIdentifierList[]=hials_nyhetsmappe
 
 RightIdentifierList[]=folder
 RightIdentifierList[]=feedback_form
