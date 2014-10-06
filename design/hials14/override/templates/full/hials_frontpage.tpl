@@ -77,12 +77,8 @@
 	                </article>
                     <div class="row">
 		                <article class="col-sm-6">
-		                    <h2 class="teaser-title">Fortsatt campus ålesund i 2020</h2>
-		                    <p>24.06.14. Høgskolen i Ålesund kan komme til
-		                        å bli tettere integrert eller fusjonert med andre
-		                        utdanningsinstitusjoner innen 2020. Noen
-		                        alternativ kan være Høgskolen i Molde, eller
-		                        NTNU i Trondheim.</p>
+		                    <h2 class="teaser-title"><a href="{'/Hoegskolen/Aktuelt/Nyhetsarkiv/2014/Campus-uka-2014'|ezurl( 'no' )">Campus-uka 2014</a></h2>
+		                    <p>19.09.14. Campus-uka sparkes i gang mandag 22. september med tidenes første drive-in kino i Ålesund. Det blir også Ocean Talent Camp og Forskningsdager, for å nevne noe. Flere tusen besøkende er ventet til campus i løpet av uka.</p>
 		                </article>
 		                <article class="col-sm-6">
 		                    <h2 class="teaser-title">Ny professor på helsefag overskrift over to linjer</h2>
