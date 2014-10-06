@@ -77,7 +77,7 @@
 	                </article>
                     <div class="row">
 		                <article class="col-sm-6">
-		                    <h2 class="teaser-title"><a href="{'/Hoegskolen/Aktuelt/Nyhetsarkiv/2014/Campus-uka-2014'|ezurl( 'no' )">Campus-uka 2014</a></h2>
+		                    <h2 class="teaser-title"><a href="{'/Hoegskolen/Aktuelt/Nyhetsarkiv/2014/Campus-uka-2014'|ezurl( 'no' )}">Campus-uka 2014</a></h2>
 		                    <p>19.09.14. Campus-uka sparkes i gang mandag 22. september med tidenes første drive-in kino i Ålesund. Det blir også Ocean Talent Camp og Forskningsdager, for å nevne noe. Flere tusen besøkende er ventet til campus i løpet av uka.</p>
 		                </article>
 		                <article class="col-sm-6">
