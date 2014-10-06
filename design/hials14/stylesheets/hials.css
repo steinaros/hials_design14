@@ -499,3 +499,34 @@ ul.submenu {
 .submenu > li > a {
     color: #5B5755;
 }
+
+/**************************************************/
+
+/* TABLE ******************************************/
+
+table.default {
+	background-color: #808080;
+	color: #000;
+}
+
+table.default td, table.default th {
+	padding: 0.5em;
+	border-left: 2px solid #f1f1f1;
+	border-right: 2px solid #f1f1f1;
+} 
+
+table.default th[scope=row] {
+	border-bottom: 2px solid #f1f1f1;
+	border-left: none;
+	border-right: none;
+}
+
+table.default td:first-child {
+	border-left: none;
+}
+
+table.default td:last-child {
+    border-right: none;
+}
+
+/*************************************************/
