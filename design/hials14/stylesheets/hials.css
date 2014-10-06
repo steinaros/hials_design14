@@ -519,6 +519,7 @@ table.default th[scope=row] {
 	border-bottom: 2px solid #f1f1f1;
 	border-left: none;
 	border-right: none;
+	text-transform: uppercase;
 }
 
 table.default td:first-child {
