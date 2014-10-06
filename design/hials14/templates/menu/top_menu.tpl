@@ -7,24 +7,22 @@
                                                        'class_filter_array', $top_menu_class_filter ) )
      $top_menu_items_count = $top_menu_items|count()
      $item_class = array()
-     $sub_items = 0
-     $sub_items_count = 0
-     $current_node_in_path = first_set($pagedata.path_array[1].node_id, 0  )
-     $current_node_in_path_2 = first_set($pagedata.path_array[2].node_id, 0  )
+     $level2_items = 0
+     $level2_items_count = 0
+     $level3_items = 0
+     $level3_items_count = 0
      $UTDANNING_node_id = 65} {* Utdanning submenu needs special treatment *}
-<!-- {$top_menu_class_filter|attribute('show',2,'text')} -->
 {if $top_menu_items_count}
 <div id="navbar-collapse-grid" class="navbar-collapse collapse">     
     <ul class="nav navbar-nav">
     {foreach $top_menu_items as $key => $item}
 		{set $item_class = array()
-			 $sub_items = fetch( 'content', 'tree', hash( 'parent_node_id', $item.node_id,
+			 $level2_items = fetch( 'content', 'list', hash( 'parent_node_id', $item.node_id,
 			                                              'sort_by', $item.sort_array,
-			                                              'depth', 1,
 			                                              'class_filter_type', 'include',
 			                                              'class_filter_array', $top_menu_class_filter ) )
-			 $sub_items_count = $sub_items|count()}
-        {if $sub_items_count|ne(0)}
+			 $level2_items_count = $level2_items|count()}
+        {if $level2_items_count|ne(0)}
             {set $item_class = $item_class|append("dropdown yamm-fw")}
         {/if}					 
 		{if $key|eq(0)}
@@ -39,17 +37,22 @@
 		{if eq( $item.class_identifier, 'link')}
 		<li id="node_id_{$item.node_id}"{if $item_class} class="{$item_class|implode(" ")}"{/if}><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.data_map.location.content|ezurl}{if and( is_set( $item.data_map.open_in_new_window ), $item.data_map.open_in_new_window.data_int )} target="_blank"{/if}{/if}{if $pagedata.is_edit} onclick="return false;"{/if} title="{$item.data_map.location.data_text|wash}" class="menu-item-link" rel={$item.url_alias|ezurl}>{if $item.data_map.location.data_text}{$item.data_map.location.data_text|wash()}{else}{$item.name|wash()}{/if}</a></li>
 		{else}
-		<li id="node_id_{$item.node_id}"{if $item_class} class="{$item_class|implode(" ")}"{/if}><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}{if $pagedata.is_edit} onclick="return false;"{/if}{if $sub_items_count} data-target="#" data-toggle="dropdown" class="dropdown-toggle"{/if}>{$item.name|wash()}</a>
-		    {if and($sub_items_count,ne($item.node_id, $UTDANNING_node_id))}
+		<li id="node_id_{$item.node_id}"{if $item_class} class="{$item_class|implode(" ")}"{/if}><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}{if $pagedata.is_edit} onclick="return false;"{/if}{if $level2_items_count} data-target="#" data-toggle="dropdown" class="dropdown-toggle"{/if}>{$item.name|wash()}</a>
+		    {if and($level2_items_count,ne($item.node_id, $UTDANNING_node_id))}
 		        <ul class="dropdown-menu">
 		            <li><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}>{'Directly to'|i18n('hials/design/std')} {$item.name|wash()}</a></li>
-		            <li><div class="row">{foreach $sub_items as $subkey => $subitem}
-		                <div class="{if $subkey|eq(0)}col-sm-offset-2 col-sm-2{else}col-sm-2{/if}">
+		            <li><div class="row">{foreach $level2_items as $level2key => $level2item}
+		                <div class="{if $level2key|eq(0)}col-sm-offset-2 col-sm-2{else}col-sm-2{/if}">
 		                    <ul class="submenu">
-		                        <li class="submenuhead"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $subitem.node_id)|ezurl}{else}{$subitem.url_alias|ezurl}{/if}>{$subitem.name|wash()}</a></li>
-                            {if $subitem.children|count()}
-                                {foreach $subitem.children as $sub2key => $sub2item}
-                                    <li><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $sub2item.node_id)|ezurl}{else}{$sub2item.url_alias|ezurl}{/if}>{$sub2item.name|wash()}</a></li>
+		                        <li class="submenuhead"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $level2item.node_id)|ezurl}{else}{$level2item.url_alias|ezurl}{/if}>{$level2item.name|wash()}</a></li>
+		                    {set $level3_items = fetch( 'content', 'list', hash( 'parent_node_id', $level2item.node_id,
+			                                              'sort_by', $level2item.sort_array,
+			                                              'class_filter_type', 'include',
+			                                              'class_filter_array', $top_menu_class_filter ) )
+			 					 $level3_items_count = $level3_items|count()}
+                            {if $level3_items_count}
+                                {foreach $level3_items as $level3key => $level3item}
+                                    <li><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $level3item.node_id)|ezurl}{else}{$level3item.url_alias|ezurl}{/if}>{$level3item.name|wash()}</a></li>
                                 {/foreach}
                             {/if}
                             </ul>
@@ -67,5 +70,5 @@
     </ul>
 </div>
 {/if}
-{undef $sub_items $root_node $top_menu_items $item_class $top_menu_items_count $current_node_in_path $current_node_in_path_2 $UTDANNING_node_id $sub_items_count}
+{undef $level2_items $level2_items_count $level3_items $level3_items_count $root_node $top_menu_items $item_class $top_menu_items_count $UTDANNING_node_id}
 <!-- Top menu content: END -->
