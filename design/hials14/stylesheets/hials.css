@@ -485,6 +485,10 @@ form.dropdown-menu {
     border-radius: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
+    -webkit-transition: margin-top 0.5s linear;
+    -moz-transiton: margin-top 0.5s linear;
+    -o-transiton: margin-top 0.5s linear;
+    transition: margin-top 0.5s linear;
 }
 
 ul.submenu {
