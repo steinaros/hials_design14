@@ -523,8 +523,8 @@ table.default {
 
 table.default td, table.default th {
 	padding: 0.5em;
-	border-left: 2px solid transparent;
-	border-right: 2px solid transparent;
+	border-left: 2px solid #f1f1f1;
+	border-right: 2px solid #f1f1f1;
 } 
 
 table.default th[scope=row] {
