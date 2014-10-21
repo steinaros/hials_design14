@@ -473,8 +473,8 @@ form.dropdown-menu {
         padding-top: 20px;
         padding-bottom: 10px;
     }
-	
-	.navbar-nav > li > a {
+    
+    .navbar-nav > li > a {
         padding-top: 10px;
         padding-bottom: 10px;
     }
@@ -485,6 +485,18 @@ form.dropdown-menu {
     border: none;
     border-radius: 0;
     margin-bottom: 0;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    font-size: 14px;
+}
+
+.navbar-hials .nav > li a {
+    color: #4d4d4d;
+}
+
+.navbar-hials .nav > li > a:hover, .navbar-hials .nav > li > a:focus {
+    background-color: #4d4d4d;
+    color: #fff;
 }
 
 .dropdown-menu {
@@ -499,6 +511,10 @@ form.dropdown-menu {
     transition: margin-top 0.5s linear;
 }
 
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: #4d4d4d;
+}
+
 ul.submenu {
     list-style-type: none;
     padding-left: 0;
@@ -509,10 +525,29 @@ ul.submenu {
 }
 
 .submenu > li > a {
-    color: #5B5755;
+    color: #4d4d4d;
 }
 
-/**************************************************/
+@media (max-width: 768px) {
+
+    .submenu > li > a {
+        padding: 10px 10px;
+        line-height: 20px;
+        display: block;
+        border-left: 5px solid #4d4d4d;
+    }
+    
+    .submenu > li:last-child {
+        border-bottom: 1px solid #4d4d4d;
+    }
+    
+    .submenu > li > a:hover, .submenu > li > a:focus {
+        background-color: #4d4d4d;
+        color: #fff;
+        border-left: 5px solid #f1f1f1;
+        text-decoration: none;
+    }    
+}
 
 /* TABLE ******************************************/
 

@@ -40,8 +40,8 @@
 		<li id="node_id_{$item.node_id}"{if $item_class} class="{$item_class|implode(" ")}"{/if}><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}{if $pagedata.is_edit} onclick="return false;"{/if}{if $level2_items_count} data-target="#" data-toggle="dropdown" class="dropdown-toggle"{/if}>{$item.name|wash()}</a>
 		    {if and($level2_items_count,ne($item.node_id, $UTDANNING_node_id))}
 		        <ul class="dropdown-menu">
-		            <li><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}>{'Directly to'|i18n('hials/design/std')} {$item.name|wash()}</a></li>
-		            <li><div class="row">{foreach $level2_items as $level2key => $level2item}
+		            <li class="directToMenu"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}>{'Directly to'|i18n('hials/design/std')} {$item.name|wash()}</a></li>
+		            <li>{foreach $level2_items as $level2key => $level2item}
 		                <div class="{if $level2key|eq(0)}col-sm-offset-2 col-sm-2{else}col-sm-2{/if}">
 		                    <ul class="submenu">
 		                        <li class="submenuhead"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $level2item.node_id)|ezurl}{else}{$level2item.url_alias|ezurl}{/if}>{$level2item.name|wash()}</a></li>
@@ -56,7 +56,6 @@
                                 {/foreach}
                             {/if}
                             </ul>
-                        </div>
 		            {/foreach}</div></li>
 		        </ul>
 		    {elseif ne($item.node_id, $UTDANNING_node_id)}
