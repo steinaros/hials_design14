@@ -9,7 +9,7 @@
 	        {set $color_selection = $node.data_map.boxcolor.content.0}
 	        {switch match=$color_selection}
 	        {case match=0}{set $color_class='bg-white'}{/case}
-	        {case match=1}{set $color_class='bg-gray'}{/case}
+	        {case match=1}{set $color_class='bg-darkgray'}{/case}
 	        {case match=2}{set $color_class='bg-red'}{/case}
 	        {case match=3}{set $color_class='bg-yellow'}{/case}
 	        {/switch}

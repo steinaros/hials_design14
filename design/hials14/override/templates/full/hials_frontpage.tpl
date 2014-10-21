@@ -2,7 +2,7 @@
     <div class="container-sm-height colspacing">
         <div class="row-sm-height">
             <div class="col-sm-9 col-sm-height nopadding"><figure class="frontbanner"><img src="{"tmp-frontpage/OKADM_crop.jpg"|ezimage('no')}" alt="Studenter" class="img-responsive"><figcaption>#hialsmoments</figcaption></figure></div>
-            <div class="col-sm-3 col-sm-height bg-gray col-top boks">
+            <div class="col-sm-3 col-sm-height bg-darkgray col-top boks">
                 <h2 class="front">Kalender</h2>
                 <dl>
                     <dt>
