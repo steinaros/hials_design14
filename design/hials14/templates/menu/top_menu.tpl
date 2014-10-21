@@ -56,7 +56,8 @@
                                 {/foreach}
                             {/if}
                             </ul>
-		            {/foreach}</div></li>
+                        </div>
+		            {/foreach}</li>
 		        </ul>
 		    {elseif ne($item.node_id, $UTDANNING_node_id)}
                 <ul class="dropdown-menu">
