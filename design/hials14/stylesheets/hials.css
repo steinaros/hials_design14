@@ -519,6 +519,7 @@ ul.submenu {
 table.default {
 	background-color: #B4B4B4;
 	color: #4d4d4d;
+	width: 100%
 }
 
 table.default td, table.default th {
@@ -527,11 +528,18 @@ table.default td, table.default th {
 	border-right: 2px solid #f1f1f1;
 } 
 
-table.default th[scope=row] {
+table.default th[scope=col] {
 	border-bottom: 2px solid #f1f1f1;
 	border-left: none;
 	border-right: none;
 	text-transform: uppercase;
+}
+
+table.default th[scope=row] {
+    border-right: 2px solid #f1f1f1;
+    border-bottom: none;
+    border-left: none;
+    text-transform: uppercase;
 }
 
 table.default td:first-child {
