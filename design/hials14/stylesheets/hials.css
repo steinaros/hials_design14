@@ -8,6 +8,15 @@ body {
 	background-color: #f1f1f1;
 }
 
+main {
+	padding-top: 15px;
+}
+
+/* no top padding if breadcrumb is showing */
+.breadcrumb-wrapper ~ main {
+	padding-top: 0;
+}
+
 h1, .h1 {
 	color: #7C1850;
 	text-transform: uppercase;
@@ -46,11 +55,6 @@ h4, .h4 {
 	font-size: 36px;
 	font-weight: 500;
 	line-height: 1.1;
-}
-
-.breadcrumb {
-	margin-bottom: 0;
-	background: transparent;
 }
 
 ul.leftmenu {
@@ -589,13 +593,20 @@ table.default td:last-child {
 
 /**** Breadcrumbs ********************************/
 
+.breadcrumb {
+	font-size: 11px;
+	margin-bottom: 0;
+    background: transparent;
+}
+
 .breadcrumb>li+li:before {
 	content: '>';
 }
 
 .breadcrumb > .active {
 	color: #7C1850;
-	text-transform: uppercase; 
+	text-transform: uppercase;
+	font-weight: 700; 
 }
 
 .breadcrumb a {
