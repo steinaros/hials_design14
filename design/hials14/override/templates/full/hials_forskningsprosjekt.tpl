@@ -5,7 +5,7 @@
                                           class_filter_array, $leftmenu_class_filter,
                                           sort_by, $node.sort_array ) )}
 {def $extra_class = ""}
-<section class="content-view-full">
+<div class="content-view-full">
     <div class="row">
 	    {if $node.data_map.image.has_content}
 	    <aside class="col-sm-6 col-left">
@@ -26,17 +26,17 @@
 	        <h2 class="tematitle">{$node.data_map.tema_title.content|wash()}</h2>
 	
 	        {if $node.data_map.intro.content.is_empty|not}
-	        <section class="intro">
+	        <div class="intro">
 	            {attribute_view_gui attribute=$node.data_map.intro}
-	        </section>
+	        </div>
 	        {/if}
 	        {include uri='design:parts/byline.tpl'}
 	        
 	        {if $node.data_map.description.content.is_empty|not}
-	        <section class="bodytext">
+	        <div class="bodytext">
 	            {attribute_view_gui attribute=$node.data_map.description}
-	        </section>
+	        </div>
 	        {/if}
 	    </article>
 	</div>
-</section>
+</div>

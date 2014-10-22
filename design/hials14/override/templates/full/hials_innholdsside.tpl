@@ -7,7 +7,7 @@
                                           class_filter_array, $leftmenu_class_filter,
                                           sort_by, $node.sort_array ) )}
 {def $extra_class = ""}                                          
-<section class="content-view-full">
+<div class="content-view-full">
     {if $node.data_map.bokser.has_content}
     <aside>
         <div class="attribute-bokser">
@@ -33,23 +33,23 @@
 	    {else}
 	        {set $extra_class = "col-sm-offset-3"}
 	    {/if}
-	    <article class="class-hials_innholdsside col-sm-6 col-right {$extra_class}">
+	    <article class="class-hials_innholdsside col-sm-6 col-right {$extra_class}" itemscope itemtype="http://schema.org/Article">
 	        <h1>{$node.data_map.title.content|wash()}</h1>
-	        <h2 class="tematitle">{$node.data_map.tema_title.content|wash()}</h2>
+	        {if $node.data_map.tema_title.content}<h2 class="tematitle">{$node.data_map.tema_title.content|wash()}</h2>{/if}
 	
 	        {if $node.data_map.intro.content.is_empty|not}
-	        <section class="intro">
+	        <div class="intro" itemprop="description">
 	            {attribute_view_gui attribute=$node.data_map.intro}
-	        </section>
+	        </div>
 	        {/if}
 	        {include uri='design:parts/byline.tpl'}
 	        
 	        {if $node.data_map.body.content.is_empty|not}
-	        <section class="bodytext">
+	        <div class="bodytext" itemprop="text">
 	            {attribute_view_gui attribute=$node.data_map.body}
-	        </section>
+	        </div>
 	        {/if}
 	    </article>
 	</div>
-</section>
+</div>
 {undef $leftmenu_class_filter $children $extra_class}

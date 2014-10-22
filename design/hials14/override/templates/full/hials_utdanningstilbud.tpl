@@ -4,28 +4,28 @@
 {def $spesialiseringer = fetch_alias('children', hash( 'parent_node_id', $node.node_id,
                                               'class_filter_type', 'include',
                                               'class_filter_array', array( 'hials_spesialisering' ) ) )}
-<section class="content-view-full">
+<div class="content-view-full">
     {if $node.data_map.banner.has_content}
     <div class="attribute-banner row equal">{attribute_view_gui attribute=$node.data_map.banner}</div>
     {/if}
     
     <div class="row">
-	    <article class="class-hials_utdanningstilbud col-sm-6 col-left">
+	    <article class="class-hials_utdanningstilbud col-sm-6 col-left" itemscope itemtype="http://schema.org/Article">
 	        <h2><span class="utdanningsnivaa">{$node.data_map.nivaa.class_content.options[$node.data_map.nivaa.content[0]].name|wash()}</span>{if eq($node.parent.class_identifier,'hials_fagomrade')} {"in"|i18n('hials/design/utdanning')} <span class="fagomraade">{$node.parent.data_map.name.content|wash()}</span>{/if}</h2>
 	        <h1>{$node.data_map.title.content|wash()}</h1>
 	
 	        {if $node.data_map.intro.content.is_empty|not}
-	        <section class="intro">
+	        <div class="intro">
 	            {attribute_view_gui attribute=$node.data_map.intro}
-	        </section>
+	        </div>
 	        {/if}
 	        
             {include uri='design:parts/byline.tpl'}
             	            
 	        {if $node.data_map.description.content.is_empty|not}
-	        <section class="bodytext">
+	        <div class="bodytext">
 	            {attribute_view_gui attribute=$node.data_map.description}
-	        </section>
+	        </div>
 	        {/if}
 	        
 	        {if $spesialiseringer|count()}
@@ -48,5 +48,5 @@
 	        {/if}
 	    </aside>
     </div>   
-</section>
+</div>
 {undef $spesialieringer}

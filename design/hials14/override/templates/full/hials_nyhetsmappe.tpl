@@ -1,7 +1,7 @@
 {* Nyhetsmappe - Full view *}
 {def $rss_export = fetch( 'rss', 'export_by_node', hash( 'node_id', $node.node_id ) )}
 
-<section class="content-view-full class-hials_nyhetsmapppe">
+<div class="content-view-full class-hials_nyhetsmapppe">
     <div class="row">
         <div class="col-sm-offset-3 col-sm-6">
             {if $rss_export}
@@ -29,7 +29,7 @@
                          view_parameters=$view_parameters
                          item_limit=$page_limit}
 
-                <section class="content-view-children">
+                <div class="content-view-children">
                 {if $children_count}
                     {foreach fetch( 'content', 'tree', hash( 'parent_node_id', $node.node_id,
                                                             'offset', $view_parameters.offset,
@@ -41,7 +41,7 @@
                         {node_view_gui view='line' content_node=$child}
                     {/foreach}
                 {/if}
-                </section>
+                </div>
 
                 {include name=navigator
                          uri='design:navigator/google.tpl'
@@ -77,5 +77,5 @@
             {undef $nyhet_root_node $menu_items $menu_items_count}
         </aside>
     </div>
-</section>
+</div>
 {undef $rss_export}

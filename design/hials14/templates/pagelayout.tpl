@@ -30,6 +30,8 @@
 </head>
 <body>
 <!-- ########### DEBUG ############
+Site:
+{$site|attribute( 'show', 2, 'text')}
 Pagedata:
 {$pagedata|attribute('show', 2, 'text')}
      ######### END DEBUG ##########

@@ -6,9 +6,9 @@
         <div class="col-sm-offset-3 col-sm-6">
             <h1>{$node.data_map.name.content|wash()}</h1>
             {if $node.data_map.intro.content.is_empty|not}
-            <section class="intro">
+            <div class="intro">
                 {attribute_view_gui attribute=$node.data_map.intro}
-            </section>
+            </div>
             {/if}          
         </div>
     </div>

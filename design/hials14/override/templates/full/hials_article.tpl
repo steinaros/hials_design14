@@ -4,7 +4,7 @@
 {else}
     {def $root_node_id = $node.parent_node_id}
 {/if}
-<section class="content-view-full">
+<div class="content-view-full">
     {if $node.data_map.image.has_content}
     <div class="row">
 	    <div class="col-sm-6 col-sm-offset-3 col-left">
@@ -21,19 +21,19 @@
 	        <h1 itemprop="name">{$node.data_map.title.content|wash()}</h1>
 	
 	        {if $node.data_map.intro.content.is_empty|not}
-	        <section class="intro" itemprop="description">
+	        <div class="intro" itemprop="description">
 	            {attribute_view_gui attribute=$node.data_map.intro}
-	        </section>
+	        </div>
 	        {/if}
 	        {include uri='design:parts/byline.tpl'}
 	        
 	        {if $node.data_map.body.content.is_empty|not}
-	        <section class="bodytext" itemprop="text">
+	        <div class="bodytext" itemprop="text">
 	            {attribute_view_gui attribute=$node.data_map.body}
-	        </section>
+	        </div>
 	        {/if}
 	    </article>
 	    {if not($node.data_map.image.has_content)}{include uri='design:parts/latest_news_sidebar.tpl' root_node_id=$root_node_id}{/if}
 	</div>
-</section>
+</div>
 {undef $root_node_id}

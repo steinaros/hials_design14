@@ -1,7 +1,7 @@
 {* Spesialisering - Full view *}
 {set scope=global persistent_variable=hash('left_menu', false(),
                                            'extra_menu', false())}
-<section class="content-view-full">
+<div class="content-view-full">
     <article class="class-hials_spesialisering">
         <h1>{$node.data_map.title.content|wash()}</h1>
 
@@ -15,4 +15,4 @@
         </div>
         {/if}
     </article>
-</section>
+</div>
