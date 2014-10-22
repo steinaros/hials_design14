@@ -34,8 +34,9 @@
     <meta http-equiv="Refresh" content="{$site.redirect.timer}; URL={$site.redirect.location}">
     {/if}
     {foreach $site.http_equiv as $key => $item}
+    {if not($key|compare('content-language'))}
     <meta http-equiv="{$key|wash}" content="{$item|wash}">
-
+    {/if}
     {/foreach}
     {foreach $site.meta as $key => $item}
     {if is_set( $module_result.content_info.persistent_variable[$key] )}<meta name="{$key|wash}" content="{$module_result.content_info.persistent_variable[$key]|wash}">
