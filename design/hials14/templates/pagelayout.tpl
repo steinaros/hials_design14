@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--[if lt IE 9 ]><html class="unsupported-ie ie" lang="{$site.http_equiv.Content-language|wash}"><![endif]-->
-<!--[if IE 9 ]><html class="ie ie9" lang="{$site.http_equiv.Content-language|wash}"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--><html lang="{$site.http_equiv.Content-language|wash}"><!--<![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="{$site.http_equiv.Content-language|wash|explode('-').0}"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="{$site.http_equiv.Content-language|wash|explode('-').0}"><!--<![endif]-->
 <head>
 {def $user_hash = concat( $current_user.role_id_list|implode( ',' ), ',', $current_user.limited_assignment_value_list|implode( ',' ) )}
          

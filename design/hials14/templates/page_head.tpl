@@ -35,8 +35,7 @@
 
     {/if}
     {foreach $site.http_equiv as $key => $item}
-        <meta name="{$key|wash}" content="{$item|wash}">
-
+        <meta http-equiv="{$key|wash}" content="{$item|wash}">
     {/foreach}
     {foreach $site.meta as $key => $item}
     {if is_set( $module_result.content_info.persistent_variable[$key] )}<meta name="{$key|wash}" content="{$module_result.content_info.persistent_variable[$key]|wash}">
