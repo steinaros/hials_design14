@@ -455,11 +455,13 @@ nav#mainnav {
 
 .navbar-brand {
     height: auto;
+    padding-left: 0;
+    padding: 10px 15px;
 }
 
 #logo {
     height: auto;
-    width: 215px;
+    width: 180px;
     margin:0;
 }
 
@@ -473,14 +475,25 @@ form.dropdown-menu {
 }
 
 @media (min-width: 768px) {
-    .navbar-nav {
-        padding-top: 20px;
-        padding-bottom: 10px;
+    .navbar-hials .navbar-nav {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-left: 10%;
     }
     
-    .navbar-nav > li > a {
-        padding-top: 10px;
-        padding-bottom: 10px;
+    .navbar-hials .navbar-nav > li > a {
+        padding-top: 17px;
+        padding-bottom: 17px;
+    }
+    
+    .topmenuitem-wrapper {
+        display:block;
+        padding: 0 15px;
+        border-left: 1px solid #565656;
+    }
+    
+    .navbar-hials .navbar-nav > li:last-child .topmenuitem-wrapper {
+        border-right: 1px solid #565656;
     }
 }
 
@@ -513,6 +526,9 @@ form.dropdown-menu {
     -moz-transiton: margin-top 0.5s linear;
     -o-transiton: margin-top 0.5s linear;
     transition: margin-top 0.5s linear;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: normal;
 }
 
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
