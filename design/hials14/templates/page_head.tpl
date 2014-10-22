@@ -34,7 +34,7 @@
     <meta http-equiv="Refresh" content="{$site.redirect.timer}; URL={$site.redirect.location}">
     {/if}
     {foreach $site.http_equiv as $key => $item}
-    {if not($key|compare('content-language'))}
+    {if not($key|downcase()|compare('content-language'))}
     <meta http-equiv="{$key|wash}" content="{$item|wash}">
     {/if}
     {/foreach}

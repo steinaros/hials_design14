@@ -1,9 +1,9 @@
 {*def $css_class=false()*}
 
 <div class="{$css_class|wash}">
-	<article>
+	<div>
 	    <p class="h3">{$node.name|wash()}</p>
 	    {attribute_view_gui attribute=$node.data_map.contents}
-	</article>
+	</div>
 </div>
 {*undef $css_class*}
