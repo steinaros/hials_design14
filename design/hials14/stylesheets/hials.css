@@ -482,8 +482,7 @@ form.dropdown-menu {
     }
     
     .navbar-hials .navbar-nav > li > a {
-        padding-top: 17px;
-        padding-bottom: 17px;
+        padding: 17px 0;
     }
     
     .topmenuitem-wrapper {
