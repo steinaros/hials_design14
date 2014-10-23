@@ -31,6 +31,14 @@
             <source>Directly to</source>
             <translation>Direkte til</translation>
         </message>
+        <message>
+            <source>Departments</source>
+            <translation>Avdelinger</translation>
+        </message>
+        <message>
+            <source>Department</source>
+            <translation>Avdeling</translation>
+        </message>                
     </context>
     <context>
         <name>hials/design/pagelayout</name>

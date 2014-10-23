@@ -532,10 +532,29 @@ form.dropdown-menu {
     font-weight: 400;
     font-size: 12px;
     letter-spacing: normal;
+    padding: 0;
+}
+
+.dropdown-menu > li > a {
+	text-decoration: none;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+	text-decoration: underline;
+	background-color: transparent;
 }
 
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
     background-color: #565656;
+}
+
+.directToMenu {
+	background-color: #f1f1f1;
+	padding: 5px 0;
+}
+
+.submenuWrapper {
+	padding: 10px 0;
 }
 
 ul.submenu {
