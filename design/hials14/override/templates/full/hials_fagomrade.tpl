@@ -14,22 +14,21 @@
         {/if}
 
         {def $classes = array('hials_utdanningstilbud')
+             $nivaa_sortorder = array( 'master', 'bachelor', 'videreutdanning', 'årsstudium', 'maritime kurs', 'kurs' )
              $children = array()
              $children_count = ''}
 
-        {set $children_count=fetch( 'content', 'list_count', hash( 'parent_node_id', $node.node_id,
-                                                                  'class_filter_type', 'include',
-                                                                  'class_filter_array', $classes ) )}
         <div class="content-view-children">
-            {if $children_count}
+            {foreach $nivaa_sortorder as $nivaa}
+            
                 {foreach fetch( 'content', 'list', hash( 'parent_node_id', $node.node_id,
-                                                        'offset', $view_parameters.offset,
-                                                        'sort_by', $node.sort_array,
-                                                        'class_filter_type', 'include',
-                                                        'class_filter_array', $classes ) ) as $child }
+                                                         'sort_by', $node.sort_array,
+                                                         'class_filter_type', 'include',
+                                                         'class_filter_array', $classes,
+                                                         'attribute_filter', array ( array ( 'hials_utdanningstilbud/nivaa', '=', $nivaa ) ) ) ) as $child }
                     {node_view_gui view='line' content_node=$child fagomrade=$node.data_map.name}
                 {/foreach}
-            {/if}
+            {/foreach}
         </div>
     </div>
 </div>

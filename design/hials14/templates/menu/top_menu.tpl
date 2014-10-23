@@ -18,12 +18,17 @@
 <div id="navbar-collapse-grid" class="navbar-collapse collapse">     
     <ul class="nav navbar-nav">
     {foreach $top_menu_items as $key => $item}
-		{set $item_class = array()
-			 $level2_items = fetch( 'content', 'list', hash( 'parent_node_id', $item.node_id,
+		{set $item_class = array()}
+		{if eq($item.node_id, $UTDANNING_node_id)}
+            {set $level2_items = array()}
+		
+		{else}
+            {set $level2_items = fetch( 'content', 'list', hash( 'parent_node_id', $item.node_id,
 			                                              'sort_by', $item.sort_array,
 			                                              'class_filter_type', 'include',
-			                                              'class_filter_array', $top_menu_class_filter ) )
-			 $level2_items_count = $level2_items|count()}
+			                                              'class_filter_array', $top_menu_class_filter ) )}
+        {/if}
+		{set $level2_items_count = $level2_items|count()}
         {if $level2_items_count|ne(0)}
             {set $item_class = $item_class|append("dropdown yamm-fw")}
         {/if}					 
@@ -49,7 +54,7 @@
                                                                            'class_filter_array', array( 'hials_avdeling' ) ) )}
                         <ul class="dropdown-menu">
                             <li class="directToMenu"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}>{'Directly to'|i18n('hials/design/std')} {$item.name|wash()}</a></li>
-                            <li><div class="submenuWrapper">
+                            <li>
                                 <div class="col-sm-offset-2 col-sm-3">
                                     <ul class="submenu">
                                     <li class="submenuhead">{'Departments'|i18n('hials/design/std')}</li>
@@ -75,20 +80,19 @@
                                     </ul>
                                 </div>                                
                                 {/foreach}
-                            </div></li>
+                            </li>
                         </ul>
                     {/case}
                     {case match=$UTDANNING_node_id}
                         <ul class="dropdown-menu">
                             <li class="directToMenu"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}>{'Directly to'|i18n('hials/design/std')} {$item.name|wash()}</a></li>
-                            <li><div class="submenuWrapper">
-                            </div></li>                            
+                            <li></li>                            
                         </ul>                    
                     {/case}
                     {case}
 				        <ul class="dropdown-menu">
 				            <li class="directToMenu"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}>{'Directly to'|i18n('hials/design/std')} {$item.name|wash()}</a></li>
-				            <li><div class="submenuWrapper">{foreach $level2_items as $level2key => $level2item}
+				            <li>{foreach $level2_items as $level2key => $level2item}
 				                <div class="{if $level2key|eq(0)}col-sm-offset-2 col-sm-2{else}col-sm-2{/if}">
 				                    <ul class="submenu">
 				                        <li class="submenuhead"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $level2item.node_id)|ezurl}{else}{$level2item.url_alias|ezurl}{/if}>{$level2item.name|wash()}</a></li>
@@ -104,7 +108,7 @@
 		                            {/if}
 		                            </ul>
 		                        </div>
-				            {/foreach}</div></li>
+				            {/foreach}</li>
 				        </ul>
 			        {/case}
 		        {/switch}
