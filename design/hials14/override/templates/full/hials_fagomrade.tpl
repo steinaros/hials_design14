@@ -23,7 +23,7 @@
             {foreach $nivaa_sortorder as $nivaa_id}
                 <!-- Listing: {$nivaa_sortorder_name[$nivaa_id]} ({$nivaa_id}) -->            
                 {set $children = fetch( 'content', 'list', hash( 'parent_node_id', $node.node_id,
-                                                         'sort_by', $node.sort_array,
+                                                         'sort_by', array( 'attribute', false(), 317),
                                                          'class_filter_type', 'include',
                                                          'class_filter_array', $classes,
                                                          'attribute_filter', array( array( 325, '=', $nivaa_id ) ) ) )}
