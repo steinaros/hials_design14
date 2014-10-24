@@ -14,7 +14,7 @@
         {/if}
 
         {def $classes = array('hials_utdanningstilbud')
-             $nivaa_sortorder = array( 1, 0, 2, 5, 4, 3)
+             $nivaa_sortorder = array( '1', '0', '2', '5', '4', '3')
              $nivaa_sortorder_name = hash( 1, 'Master', 0, 'Bachelor', 2, 'Videreutdanning', 5, 'Årsstudium', 4, 'Maritime kurs', 3, 'Kurs' )
              $children = array()
              $children_count = ''}
