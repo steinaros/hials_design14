@@ -19,15 +19,6 @@
              $children = array()
              $children_count = ''}
 
-        {set $children = fetch( 'content', 'list', hash( 'parent_node_id', $node.node_id,
-                                                         'attribute_filter', array( array( 'hials_utdanningstilbud/nivaa' , '=', '1' ) ) ) )}
-        <!-- 
-        {foreach $children as $child}
-        {$child.data_map.nivaa|attribute('show', 2, 'text')} 
-        {/foreach}
-        
-        -->
-
         <div class="content-view-children">
             {foreach $nivaa_sortorder as $nivaa_id}
                 <!-- Listing: {$nivaa_sortorder_name[$nivaa_id]} ({$nivaa_id}) -->            
