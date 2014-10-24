@@ -25,7 +25,7 @@
                                                          'class_filter_array', $classes) )}
         <!-- 
         {foreach $children as $child}
-        {$child.data_map|attribute('show', 2, 'text')} 
+        {$child.data_map.nivaa|attribute('show', 2, 'text')} 
         {/foreach}
         
         -->
