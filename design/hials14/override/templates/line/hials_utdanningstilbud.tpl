@@ -11,7 +11,7 @@
     {/if}
 
     <div class="media-body">
-        <h2 class="media-heading"><a href="{$node.url_alias|ezurl( 'no' )}" class="teaser-link">{$node.data_map.title.content|wash()}{if eq($node.parent.class_identifier,'hials_fagomrade')} - {$node.data_map.nivaa.class_content.options[$node.data_map.nivaa.content[0]].name|wash()} {"in"|i18n('hials/design/utdanning')} {$node.parent.data_map.name.content|wash()}{/if}</a></h2>
+        <h3 class="media-heading"><a href="{$node.url_alias|ezurl( 'no' )}" class="teaser-link">{$node.data_map.title.content|wash()}</a></h3>
         {if $node.data_map.intro.content.is_empty|not}
         <div class="attribute-intro">
             {attribute_view_gui attribute=$node.data_map.intro}

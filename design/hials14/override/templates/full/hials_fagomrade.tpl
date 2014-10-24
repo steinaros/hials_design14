@@ -21,7 +21,7 @@
 
         <div class="content-view-children">
             {foreach $nivaa_sortorder as $nivaa_id}
-                <!-- Listing: {$nivaa_sortorder_name[$nivaa_id]} ({$nivaa_id}) -->            
+                <h2>{$nivaa_sortorder_name[$nivaa_id]}</h2>
                 {set $children = fetch( 'content', 'list', hash( 'parent_node_id', $node.node_id,
                                                          'sort_by', array( 'attribute', true(), 317),
                                                          'class_filter_type', 'include',
@@ -30,7 +30,6 @@
                 {foreach $children as $child }
                     {node_view_gui view='line' content_node=$child fagomrade=$node.data_map.name}
                 {/foreach}
-                <!-- END {$nivaa_sortorder_name[$nivaa_id]} -->
             {/foreach}
         </div>
     </div>
