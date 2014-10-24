@@ -20,10 +20,7 @@
              $children_count = ''}
 
         {set $children = fetch( 'content', 'list', hash( 'parent_node_id', $node.node_id,
-                                                         'sort_by', $node.sort_array,
-                                                         'class_filter_type', 'include',
-                                                         'class_filter_array', $classes,
-                                                         'attribute_filter', array ( array ( 'hials_utdanningstilbud/nivaa' , '=', '1' ) ) ) )}
+                                                         'attribute_filter', array( array( 'hials_utdanningstilbud/nivaa' , '=', '1' ) ) ) )}
         <!-- 
         {foreach $children as $child}
         {$child.data_map.nivaa|attribute('show', 2, 'text')} 
@@ -38,7 +35,7 @@
                                                          'sort_by', $node.sort_array,
                                                          'class_filter_type', 'include',
                                                          'class_filter_array', $classes,
-                                                         'attribute_filter', array ( array ( 325, '=', $nivaa_id ) ) ) )}
+                                                         'attribute_filter', array( array( 325, '=', $nivaa_id ) ) ) )}
                 {foreach $children as $child }
                     {node_view_gui view='line' content_node=$child fagomrade=$node.data_map.name}
                 {/foreach}
