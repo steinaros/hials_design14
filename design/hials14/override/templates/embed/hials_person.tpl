@@ -16,7 +16,7 @@
 		    </div> 
 			<div class="col-xs-6 boks bg-white nopadding col-xs-height col-middle">
 			    {if $object.data_map.image.has_content}
-			        {attribute_view_gui attribute=$object.data_map.image image_class=contact css_class='u-photo photo'}
+			        {attribute_view_gui attribute=$object.data_map.image image_class=contact css_class='u-photo photo img-responsive'}
 			    {/if}
 			</div>
 	    </div>
