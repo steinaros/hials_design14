@@ -23,7 +23,12 @@
                                                          'sort_by', $node.sort_array,
                                                          'class_filter_type', 'include',
                                                          'class_filter_array', $classes) )}
-        <!-- {$children|attribute('show', 2, 'text')} -->
+        <!-- 
+        {foreach $children as $child}
+        {$child.data_map|attribute('show', 2, 'text')} 
+        {/foreach}
+        
+        -->
 
         <div class="content-view-children">
             {foreach $nivaa_sortorder as $nivaa_id}
