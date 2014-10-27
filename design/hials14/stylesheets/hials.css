@@ -12,17 +12,6 @@ main {
 	padding-top: 15px;
 }
 
-/* Fix FontAwesome */
-
-.fa {
-    font-family: inherit;
-}
-.fa:before {
-    font-family: FontAwesome;
-}
-
-/*******************/
-
 /* no top padding if breadcrumb is showing */
 .breadcrumb-wrapper ~ main {
 	padding-top: 0;

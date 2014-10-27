@@ -15,8 +15,8 @@
             {set $iconclasses = $iconclasses|append('fa-file-o')}
         {/case}
     {/switch}
-    <div class="{concat('content-body ', $iconclasses|implode(' '))}">
-        <a href={concat("content/download/", $file.contentobject_id, "/", $file.id, "/file/", $file.content.original_filename)|ezurl}>{$object.name|wash("xhtml")}</a> {$file.content.filesize|si(byte)}
+    <div class="content-body">
+        <i class="{$iconclasses|implode(' ')}"></i><a href={concat("content/download/", $file.contentobject_id, "/", $file.id, "/file/", $file.content.original_filename)|ezurl}>{$object.name|wash("xhtml")}</a> {$file.content.filesize|si(byte)}
     </div>
     {undef $file}
     {else}
