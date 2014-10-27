@@ -14,7 +14,6 @@ JavaScriptFooterList[]=https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquer
 JavaScriptFooterList[]=bootstrap.js
 JavaScriptFooterList[]=hials.js
 
-
 [StyleSheetSettings]
 CSSFileList[]
 CSSFileList[]=bootstrap.min.css

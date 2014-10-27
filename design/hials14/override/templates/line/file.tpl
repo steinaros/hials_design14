@@ -1,5 +1,5 @@
-{* File - List embed view *}
-<div class="content-view-embed">
+{* File - line view *}
+<div class="content-view-line">
     <div class="class-file">
     {if $object.data_map.file.has_content}
     {def $file = $object.data_map.file
