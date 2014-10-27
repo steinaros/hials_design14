@@ -141,8 +141,8 @@ p.leftmenu {
     padding-bottom: 0.5em;
 }
 
-i.fa + label, i.fa + span {
-	padding-left: 3px;
+i.fa + * {
+	margin-left: 3px;
 }
 
 label {
@@ -634,3 +634,4 @@ table.default td:last-child {
 .breadcrumb a {
 	color: #565656;
 }
+
