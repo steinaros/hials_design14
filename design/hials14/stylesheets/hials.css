@@ -635,3 +635,18 @@ table.default td:last-child {
 	color: #565656;
 }
 
+/*************************************************/
+
+/*** PILLS ***************************************/
+
+.nav-pills > li > a {
+	border-radius: 0;
+	background-color: #b4b4b4;
+	color: #565656;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+	background-color: #565656;
+	color: #fff;
+	
+}
