@@ -8,7 +8,7 @@
      $col_width = 2
      $fagomraader = array()}
 
-{set $fagomraader = fetch( 'content', 'list', hash( 'parent_node_id', $node.node_id,
+{set $fagomraader = fetch( 'content', 'list', hash( 'parent_node_id', $menuitem,
                                                     'sort_by', $node.sort_array,
                                                     'class_filter_type', 'include',
                                                     'class_filter_array', array( 'hials_fagomrade' ) ) )} 
