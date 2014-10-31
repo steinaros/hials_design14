@@ -13,18 +13,23 @@
                                                     'class_filter_type', 'include',
                                                     'class_filter_array', array( 'hials_fagomrade' ) ) )} 
 
+<!--
+MenuItem: '{$menuitem|wash()}'
+Fagomrader: {$fagomraader|attribute('show',2,'text')}
+-->
+
 
 <div class="col-sm-2">
     <ul class="nav nav-pills nav-stacked" role="tablist">
         {foreach $nivaa_sortorder as $nivaa_id}
-            {foreach $fagomraader as $fagomrade}
+            {*foreach $fagomraader as $fagomrade*}
         <li role="presentation" class="active"><a href="{concat('#utdnivaa_', $nivaa_id)}" role="tab" data-toggle="tab">{$nivaa_names[$nivaa_id]|wash()}</a></li>
-            {set $utdanninger[$nivaa_id][$fagomrade.node_id] = fetch( 'content', 'list', hash( 'parent_node_id', $fagomrade.node_id,
+            {*set $utdanninger[$nivaa_id][$fagomrade.node_id] = fetch( 'content', 'list', hash( 'parent_node_id', $fagomrade.node_id,
                                              'sort_by', array( 'attribute', true(), 317),
                                              'class_filter_type', 'include',
                                              'class_filter_array', $classes,
-                                             'attribute_filter', array( array( 325, '=', $nivaa_id ) ) ) )}
-            {/foreach}
+                                             'attribute_filter', array( array( 325, '=', $nivaa_id ) ) ) )*}
+            {*/foreach*}
 	   {/foreach}
 	</ul>
 </div>
@@ -41,6 +46,6 @@
 {/foreach}
 </div>
 
-<!-- {$utdanninger|attribute('show', 3, 'text')} -->
+<!-- {*$utdanninger|attribute('show', 3, 'text')*} -->
 
 {undef $classes $nivaa_sortorder $nivaa_names $utdanninger $utdanning_width $utdanning_count $col_width $fagomraader}
