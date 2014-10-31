@@ -25,7 +25,7 @@
                                              'class_filter_array', $classes,
                                              'attribute_filter', array( array( 325, '=', $nivaa_id ) ) ) )}
                 {set $utdanninger[$nivaa_id] = $utdanninger[$nivaa_id]|merge( hash( $fagomrade.name, hash( 'count', $tmp_items|count(),
-                                                                                                           'items', $tmp_items ) )}
+                                                                                                           'items', $tmp_items ) ) )}
                 {set $nivaa_item_count = $nivaa_item_count + $utdanninger|count()}
                 
                 <!--
