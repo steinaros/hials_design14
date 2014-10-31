@@ -27,6 +27,15 @@
                      $utdanninger[$nivaa_id] = $utdanninger[$nivaa_id]|append( hash( $fagomrade.name, hash( 'count', $tmp_items|count(),
                                                                                                             'items', $tmp_items ) )}
                 {set $nivaa_item_count = $nivaa_item_count + $utdanninger|count()}
+                
+                <!--
+                
+                tmp_items: {$tmp_items|attribute('show',2,'text')}
+                nivaa: {$nivaa_id}
+                fagomrade: {$fagomrade|attribute('show',2,'text')}
+                
+                -->
+                
             {/foreach}
             {if gt($nivaa_item_count, 0)}
             <li role="presentation"{if eq($nivaa_id,0} class="active"{/if}><a href="{concat('#utdnivaa_', $nivaa_id)}" role="tab" data-toggle="tab">{$nivaa_names[$nivaa_id]|wash()}</a></li>
