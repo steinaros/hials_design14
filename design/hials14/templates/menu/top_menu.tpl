@@ -1,6 +1,7 @@
 <!-- Top menu content: START -->
 {def $root_node = fetch( 'content', 'node', hash( 'node_id', $pagedata.root_node ) )
      $top_menu_class_filter = ezini( 'MenuContentSettings', 'TopIdentifierList', 'menu.ini' )
+     $top_menu_utdanning_class_filter = ezini( 'MenuContentSettings', 'UtdanningSubMenuIdentifierList', 'menu.ini' )
      $top_menu_items = fetch( 'content', 'list', hash( 'parent_node_id', $root_node.node_id,
                                                        'sort_by', $root_node.sort_array,
                                                        'class_filter_type', 'include',
@@ -20,8 +21,10 @@
     {foreach $top_menu_items as $key => $item}
 		{set $item_class = array()}
 		{if eq($item.node_id, $UTDANNING_node_id)}
-            {set $level2_items = array()}
-		
+            {set $level2_items = fetch( 'content', 'list', hash( 'parent_node_id', $item.node_id,
+                                                          'sort_by', $item.sort_array,
+                                                          'class_filter_type', 'include',
+                                                          'class_filter_array', $top_menu_utdanning_class_filter ) )}
 		{else}
             {set $level2_items = fetch( 'content', 'list', hash( 'parent_node_id', $item.node_id,
 			                                              'sort_by', $item.sort_array,
@@ -114,7 +117,7 @@
 		        {/switch}
 		    {else}
                 <ul class="dropdown-menu">
-                    <li><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}>{'Directly to'|i18n('hials/design/menu')} {$item.name|wash()}</a></li>
+                    <li><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}>{'Directly to'|i18n('hials/design/std')} {$item.name|wash()}</a></li>
                 </ul>
 		    {/if}
 		</li>

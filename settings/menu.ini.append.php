@@ -8,6 +8,10 @@ TopIdentifierList[]=landing_page
 TopIdentifierList[]=hials_avdeling
 TopIdentifierList[]=hials_contentpage
 
+UtdanningSubMenuIdentifierList[]
+UtdanningSubMenuIdentifierList[]=hials_fagomrade
+UtdanningSubMenuIdentifierList[]=hials_utdanningstilbud
+
 LeftIdentifierList[]=hials_portal_page
 LeftIdentifierList[]=landing_page
 LeftIdentifierList[]=hials_contentpage
