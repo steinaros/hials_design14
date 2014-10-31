@@ -29,7 +29,7 @@ Fagomrader: {$fagomraader|attribute('show',2,'text')}
                                              'class_filter_type', 'include',
                                              'class_filter_array', $classes,
                                              'attribute_filter', array( array( 325, '=', $nivaa_id ) ) ) )}
-            {*/foreach*}
+            {/foreach}
 	   {/foreach}
 	</ul>
 </div>
