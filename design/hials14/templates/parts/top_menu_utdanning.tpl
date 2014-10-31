@@ -42,4 +42,4 @@
 
 <!-- {$utdanninger|attribute('show', 3, 'text')} -->
 
-{*undef $classes $nivaa_sortorder $nivaa_names $utdanninger $utdanning_width $utdanning_count $col_width $fagomraader*}
+{undef $classes $nivaa_sortorder $nivaa_names $utdanninger $utdanning_width $utdanning_count $col_width $fagomraader}
