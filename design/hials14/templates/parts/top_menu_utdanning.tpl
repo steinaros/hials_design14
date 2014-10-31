@@ -24,16 +24,14 @@
                                              'class_filter_type', 'include',
                                              'class_filter_array', $classes,
                                              'attribute_filter', array( array( 325, '=', $nivaa_id ) ) ) )
-                     $utdanninger[$nivaa_id] = $utdanninger[$nivaa_id]|append( hash( $fagomrade.name, hash( 'count', $tmp_items|count(),
-                                                                                                            'items', $tmp_items ) )}
+                     $utdanninger[$nivaa_id] = $utdanninger[$nivaa_id]|merge( hash( $fagomrade.name, hash( 'count', $tmp_items|count(),
+                                                                                                           'items', $tmp_items ) )}
                 {set $nivaa_item_count = $nivaa_item_count + $utdanninger|count()}
                 
                 <!--
-                
-                tmp_items: {$tmp_items|attribute('show',2,'text')}
                 nivaa: {$nivaa_id}
-                fagomrade: {$fagomrade|attribute('show',2,'text')}
-                
+                fagomrade: {$fagomrade|attribute('show',1,'text')}              
+                tmp_items: {$tmp_items|attribute('show',1,'text')}
                 -->
                 
             {/foreach}
@@ -56,7 +54,7 @@
 {/foreach}
 </div>
 
-<!-- {$utdanninger|attribute('show', 3, 'text')} -->
+<!-- {$utdanninger|attribute('show', 1, 'text')} -->
 
 <!--
 {foreach $utdanninger as $key => $item}
