@@ -6,30 +6,28 @@
      $utdanning_width = array()
      $utdanning_count = ''
      $col_width = 2
-     $fagomraader = array()}
+     $fagomraader = array()
+     $nivaa_item_count = 0}
 
 {set $fagomraader = fetch( 'content', 'list', hash( 'parent_node_id', $menunode,
                                                     'sort_by', $node.sort_array,
                                                     'class_filter_type', 'include',
                                                     'class_filter_array', array( 'hials_fagomrade' ) ) )} 
-
-<!--
-MenuItem: '{$menunode|wash()}'
-Fagomrader: {$fagomraader|attribute('show',2,'text')}
--->
-
-
 <div class="col-sm-2">
     <ul class="nav nav-pills nav-stacked" role="tablist">
         {foreach $nivaa_sortorder as $nivaa_id}
+            {set $nivaa_item_count = 0}       
             {foreach $fagomraader as $fagomrade}
-        <li role="presentation"{if eq($nivaa_id,0} class="active"{/if}><a href="{concat('#utdnivaa_', $nivaa_id)}" role="tab" data-toggle="tab">{$nivaa_names[$nivaa_id]|wash()}</a></li>
-            {set $utdanninger[$nivaa_id][$fagomrade.node_id] = fetch( 'content', 'list', hash( 'parent_node_id', $fagomrade.node_id,
+                {set $utdanninger[$nivaa_id][$fagomrade.node_id] = fetch( 'content', 'list', hash( 'parent_node_id', $fagomrade.node_id,
                                              'sort_by', array( 'attribute', true(), 317),
                                              'class_filter_type', 'include',
                                              'class_filter_array', $classes,
                                              'attribute_filter', array( array( 325, '=', $nivaa_id ) ) ) )}
+                {set $nivaa_item_count = $nivaa_item_count + $utdanninger[$nivaa_id][$fagomrade.node_id]|count()}
             {/foreach}
+            {if gt($nivaa_item_count, 0)}
+            <li role="presentation"{if eq($nivaa_id,0} class="active"{/if}><a href="{concat('#utdnivaa_', $nivaa_id)}" role="tab" data-toggle="tab">{$nivaa_names[$nivaa_id]|wash()}</a></li>
+            {/if}
 	   {/foreach}
 	</ul>
 </div>
@@ -47,5 +45,12 @@ Fagomrader: {$fagomraader|attribute('show',2,'text')}
 </div>
 
 <!-- {$utdanninger|attribute('show', 3, 'text')} -->
+
+<!--
+{foreach $utdanninger[0] as $key => $item}
+    Key: {$key}
+    Item: {$item|attribute('show',2,'text')}
+{/foreach}
+-->
 
 {undef $classes $nivaa_sortorder $nivaa_names $utdanninger $utdanning_width $utdanning_count $col_width $fagomraader}
