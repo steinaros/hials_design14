@@ -36,7 +36,7 @@
 nivaa_id: {$nivaa_id}
 fagomrade: {$fagomrade}
 Tmp_item_count: {$tmp_item_count}
-tmp_hash: {$tmp_hash|attribute('show',2,'text')
+tmp_hash: {$tmp_hash|attribute('show',2,'text')}
 nivaa_item_count: {$nivaa_item_count}
 -->                                                     
         
