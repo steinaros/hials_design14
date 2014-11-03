@@ -1,7 +1,7 @@
 {if not(is_set($menunode))}{def $menunode = 0}{/if}
 {def $classes = array('hials_utdanningstilbud')
      $nivaa_sortorder = array( '0', '1', '2', '5', '4', '3')
-     $nivaa_names = hash( 0, 'Bachelor', 1, 'Master', 2, 'Videreutdanning', 5, 'Årsstudium', 4, 'Maritime kurs', 3, 'Kurs' )
+     $nivaa_names = hash( 0, 'Bachelor', 1, 'Master', 2, 'Videreutdanning', 3, 'Kurs', 4, 'Maritime kurs', 5, 'Årsstudium' )
      $utdanninger = array()
      $utdanning_width = array()
      $utdanning_count = ''
@@ -15,39 +15,35 @@
 {set $fagomraader = fetch( 'content', 'list', hash( 'parent_node_id', $menunode,
                                                     'sort_by', $node.sort_array,
                                                     'class_filter_type', 'include',
-                                                    'class_filter_array', array( 'hials_fagomrade' ) ) )} 
+                                                    'class_filter_array', array( 'hials_fagomrade' ) ) )}
+{foreach $nivaa_names as $nivaa_id => $nivaa_name}
+    {set $nivaa_item_count = 0}
+    {set $utdanninger = $utdanninger|append(hash('nivaa_id', $nivaa_id,
+                                                 'nivaa', $nivaa_name,
+                                                 'fagomrade', hash() ) )}
+    {foreach $fagomraader as $fagomrade}
+        {set $tmp_items = fetch( 'content', 'list', hash( 'parent_node_id', $fagomrade.node_id,
+                                     'sort_by', array( 'attribute', true(), 317),
+                                     'class_filter_type', 'include',
+                                     'class_filter_array', $classes,
+                                     'attribute_filter', array( array( 325, '=', $nivaa_id ) ) ) )
+             $tmp_item_count = $tmp_items|count()
+             $tmp_hash = hash( $fagomrade.name, hash( 'count', $tmp_items_count,
+                                                      'items', $tmp_items ) )}
+
+        {set $nivaa_item_count = $nivaa_item_count + $tmp_item_count}
+        
+        {set $utdanninger[$nivaa_id].fagomrade = $utdanninger[$nivaa_id].fagomrade|append($tmp_hash)}      
+    {/foreach}
+    {set $utdanninger[$nivaa_id] = $utdanninger[$nivaa_id]|merge(hash('count', $nivaa_item_count))}
+{/foreach}                                                     
 <div class="col-sm-2">
     <ul class="nav nav-pills nav-stacked" role="tablist">
-        {foreach $nivaa_sortorder as $nivaa_id}
-            {set $nivaa_item_count = 0}
-            {set $utdanninger = $utdanninger|append(hash('nivaa_id', $nivaa_id,
-                                                         'nivaa', $nivaa_names[$nivaa_id],
-                                                         'fagomrade', hash() ) )}
-            {foreach $fagomraader as $fagomrade}
-                {set $tmp_items = fetch( 'content', 'list', hash( 'parent_node_id', $fagomrade.node_id,
-                                             'sort_by', array( 'attribute', true(), 317),
-                                             'class_filter_type', 'include',
-                                             'class_filter_array', $classes,
-                                             'attribute_filter', array( array( 325, '=', $nivaa_id ) ) ) )
-                     $tmp_item_count = $tmp_items|count()
-                     $tmp_hash = hash( $fagomrade.name, hash( 'count', $tmp_items_count,
-                                                              'items', $tmp_items ) )}
-                                             
-                {*set $utdanninger = $utdanninger|append( hash( $fagomrade.name, hash( 'count', $tmp_items|count(),
-                                                                                                           'items', $tmp_items ) ) )*}
-                {set $nivaa_item_count = $nivaa_item_count + $tmp_item_count}
-                
-                <!--
-                nivaa: {$nivaa_id}
-                fagomrade: {$fagomrade|attribute('show',1,'text')}              
-                tmp_items: {$tmp_items|attribute('show',1,'text')}
-                -->
-                
-            {/foreach}
-            {if gt($nivaa_item_count, 0)}
-            <li role="presentation"{if eq($nivaa_id,0} class="active"{/if}><a href="{concat('#utdnivaa_', $nivaa_id)}" role="tab" data-toggle="tab">{$nivaa_names[$nivaa_id]|wash()}</a></li>
-            {/if}
-	   {/foreach}
+{foreach $nivaa_sortorder as $nivaa_id}    
+    {if gt($nivaa_item_count, 0)}
+        <li role="presentation"{if eq($nivaa_id,0} class="active"{/if}><a href="{concat('#utdnivaa_', $nivaa_id)}" role="tab" data-toggle="tab">{$utdanninger[$nivaa_id].nivaa|wash()}</a></li>
+    {/if}
+{/foreach}    
 	</ul>
 </div>
 <div class="tab-content col-sm-10">
@@ -62,8 +58,6 @@
     </div>
 {/foreach}
 </div>
-
-<!-- {$utdanninger|attribute('show',1,'text')} -->
 
 <!--
 {foreach $utdanninger as $key => $item}
