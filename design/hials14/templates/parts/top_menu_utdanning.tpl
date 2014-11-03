@@ -4,12 +4,15 @@
      $nivaa_names = hash( 0, 'Bachelor', 1, 'Master', 2, 'Videreutdanning', 3, 'Kurs', 4, 'Maritime kurs', 5, 'Årsstudium' )
      $utdanninger = array()
      $utdanning_width = array()
+     $fagomraader = array()
+     $tmp_utd = hash()
+
      $utdanning_count = ''
      $col_width = 2
-     $fagomraader = array()
      $nivaa_item_count = 0
      $tmp_items = array()
      $tmp_item_count = 0
+     
      $tmp_hash = hash()
      $tmp_fagomrade = array()}
 
@@ -19,11 +22,8 @@
                                                     'class_filter_array', array( 'hials_fagomrade' ) ) )}
 {foreach $nivaa_names as $nivaa_id => $nivaa_name}
     {set $nivaa_item_count = 0}
-    {set $utdanninger = $utdanninger|append(hash('nivaa_id', $nivaa_id,
-                                                 'nivaa', $nivaa_name,
-                                                 'antall', 0,
-                                                 'fagomrade', array() ) )}
     {set $tmp_fagomrade = array()}
+    {set $tmp_utd = hash()}
     {foreach $fagomraader as $fagomrade}
         {set $tmp_items = fetch( 'content', 'list', hash( 'parent_node_id', $fagomrade.node_id,
                                      'sort_by', array( 'attribute', true(), 317),
@@ -35,37 +35,13 @@
                                                       'items', $tmp_items ) )
              $nivaa_item_count = sum($nivaa_item_count, $tmp_item_count)}
 
-<!--
-nivaa_id: {$nivaa_id}
-Tmp_item_count: {$tmp_item_count}
-tmp_hash: {$tmp_hash|attribute('show',2,'text')}
-nivaa_item_count: {$nivaa_item_count}
--->
-        {set $tmp_fagomrade = $utdanninger[$nivaa_id]['fagomrade']|append($tmp_hash)}
-<!--
-Tmp_fagomrade: {$tmp_fagomrade|attribute('show',1,'text')}
--->        
-                 
-        {*set $utdanninger[$nivaa_id].fagomrade = $tmp_fagomrade*}      
+        {set $tmp_fagomrade = $tmp_fagomrade|append($tmp_hash)}
     {/foreach}
-    <!--
-    FOR
-    Nivaa_id: {$nivaa_id}
-    Count: {$utdanninger[$nivaa_id]['antall']}
-    Nivaa count: {$nivaa_item_count}
-    Utdanninger:
-    {$utdanninger|dump('show',3,'text')}
-    -->
-    {set $utdanninger[$nivaa_id]['antall'] = $nivaa_item_count}
-
-    <!--
-    ETTER
-    Nivaa_id: {$nivaa_id}
-    Count: {$utdanninger[$nivaa_id]['antall']}
-    Utdanninger:
-    {$utdanninger|dump('show',3,'text')}
-    -->
-
+    {set $tmp_utd = hash('nivaa_id', $nivaa_id,
+                         'nivaa', $nivaa_name,
+                         'antall', $nivaa_item_count,
+                         'fagomrade', $tmp_fagomrade ) )}
+    {set $utdanning =  $utdanning|append($tmp_utd)}
 {/foreach}                                                     
 <div class="col-sm-2">
     <ul class="nav nav-pills nav-stacked" role="tablist">
