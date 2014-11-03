@@ -37,20 +37,23 @@
 
 <!--
 nivaa_id: {$nivaa_id}
-fagomrade: {$fagomrade|attribute('show',2,'text')}
 Tmp_item_count: {$tmp_item_count}
 tmp_hash: {$tmp_hash|attribute('show',2,'text')}
 nivaa_item_count: {$nivaa_item_count}
 -->
-        {set $tmp_fagomrade = $utdanninger[$nivaa_id].fagomrade|append($tmp_hash)}         
-        {set $utdanninger[$nivaa_id].fagomrade = $tmp_fagomrade}      
+        {set $tmp_fagomrade = $utdanninger[$nivaa_id].fagomrade|append($tmp_hash)}
+<!--
+Tmp_fagomrade: {$tmp_fagomrade|attribute('show',1,'text')}
+-->        
+                 
+        {*set $utdanninger[$nivaa_id].fagomrade = $tmp_fagomrade*}      
     {/foreach}
     <!--
     Count: {$utdanninger[$nivaa_id].count}
     Utdanninger:
     {$utdanninger|dump('show',3,'text')}
     -->
-    {set $utdanninger[$nivaa_id].count = $nivaa_item_count}
+    {*set $utdanninger[$nivaa_id].count = $nivaa_item_count*}
 {/foreach}                                                     
 <div class="col-sm-2">
     <ul class="nav nav-pills nav-stacked" role="tablist">
