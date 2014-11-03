@@ -40,7 +40,7 @@ tmp_hash: {$tmp_hash|attribute('show',2,'text')}
 nivaa_item_count: {$nivaa_item_count}
 -->                                                     
         
-        {set $utdanninger[$nivaa_id].fagomrade = $utdanninger[$nivaa_id].fagomrade|append($tmp_hash)}      
+        {set $utdanninger[$nivaa_id]['fagomrade'] = $utdanninger[$nivaa_id]['fagomrade']|append($tmp_hash)}      
     {/foreach}
     {set $utdanninger[$nivaa_id] = $utdanninger[$nivaa_id]|merge(hash('count', $nivaa_item_count))}
 {/foreach}                                                     
@@ -48,7 +48,7 @@ nivaa_item_count: {$nivaa_item_count}
     <ul class="nav nav-pills nav-stacked" role="tablist">
 {foreach $nivaa_sortorder as $nivaa_id}    
     {if gt($nivaa_item_count, 0)}
-        <li role="presentation"{if eq($nivaa_id,0} class="active"{/if}><a href="{concat('#utdnivaa_', $nivaa_id)}" role="tab" data-toggle="tab">{$utdanninger[$nivaa_id].nivaa|wash()}</a></li>
+        <li role="presentation"{if eq($nivaa_id,0)} class="active"{/if}><a href="{concat('#utdnivaa_', $nivaa_id)}" role="tab" data-toggle="tab">{$utdanninger[$nivaa_id].nivaa|wash()}</a></li>
     {/if}
 {/foreach}    
 	</ul>
