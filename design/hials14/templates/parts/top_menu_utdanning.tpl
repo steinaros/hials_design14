@@ -70,12 +70,15 @@ utdanninger: {$utdanninger|attribute('show',3,'text')}
 <div class="tab-content col-sm-10">
 {foreach $nivaa_sortorder as $nivaa_id}
     <div role="tabpanel" class="tab-pane active" id="{concat('utdnivaa_', $nivaa_id)}">
+        {foreach $utdanninger[$nivaa_id].fagomrade as $key => $item}
         <ul class="submenu col-sm-2">
-            <li class="submenuhead"><a href="#">Test</a></li>
-            <li><a href="#">Biomarin innovasjon</a></li>
-            <li><a href="#">Bioteknologi</a></li>
-            <li><a href="#">Bioingeniør</a></li>
+            <li class="submenuhead"><a href="#">{$key|wash()}</a></li>
+            {foreach $item.0.items as $utd_item}
+            <!-- Utd_item: {$utd_item|attribute('show', 2, 'text')} -->
+            <li><a href="#">{$utd_item.name|wash()}</a></li>
+            {/foreach}
         </ul>
+        {/foreach}
     </div>
 {/foreach}
 </div>
