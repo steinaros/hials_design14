@@ -17,7 +17,7 @@
      $tmp_fagomrade = array()}
 
 {set $fagomraader = fetch( 'content', 'list', hash( 'parent_node_id', $menunode,
-                                                    'sort_by', array( 'attribute', false(), 315 ),
+                                                    'sort_by', array( 'attribute', true(), 315 ),
                                                     'class_filter_type', 'include',
                                                     'class_filter_array', array( 'hials_fagomrade' ) ) )}
 {foreach $nivaa_names as $nivaa_id => $nivaa_name}
