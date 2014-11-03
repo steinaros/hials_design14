@@ -36,12 +36,27 @@
              $nivaa_item_count = sum($nivaa_item_count, $tmp_item_count)}
 
         {set $tmp_fagomrade = $tmp_fagomrade|append($tmp_hash)}
+        
+<!--
+nivaa: {$nivaa_name}
+tmp_fagomrade: {$tmp_fagomrade|attribute('show',2,'text')}
+-->        
+        
     {/foreach}
     {set $tmp_utd = hash('nivaa_id', $nivaa_id,
                          'nivaa', $nivaa_name,
                          'antall', $nivaa_item_count,
                          'fagomrade', $tmp_fagomrade )}
+<!--                         
+tmp_utd: {$tmp_utd|attribute('show',2,'text')}
+-->
+
     {set $utdanning =  $utdanning|append($tmp_utd)}
+    
+<!--                         
+utdanning: {$utdanning|attribute('show',2,'text')}
+-->    
+    
 {/foreach}                                                     
 <div class="col-sm-2">
     <ul class="nav nav-pills nav-stacked" role="tablist">
