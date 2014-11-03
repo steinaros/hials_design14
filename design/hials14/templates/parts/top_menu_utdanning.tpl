@@ -48,7 +48,7 @@ nivaa_item_count: {$nivaa_item_count}
     <!--
     Count: {$utdanninger[$nivaa_id].count}
     Utdanninger:
-    {$utdanninger|dump('show',3,'text)}
+    {$utdanninger|dump('show',3,'text')}
     -->
     {set $utdanninger[$nivaa_id].count = $nivaa_item_count}
 {/foreach}                                                     
