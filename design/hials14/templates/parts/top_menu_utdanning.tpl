@@ -31,11 +31,13 @@
                                      'class_filter_array', $classes,
                                      'attribute_filter', array( array( 325, '=', $nivaa_id ) ) ) )
              $tmp_item_count = $tmp_items|count()
-             $tmp_hash = hash( $fagomrade.name, hash( 'antall', $tmp_item_count,
-                                                      'items', $tmp_items ) )
+             $tmp_hash = hash( 'navn', $fagomrade.name, 
+                               'antall', $tmp_item_count,
+                               'items', $tmp_items )
              $nivaa_item_count = sum($nivaa_item_count, $tmp_item_count)}
-
+        {if gt($tmp_item_count, 0)}
         {set $tmp_fagomrade = $tmp_fagomrade|append($tmp_hash)}
+        {/if}
         
 <!--
 nivaa: {$nivaa_name}
@@ -50,9 +52,9 @@ tmp_fagomrade: {$tmp_fagomrade|attribute('show',3,'text')}
 <!--                         
 tmp_utd: {$tmp_utd|attribute('show',2,'text')}
 -->
-
+    {if gt($tmp_utd.antall, 0)}
     {set $utdanninger = $utdanninger|append($tmp_utd)}
-    
+    {/if}
 <!--                         
 utdanninger: {$utdanninger|attribute('show',3,'text')}
 -->    
@@ -74,10 +76,12 @@ utdanninger: {$utdanninger|attribute('show',3,'text')}
     <div role="tabpanel" class="tab-pane active" id="{concat('utdnivaa_', $nivaa_id)}">
         {foreach $utdanninger[$nivaa_id].fagomrade as $item}
         
-        {if gt($item.0.antall, 0)}
+        <!-- Item: {$item|attribute('show', 3, 'text')} -->
+        
+        {if gt($item.antall, 0)}
         <ul class="submenu col-sm-2">
-            <li class="submenuhead"><a href="#">{$item[0]|wash()}</a></li>
-            {foreach $item.0.items as $utd_item}
+            <li class="submenuhead"><a href="#">{$item.navn|wash()}</a></li>
+            {foreach $item.items as $utd_item}
             <!-- Utd_item: {$utd_item|attribute('show', 2, 'text')} -->
             <li><a href="#">{$utd_item.name|wash()}</a></li>         
             {/foreach}
