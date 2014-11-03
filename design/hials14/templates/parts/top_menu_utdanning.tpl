@@ -17,7 +17,7 @@
      $tmp_fagomrade = array()}
 
 {set $fagomraader = fetch( 'content', 'list', hash( 'parent_node_id', $menunode,
-                                                    'sort_by', $node.sort_array,
+                                                    'sort_by', array( 'attribute', false(), 'hials_fagomrade/title' ),
                                                     'class_filter_type', 'include',
                                                     'class_filter_array', array( 'hials_fagomrade' ) ) )}
 {foreach $nivaa_names as $nivaa_id => $nivaa_name}
@@ -39,25 +39,14 @@
         {set $tmp_fagomrade = $tmp_fagomrade|append($tmp_hash)}
         {/if}
         
-<!--
-nivaa: {$nivaa_name}
-tmp_fagomrade: {$tmp_fagomrade|attribute('show',3,'text')}
--->        
-        
     {/foreach}
     {set $tmp_utd = hash('nivaa_id', $nivaa_id,
                          'nivaa', $nivaa_name,
                          'antall', $nivaa_item_count,
                          'fagomrade', $tmp_fagomrade )}
-<!--                         
-tmp_utd: {$tmp_utd|attribute('show',2,'text')}
--->
     {if gt($tmp_utd.antall, 0)}
     {set $utdanninger = $utdanninger|append($tmp_utd)}
     {/if}
-<!--                         
-utdanninger: {$utdanninger|attribute('show',2,'text')}
--->    
     
 {/foreach}                                                     
 <div class="col-sm-2">
@@ -91,12 +80,5 @@ utdanninger: {$utdanninger|attribute('show',2,'text')}
     {/if}
 {/foreach}
 </div>
-
-<!--
-{foreach $utdanninger as $key => $item}
-    Key: {$key}
-    Item: {$item|attribute('show',1,'text')}
-{/foreach}
--->
 
 {undef $classes $nivaa_sortorder $nivaa_names $utdanninger $utdanning_width $utdanning_count $col_width $fagomraader $tmp_items}
