@@ -10,7 +10,9 @@
      $nivaa_item_count = 0
      $tmp_items = array()
      $tmp_item_count = 0
-     $tmp_hash = hash()}
+     $tmp_hash = hash()
+     $tmp_fagomrade = array()
+     $tmp_nivaa = array()}
 
 {set $fagomraader = fetch( 'content', 'list', hash( 'parent_node_id', $menunode,
                                                     'sort_by', $node.sort_array,
@@ -21,6 +23,7 @@
     {set $utdanninger = $utdanninger|append(hash('nivaa_id', $nivaa_id,
                                                  'nivaa', $nivaa_name,
                                                  'fagomrade', hash() ) )}
+    {set $tmp_fagomrade = array()}
     {foreach $fagomraader as $fagomrade}
         {set $tmp_items = fetch( 'content', 'list', hash( 'parent_node_id', $fagomrade.node_id,
                                      'sort_by', array( 'attribute', true(), 317),
@@ -38,11 +41,12 @@ fagomrade: {$fagomrade}
 Tmp_item_count: {$tmp_item_count}
 tmp_hash: {$tmp_hash|attribute('show',2,'text')}
 nivaa_item_count: {$nivaa_item_count}
--->                                                     
-        
-        {set $utdanninger[$nivaa_id]['fagomrade'] = $utdanninger[$nivaa_id]['fagomrade']|append($tmp_hash)}      
+-->
+        {set $tmp_fagomrade = $utdanninger[$nivaa_id]['fagomrade']|append($tmp_hash)}         
+        {set $utdanninger[$nivaa_id]['fagomrade'] = $tmp_fagomrade}      
     {/foreach}
-    {set $utdanninger[$nivaa_id] = $utdanninger[$nivaa_id]|merge(hash('count', $nivaa_item_count))}
+    {set $tmp_nivaa = $utdanninger[$nivaa_id]|merge(hash('count', $nivaa_item_count))}
+    {set $utdanninger[$nivaa_id] = $tmp_nivaa}
 {/foreach}                                                     
 <div class="col-sm-2">
     <ul class="nav nav-pills nav-stacked" role="tablist">
