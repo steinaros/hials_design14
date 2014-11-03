@@ -69,17 +69,25 @@ utdanninger: {$utdanninger|attribute('show',3,'text')}
 </div>
 <div class="tab-content col-sm-10">
 {foreach $nivaa_sortorder as $nivaa_id}
+    {if gt($utdanninger[$nivaa_id].antall, 0)}
+    
     <div role="tabpanel" class="tab-pane active" id="{concat('utdnivaa_', $nivaa_id)}">
-        {foreach $utdanninger[$nivaa_id].fagomrade as $key => $item}
+        {foreach $utdanninger[$nivaa_id].fagomrade as $item}
+        
+        {if gt($item.0.antall, 0)}
         <ul class="submenu col-sm-2">
-            <li class="submenuhead"><a href="#">{$key|wash()}</a></li>
+            <li class="submenuhead"><a href="#">{$item[0]|wash()}</a></li>
             {foreach $item.0.items as $utd_item}
             <!-- Utd_item: {$utd_item|attribute('show', 2, 'text')} -->
-            <li><a href="#">{$utd_item.name|wash()}</a></li>
+            <li><a href="#">{$utd_item.name|wash()}</a></li>         
             {/foreach}
+            
         </ul>
         {/foreach}
+        {/if}
     </div>
+    
+    {/if}
 {/foreach}
 </div>
 
