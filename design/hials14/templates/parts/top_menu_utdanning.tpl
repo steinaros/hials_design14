@@ -40,7 +40,7 @@
     {set $tmp_utd = hash('nivaa_id', $nivaa_id,
                          'nivaa', $nivaa_name,
                          'antall', $nivaa_item_count,
-                         'fagomrade', $tmp_fagomrade ) )}
+                         'fagomrade', $tmp_fagomrade )}
     {set $utdanning =  $utdanning|append($tmp_utd)}
 {/foreach}                                                     
 <div class="col-sm-2">
