@@ -39,7 +39,7 @@
         
 <!--
 nivaa: {$nivaa_name}
-tmp_fagomrade: {$tmp_fagomrade|attribute('show',2,'text')}
+tmp_fagomrade: {$tmp_fagomrade|attribute('show',3,'text')}
 -->        
         
     {/foreach}
@@ -51,27 +51,27 @@ tmp_fagomrade: {$tmp_fagomrade|attribute('show',2,'text')}
 tmp_utd: {$tmp_utd|attribute('show',2,'text')}
 -->
 
-    {set $utdanning =  $utdanning|append($tmp_utd)}
+    {set $utdanninger = $utdanninger|append($tmp_utd)}
     
 <!--                         
-utdanning: {$utdanning|attribute('show',2,'text')}
+utdanninger: {$utdanninger|attribute('show',3,'text')}
 -->    
     
 {/foreach}                                                     
 <div class="col-sm-2">
     <ul class="nav nav-pills nav-stacked" role="tablist">
 {foreach $nivaa_sortorder as $nivaa_id}    
-    {if gt($nivaa_item_count, 0)}
+    {if gt($utdanninger[$nivaa_id].antall, 0)}
         <li role="presentation"{if eq($nivaa_id,0)} class="active"{/if}><a href="{concat('#utdnivaa_', $nivaa_id)}" role="tab" data-toggle="tab">{$utdanninger[$nivaa_id].nivaa|wash()}</a></li>
     {/if}
-{/foreach}    
+{/foreach}
 	</ul>
 </div>
 <div class="tab-content col-sm-10">
 {foreach $nivaa_sortorder as $nivaa_id}
     <div role="tabpanel" class="tab-pane active" id="{concat('utdnivaa_', $nivaa_id)}">
         <ul class="submenu col-sm-2">
-            <li class="submenuhead"><a href="#">{$nivaa_names[$nivaa_id]|wash()}</a></li>
+            <li class="submenuhead"><a href="#">Test</a></li>
             <li><a href="#">Biomarin innovasjon</a></li>
             <li><a href="#">Bioteknologi</a></li>
             <li><a href="#">Bioingeniør</a></li>
