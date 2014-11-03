@@ -29,13 +29,14 @@
                                      'attribute_filter', array( array( 325, '=', $nivaa_id ) ) ) )
              $tmp_item_count = $tmp_items|count()
              $tmp_hash = hash( $fagomrade.name, hash( 'count', $tmp_item_count,
-                                                      'items', $tmp_items ) )}
-
-        {set $nivaa_item_count = $nivaa_item_count + $tmp_item_count}
+                                                      'items', $tmp_items ) )
+             $nivaa_item_count = sum($nivaa_item_count, $tmp_item_count)}
 
 <!--
 nivaa_id: {$nivaa_id}
+fagomrade: {$fagomrade}
 Tmp_item_count: {$tmp_item_count}
+tmp_hash: {$tmp_hash|attribute('show',2,'text')
 nivaa_item_count: {$nivaa_item_count}
 -->                                                     
         
