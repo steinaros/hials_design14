@@ -28,10 +28,16 @@
                                      'class_filter_array', $classes,
                                      'attribute_filter', array( array( 325, '=', $nivaa_id ) ) ) )
              $tmp_item_count = $tmp_items|count()
-             $tmp_hash = hash( $fagomrade.name, hash( 'count', $tmp_items_count,
+             $tmp_hash = hash( $fagomrade.name, hash( 'count', $tmp_item_count,
                                                       'items', $tmp_items ) )}
 
         {set $nivaa_item_count = $nivaa_item_count + $tmp_item_count}
+
+<!--
+nivaa_id: {$nivaa_id}
+Tmp_item_count: {$tmp_item_count}
+nivaa_item_count: {$nivaa_item_count}
+-->                                                     
         
         {set $utdanninger[$nivaa_id].fagomrade = $utdanninger[$nivaa_id].fagomrade|append($tmp_hash)}      
     {/foreach}
