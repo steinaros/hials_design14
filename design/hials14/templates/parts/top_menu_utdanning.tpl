@@ -50,15 +50,17 @@ Tmp_fagomrade: {$tmp_fagomrade|attribute('show',1,'text')}
     {/foreach}
     <!--
     FOR
-    Count: {$utdanninger[$nivaa_id].antall}
+    Nivaa_id: {$nivaa_id}
+    Count: {$utdanninger.$nivaa_id.antall}
     Utdanninger:
     {$utdanninger|dump('show',3,'text')}
     -->
-    {set $utdanninger.$nivaa_id.antall = int($nivaa_item_count)}
+    {set $utdanninger.$nivaa_id.antall = $nivaa_item_count}
 
     <!--
     ETTER
-    Count: {$utdanninger[$nivaa_id].antall}
+    Nivaa_id: {$nivaa_id}
+    Count: {$utdanninger.$nivaa_id.antall}
     Utdanninger:
     {$utdanninger|dump('show',3,'text')}
     -->
