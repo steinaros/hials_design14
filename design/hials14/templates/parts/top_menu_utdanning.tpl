@@ -56,7 +56,7 @@ tmp_utd: {$tmp_utd|attribute('show',2,'text')}
     {set $utdanninger = $utdanninger|append($tmp_utd)}
     {/if}
 <!--                         
-utdanninger: {$utdanninger|attribute('show',3,'text')}
+utdanninger: {$utdanninger|attribute('show',2,'text')}
 -->    
     
 {/foreach}                                                     
@@ -73,17 +73,14 @@ utdanninger: {$utdanninger|attribute('show',3,'text')}
 {foreach $nivaa_sortorder as $nivaa_id}
     {if gt($utdanninger[$nivaa_id].antall, 0)}
     
-    <div role="tabpanel" class="tab-pane active" id="{concat('utdnivaa_', $nivaa_id)}">
+    <div role="tabpanel" class="tab-pane{if eq($nivaa_id,0)} active{/if}" id="{concat('utdnivaa_', $nivaa_id)}">
         {foreach $utdanninger[$nivaa_id].fagomrade as $item}
-        
-        <!-- Item: {$item|attribute('show', 3, 'text')} -->
         
         {if gt($item.antall, 0)}
         <ul class="submenu col-sm-2">
             <li class="submenuhead"><a href="#">{$item.navn|wash()}</a></li>
             {foreach $item.items as $utd_item}
-            <!-- Utd_item: {$utd_item|attribute('show', 2, 'text')} -->
-            <li><a href="#">{$utd_item.name|wash()}</a></li>         
+            <li><a href="#">{$utd_item.data_map.title.content|wash()}</a></li>         
             {/foreach}
             
         </ul>
