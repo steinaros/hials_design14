@@ -49,11 +49,20 @@ Tmp_fagomrade: {$tmp_fagomrade|attribute('show',1,'text')}
         {*set $utdanninger[$nivaa_id].fagomrade = $tmp_fagomrade*}      
     {/foreach}
     <!--
+    FOR
     Count: {$utdanninger[$nivaa_id].count}
     Utdanninger:
     {$utdanninger|dump('show',3,'text')}
     -->
-    {*set $utdanninger[$nivaa_id].count = $nivaa_item_count*}
+    {set $utdanninger[$nivaa_id].count = $nivaa_item_count}
+
+    <!--
+    ETTER
+    Count: {$utdanninger[$nivaa_id].count}
+    Utdanninger:
+    {$utdanninger|dump('show',3,'text')}
+    -->
+
 {/foreach}                                                     
 <div class="col-sm-2">
     <ul class="nav nav-pills nav-stacked" role="tablist">
