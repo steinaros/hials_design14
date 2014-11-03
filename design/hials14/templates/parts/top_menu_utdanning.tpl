@@ -22,7 +22,7 @@
     {set $utdanninger = $utdanninger|append(hash('nivaa_id', $nivaa_id,
                                                  'nivaa', $nivaa_name,
                                                  'antall', 0,
-                                                 'fagomrade', hash() ) )}
+                                                 'fagomrade', array() ) )}
     {set $tmp_fagomrade = array()}
     {foreach $fagomraader as $fagomrade}
         {set $tmp_items = fetch( 'content', 'list', hash( 'parent_node_id', $fagomrade.node_id,
@@ -41,7 +41,7 @@ Tmp_item_count: {$tmp_item_count}
 tmp_hash: {$tmp_hash|attribute('show',2,'text')}
 nivaa_item_count: {$nivaa_item_count}
 -->
-        {set $tmp_fagomrade = $utdanninger[$nivaa_id].fagomrade|append($tmp_hash)}
+        {set $tmp_fagomrade = $utdanninger[$nivaa_id]['fagomrade']|append($tmp_hash)}
 <!--
 Tmp_fagomrade: {$tmp_fagomrade|attribute('show',1,'text')}
 -->        
@@ -51,16 +51,17 @@ Tmp_fagomrade: {$tmp_fagomrade|attribute('show',1,'text')}
     <!--
     FOR
     Nivaa_id: {$nivaa_id}
-    Count: {$utdanninger.$nivaa_id.antall}
+    Count: {$utdanninger[$nivaa_id]['antall']}
+    Nivaa count: {$nivaa_item_count}
     Utdanninger:
     {$utdanninger|dump('show',3,'text')}
     -->
-    {set $utdanninger.$nivaa_id.antall = $nivaa_item_count}
+    {set $utdanninger[$nivaa_id]['antall'] = $nivaa_item_count}
 
     <!--
     ETTER
     Nivaa_id: {$nivaa_id}
-    Count: {$utdanninger.$nivaa_id.antall}
+    Count: {$utdanninger[$nivaa_id]['antall']}
     Utdanninger:
     {$utdanninger|dump('show',3,'text')}
     -->
