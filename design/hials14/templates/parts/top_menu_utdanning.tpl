@@ -54,7 +54,7 @@ Tmp_fagomrade: {$tmp_fagomrade|attribute('show',1,'text')}
     Utdanninger:
     {$utdanninger|dump('show',3,'text')}
     -->
-    {set $utdanninger[$nivaa_id].antall = int($nivaa_item_count)}
+    {set $utdanninger.$nivaa_id.antall = int($nivaa_item_count)}
 
     <!--
     ETTER
