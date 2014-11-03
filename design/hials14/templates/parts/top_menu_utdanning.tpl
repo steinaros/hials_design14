@@ -21,7 +21,7 @@
     {set $nivaa_item_count = 0}
     {set $utdanninger = $utdanninger|append(hash('nivaa_id', $nivaa_id,
                                                  'nivaa', $nivaa_name,
-                                                 'count', 0,
+                                                 'antall', 0,
                                                  'fagomrade', hash() ) )}
     {set $tmp_fagomrade = array()}
     {foreach $fagomraader as $fagomrade}
@@ -31,7 +31,7 @@
                                      'class_filter_array', $classes,
                                      'attribute_filter', array( array( 325, '=', $nivaa_id ) ) ) )
              $tmp_item_count = $tmp_items|count()
-             $tmp_hash = hash( $fagomrade.name, hash( 'count', $tmp_item_count,
+             $tmp_hash = hash( $fagomrade.name, hash( 'antall', $tmp_item_count,
                                                       'items', $tmp_items ) )
              $nivaa_item_count = sum($nivaa_item_count, $tmp_item_count)}
 
@@ -50,15 +50,15 @@ Tmp_fagomrade: {$tmp_fagomrade|attribute('show',1,'text')}
     {/foreach}
     <!--
     FOR
-    Count: {$utdanninger[$nivaa_id].count}
+    Count: {$utdanninger[$nivaa_id].antall}
     Utdanninger:
     {$utdanninger|dump('show',3,'text')}
     -->
-    {set $utdanninger[$nivaa_id].count = $nivaa_item_count}
+    {set $utdanninger[$nivaa_id].antall = int($nivaa_item_count)}
 
     <!--
     ETTER
-    Count: {$utdanninger[$nivaa_id].count}
+    Count: {$utdanninger[$nivaa_id].antall}
     Utdanninger:
     {$utdanninger|dump('show',3,'text')}
     -->
