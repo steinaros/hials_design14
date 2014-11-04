@@ -37,7 +37,7 @@
 
         {foreach $tmp_items as $item}
             {if gt($item.data_map.title.content|count(), $tmp_width)}
-                {set $tmp_witdth = $item.data_map.title.content|count()
+                {set $tmp_width = $item.data_map.title.content|count()}
             {/if}
         {/foreach}
 
