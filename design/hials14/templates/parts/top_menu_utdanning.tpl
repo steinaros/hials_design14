@@ -61,10 +61,10 @@
     
 {/foreach}                                                     
 <div class="col-sm-2">
-    <ul class="nav nav-pills nav-stacked" role="tablist">
+    <ul id="utdanning_tabs" class="nav nav-pills nav-stacked" role="tablist">
 {foreach $nivaa_sortorder as $nivaa_id}    
     {if gt($utdanninger[$nivaa_id].antall, 0)}
-        <li role="presentation"{if eq($nivaa_id,0)} class="active"{/if}><a href="{concat('#utdnivaa_', $nivaa_id)}" role="tab" data-toggle="tab">{$utdanninger[$nivaa_id].nivaa|wash()}</a></li>
+        <li role="presentation"{if eq($nivaa_id,0)} class="active"{/if}><a href="{concat('#utdnivaa_', $nivaa_id)}" data-toggle="pill">{$utdanninger[$nivaa_id].nivaa|wash()}</a></li>
     {/if}
 {/foreach}
 	</ul>
