@@ -650,3 +650,8 @@ table.default td:last-child {
 	color: #fff;
 	
 }
+
+ul.nav-pills.nav-stacked {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}

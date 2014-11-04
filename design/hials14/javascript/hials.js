@@ -20,3 +20,23 @@ $('#mainDropdown').on('hidden.bs.dropdown', function (e) {
 	$('#bachelor').parent('li').addClass('active');
 	$('#submenu-bachelor').addClass('active');
 });
+
+$('[data-toggle="pill"]').on('click', function(event) {
+    // Avoid following the href location when clicking
+    event.preventDefault() 
+    // Avoid having the menu to close when clicking
+    event.stopPropagation()
+	
+//	var $tabsubMenu = $(event.target).closest('ul.tab-pane')
+//	var $activeTab = $($tabsubMenu).find('div.tabsubmenu-pane.active')
+//	var $newTab = $(event.target.parentElement).find('div.tabsubmenu-pane')
+	
+//	if (($activeTab.length == 1) && ($activeTab[0].id != $newTab[0].id)) {
+//		$($activeTab).toggleClass('active')
+//	} else {
+//		$($activeTab).removeClass('active')
+//		$($newTab).addClass('active')
+//		$($tabsubMenu).find('li.active').removeClass('active')
+//		$(event.target.parentElement).addClass('active');
+	}
+});

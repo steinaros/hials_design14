@@ -6,12 +6,13 @@
      $utdanning_width = array()
      $fagomraader = array()
      $tmp_utd = hash()
-
-     $utdanning_count = ''
+     $extra_space = 0
+     
      $col_width = 2
      $nivaa_item_count = 0
      $tmp_items = array()
      $tmp_item_count = 0
+     $tmp_width = 0
      
      $tmp_hash = hash()
      $tmp_fagomrade = array()}
@@ -30,11 +31,21 @@
                                      'class_filter_type', 'include',
                                      'class_filter_array', $classes,
                                      'attribute_filter', array( array( 325, '=', $nivaa_id ) ) ) )
+             $tmp_width = $fagomrade.data_map.name.content|count()
              $tmp_item_count = $tmp_items|count()
-             $tmp_hash = hash( 'navn', $fagomrade.name, 
-                               'antall', $tmp_item_count,
-                               'items', $tmp_items )
              $nivaa_item_count = sum($nivaa_item_count, $tmp_item_count)}
+
+        {foreach $tmp_items as $item}
+            {if gt($item.data_map.title.content|count(), $tmp_width)}
+                {set $tmp_witdth = $item.data_map.title.content|count()
+            {/if}
+        {/foreach}
+
+        {set $tmp_hash = hash( 'navn', $fagomrade.name, 
+                               'antall', $tmp_item_count,
+                               'width', $tmp_width,
+                               'items', $tmp_items )}
+
         {if gt($tmp_item_count, 0)}
         {set $tmp_fagomrade = $tmp_fagomrade|append($tmp_hash)}
         {/if}
@@ -62,11 +73,17 @@
 {foreach $nivaa_sortorder as $nivaa_id}
     {if gt($utdanninger[$nivaa_id].antall, 0)}
     
+    {set $col_width = floor(div(12, $utdanninger[$nivaa_id].fagomrade|count()))}
+    {if gt($col_width, 4)}{set $col_width = 4}{/if}
+    {set $extra_space = mod(12, $utdanninger[$nivaa_id].fagomrade|count())}
+    {if gt($extra_space, 0)}
+    {/if}
+    
     <div role="tabpanel" class="tab-pane{if eq($nivaa_id,0)} active{/if}" id="{concat('utdnivaa_', $nivaa_id)}">
         {foreach $utdanninger[$nivaa_id].fagomrade as $item}
         
         {if gt($item.antall, 0)}
-        <ul class="submenu col-sm-2">
+        <ul class="submenu col-sm-{$col-width}">
             <li class="submenuhead"><a href="#">{$item.navn|wash()}</a></li>
             {foreach $item.items as $utd_item}
             <li><a href="#">{$utd_item.data_map.title.content|wash()}</a></li>         
@@ -81,4 +98,11 @@
 {/foreach}
 </div>
 
-{undef $classes $nivaa_sortorder $nivaa_names $utdanninger $utdanning_width $utdanning_count $col_width $fagomraader $tmp_items}
+<!--
+
+Utdanninger:
+{$utdanninger|attribute('show', 2, 'text')}
+
+-->
+
+{undef $classes $nivaa_sortorder $nivaa_names $utdanninger $utdanning_width $fagomraader $tmp_utd $col_width $nivaa_item_count $tmp_items $tmp_item_count $tmp_hash $tmp_fagomrade}
