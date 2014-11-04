@@ -35,7 +35,8 @@
              $tmp_item_count = $tmp_items|count()
              $nivaa_item_count = sum($nivaa_item_count, $tmp_item_count)}
         {foreach $tmp_items as $item}{if gt($item.data_map.title.content|count(), $tmp_width)}{set $tmp_width = $item.data_map.title.content|count()}{/if}{/foreach}
-        {set $tmp_hash = hash( 'navn', $fagomrade.name, 
+        {set $tmp_hash = hash( 'navn', $fagomrade.name,
+                               'url_alias', $fagomrade.url_alias, 
                                'antall', $tmp_item_count,
                                'width', $tmp_width,
                                'items', $tmp_items )}
@@ -67,15 +68,18 @@
     {set $col_width = floor(div(12, $utdanninger[$nivaa_id].fagomrade|count()))}
     {if gt($col_width, 4)}{set $col_width = 4}{/if}
     {set $extra_space = mod(12, $utdanninger[$nivaa_id].fagomrade|count())}
-    {if gt($extra_space, 0)}
-    {/if}
+    {*if gt($extra_space, 0)*}
+        {*foreach $utdanninger[$nivaa_id].fagomrade as $item*}
+            
+        {*/foreach*}
+    {*/if*}
 
     <div role="tabpanel" class="tab-pane{if eq($nivaa_id,0)} active{/if}" id="{concat('utdnivaa_', $nivaa_id)}">
         {foreach $utdanninger[$nivaa_id].fagomrade as $item}
         
         {if gt($item.antall, 0)}
         <ul class="submenu col-sm-{$col_width}">
-            <li class="submenuhead"><a href="#">{$item.navn|wash()}</a></li>
+            <li class="submenuhead"><a href={$item.url_alias|ezurl}>{$item.navn|wash()}</a></li>
             {foreach $item.items as $utd_item}
             <li><a href={$utd_item.url_alias|ezurl}>{$utd_item.data_map.title.content|wash()}</a></li>
             {/foreach}

@@ -522,6 +522,7 @@ form.dropdown-menu {
 
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
     background-color: #565656;
+    color: #fff;
 }
 
 .directToMenu {
