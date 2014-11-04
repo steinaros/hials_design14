@@ -449,6 +449,8 @@ form.dropdown-menu {
     padding: 5px 5px;
 }
 
+/* NAVBAR *****************************************/
+
 .navbar-nav > li > a {
     padding: 10px 10px;
     line-height: inherit;
@@ -495,6 +497,11 @@ form.dropdown-menu {
     color: #fff;
 }
 
+.navbar-hials .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: #565656;
+    color: #fff;
+}
+
 .dropdown-menu {
     border: none;
     border-top: 1px solid #565656;
@@ -518,11 +525,6 @@ form.dropdown-menu {
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
 	text-decoration: underline;
 	background-color: transparent;
-}
-
-.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-    background-color: #565656;
-    color: #fff;
 }
 
 .directToMenu {
