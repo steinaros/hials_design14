@@ -63,31 +63,21 @@
 <div class="tab-content col-sm-10">
 {foreach $nivaa_sortorder as $nivaa_id}
     {if gt($utdanninger[$nivaa_id].antall, 0)}
-    
-    <!--
-    Colwidth: {$col_width}
-    Count: {$utdanninger[$nivaa_id].fagomrade|count()}
-    -->
-    
+ 
     {set $col_width = floor(div(12, $utdanninger[$nivaa_id].fagomrade|count()))}
     {if gt($col_width, 4)}{set $col_width = 4}{/if}
     {set $extra_space = mod(12, $utdanninger[$nivaa_id].fagomrade|count())}
     {if gt($extra_space, 0)}
     {/if}
 
-    <!--
-    Colwidth: {$col_width}
-    Extra_space: {$extra_space}
-    -->
-    
     <div role="tabpanel" class="tab-pane{if eq($nivaa_id,0)} active{/if}" id="{concat('utdnivaa_', $nivaa_id)}">
         {foreach $utdanninger[$nivaa_id].fagomrade as $item}
         
         {if gt($item.antall, 0)}
-        <ul class="submenu col-sm-{$col-width}">
+        <ul class="submenu col-sm-{$col_width}">
             <li class="submenuhead"><a href="#">{$item.navn|wash()}</a></li>
             {foreach $item.items as $utd_item}
-            <li><a href="{$utd_item.url_alias|ezurl}">{$utd_item.data_map.title.content|wash()}</a></li>
+            <li><a href={$utd_item.url_alias|ezurl}>{$utd_item.data_map.title.content|wash()}</a></li>
             {/foreach}
             
         </ul>
@@ -102,7 +92,7 @@
 <!--
 
 Utdanninger:
-{$utdanninger|attribute('show', 3, 'text')}
+{$utdanninger|attribute('show', 4, 'text')}
 
 -->
 
