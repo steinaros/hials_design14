@@ -34,22 +34,14 @@
              $tmp_width = $fagomrade.data_map.name.content|count()
              $tmp_item_count = $tmp_items|count()
              $nivaa_item_count = sum($nivaa_item_count, $tmp_item_count)}
-
-        {foreach $tmp_items as $item}
-            {if gt($item.data_map.title.content|count(), $tmp_width)}
-                {set $tmp_width = $item.data_map.title.content|count()}
-            {/if}
-        {/foreach}
-
+        {foreach $tmp_items as $item}{if gt($item.data_map.title.content|count(), $tmp_width)}{set $tmp_width = $item.data_map.title.content|count()}{/if}{/foreach}
         {set $tmp_hash = hash( 'navn', $fagomrade.name, 
                                'antall', $tmp_item_count,
                                'width', $tmp_width,
                                'items', $tmp_items )}
-
         {if gt($tmp_item_count, 0)}
         {set $tmp_fagomrade = $tmp_fagomrade|append($tmp_hash)}
         {/if}
-        
     {/foreach}
     {set $tmp_utd = hash('nivaa_id', $nivaa_id,
                          'nivaa', $nivaa_name,
@@ -58,7 +50,6 @@
     {if gt($tmp_utd.antall, 0)}
     {set $utdanninger = $utdanninger|append($tmp_utd)}
     {/if}
-    
 {/foreach}                                                     
 <div class="col-sm-2">
     <ul id="utdanning_tabs" class="nav nav-pills nav-stacked" role="tablist">
@@ -73,11 +64,21 @@
 {foreach $nivaa_sortorder as $nivaa_id}
     {if gt($utdanninger[$nivaa_id].antall, 0)}
     
+    <!--
+    Colwidth: {$col_width}
+    Count: {$utdanninger[$nivaa_id].fagomrade|count()}
+    -->
+    
     {set $col_width = floor(div(12, $utdanninger[$nivaa_id].fagomrade|count()))}
     {if gt($col_width, 4)}{set $col_width = 4}{/if}
     {set $extra_space = mod(12, $utdanninger[$nivaa_id].fagomrade|count())}
     {if gt($extra_space, 0)}
     {/if}
+
+    <!--
+    Colwidth: {$col_width}
+    Extra_space: {$extra_space}
+    -->
     
     <div role="tabpanel" class="tab-pane{if eq($nivaa_id,0)} active{/if}" id="{concat('utdnivaa_', $nivaa_id)}">
         {foreach $utdanninger[$nivaa_id].fagomrade as $item}
@@ -86,7 +87,7 @@
         <ul class="submenu col-sm-{$col-width}">
             <li class="submenuhead"><a href="#">{$item.navn|wash()}</a></li>
             {foreach $item.items as $utd_item}
-            <li><a href="#">{$utd_item.data_map.title.content|wash()}</a></li>         
+            <li><a href="{$utd_item.url_alias|ezurl}">{$utd_item.data_map.title.content|wash()}</a></li>
             {/foreach}
             
         </ul>
@@ -101,7 +102,7 @@
 <!--
 
 Utdanninger:
-{$utdanninger|attribute('show', 2, 'text')}
+{$utdanninger|attribute('show', 3, 'text')}
 
 -->
 
