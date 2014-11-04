@@ -119,5 +119,6 @@ Template=singlezone_layout.tpl
 AvailableForClasses[]=hials_portal_page
 AvailableForClasses[]=hials_avdeling
 AvailableForClasses[]=hials_contentpage
+AvailableForClasses[]=hials_forskningsprosjekt
 
 */ ?>

@@ -61,11 +61,11 @@
 {/foreach}
 	</ul>
 </div>
-<div class="tab-content col-sm-10">
+<div class="tab-content">
 {foreach $nivaa_sortorder as $nivaa_id}
     {if gt($utdanninger[$nivaa_id].antall, 0)}
  
-    {set $col_width = floor(div(12, $utdanninger[$nivaa_id].fagomrade|count()))}
+    {set $col_width = floor(div(10, $utdanninger[$nivaa_id].fagomrade|count()))}
     {if gt($col_width, 4)}{set $col_width = 4}{/if}
     {set $extra_space = mod(12, $utdanninger[$nivaa_id].fagomrade|count())}
     {*if gt($extra_space, 0)*}

@@ -27,6 +27,7 @@ ContentClasses[]=hials_portal_page
 ContentClasses[]=hials_utdanningstilbud
 ContentClasses[]=hials_contentpage
 ContentClasses[]=hials_avdeling
+ContentClasses[]=hials_forskningsprosjekt
 # The subtree node ID from which to fetch objects with Layout datatype
 RootSubtree=1
 

@@ -10,6 +10,11 @@
 	    {if $node.data_map.image.has_content}
 	    <aside class="col-sm-6 col-left">
 	        {attribute_view_gui attribute=$node.data_map.image image_class=banner_half css_class=img-responsive}
+            {if $node.data_map.bokser.has_content}
+            <div class="attribute-bokser">
+            {attribute_view_gui attribute=$node.data_map.bokser container_node=$node}
+            </div>
+            {/if}
             {if $children|count()}
             {include uri='design:menu/leftmenu_subitems.tpl' subitems=$children}
             {/if}	        
