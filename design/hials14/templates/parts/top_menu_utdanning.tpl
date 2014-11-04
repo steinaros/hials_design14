@@ -78,13 +78,15 @@
         {foreach $utdanninger[$nivaa_id].fagomrade as $item}
         
         {if gt($item.antall, 0)}
-        <ul class="submenu col-sm-{$col_width}">
-            <li class="submenuhead"><a href={$item.url_alias|ezurl}>{$item.navn|wash()}</a></li>
-            {foreach $item.items as $utd_item}
-            <li><a href={$utd_item.url_alias|ezurl}>{$utd_item.data_map.title.content|wash()}</a></li>
-            {/foreach}
-            
-        </ul>
+        <div class="col-sm-{$col_width}">
+	        <ul class="submenu">
+	            <li class="submenuhead"><a href={$item.url_alias|ezurl}>{$item.navn|wash()}</a></li>
+	            {foreach $item.items as $utd_item}
+	            <li><a href={$utd_item.url_alias|ezurl}>{$utd_item.data_map.title.content|wash()}</a></li>
+	            {/foreach}
+	            
+	        </ul>
+	    </div>
         {/foreach}
         {/if}
     </div>
