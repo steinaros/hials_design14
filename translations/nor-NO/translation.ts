@@ -41,6 +41,17 @@
         </message>                
     </context>
     <context>
+        <name>hials/design/navigation</name>
+        <message>
+            <source>Previous</source>
+            <translation>Forrige</translation>
+        </message>
+        <message>
+            <source>Next</source>
+            <translation>Neste</translation>
+        </message>
+    </context>
+    <context>
         <name>hials/design/pagelayout</name>
         <message>
             <source>Skip to main content</source>

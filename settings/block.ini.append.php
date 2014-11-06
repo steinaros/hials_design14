@@ -19,6 +19,7 @@ AllowedTypes[]=ApplicationInfo
 AllowedTypes[]=ApplyHere
 AllowedTypes[]=SingleItem
 AllowedTypes[]=ContactList
+AllowedTypes[]=Carousel
 
 
 [PushToBlock]
@@ -239,6 +240,15 @@ NumberOfValidItems=5
 ManualAddingOfItems=enabled
 AllowedClasses[]
 AllowedClasses[]=user
+ViewList[]
+ViewList[]=default
+ViewName[default]=Default
+
+[Carousel]
+Name=Carousel
+NumberOfValidItems=5
+NumberOfArchivedItems=5
+ManualAddingOfItems=enabled
 ViewList[]
 ViewList[]=default
 ViewName[default]=Default
