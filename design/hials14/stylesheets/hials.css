@@ -543,9 +543,10 @@ ul.submenu {
 
 .submenu > li > a {
     color: #565656;
+    line-height: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .submenu > li > a {
         padding: 10px 10px;
