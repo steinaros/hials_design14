@@ -12,22 +12,22 @@
                 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
-                    <div class="item active"> <img src="{"tmp-frontpage/OKADM_crop.jpg"|ezimage('no')}" alt="Studenter">
+                    <div class="item active"> <img src="{"tmp-frontpage/OKADM_crop.jpg"|ezimage('no')}" alt="Studenter" class="img-responsive">
                         <div class="carousel-caption">
                             <h3>#hialsmoments</h3>
                         </div>
                     </div>
-                    <div class="item"> <img src="{"tmp-frontpage/OKADM_crop.jpg"|ezimage('no')}" alt="Studenter">
+                    <div class="item"> <img src="{"tmp-frontpage/OKADM_crop.jpg"|ezimage('no')}" alt="Studenter" class="img-responsive">
                         <div class="carousel-caption">
                             <h3>#hialsmoments 2</h3>
                         </div>
                     </div>
-                    <div class="item"> <img src="{"tmp-frontpage/dresskledde.jpg"|ezimage('no')}" alt="Dresskledde">
+                    <div class="item"> <img src="{"tmp-frontpage/dresskledde.jpg"|ezimage('no')}" alt="Dresskledde" class="img-responsive">
                         <div class="carousel-caption">
                             <h3>#dresskledde</h3>
                         </div>
                     </div>
-                    <div class="item"> <img src="{"tmp-frontpage/Faddere.jpg"|ezimage('no')}" alt="Faddere">
+                    <div class="item"> <img src="{"tmp-frontpage/Faddere.jpg"|ezimage('no')}" alt="Faddere" class="img-responsive">
                         <div class="carousel-caption">
                             <h3>#fadder</h3>
                         </div>
