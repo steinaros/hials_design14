@@ -1,5 +1,4 @@
 {def $valid_nodes = $block.valid_nodes}
-<-- {$valid_nodes|attribute('show',2,'text')} -->
 <div class="block-type-content-grid block-view-{$block.view}">
     <div class="row-sm-height">
         <div class="col-sm-6 col-sm-height nopadding">
