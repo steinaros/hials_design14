@@ -134,6 +134,7 @@ ZoneName[carousel]=Carousel Zone
 ZoneName[top_side]=Top toolbox Zone
 ZoneName[box]=Box Zone
 ZoneName[news]=News Zone
+ZoneName[misc]=Misc Zone
 Template=frontpagezone_layout.tpl
 ZoneThumbnail=frontpagezone_layout.gif
 AvailableForClasses[]=hials_frontpage
