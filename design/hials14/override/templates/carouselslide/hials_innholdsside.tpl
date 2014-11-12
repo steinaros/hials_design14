@@ -1,10 +1,10 @@
 {* Innholdsside - Carouselslide view *}
 {if ne($node.data_map.banner.content.relation_list|count(),0)}
-    {attribute_view_gui attribute=$node.data_map.banner image_class=$big_class css_class='img-responsive'}
+    {def $banner = fetch( content, object, hash( object_id, $node.data_map.banner.content.relation_list.0.contentobject_id ) )}
+    <a href={$node.url_alias|ezurl}>{attribute_view_gui attribute=$banner.data_map.image image_class=$big_class css_class='img-responsive'}</a>
 {else}
-    {attribute_view_gui attribute=$node.data_map.image image_class=$big_class css_class='img-responsive'}
+    <a href={$node.url_alias|ezurl}>{attribute_view_gui attribute=$node.data_map.image image_class=$big_class css_class='img-responsive'}</a>
 {/if}
-<div class="carousel-caption"><a href={$node.url_alias|ezurl}>
-    <h3>{$node.data_map.title.content|wash()}</h3>
-    <!-- <p>{attribute_view_gui attribute=$node.data_map.intro}</p> -->
-</a></div>
+<div class="carousel-caption">
+    <h3><a href={$node.url_alias|ezurl}>{$node.data_map.title.content|wash()}</a></h3>
+</div>

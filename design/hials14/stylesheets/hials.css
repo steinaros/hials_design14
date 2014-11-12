@@ -673,6 +673,7 @@ table.default td:last-child {
 	background-color: #b4b4b4;
 	color: #333;
 	text-transform: uppercase;
+	font-weight: 700;
 }
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
@@ -692,4 +693,25 @@ ul.nav-pills.nav-stacked>li+li {
 
 .nav>li>a {
 	padding: 8px 15px;
+}
+
+/*************************************************/
+
+/*** CAROUSEL ************************************/
+
+.carousel-caption {
+	text-shadow: none;
+	background-color: rgba(0,0,0,0.7);
+	right: 0;
+	left: 0;
+	width: 100%;
+	text-align: left;
+	padding: inherit 15px;
+}
+
+.carousel-caption a {
+	color: #fff;
+	text-decoration: none;
+	
+	
 }
