@@ -1,5 +1,5 @@
 {def $valid_nodes = $block.valid_nodes}
-
+<-- {$valid_nodes|attribute('show',2,'text')} -->
 <div class="block-type-content-grid block-view-{$block.view}">
     <div class="row-sm-height">
         <div class="col-sm-6 col-sm-height nopadding">
@@ -11,14 +11,14 @@
         </div>
         <div class="col-sm-6 col-sm-height col-top" itemscope itemtype="http://schema.org/Article">
             <article class="front headline">
-                <h2 class="teaser-title" itemprop="name">{$valid_nodes.0.data_map.title.contents|wash()}</h2>
-                <div><time itemprop="datePublished" datetime="{$valid_nodes.0.object.published|datetime('custom', '%c')}>{$valid_nodes.0.object.published|l10n('shortdate')}</time><span itemprop="description">{attribute_view_gui attribute=$valid_nodes.0.data_map.intro}</span></div>
+                <h2 class="teaser-title" itemprop="name">{$valid_nodes.0.data_map.title.content|wash()}</h2>
+                <div><time itemprop="datePublished" datetime="{$valid_nodes.0.object.published|datetime('custom', '%c')}">{$valid_nodes.0.object.published|l10n('shortdate')}</time><span itemprop="description">{attribute_view_gui attribute=$valid_nodes.0.data_map.intro}</span></div>
             </article>
             <div class="row">
                 {foreach $valid_nodes as $item offset 1}
                 <article class="col-sm-6" itemscope itemtype="http://schema.org/Article">
-                    <h2 class="teaser-title" itemprop="name"><a href="{$item.url_alias|ezurl( 'no' )}">{$item.data_map.title.contents|wash()}</a></h2>
-                    <div><time itemprop="datePublished" datetime="{$item.object.published|datetime('custom', '%c')}>{$item.object.published|l10n('shortdate')}</time><span itemprop="description">{attribute_view_gui attribute=$item.data_map.intro}</span></div>
+                    <h2 class="teaser-title" itemprop="name"><a href="{$item.url_alias|ezurl( 'no' )}">{$item.data_map.title.content|wash()}</a></h2>
+                    <div><time itemprop="datePublished" datetime="{$item.object.published|datetime('custom', '%c')}">{$item.object.published|l10n('shortdate')}</time><span itemprop="description">{attribute_view_gui attribute=$item.data_map.intro}</span></div>
                 </article>
                 {/foreach}
             </div>
