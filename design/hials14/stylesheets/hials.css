@@ -1,7 +1,7 @@
 body {
 	font-family: 'Roboto', sans-serif;
     font-size: 12px;
-    color: #565656;
+    color: #333;
 }
 
 #page {
@@ -46,12 +46,21 @@ h4, .h4 {
     font-size: 14px;
 }
 
+a {
+	color: #003468;
+	text-decoration: underline;
+}
+
+a:hover, a:focus {
+	color: #004C99;
+}
+
 .pubisheddatecol {
 	padding-top: 20px;
 }
 
 .pubisheddatecol time {
-	color: #565656;
+	color: #333;
 	font-size: 36px;
 	font-weight: 500;
 	line-height: 1.1;
@@ -67,7 +76,7 @@ ul.leftmenu > li {
 }
 
 .leftmenu, .leftmenu > li > a {
-    color: #565656; 
+    color: #333; 
     font-size: 14px;
 }
 
@@ -96,7 +105,7 @@ p.leftmenu {
 }
 
 .call-to-action a, .textcenter a {
-	color: #565656;
+	color: #333;
 }
 	    
 .bg-white {
@@ -118,12 +127,17 @@ p.leftmenu {
 
 .bg-yellow {
     background-color: #FDED00;
-    color:#565656;
+    color:#333;
 }
 
 .bg-red {
     background-color: #7C1850;
     color: #fff;
+}
+
+.bg-blue {
+	background-color: #003468;
+	color: #fff;
 }
 
 .articlemodified:after, .articlepublished:after {
@@ -135,8 +149,8 @@ p.leftmenu {
 }
 
 .byline p {
-    border-top: 1px solid #565656;
-    border-bottom: 1px solid #565656;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
 }
@@ -238,14 +252,14 @@ blockquote p:after {
 .highlighted h2, .highlighted h2 a {
 	font-size: 36px;
 	text-transform: none;
-	color: #565656;
+	color: #333;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
 h2.teaser-title, h2.teaser-title a {
     text-transform: none;
-    color: #565656;
+    color: #333;
 }
 
 .teaser-image {
@@ -375,7 +389,7 @@ h2.teaser-title, h2.teaser-title a {
 footer {
 	padding-top: 2em;
 	padding-bottom: 2em;
-	border-top: 1px solid #565656;
+	border-top: 1px solid #333;
 	margin-top: 4em;
 }
 
@@ -396,7 +410,7 @@ footer .h-card p {
 }
 
 article.headline {
-    border-bottom: 1px solid #565656;
+    border-bottom: 1px solid #333;
 }
 
 article.headline h2.teaser-title {
@@ -429,8 +443,8 @@ article.headline h2.teaser-title {
 }
 
 nav#mainnav {
-    border-top: 1px solid #565656;
-    border-bottom: 1px solid #565656;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
 }
 
 .navbar-brand {
@@ -470,11 +484,11 @@ form.dropdown-menu {
     .topmenuitem-wrapper {
         display:block;
         padding: 0 15px;
-        border-left: 1px solid #565656;
+        border-left: 1px solid #333;
     }
     
     .navbar-hials .navbar-nav > li:last-child .topmenuitem-wrapper {
-        border-right: 1px solid #565656;
+        border-right: 1px solid #333;
     }
 }
 
@@ -489,7 +503,8 @@ form.dropdown-menu {
 }
 
 .navbar-hials .nav > li a {
-    color: #565656;
+    color: #333;
+    text-decoration: none;
 }
 
 .navbar-hials .nav > li > a:hover, .navbar-hials .nav > li > a:focus {
@@ -504,7 +519,7 @@ form.dropdown-menu {
 
 .dropdown-menu {
     border: none;
-    border-top: 1px solid #565656;
+    border-top: 1px solid #333;
     border-radius: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -542,8 +557,9 @@ ul.submenu {
 }
 
 .submenu > li > a {
-    color: #565656;
+    color: #333;
     line-height: 20px;
+    text-decoration: none;
 }
 
 @media (max-width: 767px) {
@@ -552,7 +568,8 @@ ul.submenu {
         padding: 10px 10px;
         line-height: 20px;
         display: block;
-        border-left: 5px solid #565656;
+        border-left: 5px solid #333;
+        text-decoration: none;
     }
     
     .submenu > li:last-child {
@@ -577,8 +594,8 @@ ul.submenu {
 /* TABLE ******************************************/
 
 table.default {
-	background-color: #B4B4B4;
-	color: #565656;
+	background-color: #ccc;
+	color: #333;
 	width: 100%;
 	margin-bottom: 10px;
 }
@@ -636,7 +653,8 @@ table.default td:last-child {
 }
 
 .breadcrumb a {
-	color: #565656;
+	color: #333;
+	text-decoration: none;
 }
 
 /*************************************************/
@@ -646,11 +664,11 @@ table.default td:last-child {
 .nav-pills > li > a {
 	border-radius: 0;
 	background-color: #b4b4b4;
-	color: #565656;
+	color: #333;
 }
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
-	background-color: #565656;
+	background-color: #7C1850;
 	color: #fff;
 	
 }
