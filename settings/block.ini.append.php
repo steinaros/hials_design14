@@ -20,6 +20,7 @@ AllowedTypes[]=ApplyHere
 AllowedTypes[]=SingleItem
 AllowedTypes[]=ContactList
 AllowedTypes[]=Carousel
+AllowedTypes[]=FrontpageNews
 
 
 [PushToBlock]
@@ -249,8 +250,26 @@ Name=Carousel
 NumberOfValidItems=5
 NumberOfArchivedItems=5
 ManualAddingOfItems=enabled
+CustomAttributes[]=interval
+CustomAttributeTypes[interval]=string
+CustomAttributeNames[interval]=Interval (ms)
 ViewList[]
 ViewList[]=default
 ViewName[default]=Default
+AllowedClasses[]=hials_article
+AllowedClasses[]=hials_avdeling
+AllowedClasses[]=hials_forskningsprosjekt
+AllowedClasses[]=hials_innholdsside
+AllowedClasses[]=hials_utdanningstilbud
+
+[FrontpageNews]
+Name=Frontpage News
+NumberOfValidItems=3
+NumberOfArchivedItems=5
+ManualAddingOfItems=enabled
+ViewList[]
+ViewList[]=default
+ViewName[default]=Default
+AllowedClasses[]=hials_article
 
 */ ?>

@@ -1,3 +1,5 @@
+{attribute_view_gui attribute=$node.data_map.page container_node=$node}
+{*
 <div class="row">
     <div class="container-sm-height colspacing">
         <div class="row-sm-height">
@@ -128,3 +130,4 @@
         </div>
     </div>
 </div>
+*}

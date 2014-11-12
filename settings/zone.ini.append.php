@@ -16,6 +16,7 @@ AllowedTypes[]
 AllowedTypes[]=SingleZoneLayout
 AllowedTypes[]=UtdanningBoksLayout
 AllowedTypes[]=InnholdssideBoksLayout
+AllowedTypes[]=FrontpageLayout
 
 #[GlobalZoneLayout]
 #ZoneTypeName=Global zone layout
@@ -121,5 +122,21 @@ AvailableForClasses[]=hials_avdeling
 AvailableForClasses[]=hials_contentpage
 AvailableForClasses[]=hials_forskningsprosjekt
 AvailableForClasses[]=hials_frontpage
+
+[FrontpageLayout]
+ZoneTypeName=Frontpage zone layout
+Zones[]=carousel
+Zones[]=top_side
+Zones[]=box
+Zones[]=news
+Zones[]=misc
+ZoneName[carousel]=Carousel Zone
+ZoneName[top_side]=Top toolbox Zone
+ZoneName[box]=Box Zone
+ZoneName[news]=News Zone
+Template=frontpagezone_layout.tpl
+ZoneThumbnail=frontpagezone_layout.gif
+AvailableForClasses[]=hials_frontpage
+
 
 */ ?>

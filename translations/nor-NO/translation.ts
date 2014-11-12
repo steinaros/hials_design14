@@ -150,5 +150,17 @@
             <source>Archive</source>
             <translation>Arkiv</translation>
         </message>
-    </context>    	
+        <message>
+            <source>Newsarchive</source>
+            <translation>Nyhetsarkiv</translation>
+        </message>
+        <message>
+            <source>More news</source>
+            <translation>Flere nyheter</translation>
+        </message>
+        <message>
+            <source>News</source>
+            <translation>Nyheter</translation>
+        </message>
+    </context>
 </TS>

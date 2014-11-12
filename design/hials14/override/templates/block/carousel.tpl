@@ -1,7 +1,12 @@
 {def $valid_nodes = $block.valid_nodes
-     $big_image_class = 'frontcarousel'}
+     $big_image_class = 'frontcarousel'
+     $interval = 5000}
+{if is_set($block.custom_attributes.interval)}
+    {set $interval = $block.custom_attributes.width|int()}
+    {if lt($interval, 0)}{set $interval = 0}{/if}
+{/if}     
 <!-- BLOCK: START -->
-<div id="carousel-{$block.zone_id}-{$block.id}" class="carousel slide col-md-9 col-md-height nopadding" data-ride="carousel"> 
+<div id="carousel-{$block.zone_id}-{$block.id}" class="carousel slide col-md-9 col-md-height nopadding" data-ride="carousel" data-interval="{$interval|wash()}"> 
     <!-- Indicators -->
     <ol class="carousel-indicators">
     {foreach $valid_nodes as $key => $carousel_item}
