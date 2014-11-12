@@ -1,13 +1,13 @@
 <div class="zone-layout-{$zone_layout|downcase()}">
 	<div class="row">
-	    <div class="container-sm-height colspacing">
-	        <div class="row-sm-height">
+	    <div class="container-md-height colspacing">
+	        <div class="row-md-height">
 	            {if and( is_set( $zones[0].blocks ), $zones[0].blocks|count() )}
 		            {foreach $zones[0].blocks as $block}
 		                {include uri='design:parts/zone_block.tpl' zone=$zones[0]}
 		            {/foreach}
 	            {/if}
-	            <div class="col-sm-3 col-sm-height bg-darkgray col-top boks">
+	            <div class="col-md-3 col-md-height bg-gray col-top boks">
 	                <h2 class="front">Kalender</h2>
 	                <dl>
 	                    <dt>
