@@ -4,7 +4,8 @@
 {if is_set($block.custom_attributes.interval)}
     {set $interval = $block.custom_attributes.width|int()}
     {if lt($interval, 0)}{set $interval = 0}{/if}
-{/if}     
+{/if}
+<!-- {$valid_nodes|attribute('show', 2, 'text')} -->     
 <!-- BLOCK: START -->
 <div id="carousel-{$block.zone_id}-{$block.id}" class="carousel slide col-md-9 col-md-height nopadding" data-ride="carousel" data-interval="{$interval|wash()}"> 
     <!-- Indicators -->
@@ -17,6 +18,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         {foreach $valid_nodes as $key => $carousel_item}
+<!-- {$carousel_item|attribute('show', 2, 'text')} -->        
         <div class="item{if eq($key, 0)} active{/if}">
             {node_view_gui view='carouselslide' big_class=$big_image_class content_node=$carousel_item}
         </div>        
