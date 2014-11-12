@@ -701,17 +701,23 @@ ul.nav-pills.nav-stacked>li+li {
 
 .carousel-caption {
 	text-shadow: none;
-	background-color: rgba(0,0,0,0.7);
+	background-color: rgba(86,86,86,0.6);
 	right: 0;
 	left: 0;
 	width: 100%;
 	text-align: left;
-	padding: inherit 15px;
+	padding-left: 30px;
 }
 
 .carousel-caption a {
 	color: #fff;
 	text-decoration: none;
-	
-	
+}
+
+.carousel-caption a:hover, .carousel-caption a:focus {
+	text-decoration: underline;
+}
+
+.carousel-control {
+	color: #FDED00;
 }
