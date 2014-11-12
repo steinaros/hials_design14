@@ -1,4 +1,4 @@
-<div class="zone-layout-{$zone_layout|downcase()}"
+<div class="zone-layout-{$zone_layout|downcase()}">
 	<div class="row">
 	    <div class="container-sm-height colspacing">
 	        <div class="row-sm-height">
