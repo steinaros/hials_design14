@@ -555,6 +555,7 @@ ul.submenu {
 
 .submenuhead {
     text-transform: uppercase;
+    font-weight: 700;
 }
 
 .submenu > li > a {
@@ -671,7 +672,7 @@ table.default td:last-child {
 	border-radius: 0;
 	background-color: #b4b4b4;
 	color: #333;
-	
+	text-transform: uppercase;
 }
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
