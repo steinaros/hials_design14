@@ -259,6 +259,7 @@ blockquote p:after {
 
 h2.teaser-title, h2.teaser-title a {
     text-transform: none;
+    text-decoration: none;
     color: #333;
 }
 
@@ -562,6 +563,11 @@ ul.submenu {
     text-decoration: none;
 }
 
+.submenu > li > a:hover,  .submenu > li > a:focus {
+    text-decoration: underline;
+}
+
+
 @media (max-width: 767px) {
 
     .submenu > li > a {
@@ -665,6 +671,7 @@ table.default td:last-child {
 	border-radius: 0;
 	background-color: #b4b4b4;
 	color: #333;
+	
 }
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
@@ -676,4 +683,12 @@ table.default td:last-child {
 ul.nav-pills.nav-stacked {
 	padding-top: 15px;
 	padding-bottom: 15px;
+}
+
+ul.nav-pills.nav-stacked>li+li {
+    margin-top: 8px;
+}
+
+.nav>li>a {
+	padding: 8px 15px;
 }
