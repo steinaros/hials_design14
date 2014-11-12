@@ -2,7 +2,7 @@
      $big_image_class = 'frontcarousel'
      $interval = 5000}
 {if is_set($block.custom_attributes.interval)}
-    {set $interval = $block.custom_attributes.width|int()}
+    {set $interval = $block.custom_attributes.interval|int()}
     {if lt($interval, 0)}{set $interval = 0}{/if}
 {/if}
  
@@ -27,5 +27,5 @@
     <!-- Controls --> 
     <a class="left carousel-control" href="#carousel-{$block.zone_id}-{$block.id}" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> <span class="sr-only">{'Previous'|i18n('hials/design/navigation')}</span> </a> <a class="right carousel-control" href="#carousel-{$block.zone_id}-{$block.id}" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> <span class="sr-only">{'Next'|i18n('hials/design/navigation')}</span> </a>
 </div>
-{undef $valid_nodes $big_image_class}
+{undef $valid_nodes $big_image_class $interval}
 <!-- BLOCK: END -->
