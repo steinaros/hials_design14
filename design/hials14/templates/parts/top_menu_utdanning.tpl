@@ -94,10 +94,10 @@
     {/if}
 {/foreach}
 </div>
-
+{*
 <!--
 Utdanninger:
 {$utdanninger|attribute('show', 4, 'text')}
 -->
-
+*}
 {undef $classes $nivaa_sortorder $nivaa_names $utdanninger $utdanning_width $fagomraader $tmp_utd $col_width $nivaa_item_count $tmp_items $tmp_item_count $tmp_hash $tmp_fagomrade}
