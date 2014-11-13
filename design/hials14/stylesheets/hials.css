@@ -509,13 +509,16 @@ form.dropdown-menu {
 }
 
 .navbar-hials .nav > li > a:hover, .navbar-hials .nav > li > a:focus {
-    background-color: #565656;
-    color: #fff;
+    /*background-color: #565656;
+    color: #fff;*/
+    text-decoration: underline;
 }
 
 .navbar-hials .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-    background-color: #565656;
-    color: #fff;
+    /*background-color: #565656;
+    color: #fff;*/
+    color: #7C1850;
+    text-decoration: underline;
 }
 
 .dropdown-menu {

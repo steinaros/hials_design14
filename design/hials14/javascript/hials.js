@@ -38,4 +38,9 @@ $('[data-toggle="pill"]').on('click', function(event) {
 		$('#utdanning_tabs').find('li.active').removeClass('active')
 		$(event.target.parentElement).addClass('active');
 	}
+   	
+	var height = $menu.outerHeight()
+	$('main').css('margin-top', height)
+	$menu.slideDown('fast', 'linear')
+	
 });
