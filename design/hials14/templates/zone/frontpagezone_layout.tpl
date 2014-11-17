@@ -54,29 +54,24 @@
 	    </div>
 	</div>
     <div class="row">
-        <div class="container">
-	       <div class="col-xs-12 bg-red height90 col-middle">
-	           <ul class="nav nav-pills nav-justified">
-	               <li role="presentation"><a href="#">Biologiske fag</a></li>
-	               <li role="presentation"><a href="#">Helsefag</a></li>
-	               <li role="presentation"><a href="#">Ingeniørfag</a></li>
-	               <li role="presentation"><a href="#">Maritime fag</a></li>
-	               <li role="presentation"><a href="#">Økonomisk-administrative fag</a></li>
-	           </ul>
-	       </div>
-       </div>
+        <div class="col-xs-12">
+			<div class="bg-gray">
+				<ul class="nav-links">
+					<li role="presentation"><a href="#">Biologiske fag</a></li>
+					<li role="presentation"><a href="#">Helsefag</a></li>
+					<li role="presentation"><a href="#">Ingeniørfag</a></li>
+					<li role="presentation"><a href="#">Maritime fag</a></li>
+					<li role="presentation"><a href="#">Økonomisk-administrative fag</a></li>
+				</ul>
+			</div>
+		</div>
     </div>   
 	<div id=news class="row bg-white">
-	    <p class="h1 front">{'News'|i18n('hials/design/news')}</p>
-	    <div class="row">
-	        <div class="container-sm-height colspacing">
-                {if and( is_set( $zones[3].blocks ), $zones[3].blocks|count() )}
-                    {foreach $zones[3].blocks as $block}
-                        {include uri='design:parts/zone_block.tpl' zone=$zones[3]}
-                    {/foreach}
-                {/if}
-	        </div>
-	    </div>
+        {if and( is_set( $zones[3].blocks ), $zones[3].blocks|count() )}
+            {foreach $zones[3].blocks as $block}
+                {include uri='design:parts/zone_block.tpl' zone=$zones[3]}
+            {/foreach}
+        {/if}
     </div>
     <div class="row">
         <div class="container-sm-height colspacing">
