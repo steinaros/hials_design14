@@ -65,7 +65,7 @@
 				                                                        'class_filter_type', 'include',
 				                                                        'class_filter_array', $top_menu_utdanning_class_filter ) )}
                 {foreach $utdanning_groups as $item}
-					<li role="presentation"><a href="{$item.url_alias|ezurl('no')}">{$item.data_map.title.content|wash()}</a></li>
+					<li role="presentation"><a href="{$item.url_alias|ezurl('no')}">{$item.data_map.name.content|wash()}</a></li>
                 {/foreach}
                 {undef $UTDANNING_node_id $root_node $top_menu_utdanning_class_filter $utdanning_groups}
 				</ul>
