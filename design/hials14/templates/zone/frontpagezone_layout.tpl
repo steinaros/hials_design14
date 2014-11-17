@@ -57,21 +57,29 @@
         <div class="col-xs-12">
 			<div class="bg-gray">
 				<ul class="nav-links">
-					<li role="presentation"><a href="#">Biologiske fag</a></li>
-					<li role="presentation"><a href="#">Helsefag</a></li>
-					<li role="presentation"><a href="#">Ingeniørfag</a></li>
-					<li role="presentation"><a href="#">Maritime fag</a></li>
-					<li role="presentation"><a href="#">Økonomisk-administrative fag</a></li>
+				{def $UTDANNING_node_id = ezini( 'HialsContentNodeIDs', 'UtdanningRoot', 'content.ini' )}
+				{def $root_node = fetch( 'content', 'node', hash( 'node_id', $UTDANNING_node_id ) )}
+				{def $top_menu_utdanning_class_filter = ezini( 'MenuContentSettings', 'UtdanningSubMenuIdentifierList', 'menu.ini' )}
+				{def $utdanning_groups = fetch('content', 'list', hash( 'parent_node_id', $UTDANNING_node_id,
+				                                                        'sort_by', $root_node.sort_array,
+				                                                        'class_filter_type', 'include',
+				                                                        'class_filter_array', $top_menu_utdanning_class_filter ) )}
+                {foreach $utdanning_groups as $item}
+					<li role="presentation"><a href="{$item.url_alias|ezurl('no')}">{$item.data_map.title.content|wash()}</a></li>
+                {/foreach}
+                {undef $UTDANNING_node_id $root_node $top_menu_utdanning_class_filter $utdanning_groups}
 				</ul>
 			</div>
 		</div>
     </div>   
 	<div id=news class="row bg-white">
+        <div class="row-wrapper">
         {if and( is_set( $zones[3].blocks ), $zones[3].blocks|count() )}
             {foreach $zones[3].blocks as $block}
                 {include uri='design:parts/zone_block.tpl' zone=$zones[3]}
             {/foreach}
         {/if}
+        </div>
     </div>
     <div class="row">
         <div class="container-sm-height colspacing">

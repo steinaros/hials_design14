@@ -17,6 +17,11 @@ main {
 	padding-top: 0;
 }
 
+.row-wrapper > * {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 h1, .h1 {
 	color: #7C1850;
 	text-transform: uppercase;
@@ -278,6 +283,15 @@ h2.teaser-title, h2.teaser-title a {
 .col-xs-height {
     display:table-cell;
     float:none;
+}
+
+.row-sm-height {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.col-sm-height {
+    margin-bottom: 15px;
 }
 
 .row-md-height {

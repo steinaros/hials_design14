@@ -1,7 +1,7 @@
 <?php /*
 
 [MenuContentSettings]
-TopIdentifierList[]=event_calendar
+TopIdentifierList[]=hials_event_calendar
 TopIdentifierList[]=link
 TopIdentifierList[]=hials_portal_page
 TopIdentifierList[]=landing_page
