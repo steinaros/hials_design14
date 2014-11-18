@@ -89,7 +89,7 @@
                     {case match=$UTDANNING_node_id}
                         <ul class="dropdown-menu">
                             <li class="directToMenu"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}>{'Directly to'|i18n('hials/design/std')} {$item.name|wash()}</a></li>
-                            <li id="utdanning_tabs">{include uri='design:parts/top_menu_utdanning.tpl' menunode=$UTDANNING_node_id}</li>
+                            <li id="utdanning_tabs">{include uri='design:menu/top_menu_utdanning.tpl' menunode=$UTDANNING_node_id}</li>
                         </ul>                    
                     {/case}
                     {case}

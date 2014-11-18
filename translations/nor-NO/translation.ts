@@ -38,7 +38,11 @@
         <message>
             <source>Department</source>
             <translation>Avdeling</translation>
-        </message>                
+        </message>
+        <message>
+            <source>More...</source>
+            <translation>Se flere</translation>
+        </message>
     </context>
     <context>
         <name>hials/design/navigation</name>
@@ -163,4 +167,18 @@
             <translation>Nyheter</translation>
         </message>
     </context>
+    <context>
+        <name>hials/design/calendar</name>
+        <message>
+            <source>Calendar</source>
+            <translation>Kalender</translation>
+        </message>
+        <message>
+            <source>More events</source>
+            <translation>Flere hendelser</translation>
+        </message>
+        <message>
+            <source></source>
+            <translation></translation>
+        </message>
 </TS>

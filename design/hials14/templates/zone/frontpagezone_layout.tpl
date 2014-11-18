@@ -10,30 +10,7 @@
 	            <div class="col-md-3 col-md-height bg-darkgray col-top boks">
                     <div class="row">
 	                    <div class="col-md-12 col-xs-6">
-			                <h2 class="front">Kalender</h2>
-			                <dl>
-			                    <dt>
-			                        <time datetime="2014-04-07">07.04.14</time>
-			                    </dt>
-			                    <dd>Valg i studentparlamentet</dd>
-			                    <dt>
-			                        <time datetime="2014-04-08">08.04.14</time>
-			                    </dt>
-			                    <dd>Kurs: Marine lipider</dd>
-			                    <dt>
-			                        <time datetime="2014-04-08">08.04.14</time>
-			                    </dt>
-			                    <dd>Møte i <abbr title="Hva står AMU for?">AMU</abbr></dd>
-			                    <dt>
-			                        <time datetime="2014-04-08">08.04.14</time>
-			                    </dt>
-			                    <dd>Kurs: Marine lipider</dd>
-			                    <dt>
-			                        <time datetime="2014-04-08">08.04.14</time>
-			                    </dt>
-			                    <dd>Møte i <abbr title="Hva står AMU for?">AMU</abbr></dd>
-			                </dl>
-			                <p class="text-right"><a href="#" title="Flere hendelser">Se flere</a></p>
+	                       {include uri='design:parts/frontpage_eventlist.tpl'}
 		                </div>
 		                <div class="col-md-12 col-xs-6">
 			                <h2 class="front">Verktøy</h2>
@@ -46,7 +23,7 @@
 			                    <li><a href="#">Timeplan</a></li>
 			                    <li><a href="#">Studiehåndbok</a></li>
 			                </ul>
-			                <p class="text-right"><a href="#" title="Flere verktøy">Se flere</a></p>
+			                <p class="text-right"><a href="#" title="Flere verktøy">{'More...'|i18n('hials/design/std')}</a></p>
 		                </div>
 	                </div>
 	            </div>
