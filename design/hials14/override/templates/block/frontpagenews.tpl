@@ -2,7 +2,7 @@
 <div class="block-type-content-grid block-view-{$block.view} row-wrapper">
     <div class="col-sm-6">
     {if $valid_nodes.0.data_map.image.has_content}
-        <a title="{$valid_nodes.0.data_map.title.content|wash()}" href="{$node.url_alias|ezurl( 'no' )}">
+        <a title="{$valid_nodes.0.data_map.title.content|wash()}" href="{$valid_nodes.0.url_alias|ezurl( 'no' )}">
             {attribute_view_gui css_class='img-responsive' image_class=banner_half attribute=$valid_nodes.0.data_map.image}
         </a>
     {/if}
@@ -10,7 +10,7 @@
     <div class="col-sm-6 col-top" itemscope itemtype="http://schema.org/Article">
         <article class="front headline">
             <span class="glyphicon glyphicon-chevron-left hidden-xs" style="position: absolute;font-size: 28px;color: #f1f1f1;margin-top: 35px;left:-15px;"></span>
-            <h2 class="teaser-title" itemprop="name"><a href="{$node.url_alias|ezurl( 'no' )}">{$valid_nodes.0.data_map.title.content|wash()}</a></h2>
+            <h2 class="teaser-title" itemprop="name"><a href="{$valid_nodes.0.url_alias|ezurl( 'no' )}">{$valid_nodes.0.data_map.title.content|wash()}</a></h2>
             <div><time itemprop="datePublished" datetime="{$valid_nodes.0.object.published|datetime('custom', '%c')}">{$valid_nodes.0.object.published|l10n('shortdate')}</time><span itemprop="description">{attribute_view_gui attribute=$valid_nodes.0.data_map.intro}</span></div>
         </article>
         <div class="row">
