@@ -73,13 +73,11 @@
 		</div>
     </div>   
 	<div id=news class="row bg-white">
-        <div class="row-wrapper">
         {if and( is_set( $zones[3].blocks ), $zones[3].blocks|count() )}
             {foreach $zones[3].blocks as $block}
                 {include uri='design:parts/zone_block.tpl' zone=$zones[3]}
             {/foreach}
         {/if}
-        </div>
     </div>
     <div class="row">
         <div class="container-sm-height colspacing">

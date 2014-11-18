@@ -1,5 +1,5 @@
 {def $valid_nodes = $block.valid_nodes}
-<div class="block-type-content-grid block-view-{$block.view}">
+<div class="block-type-content-grid block-view-{$block.view} row-wrapper">
     <div class="col-sm-6">
     {if $valid_nodes.0.data_map.image.has_content}
         <a title="{$valid_nodes.0.data_map.title.content|wash()}" href="{$node.url_alias|ezurl( 'no' )}">
