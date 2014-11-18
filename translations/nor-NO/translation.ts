@@ -177,5 +177,12 @@
             <source>More events</source>
             <translation>Flere hendelser</translation>
         </message>
-    </context>    
+    </context>
+    <context>
+        <name>hials/design/tools</name>
+        <message>
+            <source>Tools</source>
+            <translation>Verktøy</translation>
+        </message>
+    </context>
 </TS>

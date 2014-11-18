@@ -56,7 +56,7 @@
                                                                            'class_filter_type', 'include',
                                                                            'class_filter_array', array( 'hials_avdeling' ) ) )}
                         <ul class="dropdown-menu">
-                            <li class="directToMenu"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}>{'Directly to'|i18n('hials/design/std')} {$item.name|wash()}</a></li>
+                            <li class="directToMenu"><div class="col-sm-offset-2 col-sm-10"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}>{if $item.data_map.submenu_portal_linktext.has_content}{$item.data_map.submenu_portal_linktext.content|wash()}{else}{$item.name|wash()}{/if}</a></div></li>
                             <li>
                                 <div class="col-sm-offset-2 col-sm-3">
                                     <ul class="submenu">

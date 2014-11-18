@@ -10,20 +10,10 @@
 	            <div class="col-md-3 col-md-height bg-darkgray col-top boks">
                     <div class="row">
 	                    <div class="col-md-12 col-xs-6">
-	                       {include uri='design:parts/frontpage_eventlist.tpl'}
+                            {include uri='design:parts/frontpage_eventlist.tpl'}
 		                </div>
 		                <div class="col-md-12 col-xs-6">
-			                <h2 class="front">Verktøy</h2>
-			                <ul class="toolmenu">
-			                    <li><a href="#">Aktiver/administrer studentkonto</a></li>
-			                    <li><a href="#">Studentweb</a></li>
-			                    <li><a href="#">Fronter</a></li>
-			                    <li><a href="#">E-post</a></li>
-			                    <li><a href="#">Romreservasjon</a></li>
-			                    <li><a href="#">Timeplan</a></li>
-			                    <li><a href="#">Studiehåndbok</a></li>
-			                </ul>
-			                <p class="text-right"><a href="#" title="Flere verktøy">{'More...'|i18n('hials/design/std')}</a></p>
+                            {include uri='design:parts/frontpage_toolslist.tpl'}
 		                </div>
 	                </div>
 	            </div>
@@ -32,21 +22,7 @@
 	</div>
     <div class="row">
         <div class="col-xs-12">
-			<div class="bg-gray">
-				<ul class="nav-links">
-				{def $UTDANNING_node_id = ezini( 'HialsContentNodeIDs', 'UtdanningRoot', 'content.ini' )}
-				{def $root_node = fetch( 'content', 'node', hash( 'node_id', $UTDANNING_node_id ) )}
-				{def $top_menu_utdanning_class_filter = ezini( 'MenuContentSettings', 'UtdanningSubMenuIdentifierList', 'menu.ini' )}
-				{def $utdanning_groups = fetch('content', 'list', hash( 'parent_node_id', $UTDANNING_node_id,
-				                                                        'sort_by', $root_node.sort_array,
-				                                                        'class_filter_type', 'include',
-				                                                        'class_filter_array', $top_menu_utdanning_class_filter ) )}
-                {foreach $utdanning_groups as $item}
-					<li role="presentation"><a href="{$item.url_alias|ezurl('no')}">{$item.data_map.name.content|wash()}</a></li>
-                {/foreach}
-                {undef $UTDANNING_node_id $root_node $top_menu_utdanning_class_filter $utdanning_groups}
-				</ul>
-			</div>
+            {include uri='design:parts/frontpage_nav-links.tpl'}
 		</div>
     </div>   
 	<div id=news class="row bg-white">
