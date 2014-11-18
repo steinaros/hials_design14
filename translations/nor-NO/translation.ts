@@ -177,8 +177,5 @@
             <source>More events</source>
             <translation>Flere hendelser</translation>
         </message>
-        <message>
-            <source></source>
-            <translation></translation>
-        </message>
+    </context>    
 </TS>
