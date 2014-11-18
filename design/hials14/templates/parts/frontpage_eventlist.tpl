@@ -25,6 +25,6 @@
     <dd><a href="{$event.url_alias|ezurl('no')}" title="{$event.data_map.title.content|wash()} - {$event.data_map.from_time.content.timestamp|l10n('shortdate')}">{$event.data_map.short_title.content|wash()}</a></dd>
 </dl>
 
-<p class="text-right"><a href="{$root_node.url_alias|ezurl('no')}" title="{'More events'|i18n('hials/design/calendar')}">{'More...'|i18n('hials/design/std')}</a></p>
+<p class="text-right"><a href="{$calendar.url_alias|ezurl('no')}" title="{'More events'|i18n('hials/design/calendar')}">{'More...'|i18n('hials/design/std')}</a></p>
 {/if}
 {undef $CALENDAR_node_id $calendar $eventlist}
