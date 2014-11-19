@@ -122,7 +122,7 @@ background-color: #f1f1f1;
 }
 
 .bg-gray {
-    background-color: #B4B4B4;
+    background-color: #ccc;
 }
 
 .bg-darkgray {
@@ -729,7 +729,7 @@ table.default td:last-child {
 
 .nav-pills > li > a {
 	border-radius: 0;
-	background-color: #b4b4b4;
+	background-color: #ccc;
 	color: #333;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -855,7 +855,7 @@ ul.links-center {
 }
 
 #fagomraade-links .nav-links {
-    padding: 15px 0;
+    padding: 25px 0;
     margin-bottom: 15px;
     font-size: 14px;
 }
