@@ -723,6 +723,11 @@ table.default td:last-child {
 	text-decoration: none;
 }
 
+.breadcrumb a:hover, .breadcrumb a:focus {
+    text-decoration: underline;
+}
+
+
 /*************************************************/
 
 /*** PILLS ***************************************/
@@ -804,7 +809,7 @@ ul.nav-pills.nav-stacked>li+li {
 .nav-links > li {
     float: left;
     border-right: 1px solid #565656;
-    padding: 0 5px;
+    padding: 0 10px;
 }
 
 .nav-links > li:last-child {
