@@ -56,7 +56,7 @@
                                                                            'class_filter_type', 'include',
                                                                            'class_filter_array', array( 'hials_avdeling' ) ) )}
                         <ul class="dropdown-menu">
-                            {include uri='design:/menu/top_menu_submenu_nav_links.tpl' menuitem=$item}
+                            {include uri='design:menu/top_menu_submenu_nav_links.tpl' menuitem=$item}
                             <li>
                                 <div class="col-sm-offset-2 col-sm-3">
                                     <ul class="submenu">
@@ -88,13 +88,13 @@
                     {/case}
                     {case match=$UTDANNING_node_id}
                         <ul class="dropdown-menu">
-                            {include uri='design:/menu/top_menu_submenu_nav_links.tpl' menuitem=$item}
+                            {include uri='design:menu/top_menu_submenu_nav_links.tpl' menuitem=$item}
                             <li id="utdanning_tabs">{include uri='design:menu/top_menu_utdanning.tpl' menunode=$UTDANNING_node_id}</li>
                         </ul>                    
                     {/case}
                     {case}
 				        <ul class="dropdown-menu">
-				            {include uri='design:/menu/top_menu_submenu_nav_links.tpl' menuitem=$item}
+				            {include uri='design:menu/top_menu_submenu_nav_links.tpl' menuitem=$item}
 				            <li>{foreach $level2_items as $level2key => $level2item}
 				                <div class="{if $level2key|eq(0)}col-sm-offset-2 col-sm-2{else}col-sm-2{/if}">
 				                    <ul class="submenu">
@@ -117,7 +117,7 @@
 		        {/switch}
 		    {else}
                 <ul class="dropdown-menu">
-                    {include uri='design:/menu/top_menu_submenu_nav_links.tpl' menuitem=$item}
+                    {include uri='design:menu/top_menu_submenu_nav_links.tpl' menuitem=$item}
                 </ul>
 		    {/if}
 		</li>
