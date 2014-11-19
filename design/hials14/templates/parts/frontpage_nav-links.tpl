@@ -1,5 +1,5 @@
 <div class="bg-gray">
-    <ul class="nav-links">
+    <ul class="nav-links links-center">
     {def $UTDANNING_node_id = ezini( 'HialsContentNodeIDs', 'UtdanningRoot', 'content.ini' )
          $root_node = fetch( 'content', 'node', hash( 'node_id', $UTDANNING_node_id ) )
          $top_menu_utdanning_class_filter = ezini( 'MenuContentSettings', 'UtdanningSubMenuIdentifierList', 'menu.ini' )

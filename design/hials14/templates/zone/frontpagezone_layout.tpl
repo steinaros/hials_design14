@@ -20,7 +20,7 @@
 	        </div>
 	    </div>
 	</div>
-    <div class="row">
+    <div id="fagomraade-links" class="row">
         <div class="col-xs-12">
             {include uri='design:parts/frontpage_nav-links.tpl'}
 		</div>
