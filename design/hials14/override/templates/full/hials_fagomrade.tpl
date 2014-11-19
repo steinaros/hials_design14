@@ -2,7 +2,7 @@
 {set scope=global persistent_variable=hash('left_menu', false(),
                                            'extra_menu', false())}
 <div class="content-view-full class-hials_fagomrade row">
-    <div class="col-sm-12">
+    <div class="col-sm-offset-3 col-sm-6">
         <div class="attribute-header">
             <h1>{attribute_view_gui attribute=$node.data_map.name}</h1>
         </div>
@@ -14,8 +14,8 @@
         {/if}
 
         {def $classes = array('hials_utdanningstilbud')
-             $nivaa_sortorder = array( '1', '0', '2', '5', '4', '3')
-             $nivaa_sortorder_name = hash( 1, 'Master', 0, 'Bachelor', 2, 'Videreutdanning', 5, 'Årsstudium', 4, 'Maritime kurs', 3, 'Kurs' )
+             $nivaa_sortorder = array( '1', '0', '2', '5', '6', '4', '3')
+             $nivaa_sortorder_name = hash( 1, 'Master', 0, 'Bachelor', 2, 'Videreutdanning', 5, 'Årsstudium', 6, 'Enkeltemne', 4, 'Maritime kurs', 3, 'Kurs' )
              $children = array()
              $children_count = ''}
 
