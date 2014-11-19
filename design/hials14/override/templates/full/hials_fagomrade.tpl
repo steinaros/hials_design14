@@ -2,15 +2,26 @@
 {set scope=global persistent_variable=hash('left_menu', false(),
                                            'extra_menu', false())}
 <div class="content-view-full class-hials_fagomrade row">
+    {if $node.data_map.banner.has_content}
+    <div class="attribute-banner row">{attribute_view_gui attribute=$node.data_map.banner}</div>
+    {/if}
+
     <div class="col-sm-offset-3 col-sm-6">
         <div class="attribute-header">
             <h1>{attribute_view_gui attribute=$node.data_map.name}</h1>
         </div>
 
         {if $node.object.data_map.intro.has_content}
-            <div class="attribute-short">
-                {attribute_view_gui attribute=$node.data_map.intro}
-            </div>
+        <div class="intro">
+            {attribute_view_gui attribute=$node.data_map.intro}
+        </div>
+        {/if}
+        {include uri='design:parts/byline.tpl'}
+                        
+        {if $node.data_map.description.content.is_empty|not}
+        <div class="bodytext">
+            {attribute_view_gui attribute=$node.data_map.description}
+        </div>
         {/if}
 
         {def $classes = array('hials_utdanningstilbud')
