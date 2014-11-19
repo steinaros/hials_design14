@@ -649,7 +649,7 @@ ul.submenu {
 
 .directToMenu {
     background-color: #f1f1f1;
-    padding: 5px 0;
+    padding: 10px 0;
     text-transform: uppercase;
 }
 
@@ -795,26 +795,31 @@ ul.nav-pills.nav-stacked>li+li {
 /*************************************************/
 /**** NAV-LINKS **********************************/
 
-ul.nav-links {
+.nav-links {
     list-style-type: none;
     display: table;
     padding-left: 15px;
 }
 
-ul.nav-links > li {
+.nav-links > li {
     float: left;
     border-right: 1px solid #565656;
     padding: 0 5px;
 }
 
-ul.nav-links > li:last-child {
+.nav-links > li:last-child {
     border-right: none;
     padding-right: 0;
 }
 
-ul.nav-links > li:first-child {
+.nav-links > li:first-child {
     padding-left: 0;
 }
+
+.nav-links > li > a:hover, .nav-links > li > a:focus {
+    text-decoration: underline;
+}
+
 
 ul.links-center {
     margin: 0 auto;
@@ -838,7 +843,15 @@ ul.links-center {
         border-left: 5px solid #333;
         text-decoration: none;
     }
-    
+
+	#mainnav .nav-links > li > a:hover, .nav-links > li > a:focus {
+        background-color: #565656;
+        color: #fff;
+        border-left: 5px solid #f1f1f1;
+        text-decoration: none;
+	}
+
+
 }
 
 #fagomraade-links .nav-links {
