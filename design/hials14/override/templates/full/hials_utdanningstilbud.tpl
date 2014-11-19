@@ -6,7 +6,7 @@
                                               'class_filter_array', array( 'hials_spesialisering' ) ) )}
 <div class="content-view-full">
     {if $node.data_map.banner.has_content}
-    <div class="attribute-banner row equal">{attribute_view_gui attribute=$node.data_map.banner}</div>
+    <div class="attribute-banner row">{attribute_view_gui attribute=$node.data_map.banner}</div>
     {/if}
     
     <div class="row">
