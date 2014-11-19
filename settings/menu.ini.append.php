@@ -16,6 +16,7 @@ LeftIdentifierList[]=hials_portal_page
 LeftIdentifierList[]=landing_page
 LeftIdentifierList[]=hials_contentpage
 LeftIdentifierList[]=hials_nyhetsmappe
+LeftIdentifierList[]=hials_event_calendar
 
 RightIdentifierList[]=folder
 RightIdentifierList[]=feedback_form

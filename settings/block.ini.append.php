@@ -258,6 +258,7 @@ ViewList[]=default
 ViewName[default]=Default
 AllowedClasses[]=hials_article
 AllowedClasses[]=hials_avdeling
+AllowedClasses[]=hials_fagomrade
 AllowedClasses[]=hials_forskningsprosjekt
 AllowedClasses[]=hials_innholdsside
 AllowedClasses[]=hials_utdanningstilbud
