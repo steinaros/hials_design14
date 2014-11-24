@@ -14,18 +14,24 @@
 {def $extra_class = ""}                                          
 <div class="content-view-full">
     {if ne($node.data_map.banner.content.relation_list|count(),0)}
-    <div class="attribute-banner row equal">{attribute_view_gui attribute=$node.data_map.banner}</div>
+    <div class="attribute-banner row">{attribute_view_gui attribute=$node.data_map.banner}</div>
     {/if}
     <div class="row">
-	    {if $node.data_map.image.has_content}
+	    {*if $node.data_map.image.has_content*}
+        {if $node.data_map.bokser.has_content}  
 	    <aside class="col-sm-6 col-left">
-	        {attribute_view_gui attribute=$node.data_map.image image_class=banner_half css_class=img-responsive}
-	        {if $children|count()}
+            <div class="attribute-bokser">
+            {attribute_view_gui attribute=$node.data_map.bokser container_node=$node}
+            </div>
+            {/if}
+            
+	        {*attribute_view_gui attribute=$node.data_map.image image_class=banner_half css_class=img-responsive*}
+	        {*if $children|count()}
             {include uri='design:menu/leftmenu_subitems.tpl' subitems=$children}
 	        {/if}
             {if $projects|count()}
             {include uri='design:menu/leftmenu_subitems.tpl' subitems=$projects title='Projects'}
-            {/if}       
+            {/if*}       
 	    </aside>
 	    {elseif or($children|count(), $projects|count())}
 	    <aside class="col-sm-3 col-left">
