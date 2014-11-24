@@ -10,7 +10,6 @@ AllowedTypes[]=Banner
 #AllowedTypes[]=Video
 #AllowedTypes[]=TagCloud
 #AllowedTypes[]=Poll
-#AllowedTypes[]=ItemList
 #AllowedTypes[]=FeedReader
 #AllowedTypes[]=FeedbackForm
 AllowedTypes[]=HighlightedItem
@@ -21,7 +20,7 @@ AllowedTypes[]=SingleItem
 AllowedTypes[]=ContactList
 AllowedTypes[]=Carousel
 AllowedTypes[]=FrontpageNews
-
+AllowedTypes[]=ItemList
 
 [PushToBlock]
 # List of content classes using Layout datatype
@@ -131,15 +130,6 @@ ManualAddingOfItems=disabled
 CustomAttributes[]
 CustomAttributes[]=poll_node_id
 UseBrowseMode[poll_node_id]=true
-ViewList[]
-ViewList[]=default
-ViewName[default]=Default
-
-[ItemList]
-Name=Item list
-NumberOfValidItems=12
-NumberOfArchivedItems=5
-ManualAddingOfItems=enabled
 ViewList[]
 ViewList[]=default
 ViewName[default]=Default
@@ -272,5 +262,17 @@ ViewList[]
 ViewList[]=default
 ViewName[default]=Default
 AllowedClasses[]=hials_article
+
+[ItemList]
+Name=Item list
+NumberOfValidItems=12
+NumberOfArchivedItems=5
+ManualAddingOfItems=enabled
+CustomAttributes[]=desc
+CustomAttributeTypes[desc]=text
+CustomAttributeNames[desc]=Description
+ViewList[]
+ViewList[]=default
+ViewName[default]=Default
 
 */ ?>
