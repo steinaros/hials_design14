@@ -1,11 +1,7 @@
-<h2 class="front">{'Tools'|i18n('hials/design/tools')}</h2>
-<ul class="toolmenu">
-    <li><a href="#">Aktiver/administrer studentkonto</a></li>
-    <li><a href="#">Studentweb</a></li>
-    <li><a href="#">Fronter</a></li>
-    <li><a href="#">E-post</a></li>
-    <li><a href="#">Romreservasjon</a></li>
-    <li><a href="#">Timeplan</a></li>
-    <li><a href="#">Studiehåndbok</a></li>
-</ul>
-<p class="text-right"><a href="#" title="Flere verktøy">{'More...'|i18n('hials/design/std')}</a></p>
+{def $TOOLS_node_id = ezini( 'HialsContentNodeIDs', 'FrontpageTools', 'content.ini' )
+     $toolbox = fetch( 'content', 'node', hash( 'node_id', $TOOLS_node_id ) )}
+<div class="toolmenu">     
+<h2 class="front">{$toolbox.data_map.title.content|wash()}</h2>
+{attribute_view_gui attribute=$toolbox.data_map.contents}
+{*<p class="text-right"><a href="#" title="Flere verktøy">{'More...'|i18n('hials/design/std')}</a></p>*}
+</div>
