@@ -243,6 +243,10 @@ h2.teaser-title, h2.teaser-title a {
     margin-bottom: 15px;
 }
 
+.teaser-intro {
+	margin-bottom: 15px;
+}
+
 .teaser-intro p {
     display: inline;
 }
@@ -464,7 +468,7 @@ footer .h-card p {
     font-weight: 900;
 }
 
-.toolmenu {
+.toolmenu ul {
     list-style-type:none;
     padding-left:0;
 }
