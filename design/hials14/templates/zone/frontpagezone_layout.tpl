@@ -25,32 +25,25 @@
             {include uri='design:parts/frontpage_nav-links.tpl'}
 		</div>
     </div>   
-	<div id=news class="row bg-white">
+	<div id="news" class="row bg-white">
         {if and( is_set( $zones[3].blocks ), $zones[3].blocks|count() )}
             {foreach $zones[3].blocks as $block}
                 {include uri='design:parts/zone_block.tpl' zone=$zones[3]}
             {/foreach}
         {/if}
     </div>
-    <div class="row">
-        <div class="container-sm-height colspacing">
-            <div class="row-sm-height">
-                <div class="col-sm-6 col-sm-height bg-red height180 col-middle text-center">
-                    <p class="h2 front">14. august</p>
-                    <p>Praktisk informasjon om studiestart</p>
-                </div>
-                <div class="col-sm-3 col-sm-height nopadding"><img src="{"tmp-frontpage/Faddere.jpg"|ezimage('no')}" alt="Faddere" class="img-responsive"></div>
-                <div class="col-sm-3 col-sm-height nopadding"><img src="{"tmp-frontpage/Maritime-Human-Factors-Lab.jpg"|ezimage('no')}" alt="Båt" class="img-responsive"></div>
-            </div>
-            <div class="row-sm-height">
-                <div class="col-sm-6 col-sm-height height180"></div>
-                <div class="col-sm-3 col-sm-height col-middle text-center bg-white">
-                    <p>text</p>
-                </div>
-                <div class="col-sm-3 col-sm-height col-middle text-center bg-white">
-                    <p>text</p>
-                </div>
-            </div>
-        </div>
+    <div id="boxzone" class="row">
+        {if and( is_set( $zones[2].blocks ), $zones[2].blocks|count() )}
+            {foreach $zones[2].blocks as $block}
+                {include uri='design:parts/zone_block.tpl' zone=$zones[2]}
+            {/foreach}
+        {/if}
+    </div>    
+    <div id="bottomzone" class="row">
+        {if and( is_set( $zones[4].blocks ), $zones[4].blocks|count() )}
+            {foreach $zones[4].blocks as $block}
+                {include uri='design:parts/zone_block.tpl' zone=$zones[4]}
+            {/foreach}
+        {/if}
     </div>    
 </div>
