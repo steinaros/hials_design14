@@ -243,6 +243,14 @@ h2.teaser-title, h2.teaser-title a {
     margin-bottom: 15px;
 }
 
+.teaser-intro p {
+    display: inline;
+}
+
+.teaser-intro time {
+	font-weight: 700;
+}
+
 .content-view-full.class-hials_portal_page .intro {
     padding-bottom: 2em;
 }
