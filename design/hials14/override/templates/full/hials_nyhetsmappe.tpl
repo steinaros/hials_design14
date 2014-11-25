@@ -38,7 +38,7 @@
                                                             'class_filter_array', $classes,
                                                             'depth', $depth,
                                                             'limit', $page_limit ) ) as $child }
-                        {node_view_gui view='line' content_node=$child}
+                        {node_view_gui view='listitem' content_node=$child}
                     {/foreach}
                 {/if}
                 </div>
