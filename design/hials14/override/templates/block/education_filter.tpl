@@ -16,13 +16,6 @@
                                                     'sort_by', array( 'attribute', true(), 315 ),
                                                     'class_filter_type', 'include',
                                                     'class_filter_array', array( 'hials_fagomrade' ) ) )}
-{set $tmp_utdanninger = fetch( 'content', 'list', hash( 'parent_node_id', $UTDANNING_node_id,
-                                                    'depth', 2,
-                                                    'sort_by', array(
-                                                        array( 'attribute', true(), 325 ), 
-                                                        array( 'attribute', true(), 317 ) ),
-                                                    'class_filter_type', 'include',
-                                                    'class_filter_array', $classes ) )}
 
 {foreach $tmp_fagomraader as $fagomraade}
     {* 'attribute_filter', array( array( 325, '=', $nivaa_id ) ) ) )*}
@@ -44,8 +37,22 @@
     {/if}
 {/foreach}
 
-{foreach $tmp_utdanninger 
-
+{foreach $nivaa_names as $nivaa_id => $nivaa_name}
+	{set $tmp_utdanninger = fetch( 'content', 'list', hash( 'parent_node_id', $UTDANNING_node_id,
+	                                                    'depth', 2,
+	                                                    'sort_by', array(
+	                                                        array( 'attribute', true(), 325 ), 
+	                                                        array( 'attribute', true(), 317 ) ),
+	                                                    'class_filter_type', 'include',
+	                                                    'class_filter_array', $classes,
+	                                                    'attribute_filter', array( array( 325, '=', $nivaa_id ) ) ) )}
+    {set $tmp_item_count = $tmp_utdanninger|count()}
+    {set $tmp_hash = hash( 'navn', $nivaa_name,
+                           'nivaa_id', $nivaa_id,
+                           'antall', $tmp_item_count,
+                           'items', $tmp_utdanninger )}
+    {set $utdanninger = $utdanninger|append($tmp_hash)}
+{/foreach}
 <aside class="col-sm-3">
     <h3>Fagområde</h3>
     <ul>
@@ -55,13 +62,14 @@
     </ul>
     <h3>Nivå</h3>
     <ul>
-        {foreach $nivaa_names as $key => $nivaa}
-        <li><input type="checkbox" id="nivaa_{$key}" name="nivaa_{$key}">{$nivaa} <span class="badge">{$key}</span></li>
-        {/foreach}
+    {foreach $utdanninger as $utdanning}
+        <li><input type="checkbox" id="nivaa_{$utdanning.nivaa_id}" name="nivaa_{$utdanning.nivaa_id}">{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall}</span></li>
+    {/foreach}
     </ul>
 </aside>
 <div class="col-sm-9">
-    {foreach $tmp_utdanninger as $utdanning}
+    {foreach $utdanninger as $utdanning}
+        <h2>{$utdanning.navn|wash()}</h2>
         <ul>
         {foreach $utdanning.items as $item}
             <li><a href={$item.url_alias|ezurl}>{$item.data_map.title.content|wash()}</a></li>
