@@ -33,36 +33,34 @@
     {/if}
 {/foreach}
 
-<div class="row">
-    <aside class="col-sm-3">
-        <h3>Fagområde</h3>
+<aside class="col-sm-3">
+    <h3>Fagområde</h3>
+    <ul>
+    {foreach $utdanninger as $utdanning}
+        <li><input type="checkbox">{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall|wash()}</span></li>
+    {/foreach}
+    </ul>
+    <h3>Nivå</h3>
+    <ul>
+        <li><input type="checkbox">Nivå 1 <span class="badge">1</span></li>
+        <li><input type="checkbox">Nivå 2 <span class="badge">12</span></li>
+        <li><input type="checkbox">Nivå 3 <span class="badge">123</span></li>
+        <li><input type="checkbox">Nivå 4 <span class="badge">1234</span></li>
+        <li><input type="checkbox">Nivå 5 <span class="badge">12345</span></li>
+    </ul>
+</aside>
+<div class="col-sm-9">
+    {foreach $utdanninger as $utdanning}
+        <h2>{$utdanning.navn|wash()}</h2>
         <ul>
-        {foreach $utdanninger as $utdanning}
-            <li><input type="checkbox">{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall|wash()}</span></li>
+        {foreach $utdanning.items as $item}
+            <li><a href={$item.url_alias|ezurl}>{$item.data_map.title.content|wash()}</a></li>
+            <!--
+                {$item|attribute('show', 2, 'text')} 
+            -->
         {/foreach}
         </ul>
-        <h3>Nivå</h3>
-        <ul>
-            <li><input type="checkbox">Nivå 1 <span class="badge">1</span></li>
-            <li><input type="checkbox">Nivå 2 <span class="badge">12</span></li>
-            <li><input type="checkbox">Nivå 3 <span class="badge">123</span></li>
-            <li><input type="checkbox">Nivå 4 <span class="badge">1234</span></li>
-            <li><input type="checkbox">Nivå 5 <span class="badge">12345</span></li>
-        </ul>
-    </aside>
-    <div class="row">
-        <div class="col-sm-9">
-            <h1>Utdanning</h1>
-            {foreach $utdanninger as $utdanning}
-                <h2>{$utdanning.navn|wash()}</h2>
-                <ul>
-                {foreach $utdanning.items as $item}
-                    <li><a href={$item.url_alias|ezurl}>{$item.data_map.title.content|wash()}</a></li>
-                {/foreach}
-                </ul>
-            {/foreach}
-        </div>
-    </div>
+    {/foreach}
 </div>
 
 {undef $UTDANNING_node_id $classes $nivaa_sortorder $nivaa_names $utdanninger $fagomraader $tmp_items $tmp_item_count $tmp_hash} 
