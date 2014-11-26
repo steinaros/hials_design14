@@ -21,6 +21,7 @@ AllowedTypes[]=ContactList
 AllowedTypes[]=Carousel
 AllowedTypes[]=FrontpageNews
 AllowedTypes[]=ItemList
+AllowedTypes[]=EducationFilter
 
 [PushToBlock]
 # List of content classes using Layout datatype
@@ -271,6 +272,13 @@ ManualAddingOfItems=enabled
 CustomAttributes[]=desc
 CustomAttributeTypes[desc]=text
 CustomAttributeNames[desc]=Description
+ViewList[]
+ViewList[]=default
+ViewName[default]=Default
+
+[EducationFilter]
+Name=Education Filter
+ManualAddingOfItems=disabled
 ViewList[]
 ViewList[]=default
 ViewName[default]=Default
