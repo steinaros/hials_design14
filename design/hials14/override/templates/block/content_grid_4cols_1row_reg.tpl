@@ -2,12 +2,13 @@
 {def $cell_class = 'col-sm-3 boks col-sm-height nopadding'}
 {def $ant_bokser = 0}
 {def $manglende_bokser = 0}
+{def $cn = $container_node}
 
 <div class="block-type-content-grid block-view-{$block.view}">
     <div class="container-sm-height colspacing rowspacing">
         <div class="row-sm-height">
 	    {foreach $valid_nodes as $valid_node max 4}
-	        {node_view_gui view='block_item' image_class='contentgrid' content_node=$valid_node container_node=$container_node css_class=$cell_class}
+	        {node_view_gui view='block_item' image_class='contentgrid' content_node=$valid_node container_node=$cn css_class=$cell_class}
 	    {/foreach}
 	    {set $ant_bokser = $valid_nodes|count()}
 	    {set $manglende_bokser = 4|sub($ant_bokser)}
@@ -20,4 +21,4 @@
 	</div>
 </div>
 
-{undef $valid_nodes $color_selection $color_class $cell_class $ant_bokser $manglende_bokser}
+{undef $valid_nodes $color_selection $color_class $cell_class $ant_bokser $manglende_bokser $cn}
