@@ -27,7 +27,7 @@ AllowedTypes[]=EducationFilter
 # List of content classes using Layout datatype
 ContentClasses[]=hials_portal_page
 ContentClasses[]=hials_utdanningstilbud
-ContentClasses[]=hials_contentpage
+ContentClasses[]=hials_innholdsside
 ContentClasses[]=hials_avdeling
 ContentClasses[]=hials_forskningsprosjekt
 # The subtree node ID from which to fetch objects with Layout datatype
@@ -251,7 +251,7 @@ AllowedClasses[]=hials_article
 AllowedClasses[]=hials_avdeling
 AllowedClasses[]=hials_fagomrade
 AllowedClasses[]=hials_forskningsprosjekt
-AllowedClasses[]=hials_contentpage
+AllowedClasses[]=hials_innholdsside
 AllowedClasses[]=hials_utdanningstilbud
 
 [FrontpageNews]
