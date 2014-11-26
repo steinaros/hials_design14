@@ -1,3 +1,4 @@
+{if is_unset($container_node)}{def $container_node = array()}{/if}
 {def $zone_layout = cond( $attribute.content.zone_layout, $attribute.content.zone_layout, '' )
      $zones = $attribute.content.zones
      $cn = $container_node}
