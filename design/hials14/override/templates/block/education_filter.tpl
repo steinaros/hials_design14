@@ -25,7 +25,8 @@
          {*$nivaa_item_count = sum($nivaa_item_count, $tmp_item_count)}*}
     
     {set $tmp_hash = hash( 'navn', $fagomrade.name,
-                           'url_alias', $fagomrade.url_alias, 
+                           'url_alias', $fagomrade.url_alias,
+                           'node_id', $fagomrade.node_id, 
                            'antall', $tmp_item_count,
                            'items', $tmp_items )}
     {if gt($tmp_item_count, 0)}
@@ -37,16 +38,14 @@
     <h3>Fagområde</h3>
     <ul>
     {foreach $utdanninger as $utdanning}
-        <li><input type="checkbox">{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall|wash()}</span></li>
+        <li><input type="checkbox" id="fagomr_{$utdanning.node_id|wash()}" name="fagomr_{$utdanning.node_id|wash()}">{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall|wash()}</span></li>
     {/foreach}
     </ul>
     <h3>Nivå</h3>
     <ul>
-        <li><input type="checkbox">Nivå 1 <span class="badge">1</span></li>
-        <li><input type="checkbox">Nivå 2 <span class="badge">12</span></li>
-        <li><input type="checkbox">Nivå 3 <span class="badge">123</span></li>
-        <li><input type="checkbox">Nivå 4 <span class="badge">1234</span></li>
-        <li><input type="checkbox">Nivå 5 <span class="badge">12345</span></li>
+        {foreach $nivaa_names as $key => $nivaa}
+        <li><input type="checkbox" id="nivaa_{$key}" name="nivaa_{$key}">{$nivaa} <span class="badge">{$key}</span></li>
+        {/foreach}
     </ul>
 </aside>
 <div class="col-sm-9">
@@ -56,6 +55,7 @@
         {foreach $utdanning.items as $item}
             <li><a href={$item.url_alias|ezurl}>{$item.data_map.title.content|wash()}</a></li>
             <!--
+                Nivaa: {$item.data_map.nivaa|attribute('show',2,'text')}
                 {$item|attribute('show', 2, 'text')} 
             -->
         {/foreach}
