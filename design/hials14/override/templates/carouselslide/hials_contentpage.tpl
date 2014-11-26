@@ -1,4 +1,4 @@
-{* Innholdsside - Carouselslide view *}
+{* Contentpage - Carouselslide view *}
 {if ne($node.data_map.banner.content.relation_list|count(),0)}
     {def $banner = fetch( content, object, hash( object_id, $node.data_map.banner.content.relation_list.0.contentobject_id ) )}
     <a href={$node.url_alias|ezurl}>{attribute_view_gui attribute=$banner.data_map.image image_class=$big_class css_class='img-responsive'}</a>

@@ -1,4 +1,4 @@
-{* Innholdsside - Full view *}
+{* Contentpage - Full view *}
 {set scope=global persistent_variable=hash('left_menu', false(),
                                            'extra_menu', false())}
 {def $leftmenu_class_filter = ezini( 'MenuContentSettings', 'LeftIdentifierList', 'menu.ini' )
