@@ -82,40 +82,29 @@
 	    {/foreach}
 	    </ul>
     </div>
-    <input type="submit" name="Submit" value="Test" />
+    <noscript><input type="submit" name="Submit" value="Søk" /></noscript>
     </form>
 </aside>
 <div class="col-sm-9">
-{if and(eq($sel_fagomr|count(),0),eq($sel_nivaa|count(),0))}
-    {foreach $utdanninger as $utdanning}
-        <h2>{$utdanning.navn|wash()}</h2>
-        <ul>
+{foreach $utdanninger as $utdanning}
+    {if or(eq($sel_nivaa|count(),0), $sel_nivaa|contains($utdanning.nivaa_id))}
+        {set $tmp_viewheading = false()}
         {foreach $utdanning.items as $item}
-            <li><a href={$item.url_alias|ezurl}>{$item.data_map.title.content|wash()}</a></li>
+            {if or(eq($sel_fagomr|count(),0), $sel_fagomr|contains($item.parent_node_id))}
+                {set $tmp_viewheading = true()}
+                {break}
+            {/if}
         {/foreach}
-        </ul>
-    {/foreach}
-{else}
-    {foreach $utdanninger as $utdanning}
-        {if or(eq($sel_nivaa|count(),0), $sel_nivaa|contains($utdanning.nivaa_id))}
-            {set $tmp_viewheading = false()}
-            {foreach $utdanning.items as $item}
-                {if or(eq($sel_fagomr|count(),0), $sel_fagomr|contains($item.parent_node_id))}
-                    {set $tmp_viewheading = true()}
-                    {break}
-                {/if}
-            {/foreach}
-            {if $tmp_viewheading}
-                <h2>{$utdanning.navn|wash()}</h2>
-                <ul>
-		        {foreach $utdanning.items as $item}
-		            {if or(eq($sel_fagomr|count(),0), $sel_fagomr|contains($item.parent_node_id))}<li><a href={$item.url_alias|ezurl}>{$item.data_map.title.content|wash()}</a></li>{/if}
-		        {/foreach}
-                </ul>
-            {/if}            
-        {/if}
-    {/foreach}
-{/if}
+        {if $tmp_viewheading}
+            <h2>{$utdanning.navn|wash()}</h2>
+            <ul>
+	        {foreach $utdanning.items as $item}
+	            {if or(eq($sel_fagomr|count(),0), $sel_fagomr|contains($item.parent_node_id))}<li><a href={$item.url_alias|ezurl}>{$item.data_map.title.content|wash()}</a></li>{/if}
+	        {/foreach}
+            </ul>
+        {/if}            
+    {/if}
+{/foreach}
 </div>
 
 {undef $UTDANNING_node_id $classes $nivaa_sortorder $nivaa_names $utdanninger $fagomraader $tmp_utdanninger $tmp_fagomraader $tmp_items $tmp_item_count $tmp_hash $sel_fagomr $sel_nivaa $tmp_viewheading} 
