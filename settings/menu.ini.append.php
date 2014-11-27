@@ -1,23 +1,10 @@
 <?php /*
 
 [MenuContentSettings]
-TopIdentifierList[]=hials_event_calendar
-TopIdentifierList[]=link
-TopIdentifierList[]=hials_portal_page
-TopIdentifierList[]=landing_page
-TopIdentifierList[]=hials_avdeling
-TopIdentifierList[]=hials_contentpage
-TopIdentifierList[]=hials_nyhetsmappe
 
 UtdanningSubMenuIdentifierList[]
 UtdanningSubMenuIdentifierList[]=hials_fagomrade
 UtdanningSubMenuIdentifierList[]=hials_utdanningstilbud
-
-LeftIdentifierList[]=hials_portal_page
-LeftIdentifierList[]=landing_page
-LeftIdentifierList[]=hials_contentpage
-LeftIdentifierList[]=hials_nyhetsmappe
-LeftIdentifierList[]=hials_event_calendar
 
 RightIdentifierList[]=folder
 RightIdentifierList[]=feedback_form
