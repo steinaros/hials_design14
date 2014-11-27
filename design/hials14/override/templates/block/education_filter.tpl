@@ -62,13 +62,13 @@
     {set $utdanninger = $utdanninger|append($tmp_hash)}
 {/foreach}
 <aside class="col-sm-3">
-    <form action={"content/action"|ezurl} method="post">
+    <form id="education_filter" action={"content/action"|ezurl} method="post">
     <input type="hidden" name="DestinationURL" value="{$container_node.url_alias}" />
     <div class="wrapper bg-darkgray toolmenu">
 	    <h3>Fagområde</h3>
 	    <ul>
 	    {foreach $fagomraader as $fagomraade}
-	        <li><label><input type="checkbox" name="(s1)[]" value="{$fagomraade.node_id|wash()}"{if $sel_fagomr|contains($fagomraade.node_id)} checked{/if}>{$fagomraade.navn|wash()}</label> <span class="badge pull-right">{$fagomraade.antall|wash()}</span></li>
+	        <li><label><input type="checkbox" name="(s1)[]" onchange="$('#education_filter').submit();" value="{$fagomraade.node_id|wash()}"{if $sel_fagomr|contains($fagomraade.node_id)} checked{/if}>{$fagomraade.navn|wash()}</label> <span class="badge pull-right">{$fagomraade.antall|wash()}</span></li>
 	    {/foreach}
 	    </ul>
     </div>
@@ -77,7 +77,7 @@
 	    <ul>
 	    {foreach $utdanninger as $utdanning}
 	        {if ne($utdanning.antall, 0)}
-	        <li><label><input type="checkbox" name="(s2)[]" value="{$utdanning.nivaa_id}"{if $sel_nivaa|contains($utdanning.nivaa_id)} checked{/if}>{$utdanning.navn|wash()}</label> <span class="badge pull-right">{$utdanning.antall}</span></li>
+	        <li><label><input type="checkbox" name="(s2)[]" onchange="$('#education_filter').submit();" value="{$utdanning.nivaa_id}"{if $sel_nivaa|contains($utdanning.nivaa_id)} checked{/if}>{$utdanning.navn|wash()}</label> <span class="badge pull-right">{$utdanning.antall}</span></li>
 	        {/if}
 	    {/foreach}
 	    </ul>
