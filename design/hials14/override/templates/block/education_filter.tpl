@@ -11,18 +11,14 @@
 
      $tmp_items = array()
      $tmp_item_count = 0
-     $tmp_hash = hash()}
+     $tmp_hash = hash()
+     $tmp_viewheading = false()}
 
 {def $sel_fagomr = array()
      $sel_nivaa = array()}
 
 {if is_set($view_parameters.s1)}{set $sel_fagomr = $view_parameters.s1|explode(',')}{/if}
 {if is_set($view_parameters.s2)}{set $sel_nivaa = $view_parameters.s2|explode(',')}{/if}
-     
-<!-- 
-$sel_fagomr: {$sel_fagomr|get_type()} {$sel_fagomr.0|get_type()}
-$sel_nivaa: {$sel_nivaa|get_type()} {$sel_nivaa.0|get_type()}
--->     
 
 {set $tmp_fagomraader = fetch( 'content', 'list', hash( 'parent_node_id', $UTDANNING_node_id,
                                                     'sort_by', array( 'attribute', true(), 315 ),
@@ -64,29 +60,31 @@ $sel_nivaa: {$sel_nivaa|get_type()} {$sel_nivaa.0|get_type()}
                            'antall', $tmp_item_count,
                            'items', $tmp_utdanninger )}
     {set $utdanninger = $utdanninger|append($tmp_hash)}
-    <!-- type of $nivaa_id: {$nivaa_id|get_type()} -->
 {/foreach}
 <aside class="col-sm-3">
     <form action={"content/action"|ezurl} method="post">
     <input type="hidden" name="DestinationURL" value="{$container_node.url_alias}" />
-    <h3>Fagområde</h3>
-    <ul>
-    {foreach $fagomraader as $fagomraade}
-        <!-- type of $fagomraade.node_id: {$fagomraade.node_id|get_type()} -->
-        <li><input type="checkbox" name="(s1)[]" value="{$fagomraade.node_id|wash()}"{if $sel_fagomr|contains($fagomraade.node_id)} checked{/if}>{$fagomraade.navn|wash()} <span class="badge">{$fagomraade.antall|wash()}</span></li>
-    {/foreach}
-    </ul>
-    <h3>Nivå</h3>
-    <ul>
-    {foreach $utdanninger as $utdanning}
-        <!-- type of $utdanning.nivaa_id: {$utdanning.nivaa_id|get_type()} -->
-        <li><input type="checkbox" name="(s2)[]" value="{$utdanning.nivaa_id}"{if $sel_nivaa|contains($utdanning.nivaa_id)} checked{/if}>{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall}</span></li>
-    {/foreach}
-    </ul>
+    <div class="wrapper bg-darkgray toolmenu">
+	    <h3>Fagområde</h3>
+	    <ul>
+	    {foreach $fagomraader as $fagomraade}
+	        <li><input type="checkbox" name="(s1)[]" value="{$fagomraade.node_id|wash()}"{if $sel_fagomr|contains($fagomraade.node_id)} checked{/if}>{$fagomraade.navn|wash()} <span class="badge pull-right">{$fagomraade.antall|wash()}</span></li>
+	    {/foreach}
+	    </ul>
+    </div>
+    <div class="wrapper bg-darkgray toolmenu">
+	    <h3>Nivå</h3>
+	    <ul>
+	    {foreach $utdanninger as $utdanning}
+	        <li><input type="checkbox" name="(s2)[]" value="{$utdanning.nivaa_id}"{if $sel_nivaa|contains($utdanning.nivaa_id)} checked{/if}>{$utdanning.navn|wash()} <span class="badge pull-right">{$utdanning.antall}</span></li>
+	    {/foreach}
+	    </ul>
+    </div>
     <input type="submit" name="Submit" value="Test" />
     </form>
 </aside>
 <div class="col-sm-9">
+{if and(eq($sel_fagomr|count(),0),eq($sel_nivaa|count(),0))}
     {foreach $utdanninger as $utdanning}
         <h2>{$utdanning.navn|wash()}</h2>
         <ul>
@@ -95,7 +93,28 @@ $sel_nivaa: {$sel_nivaa|get_type()} {$sel_nivaa.0|get_type()}
         {/foreach}
         </ul>
     {/foreach}
+{else}
+    {foreach $utdanninger as $utdanning}
+        {if or(eq($sel_nivaa|count(),0), $sel_nivaa|contains($utdanning.nivaa_id))}
+            {foreach $utdanning.items as $item}
+                {set $tmp_viewheading = false()}
+                {if $sel_fagomr|contains($item.parent_node_id)}
+                    {set $tmp_viewheading = true()}
+                    {break}
+                {/if}
+                {if $tmp_viewheading}
+                    <h2>{$utdanning.navn|wash()}</h2>
+                    <ul>
+			        {foreach $utdanning.items as $item}
+			            {if $sel_fagomr|contains($item.parent_node_id)}<li><a href={$item.url_alias|ezurl}>{$item.data_map.title.content|wash()}</a></li>{/if}
+			        {/foreach}
+                    </ul>
+                {/if}
+            {/foreach}
+        {/if}
+    {/foreach}
+{/if}
 </div>
 
-{undef $UTDANNING_node_id $classes $nivaa_sortorder $nivaa_names $utdanninger $fagomraader $tmp_utdanninger $tmp_fagomraader $tmp_items $tmp_item_count $tmp_hash $sel_fagomr $sel_nivaa} 
+{undef $UTDANNING_node_id $classes $nivaa_sortorder $nivaa_names $utdanninger $fagomraader $tmp_utdanninger $tmp_fagomraader $tmp_items $tmp_item_count $tmp_hash $sel_fagomr $sel_nivaa $tmp_viewheading} 
 {*$utdanning_width $tmp_utd $col_width $nivaa_item_count $tmp_fagomrade*}
