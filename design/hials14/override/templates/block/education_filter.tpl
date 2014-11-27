@@ -54,18 +54,22 @@
     {set $utdanninger = $utdanninger|append($tmp_hash)}
 {/foreach}
 <aside class="col-sm-3">
+    <form action={"content/action"|ezurl} method="post">
+    <input type="hidden" name="DestinationURL" value="{$node.url_alias}" />
     <h3>Fagområde</h3>
     <ul>
     {foreach $fagomraader as $fagomraade}
-        <li><input type="checkbox" id="fagomr_{$fagomraade.node_id|wash()}" name="fagomr_{$fagomraade.node_id|wash()}">{$fagomraade.navn|wash()} <span class="badge">{$fagomraade.antall|wash()}</span></li>
+        <li><input type="checkbox" name="sel[]" value="{$fagomraade.node_id|wash()}">{$fagomraade.navn|wash()} <span class="badge">{$fagomraade.antall|wash()}</span></li>
     {/foreach}
     </ul>
     <h3>Nivå</h3>
     <ul>
     {foreach $utdanninger as $utdanning}
-        <li><input type="checkbox" id="nivaa_{$utdanning.nivaa_id}" name="nivaa_{$utdanning.nivaa_id}">{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall}</span></li>
+        <li><input type="checkbox" name="sel[]" value="{$utdanning.nivaa_id}">{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall}</span></li>
     {/foreach}
     </ul>
+    <input type="submit" name="Submit" value="Test" />
+    </form>
 </aside>
 <div class="col-sm-9">
     {foreach $utdanninger as $utdanning}
