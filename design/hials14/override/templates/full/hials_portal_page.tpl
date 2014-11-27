@@ -14,6 +14,6 @@
     </div>
     
     <div class="attribute-page row">
-        {attribute_view_gui attribute=$node.object.data_map.page}
+        {attribute_view_gui attribute=$node.object.data_map.page container_node=$node}
     </div>
 </div>
