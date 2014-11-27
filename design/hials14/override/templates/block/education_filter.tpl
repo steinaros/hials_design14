@@ -69,12 +69,14 @@ $sel_nivaa: {$sel_nivaa|get_type()} {$sel_nivaa.0|get_type()}
     <h3>Fagområde</h3>
     <ul>
     {foreach $fagomraader as $fagomraade}
+        <!-- type of $fagomraade.node_id: {$fagomraade.node_id|get_type()} -->
         <li><input type="checkbox" name="(s1)[]" value="{$fagomraade.node_id|wash()}"{if $sel_fagomr|contains($fagomraade.node_id)} checked{/if}>{$fagomraade.navn|wash()} <span class="badge">{$fagomraade.antall|wash()}</span></li>
     {/foreach}
     </ul>
     <h3>Nivå</h3>
     <ul>
     {foreach $utdanninger as $utdanning}
+        <!-- type of $utdanning.nivaa_id: {$utdanning.nivaa_id|get_type()} -->
         <li><input type="checkbox" name="(s2)[]" value="{$utdanning.nivaa_id}"{if $sel_nivaa|contains($utdanning.nivaa_id)} checked{/if}>{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall}</span></li>
     {/foreach}
     </ul>
@@ -87,10 +89,6 @@ $sel_nivaa: {$sel_nivaa|get_type()} {$sel_nivaa.0|get_type()}
         <ul>
         {foreach $utdanning.items as $item}
             <li><a href={$item.url_alias|ezurl}>{$item.data_map.title.content|wash()}</a></li>
-            <!--
-                Nivaa: {$item.data_map.nivaa|attribute('show',2,'text')}
-                {$item|attribute('show', 2, 'text')} 
-            -->
         {/foreach}
         </ul>
     {/foreach}
