@@ -55,17 +55,17 @@
 {/foreach}
 <aside class="col-sm-3">
     <form action={"content/action"|ezurl} method="post">
-    <input type="hidden" name="DestinationURL" value="{$container_node.url_alias}" />
+    <input type="hidden" name="DestinationURL" value="{$container_node.url_alias|ezurl( 'no' )}" />
     <h3>Fagområde</h3>
     <ul>
     {foreach $fagomraader as $fagomraade}
-        <li><input type="checkbox" name="sel[]" value="{$fagomraade.node_id|wash()}">{$fagomraade.navn|wash()} <span class="badge">{$fagomraade.antall|wash()}</span></li>
+        <li><input type="checkbox" name="(sel)[]" value="{$fagomraade.node_id|wash()}">{$fagomraade.navn|wash()} <span class="badge">{$fagomraade.antall|wash()}</span></li>
     {/foreach}
     </ul>
     <h3>Nivå</h3>
     <ul>
     {foreach $utdanninger as $utdanning}
-        <li><input type="checkbox" name="sel[]" value="{$utdanning.nivaa_id}">{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall}</span></li>
+        <li><input type="checkbox" name="(sel)[]" value="{$utdanning.nivaa_id}">{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall}</span></li>
     {/foreach}
     </ul>
     <input type="submit" name="Submit" value="Test" />
