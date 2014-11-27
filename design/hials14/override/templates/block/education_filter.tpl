@@ -17,8 +17,8 @@
     Sel2: {$view_parameters.sel2}
 -->     
 
-{def $selection1 = first_set($view_parameters.sel1, $view_parameters.sel1|explode(' '), array())
-     $selection2 = first_set($view_parameters.sel2, $view_parameters.sel2|explode(' '), array())}
+{def $selection1 = first_set($view_parameters.sel1, $view_parameters.sel1|explode(','), array())
+     $selection2 = first_set($view_parameters.sel2, $view_parameters.sel2|explode(','), array())}
 
 <!--
     Sel1: {$selection1|attribute('show',2,'text')}
