@@ -11,9 +11,19 @@
      $tmp_items = array()
      $tmp_item_count = 0
      $tmp_hash = hash()}
+     
+<!--
+    Sel1: {$view_parameters.sel1}
+    Sel2: {$view_parameters.sel2}
+-->     
 
-{def $selection1 = first_set($view_parameters.sel1, '')|explode(' ')
-     $selection2 = first_set($view_parameters.sel2, '')|explode(' ')}
+{def $selection1 = first_set($view_parameters.sel1, $view_parameters.sel1|explode(' '), array())
+     $selection2 = first_set($view_parameters.sel2, $view_parameters.sel2|explode(' '), array())}
+
+<!--
+    Sel1: {$selection1|attribute('show',2,'text')}
+    Sel2: {$selection2|attribute('show',2,'text')}
+-->
 
 {set $tmp_fagomraader = fetch( 'content', 'list', hash( 'parent_node_id', $UTDANNING_node_id,
                                                     'sort_by', array( 'attribute', true(), 315 ),
