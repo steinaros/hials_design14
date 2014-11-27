@@ -100,7 +100,7 @@
         {if or(eq($sel_nivaa|count(),0), $sel_nivaa|contains($utdanning.nivaa_id))}
             {set $tmp_viewheading = false()}
             {foreach $utdanning.items as $item}
-                {if $sel_fagomr|contains($item.parent_node_id)}
+                {if or(eq($sel_fagomr|count(),0), $sel_fagomr|contains($item.parent_node_id))}
                     {set $tmp_viewheading = true()}
                     {break}
                 {/if}
@@ -109,7 +109,7 @@
                 <h2>{$utdanning.navn|wash()}</h2>
                 <ul>
 		        {foreach $utdanning.items as $item}
-		            {if $sel_fagomr|contains($item.parent_node_id)}<li><a href={$item.url_alias|ezurl}>{$item.data_map.title.content|wash()}</a></li>{/if}
+		            {if or(eq($sel_fagomr|count(),0), $sel_fagomr|contains($item.parent_node_id))}<li><a href={$item.url_alias|ezurl}>{$item.data_map.title.content|wash()}</a></li>{/if}
 		        {/foreach}
                 </ul>
             {/if}            
