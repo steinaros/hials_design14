@@ -13,18 +13,8 @@
      $tmp_item_count = 0
      $tmp_hash = hash()}
      
-<!--
-    Sel1: {$view_parameters.sel1} {is_array($view_parameters.sel1)}
-    Sel2: {$view_parameters.sel2} {is_array($view_parameters.sel2)}
--->     
-
-{def $sel1 = first_set($view_parameters.sel1, $view_parameters.sel1|explode(','), array())
-     $sel2 = first_set($view_parameters.sel2, $view_parameters.sel2|explode(','), array())}
-
-<!--
-    Sel1: {$sel1|attribute('show',2,'text')}
-    Sel2: {$sel2|attribute('show',2,'text')}
--->
+{def $sel_fagomr = first_set($view_parameters.s1, $view_parameters.s1|explode(','), array())
+     $sel_nivaa = first_set($view_parameters.s2, $view_parameters.s2|explode(','), array())}
 
 {set $tmp_fagomraader = fetch( 'content', 'list', hash( 'parent_node_id', $UTDANNING_node_id,
                                                     'sort_by', array( 'attribute', true(), 315 ),
@@ -66,6 +56,7 @@
                            'antall', $tmp_item_count,
                            'items', $tmp_utdanninger )}
     {set $utdanninger = $utdanninger|append($tmp_hash)}
+    <!-- type of $nivaa_id: {$nivaa_id|get_type()} -->
 {/foreach}
 <aside class="col-sm-3">
     <form action={"content/action"|ezurl} method="post">
@@ -73,13 +64,13 @@
     <h3>Fagområde</h3>
     <ul>
     {foreach $fagomraader as $fagomraade}
-        <li><input type="checkbox" name="(sel1)[]" value="{$fagomraade.node_id|wash()}"{if $sel1|contains($fagomraade.node_id)} checked{/if}>{$fagomraade.navn|wash()} <span class="badge">{$fagomraade.antall|wash()}</span></li>
+        <li><input type="checkbox" name="(s1)[]" value="{$fagomraade.node_id|wash()}"{if $sel_fagomr|contains($fagomraade.node_id)} checked{/if}>{$fagomraade.navn|wash()} <span class="badge">{$fagomraade.antall|wash()}</span></li>
     {/foreach}
     </ul>
     <h3>Nivå</h3>
     <ul>
     {foreach $utdanninger as $utdanning}
-        <li><input type="checkbox" name="(sel2)[]" value="{$utdanning.nivaa_id}"{if $sel2|contains($utdanning.nivaa_id)} checked{/if}>{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall}</span></li>
+        <li><input type="checkbox" name="(s2)[]" value="{$utdanning.nivaa_id}"{if $sel_nivaa|contains($utdanning.nivaa_id)} checked{/if}>{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall}</span></li>
     {/foreach}
     </ul>
     <input type="submit" name="Submit" value="Test" />
@@ -100,5 +91,5 @@
     {/foreach}
 </div>
 
-{undef $UTDANNING_node_id $classes $nivaa_sortorder $nivaa_names $utdanninger $fagomraader $tmp_utdanninger $tmp_fagomraader $tmp_items $tmp_item_count $tmp_hash} 
+{undef $UTDANNING_node_id $classes $nivaa_sortorder $nivaa_names $utdanninger $fagomraader $tmp_utdanninger $tmp_fagomraader $tmp_items $tmp_item_count $tmp_hash $sel_fagomr $sel_nivaa} 
 {*$utdanning_width $tmp_utd $col_width $nivaa_item_count $tmp_fagomrade*}
