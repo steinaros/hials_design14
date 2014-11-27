@@ -68,7 +68,7 @@
 	    <h3>Fagområde</h3>
 	    <ul>
 	    {foreach $fagomraader as $fagomraade}
-	        <li><input type="checkbox" name="(s1)[]" value="{$fagomraade.node_id|wash()}"{if $sel_fagomr|contains($fagomraade.node_id)} checked{/if}>{$fagomraade.navn|wash()} <span class="badge pull-right">{$fagomraade.antall|wash()}</span></li>
+	        <li><label><input type="checkbox" name="(s1)[]" value="{$fagomraade.node_id|wash()}"{if $sel_fagomr|contains($fagomraade.node_id)} checked{/if}>{$fagomraade.navn|wash()}</label> <span class="badge pull-right">{$fagomraade.antall|wash()}</span></li>
 	    {/foreach}
 	    </ul>
     </div>
@@ -76,7 +76,9 @@
 	    <h3>Nivå</h3>
 	    <ul>
 	    {foreach $utdanninger as $utdanning}
-	        <li><input type="checkbox" name="(s2)[]" value="{$utdanning.nivaa_id}"{if $sel_nivaa|contains($utdanning.nivaa_id)} checked{/if}>{$utdanning.navn|wash()} <span class="badge pull-right">{$utdanning.antall}</span></li>
+	        {if ne($utdanning.antall, 0)}
+	        <li><label><input type="checkbox" name="(s2)[]" value="{$utdanning.nivaa_id}"{if $sel_nivaa|contains($utdanning.nivaa_id)} checked{/if}>{$utdanning.navn|wash()}</label> <span class="badge pull-right">{$utdanning.antall}</span></li>
+	        {/if}
 	    {/foreach}
 	    </ul>
     </div>
@@ -96,8 +98,8 @@
 {else}
     {foreach $utdanninger as $utdanning}
         {if or(eq($sel_nivaa|count(),0), $sel_nivaa|contains($utdanning.nivaa_id))}
+            {set $tmp_viewheading = false()}
             {foreach $utdanning.items as $item}
-                {set $tmp_viewheading = false()}
                 {if $sel_fagomr|contains($item.parent_node_id)}
                     {set $tmp_viewheading = true()}
                     {break}
