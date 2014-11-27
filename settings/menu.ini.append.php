@@ -7,6 +7,7 @@ TopIdentifierList[]=hials_portal_page
 TopIdentifierList[]=landing_page
 TopIdentifierList[]=hials_avdeling
 TopIdentifierList[]=hials_contentpage
+TopIdentifierList[]=hials_nyhetsmappe
 
 UtdanningSubMenuIdentifierList[]
 UtdanningSubMenuIdentifierList[]=hials_fagomrade
