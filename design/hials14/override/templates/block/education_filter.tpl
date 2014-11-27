@@ -55,7 +55,7 @@
 {/foreach}
 <aside class="col-sm-3">
     <form action={"content/action"|ezurl} method="post">
-    <input type="hidden" name="DestinationURL" value="{$container_node.url_alias|ezurl( 'no' )}" />
+    <input type="hidden" name="DestinationURL" value="{$container_node.url_alias}" />
     <h3>Fagområde</h3>
     <ul>
     {foreach $fagomraader as $fagomraade}
