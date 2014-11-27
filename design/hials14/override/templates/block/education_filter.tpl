@@ -72,13 +72,13 @@
     <h3>Fagområde</h3>
     <ul>
     {foreach $fagomraader as $fagomraade}
-        <li><input type="checkbox" name="(sel1)[]" value="{$fagomraade.node_id|wash()}"{if $sel1|contains($fagomraade.node_id)} checked{/if}>{$fagomraade.navn|wash()} <span class="badge">{$fagomraade.antall|wash()}</span></li>
+        <li><input type="checkbox" name="(sel1)[]" value="{$fagomraade.node_id|wash()}"{if $sel1|contains($fagomraade.node_id|int())} checked{/if}>{$fagomraade.navn|wash()} <span class="badge">{$fagomraade.antall|wash()}</span></li>
     {/foreach}
     </ul>
     <h3>Nivå</h3>
     <ul>
     {foreach $utdanninger as $utdanning}
-        <li><input type="checkbox" name="(sel2)[]" value="{$utdanning.nivaa_id}"{if $sel2|contains($utdanning.nivaa_id)} checked{/if}>{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall}</span></li>
+        <li><input type="checkbox" name="(sel2)[]" value="{$utdanning.nivaa_id}"{if $sel2|contains($utdanning.nivaa_id|int())} checked{/if}>{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall}</span></li>
     {/foreach}
     </ul>
     <input type="submit" name="Submit" value="Test" />
