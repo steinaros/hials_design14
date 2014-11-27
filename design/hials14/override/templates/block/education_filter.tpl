@@ -102,15 +102,15 @@
                     {set $tmp_viewheading = true()}
                     {break}
                 {/if}
-                {if $tmp_viewheading}
-                    <h2>{$utdanning.navn|wash()}</h2>
-                    <ul>
-			        {foreach $utdanning.items as $item}
-			            {if $sel_fagomr|contains($item.parent_node_id)}<li><a href={$item.url_alias|ezurl}>{$item.data_map.title.content|wash()}</a></li>{/if}
-			        {/foreach}
-                    </ul>
-                {/if}
             {/foreach}
+            {if $tmp_viewheading}
+                <h2>{$utdanning.navn|wash()}</h2>
+                <ul>
+		        {foreach $utdanning.items as $item}
+		            {if $sel_fagomr|contains($item.parent_node_id)}<li><a href={$item.url_alias|ezurl}>{$item.data_map.title.content|wash()}</a></li>{/if}
+		        {/foreach}
+                </ul>
+            {/if}            
         {/if}
     {/foreach}
 {/if}
