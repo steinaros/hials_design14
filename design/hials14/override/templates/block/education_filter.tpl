@@ -13,16 +13,16 @@
      $tmp_hash = hash()}
      
 <!--
-    Sel1: {$view_parameters.sel1}
-    Sel2: {$view_parameters.sel2}
+    Sel1: {$view_parameters.sel1} {is_array($view_parameters.sel1)}
+    Sel2: {$view_parameters.sel2} {is_array($view_parameters.sel2)}
 -->     
 
-{def $selection1 = first_set($view_parameters.sel1, $view_parameters.sel1|explode(','), array())
-     $selection2 = first_set($view_parameters.sel2, $view_parameters.sel2|explode(','), array())}
+{def $sel1 = first_set($view_parameters.sel1, $view_parameters.sel1|explode(','), array())
+     $sel2 = first_set($view_parameters.sel2, $view_parameters.sel2|explode(','), array())}
 
 <!--
-    Sel1: {$selection1|attribute('show',2,'text')}
-    Sel2: {$selection2|attribute('show',2,'text')}
+    Sel1: {$sel1|attribute('show',2,'text')}
+    Sel2: {$sel2|attribute('show',2,'text')}
 -->
 
 {set $tmp_fagomraader = fetch( 'content', 'list', hash( 'parent_node_id', $UTDANNING_node_id,
@@ -72,13 +72,13 @@
     <h3>Fagområde</h3>
     <ul>
     {foreach $fagomraader as $fagomraade}
-        <li><input type="checkbox" name="(sel1)[]" value="{$fagomraade.node_id|wash()}"{if $selection1|contains($fagomraade.node_id)} checked{/if}>{$fagomraade.navn|wash()} <span class="badge">{$fagomraade.antall|wash()}</span></li>
+        <li><input type="checkbox" name="(sel1)[]" value="{$fagomraade.node_id|wash()}"{if $sel1|contains($fagomraade.node_id)} checked{/if}>{$fagomraade.navn|wash()} <span class="badge">{$fagomraade.antall|wash()}</span></li>
     {/foreach}
     </ul>
     <h3>Nivå</h3>
     <ul>
     {foreach $utdanninger as $utdanning}
-        <li><input type="checkbox" name="(sel2)[]" value="{$utdanning.nivaa_id}"{if $selection2|contains($utdanning.nivaa_id)} checked{/if}>{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall}</span></li>
+        <li><input type="checkbox" name="(sel2)[]" value="{$utdanning.nivaa_id}"{if $sel2|contains($utdanning.nivaa_id)} checked{/if}>{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall}</span></li>
     {/foreach}
     </ul>
     <input type="submit" name="Submit" value="Test" />
