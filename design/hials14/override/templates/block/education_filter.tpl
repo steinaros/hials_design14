@@ -1,7 +1,8 @@
 {def $UTDANNING_node_id = ezini( 'HialsContentNodeIDs', 'UtdanningRoot', 'content.ini' )
      $classes = array('hials_utdanningstilbud')
-     $nivaa_sortorder = array( '0', '1', '2', '5', '6', '4', '3')
-     $nivaa_names = hash( 0, 'Bachelor', 1, 'Master', 2, 'Videreutdanning', 3, 'Kurs', 4, 'Maritime kurs', 5, 'Årsstudium', 6, 'Enkeltemne' )
+     $nivaa_sortorder = array( '0', '1', '2', '5', '6', '4', '3')}
+     {* needs to be string-type so that contains-function works... *}
+{def $nivaa_names = hash( '0', 'Bachelor', '1', 'Master', '2', 'Videreutdanning', '3', 'Kurs', '4', 'Maritime kurs', '5', 'Årsstudium', '6', 'Enkeltemne' )
      $utdanninger = array()
      $fagomraader = array()
 
@@ -72,13 +73,13 @@
     <h3>Fagområde</h3>
     <ul>
     {foreach $fagomraader as $fagomraade}
-        <li><input type="checkbox" name="(sel1)[]" value="{$fagomraade.node_id|wash()}"{if $sel1|contains($fagomraade.node_id|int())} checked{/if}>{$fagomraade.navn|wash()} <span class="badge">{$fagomraade.antall|wash()}</span></li>
+        <li><input type="checkbox" name="(sel1)[]" value="{$fagomraade.node_id|wash()}"{if $sel1|contains($fagomraade.node_id)} checked{/if}>{$fagomraade.navn|wash()} <span class="badge">{$fagomraade.antall|wash()}</span></li>
     {/foreach}
     </ul>
     <h3>Nivå</h3>
     <ul>
     {foreach $utdanninger as $utdanning}
-        <li><input type="checkbox" name="(sel2)[]" value="{$utdanning.nivaa_id}"{if $sel2|contains($utdanning.nivaa_id|int())} checked{/if}>{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall}</span></li>
+        <li><input type="checkbox" name="(sel2)[]" value="{$utdanning.nivaa_id}"{if $sel2|contains($utdanning.nivaa_id)} checked{/if}>{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall}</span></li>
     {/foreach}
     </ul>
     <input type="submit" name="Submit" value="Test" />
