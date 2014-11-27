@@ -12,9 +12,12 @@
      $tmp_items = array()
      $tmp_item_count = 0
      $tmp_hash = hash()}
-     
-{def $sel_fagomr = first_set($view_parameters.s1, $view_parameters.s1|explode(','), array())
-     $sel_nivaa = first_set($view_parameters.s2, $view_parameters.s2|explode(','), array())}
+
+{def $sel_fagomr = array()
+     $sel_nivaa = array()}
+
+{if is_set($view_parameters.s1)}{set $sel_fagomr = $view_parameters.s1|explode(',')}{/if}
+{if is_set($view_parameters.s2)}{set $sel_nivaa = $view_parameters.s2|explode(',')}{/if}
      
 <!-- 
 $sel_fagomr: {$sel_fagomr|get_type()} {$sel_fagomr.0|get_type()}
