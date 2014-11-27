@@ -15,6 +15,11 @@
      
 {def $sel_fagomr = first_set($view_parameters.s1, $view_parameters.s1|explode(','), array())
      $sel_nivaa = first_set($view_parameters.s2, $view_parameters.s2|explode(','), array())}
+     
+<!-- 
+$sel_fagomr: {$sel_fagomr|get_type()} {$sel_fagomr.0|get_type()}
+$sel_nivaa: {$sel_nivaa|get_type()} {$sel_nivaa.0|get_type()}
+-->     
 
 {set $tmp_fagomraader = fetch( 'content', 'list', hash( 'parent_node_id', $UTDANNING_node_id,
                                                     'sort_by', array( 'attribute', true(), 315 ),
