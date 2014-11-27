@@ -12,6 +12,9 @@
      $tmp_item_count = 0
      $tmp_hash = hash()}
 
+{def $selection1 = first_set($view_parameters.sel1, '')|explode(' ')
+     $selection2 = first_set($view_parameters.sel2, '')|explode(' ')}
+
 {set $tmp_fagomraader = fetch( 'content', 'list', hash( 'parent_node_id', $UTDANNING_node_id,
                                                     'sort_by', array( 'attribute', true(), 315 ),
                                                     'class_filter_type', 'include',
@@ -59,13 +62,13 @@
     <h3>Fagområde</h3>
     <ul>
     {foreach $fagomraader as $fagomraade}
-        <li><input type="checkbox" name="(sel)[]" value="{$fagomraade.node_id|wash()}">{$fagomraade.navn|wash()} <span class="badge">{$fagomraade.antall|wash()}</span></li>
+        <li><input type="checkbox" name="(sel1)[]" value="{$fagomraade.node_id|wash()}"{if $selection1|contains($fagomraade.node_id)} checked{/if}>{$fagomraade.navn|wash()} <span class="badge">{$fagomraade.antall|wash()}</span></li>
     {/foreach}
     </ul>
     <h3>Nivå</h3>
     <ul>
     {foreach $utdanninger as $utdanning}
-        <li><input type="checkbox" name="(sel)[]" value="{$utdanning.nivaa_id}">{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall}</span></li>
+        <li><input type="checkbox" name="(sel2)[]" value="{$utdanning.nivaa_id}"{if $selection2|contains($utdanning.nivaa_id)} checked{/if}>{$utdanning.navn|wash()} <span class="badge">{$utdanning.antall}</span></li>
     {/foreach}
     </ul>
     <input type="submit" name="Submit" value="Test" />
