@@ -7,5 +7,5 @@
 {/if}
 <div class="carousel-caption">
     <h3><a href={$node.url_alias|ezurl}>{$node.data_map.name.content|wash()}</a></h3>
-    <p>{$node.data_map.intro.content|wash()}</p>
+    {attribute_view_gui attribute=$node.data_map.intro}
 </div>
