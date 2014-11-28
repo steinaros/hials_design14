@@ -126,7 +126,7 @@ background-color: #f1f1f1;
 }
 
 .bg-darkgray {
-    background-color: #565656;
+    background-color: #4D4D4D;
     color: #fff;
 }
 
@@ -453,7 +453,7 @@ h2.teaser-title, h2.teaser-title a {
 footer {
 	padding-top: 2em;
 	padding-bottom: 2em;
-	border-top: 1px solid #333;
+	border-top: 1px solid #ccc;
 	margin-top: 4em;
 }
 
@@ -507,8 +507,8 @@ article.headline h2.teaser-title {
 }
 
 nav#mainnav {
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
 .navbar-brand {
@@ -548,11 +548,11 @@ form.dropdown-menu {
     .topmenuitem-wrapper {
         display:block;
         padding: 0 15px;
-        border-left: 1px solid #333;
+        border-left: 1px solid #ccc;
     }
     
     .navbar-hials .navbar-nav > li:last-child .topmenuitem-wrapper {
-        border-right: 1px solid #333;
+        border-right: 1px solid #ccc;
     }
 }
 
@@ -586,7 +586,7 @@ form.dropdown-menu {
 
 .dropdown-menu {
     border: none;
-    border-top: 1px solid #333;
+    border-top: 1px solid #ccc;
     border-radius: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -780,14 +780,28 @@ ul.nav-pills.nav-stacked>li+li {
 	background-color: rgba(86,86,86,0.6);
 	right: 0;
 	left: 0;
+	bottom: 0;
 	width: 100%;
 	text-align: left;
 	padding-left: 30px;
+	padding-bottom: 45px;
+	padding-top: 10px;
+}
+
+.carousel-caption p {
+    font-size: 14px;
+    padding-right: 15%;
 }
 
 .carousel-caption a {
 	color: #fff;
 	text-decoration: none;
+}
+
+.carousel-caption h3 {
+	text-transform: uppercase;
+	font-weight: 900;
+	font-size: 24px;
 }
 
 .carousel-caption a:hover, .carousel-caption a:focus {
@@ -796,6 +810,12 @@ ul.nav-pills.nav-stacked>li+li {
 
 .carousel-control, .carousel-control:hover, .carousel-control:focus {
 	color: #FDED00;
+}
+
+@media screen and (min-width: 768px) {
+    .carousel-indicators {
+        bottom: 10px;
+    }
 }
 
 /*************************************************/
