@@ -785,7 +785,7 @@ ul.nav-pills.nav-stacked>li+li {
 	text-align: left;
 	padding-left: 30px;
 	padding-bottom: 45px;
-	padding-top: 10px;
+	padding-top: 0;
 }
 
 .carousel-caption p {
