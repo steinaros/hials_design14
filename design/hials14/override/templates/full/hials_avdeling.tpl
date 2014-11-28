@@ -20,6 +20,10 @@
 	    {*if $node.data_map.image.has_content*}
         {if $node.data_map.bokser.has_content}  
 	    <aside class="col-sm-6 col-left">
+            {if $node.data_map.image.has_content}
+                {attribute_view_gui attribute=$node.data_map.image image_class=banner_half css_class=img-responsive}
+            {/if}
+
             <div class="attribute-bokser">
             {attribute_view_gui attribute=$node.data_map.bokser container_node=$node}
             </div>
@@ -32,6 +36,18 @@
             {include uri='design:menu/leftmenu_subitems.tpl' subitems=$projects title='Projects'}
             {/if*}       
 	    </aside>
+	    {elseif $node.data_map.image.has_content}
+        <aside class="col-sm-6 col-left">
+            {if $node.data_map.image.has_content}
+                {attribute_view_gui attribute=$node.data_map.image image_class=banner_half css_class=img-responsive}
+            {/if}
+            {if $children|count()}
+            {include uri='design:menu/leftmenu_subitems.tpl' subitems=$children}
+            {/if}
+            {if $projects|count()}
+            {include uri='design:menu/leftmenu_subitems.tpl' subitems=$projects title='Projects'}
+            {/if}       
+        </aside>	    
 	    {elseif or($children|count(), $projects|count())}
 	    <aside class="col-sm-3 col-left">
             {if $children|count()}
