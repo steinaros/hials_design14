@@ -31,6 +31,7 @@
 
                 <div class="content-view-children">
                 {if $children_count}
+                    <ul>
                     {foreach fetch( 'content', 'tree', hash( 'parent_node_id', $node.node_id,
                                                             'offset', $view_parameters.offset,
                                                             'sort_by', $node.sort_array,
@@ -38,8 +39,9 @@
                                                             'class_filter_array', $classes,
                                                             'depth', $depth,
                                                             'limit', $page_limit ) ) as $child }
-                        {node_view_gui view='listitem' content_node=$child}
+                        <li>{node_view_gui view='listitem' content_node=$child}</li>
                     {/foreach}
+                    </ul>
                 {/if}
                 </div>
 
