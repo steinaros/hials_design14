@@ -38,7 +38,6 @@ h2.front {
 
 h3, .h3 {
 	font-size: 20px;
-	font-weight: 700;
 }
 
 .class-hials_utdanningstilbud h3, .class-hials_utdanningstilbud .h3, h4, .h4 {
@@ -55,6 +54,7 @@ a {
 
 a:hover, a:focus {
 	color: #004C99;
+	text-decoration: underline;
 }
 
 .pubisheddatecol {
@@ -80,6 +80,7 @@ ul.leftmenu > li {
 .leftmenu, .leftmenu > li > a {
     color: #333; 
     font-size: 14px;
+    text-decoration: none;
 }
 
 p.leftmenu {
