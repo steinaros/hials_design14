@@ -5,7 +5,7 @@
                                           class_filter_array, $leftmenu_class_filter,
                                           sort_by, $node.sort_array ) )}
 {def $extra_class = ""}
-<div class="content-view-full">
+<div class="content-view-full container">
     <div class="row">
 	    {if or($node.data_map.image.has_content, $node.data_map.bokser.has_content)}
 	    <aside class="col-sm-6 col-left">

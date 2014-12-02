@@ -4,7 +4,7 @@
 {def $spesialiseringer = fetch_alias('children', hash( 'parent_node_id', $node.node_id,
                                               'class_filter_type', 'include',
                                               'class_filter_array', array( 'hials_spesialisering' ) ) )}
-<div class="content-view-full">
+<div class="content-view-full container">
     {if $node.data_map.banner.has_content}
     <div class="attribute-banner row">{attribute_view_gui attribute=$node.data_map.banner}</div>
     {/if}

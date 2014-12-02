@@ -1,7 +1,7 @@
 {* Nyhetsmappe - Full view *}
 {def $rss_export = fetch( 'rss', 'export_by_node', hash( 'node_id', $node.node_id ) )}
 
-<div class="content-view-full class-hials_nyhetsmapppe">
+<div class="content-view-full class-hials_nyhetsmapppe container">
     <div class="row">
         <div class="col-sm-offset-3 col-sm-6">
             {if $rss_export}

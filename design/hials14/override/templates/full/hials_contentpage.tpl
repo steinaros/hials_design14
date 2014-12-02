@@ -7,7 +7,7 @@
                                           class_filter_array, $leftmenu_class_filter,
                                           sort_by, $node.sort_array ) )}
 {def $extra_class = ""}                                          
-<div class="content-view-full">
+<div class="content-view-full container">
     {if $node.data_map.bokser.has_content}
     <aside>
         <div class="attribute-bokser">
@@ -16,7 +16,7 @@
     </aside>
     {/if}
     {if ne($node.data_map.banner.content.relation_list|count(),0)}
-    <div class="attribute-banner row equal">{attribute_view_gui attribute=$node.data_map.banner}</div>
+    <div class="attribute-banner row">{attribute_view_gui attribute=$node.data_map.banner}</div>
     {/if}
     <div class="row">
 	    {if $node.data_map.image.has_content}

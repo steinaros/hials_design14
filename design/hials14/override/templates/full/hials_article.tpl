@@ -4,7 +4,7 @@
 {else}
     {def $root_node_id = $node.parent_node_id}
 {/if}
-<div class="content-view-full">
+<div class="content-view-full container">
     {if $node.data_map.image.has_content}
     <div class="row">
 	    <div class="col-sm-6 col-sm-offset-3 col-left">

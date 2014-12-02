@@ -1,7 +1,7 @@
 {* hials_fagomrade - Full view *}
 {set scope=global persistent_variable=hash('left_menu', false(),
                                            'extra_menu', false())}
-<div class="content-view-full class-hials_fagomrade">
+<div class="content-view-full class-hials_fagomrade container">
     {* Fjernet 24.11.2014 SSJ Bilde kun i karusell *}
     {*if $node.data_map.banner.has_content}
     <div class="attribute-banner row">{attribute_view_gui attribute=$node.data_map.banner}</div>

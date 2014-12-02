@@ -12,7 +12,7 @@
                                           sort_by, $node.sort_array ) )}
                                           
 {def $extra_class = ""}                                          
-<div class="content-view-full">
+<div class="content-view-full container">
     {if ne($node.data_map.banner.content.relation_list|count(),0)}
     <div class="attribute-banner row">{attribute_view_gui attribute=$node.data_map.banner}</div>
     {/if}
