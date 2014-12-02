@@ -2,7 +2,7 @@ $('#mainDropdown').on('show.bs.dropdown', function (e) {
 //	var height = $('.dropdown-menu').outerHeight()
 	if (!$('#navbar-collapse-grid').hasClass('in')) {
 		var height = $(e.target).find('.dropdown-menu').outerHeight()
-		$('main').css('margin-top', height)
+		$('main').css('border-top-width', height)
 		$(e.target).find('.dropdown-menu').slideDown('fast', 'linear')
 	}
 });
@@ -10,7 +10,7 @@ $('#mainDropdown').on('show.bs.dropdown', function (e) {
 $('#mainDropdown').on('hide.bs.dropdown', function (e) {
 	if (!$('#navbar-collapse-grid').hasClass('in')) {	
 		$(e.target).find('.dropdown-menu').slideUp('fast', 'linear')
-		$('main').css('margin-top', 0)
+		$('main').css('border-top-width', 0)
 	}
 });
 
@@ -40,7 +40,7 @@ $('[data-toggle="pill"]').on('click', function(event) {
 	}
    	
 	var height = $menu.outerHeight()
-	$('main').css('margin-top', height)
+	$('main').css('border-top-width', height)
 	$menu.slideDown('fast', 'linear')
 	
 });

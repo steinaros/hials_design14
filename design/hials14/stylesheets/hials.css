@@ -9,6 +9,8 @@ body {
 
 main {
 	padding-top: 15px;
+	border-top-color: #fff;
+	border-top-style: solid;
 }
 
 /* no top padding if breadcrumb is showing */
