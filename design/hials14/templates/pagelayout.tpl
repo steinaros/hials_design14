@@ -39,22 +39,12 @@ Pagedata:
 <!-- Complete page area: START -->
 <a class="sr-only" href="#content">{"Skip to main content"|i18n('hials/design/pagelayout')}</a>
 
-<div id="page" class="container {$pagestyle}">
+<div id="page" class="{$pagestyle}">
     <!-- Header area: START -->
     {include uri='design:page_header.tpl'}
     <!-- Header area: END -->
 
     {cache-block keys=array( $module_result.uri, $user_hash, $extra_cache_key )}
-{*
-    <div class="navbar main-navi">
-    
-        <!-- Top menu area: START -->
-        {if $pagedata.top_menu}
-            {include uri='design:page_topmenu.tpl'}
-        {/if}
-        <!-- Top menu area: END -->
-  
-    </div>*}
     <!-- Path area: START -->
     {if $pagedata.show_path}
         {include uri='design:page_toppath.tpl'}
@@ -65,31 +55,13 @@ Pagedata:
         {include uri='design:page_toolbar.tpl'}
     {/if}
     <!-- Toolbar area: END -->
-{*
-    <!-- Columns area: START -->
-    <div class="container">
-        <div class="row">
-            <!-- Side menu area: START -->
-            {if $pagedata.left_menu}
-                {include uri='design:page_leftmenu.tpl'}
-            {/if}
-            <!-- Side menu area: END -->*}
     {/cache-block}
-    {/cache-block}
-            <!-- Main area: START -->
-            {include uri='design:page_mainarea.tpl'}
-            <!-- Main area: END -->
-            {cache-block keys=array( $module_result.uri, $user_hash, $access_type.name, $extra_cache_key )}
-{*
-            <!-- Extra area: START -->
-            {if $pagedata.extra_menu}
-                {include uri='design:page_extramenu.tpl'}
-            {/if}
-            <!-- Extra area: END -->
-        </div>
-    </div>
-    <!-- Columns area: END -->
-*}
+{/cache-block}
+    <!-- Main area: START -->
+    {include uri='design:page_mainarea.tpl'}
+    <!-- Main area: END -->
+    {cache-block keys=array( $module_result.uri, $user_hash, $access_type.name, $extra_cache_key )}
+
     <!-- Footer area: START -->
     {include uri='design:page_footer.tpl'}
     <!-- Footer area: END -->
