@@ -11,6 +11,7 @@ main {
 	padding-top: 15px;
 	border-top-color: #fff;
 	border-top-style: solid;
+	border-top-width: 0;
 }
 
 /* no top padding if breadcrumb is showing */
