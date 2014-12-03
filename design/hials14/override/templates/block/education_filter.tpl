@@ -64,23 +64,27 @@
 <aside class="col-sm-3">
     <form id="education_filter" action={"content/action"|ezurl} method="post">
     <input type="hidden" name="DestinationURL" value="{$container_node.url_alias}" />
-    <div class="wrapper bg-darkgray toolmenu">
-	    <div class="h3">Fagområde</div>
-	    <ul>
-	    {foreach $fagomraader as $fagomraade}
-	        <li><div class="checkbox"><label><input type="checkbox" name="(s1)[]" onchange="$('#education_filter').submit();" value="{$fagomraade.node_id|wash()}"{if $sel_fagomr|contains($fagomraade.node_id)} checked{/if}>{$fagomraade.navn|wash()}</label></div></li>
-	    {/foreach}
-	    </ul>
+    <div class="panel panel-hials bg-darkgray">
+	    <div class="panel-heading">Fagområde</div>
+	    <div class="panel-body">
+		    <ul>
+		    {foreach $fagomraader as $fagomraade}
+		        <li><div class="checkbox"><label><input type="checkbox" name="(s1)[]" onchange="$('#education_filter').submit();" value="{$fagomraade.node_id|wash()}"{if $sel_fagomr|contains($fagomraade.node_id)} checked{/if}>{$fagomraade.navn|wash()}</label></div></li>
+		    {/foreach}
+		    </ul>
+	    </div>
     </div>
-    <div class="wrapper bg-darkgray toolmenu">
-	    <div class="h3">Nivå</div>
-	    <ul>
-	    {foreach $utdanninger as $utdanning}
-	        {if ne($utdanning.antall, 0)}
-	        <li><div class="checkbox"><label><input type="checkbox" name="(s2)[]" onchange="$('#education_filter').submit();" value="{$utdanning.nivaa_id}"{if $sel_nivaa|contains($utdanning.nivaa_id)} checked{/if}>{$utdanning.navn|wash()}</label></div></li>
-	        {/if}
-	    {/foreach}
-	    </ul>
+    <div class="panel panel-hials bg-darkgray">
+        <div class="panel-heading">Nivå</div>
+        <div class="panel-body">
+		    <ul>
+		    {foreach $utdanninger as $utdanning}
+		        {if ne($utdanning.antall, 0)}
+		        <li><div class="checkbox"><label><input type="checkbox" name="(s2)[]" onchange="$('#education_filter').submit();" value="{$utdanning.nivaa_id}"{if $sel_nivaa|contains($utdanning.nivaa_id)} checked{/if}>{$utdanning.navn|wash()}</label></div></li>
+		        {/if}
+		    {/foreach}
+    	    </ul>
+    	</div>
     </div>
     <noscript><input type="submit" name="Submit" value="Søk" /></noscript>
     </form>
