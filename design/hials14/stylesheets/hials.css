@@ -895,6 +895,28 @@ ul.links-center {
 }
 
 /*************************************************/
+/*** PANEL ***************************************/
+
+.panel-hials {
+	border-radius: 0;
+	
+}
+
+.panel-hials .panel-heading {
+	font-size: 20px;
+	
+}
+
+.panel-hials .panel-body {
+	padding-top: 0;
+}
+
+.panel-body ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+/*************************************************/
 
 ul.line-list {
 	list-style: none;
