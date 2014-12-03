@@ -224,11 +224,6 @@ blockquote p:after {
     padding-top: 15px;
     /*padding-bottom: 15px;*/
 }
-/*
-.highlighted .media-body {
-    padding: 15px;
-}
-*/
 
 .highlighted h2, .highlighted h2 a {
     font-size: 36px;
@@ -498,9 +493,8 @@ article.headline h2.teaser-title {
     left: 10%;
 }
 
-/***********************************/
-
-/* Header */
+/*************************************************/
+/*** HEADER **************************************/
 
 #quicklinks {
     background-color: #fff;
@@ -532,7 +526,8 @@ form.dropdown-menu {
     padding: 5px 5px;
 }
 
-/* NAVBAR *****************************************/
+/*************************************************/
+/*** NAVBAR **************************************/
 
 .navbar-nav > li > a {
     padding: 10px 10px;
@@ -674,7 +669,8 @@ ul.submenu {
     font-weight: 700;
 }
 
-/* TABLE ******************************************/
+/*************************************************/
+/*** TABLE ***************************************/
 
 table.default {
 	background-color: #ccc;
@@ -716,8 +712,7 @@ table.default td:last-child {
 }
 
 /*************************************************/
-
-/**** Breadcrumbs ********************************/
+/**** BREADCRUMBS ********************************/
 
 .breadcrumb {
 	font-size: 11px;
@@ -746,7 +741,6 @@ table.default td:last-child {
 
 
 /*************************************************/
-
 /*** PILLS ***************************************/
 
 .nav-pills > li > a {
@@ -777,7 +771,6 @@ ul.nav-pills.nav-stacked>li+li {
 }
 
 /*************************************************/
-
 /*** CAROUSEL ************************************/
 
 .carousel-caption {
@@ -824,7 +817,6 @@ ul.nav-pills.nav-stacked>li+li {
 }
 
 /*************************************************/
-
 /*** THUMBNAIL************************************/
 
 .thumbnail {
@@ -900,4 +892,29 @@ ul.links-center {
     padding: 25px 0;
     margin-bottom: 15px;
     font-size: 14px;
+}
+
+/*************************************************/
+
+ul.line-list {
+	list-style: none;
+	padding-left: 0;
+}
+
+ul.line-list li > a {
+	display: block;
+	padding: 5px 10px;
+}
+
+li.item-odd {
+	background-color: #fff;
+}
+
+li.item-even {
+	background-color: #f1f1f1;
+}
+
+.education-search-result h2 {
+	text-transform: none;
+	color: #7C1850; 
 }

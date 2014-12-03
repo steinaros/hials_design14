@@ -65,19 +65,19 @@
     <form id="education_filter" action={"content/action"|ezurl} method="post">
     <input type="hidden" name="DestinationURL" value="{$container_node.url_alias}" />
     <div class="wrapper bg-darkgray toolmenu">
-	    <h3>Fagområde</h3>
+	    <div class="h3">Fagområde</div>
 	    <ul>
 	    {foreach $fagomraader as $fagomraade}
-	        <li><label><input type="checkbox" name="(s1)[]" onchange="$('#education_filter').submit();" value="{$fagomraade.node_id|wash()}"{if $sel_fagomr|contains($fagomraade.node_id)} checked{/if}>{$fagomraade.navn|wash()}</label> <span class="badge pull-right">{$fagomraade.antall|wash()}</span></li>
+	        <li><div class="checkbox"><label><input type="checkbox" name="(s1)[]" onchange="$('#education_filter').submit();" value="{$fagomraade.node_id|wash()}"{if $sel_fagomr|contains($fagomraade.node_id)} checked{/if}>{$fagomraade.navn|wash()}</label></div></li>
 	    {/foreach}
 	    </ul>
     </div>
     <div class="wrapper bg-darkgray toolmenu">
-	    <h3>Nivå</h3>
+	    <div class="h3">Nivå</div>
 	    <ul>
 	    {foreach $utdanninger as $utdanning}
 	        {if ne($utdanning.antall, 0)}
-	        <li><label><input type="checkbox" name="(s2)[]" onchange="$('#education_filter').submit();" value="{$utdanning.nivaa_id}"{if $sel_nivaa|contains($utdanning.nivaa_id)} checked{/if}>{$utdanning.navn|wash()}</label> <span class="badge pull-right">{$utdanning.antall}</span></li>
+	        <li><div class="checkbox"><label><input type="checkbox" name="(s2)[]" onchange="$('#education_filter').submit();" value="{$utdanning.nivaa_id}"{if $sel_nivaa|contains($utdanning.nivaa_id)} checked{/if}>{$utdanning.navn|wash()}</label></div></li>
 	        {/if}
 	    {/foreach}
 	    </ul>
@@ -96,13 +96,15 @@
             {/if}
         {/foreach}
         {if $tmp_viewheading}
+        <section class="education-search-result">
             <h2>{$utdanning.navn|wash()}</h2>
-            <ul>
-	        {foreach $utdanning.items as $item}
-	            {if or(eq($sel_fagomr|count(),0), $sel_fagomr|contains($item.parent_node_id))}<li><a href={$item.url_alias|ezurl}>{$item.data_map.title.content|wash()}</a></li>{/if}
+            <ul class="line-list">
+	        {foreach $utdanning.items as $item sequence array( 'item-odd', 'item-even' ) as $style}
+	            {if or(eq($sel_fagomr|count(),0), $sel_fagomr|contains($item.parent_node_id))}<li class="{$style}"><a href={$item.url_alias|ezurl}>{$item.data_map.title.content|wash()}</a></li>{/if}
 	        {/foreach}
             </ul>
-        {/if}            
+        </section>
+        {/if}
     {/if}
 {/foreach}
 </div>
