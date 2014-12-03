@@ -45,6 +45,7 @@ h3, .h3 {
 	font-weight: 700; 
 	text-transform: uppercase; 
 	font-size: 14px;
+	margin-top: 20px;
 }
 
 a {
@@ -276,6 +277,10 @@ h2.teaser-title, h2.teaser-title a {
     display: inline;
 }
 
+.boks dl dd {
+    margin-bottom: 3px;
+}
+
 .colspacing {
 	border-spacing: 15px 0;
 }
@@ -498,6 +503,16 @@ article.headline h2.teaser-title {
 
 #quicklinks {
     background-color: #fff;
+    font-size: 12px;
+}
+
+#quicklinks a {
+	color: #333;
+	text-decoration: none;
+}
+
+#quicklinks a:hover, #quicklinks a:focus {
+	text-decoration: underline;
 }
 
 #quicklinks .navbar-nav {
@@ -612,6 +627,7 @@ form.dropdown-menu {
 ul.submenu {
     list-style-type: none;
     padding-left: 0;
+    font-size: 13px;
 }
 
 .submenuhead {
@@ -619,9 +635,12 @@ ul.submenu {
     font-weight: 700;
 }
 
+.submenu > li {
+	margin-bottom: 3px;
+}
+
 .submenu > li > a {
     color: #333;
-    line-height: 20px;
     text-decoration: none;
 }
 
