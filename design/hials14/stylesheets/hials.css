@@ -715,9 +715,10 @@ table.default td:last-child {
 /**** BREADCRUMBS ********************************/
 
 .breadcrumb {
-	font-size: 11px;
+	font-size: 12px;
 	margin-bottom: 0;
     background: transparent;
+    padding: 10px 15px;
 }
 
 .breadcrumb>li+li:before {
