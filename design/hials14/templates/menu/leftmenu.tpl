@@ -1,5 +1,4 @@
-{def $pagedata = ezpagedata()}
-{def $menu_root = $pagedata.path_id_array[3]}
+{def $menu_root = $node.path_array[3]}
 {def $leftmenu_class_filter = ezini( 'MenuContentSettings', 'LeftIdentifierList', 'menu.ini' )
      $menu_tree=fetch( content, tree, hash( parent_node_id, $menu_root,
                                           class_filter_type, 'include',
@@ -9,6 +8,7 @@
      $item_class = array()}
 <div class="leftmenu">
 <!--
+{$node|current_node=$node}
 Menuroot: {$menu_root} {$pagedata.path_id_array.3}
 {$menu_tree|attribute('show',2,'text')} 
 -->
