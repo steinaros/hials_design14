@@ -16,8 +16,8 @@ Menuroot: {$menu_root} {$pagedata.path_id_array.3}
 <ul>
 	{foreach $menu_tree as $item}
 	   {set $item_class = array()}
-	   {if eq($item.node_id, $pagedata.node_id)}{set $item_class|append('active')}{/if}
-	   {set $item_class|append( concat( "level_", $item.depth ) )}
+	   {if eq($item.node_id, $pagedata.node_id)}{$item_class|append('active')}{/if}
+	   {$item_class|append( concat( "level_", $item.depth ) )}
 	<li class="{$item_class|implode(' ')}"><a href={$item.url_alias|ezurl}>{$item.name|wash()}</a></li>
 	{/foreach}
 </ul>
