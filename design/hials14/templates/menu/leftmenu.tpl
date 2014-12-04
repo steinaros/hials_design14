@@ -7,6 +7,10 @@
      $menu_root_node = fetch( content, node, hash( 'node_id', $menu_root )
      $item_class = array()}
 <div class="leftmenu">
+<!--
+Menuroot: {$menu_root} {$pagedata.path_id_array.3}
+{$menu_tree|attribute('show',2,'text')} 
+-->
 <div class="leftmenu-heading"><a href="{$menu_root_node.url_alias|ezurl( 'no' )}">{$menu_root_node.data_map.title.content|wash()}</a></div>
 <div class="leftmenu-body">
 <ul>
