@@ -4,7 +4,7 @@
                                           class_filter_type, 'include',
                                           class_filter_array, $leftmenu_class_filter,
                                           sort_by, $node.sort_array ) )
-     $menu_root_node = fetch( content, node, hash( 'node_id', $menu_root )
+     $menu_root_node = fetch( content, node, hash( 'node_id', $menu_root ) )
      $item_class = array()}
 <div class="leftmenu">
 <!--
