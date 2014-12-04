@@ -42,3 +42,6 @@
 	    </article>
 	</div>
 </div>
+
+<!-- {$pagedata|attribute('show',2,'text')} -->
+<!-- {$module_result|attribute('show',2,'text')} -->

@@ -24,4 +24,4 @@ Menuroot: {$menu_root} {$pagedata.path_id_array.3}
 </ul>
 </div>
 </div>
-{undef $pagedata $menu_root $leftmenu_class_filter $tree_menu $menu_root_node $item_class}s
+{undef $pagedata $menu_root $leftmenu_class_filter $tree_menu $menu_root_node $item_class}
