@@ -8,6 +8,7 @@
      $item_class = array()}
 <div class="leftmenu">
 <!--
+Moduleresult: {$module_result|attribute('show',2,'text')}
 Menuroot: {$menu_root} {$pagedata.path_id_array.3}
 {$menu_tree|attribute('show',2,'text')} 
 -->
