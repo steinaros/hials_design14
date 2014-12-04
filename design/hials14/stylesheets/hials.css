@@ -68,33 +68,6 @@ a:hover, a:focus {
 	line-height: 1.1;
 }
 
-ul.leftmenu {
-	list-style-type: none;
-	padding: 0;
-}
-
-ul.leftmenu > li {
-	padding-bottom: 5px;
-}
-
-.leftmenu, .leftmenu > li > a {
-    color: #333; 
-    font-size: 14px;
-    text-decoration: none;
-}
-
-.leftmenu > li > a:hover, .leftmenu > li > a:focus {
-    text-decoration: underline;
-}
-
-p.leftmenu {
-	font-size: 36px;
-	font-weight: 500;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	line-height: 1.1;
-}
-
 .intro {
 	font-size: 16px;
 }
@@ -974,3 +947,67 @@ li.item-even {
 	text-transform: none;
 	color: #7C1850; 
 }
+
+/*************************************************/
+/*** LEFTMENU ************************************/
+
+
+/* Gammel venstremeny stil - fases ut */
+
+ul.leftmenu {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.leftmenu > li {
+    padding-bottom: 5px;
+}
+
+.leftmenu, .leftmenu > li > a {
+    color: #333; 
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.leftmenu > li > a:hover, .leftmenu > li > a:focus {
+    text-decoration: underline;
+}
+
+p.leftmenu {
+    font-size: 36px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+/****************/ 
+
+.leftmenu, .leftmenu-body > li > a {
+    color: #333; 
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.leftmenu-heading {
+    font-size: 36px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.leftmenu-body ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.leftmenu-body ul > li {
+    padding-bottom: 5px;
+}
+
+.leftmenu-body > li > a:hover, .leftmenu-body > li > a:focus {
+    text-decoration: underline;
+}
+
+/*************************************************/
