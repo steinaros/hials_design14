@@ -498,6 +498,19 @@ article.headline h2.teaser-title {
     left: 10%;
 }
 
+a.shortcut:focus {
+	color: #fff;
+    background: #333;
+    border: 2px solid #ccc;
+    padding: 10px 15px;
+    width: auto;
+    height: auto;
+    clip: auto;
+    margin: 0;
+    z-index: 5;
+}
+
+
 /*************************************************/
 /*** HEADER **************************************/
 
@@ -513,6 +526,7 @@ article.headline h2.teaser-title {
 
 #quicklinks a:hover, #quicklinks a:focus {
 	text-decoration: underline;
+	background-color: transparent;
 }
 
 #quicklinks .navbar-nav {
