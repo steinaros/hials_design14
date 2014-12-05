@@ -7,6 +7,14 @@
                                                 'class_filter_type', 'include',
                                                 'class_filter_array', $class_filter,
                                                 'sort_by', $root_item.sort_array ) ) }
+<!--
+Sort: {$root_item.sort_array|attribute('show',2,'text')}
+Selected_path: {$selected_path|attribute('show',2,'text')}
+Menuroot: {$root_item} 
+Classfilter: {$class_filter|attribute('show',2,'text')}
+
+{$submenu|attribute('show',2,'text')} 
+-->                                                
 {def $item_class = array()
      $item_url = ''
      $item_text = ''
@@ -36,7 +44,7 @@
             <!-- Childrencount: {$subitems|count()} -->
             {if $selected_node_path_array|contains($item.node_id)}
                 <!-- SUBMENU HERE -->
-                {include uri='design:menu/leftmenu_sub.tpl' root_item=$item selected_path=$selected_path class_filter=$class_filter}
+                {include uri='design:menu/leftmenu_sub.tpl' name=concat('leftsubmenu', $item.depth) root_item=$root_item selected_path=$selected_path class_filter=$class_filter}
             {/if}
             </li>
         {/if}
