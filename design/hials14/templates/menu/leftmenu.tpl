@@ -12,8 +12,8 @@
 {foreach $menu_tree as $item}
 <!-- {$item.node_id} {$node.node_id} -->   
     {if eq($item.node_id, $node.node_id)}
-        <!--{$item.path_array()|attribute('show',2,'text')} -->
-        {def $selected_node_path_array = $item.path_array()}
+        <!--{$item.path_array|attribute('show',2,'text')} -->
+        {def $selected_node_path_array = $item.path_array}
         {break}
     {/if}
 {/foreach}
