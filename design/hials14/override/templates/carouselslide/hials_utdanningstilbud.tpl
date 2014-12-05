@@ -7,7 +7,7 @@
 {/if}
 <div class="carousel-caption">
     <h3><a href={$node.url_alias|ezurl}>{$node.data_map.title.content|wash()}</a></h3>
-    <p>{$node.data_map.tagline.content|wash()}</p>
+    <p class="hidden-xs">{$node.data_map.tagline.content|wash()}</p>
 </div>
 
 {undef $banner}
