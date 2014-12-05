@@ -22,7 +22,7 @@
         {set $item_url = $item.data_map.link.content}
         {set $item_text = $item.data_map.name.content}
     {else}
-        {set $item_url = $item.url_alias}
+        {set $item_url = $item.url_alias|ezurl()}
         {set $item_text = $item.data_map.title.content}
     {/if}
     {if eq($item.node_id, $current_node.node_id)}{set $item_class = $item_class|append('active')}{/if}
@@ -34,9 +34,8 @@
         {if $subitem_count}
             {set $item_class = $item_class|append('hasSubitems')}
             <li {if $item_class|count()}class="{$item_class|implode(' ')}{/if}"><a href={$item_url|ezurl}>{$item_text|wash()}</a>
-            <!-- Childrencount: {$subitem_count} -->
+            
             {if $selected_path|contains($item.node_id)}
-                <!-- SUBMENU HERE -->
                 {include uri='design:menu/leftmenu_sub.tpl' name=concat('leftsubmenu', $item.depth) 
                                                             current_node=$current_node
                                                             root_item=$item
@@ -46,7 +45,7 @@
             </li>
         {/if}
     {else}
-        <li {if $item_class|count()}class="{$item_class|implode(' ')}{/if}"><a href={$item_url|ezurl}>{$item_text|wash()}</a>
+        <li {if $item_class|count()}class="{$item_class|implode(' ')}{/if}"><a href={$item_url}>{$item_text|wash()}</a></li>
     {/if}
 {/foreach}
 </ul>
