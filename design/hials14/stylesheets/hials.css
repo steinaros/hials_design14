@@ -623,7 +623,7 @@ ul.submenu {
 }
 
 .submenu > li {
-	margin-bottom: 3px;
+	margin-bottom: 5px;
 }
 
 .submenu > li > a {
@@ -970,7 +970,7 @@ ul.leftmenu > li {
 }
 
 .leftmenu > li > a:hover, .leftmenu > li > a:focus {
-    text-decoration: underline;
+   text-decoration: underline;  
 }
 
 p.leftmenu {
@@ -990,11 +990,20 @@ p.leftmenu {
 }
 
 .leftmenu-heading {
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 500;
     margin-top: 20px;
     margin-bottom: 20px;
     line-height: 1.1;
+}
+
+.leftmenu-heading a {
+    text-transform: none;
+    color: #7C1850; 
+}
+
+.leftmenu-heading a:hover,  .leftmenu-heading a:focus {
+    text-transform: underline;
 }
 
 .leftmenu-body ul {
