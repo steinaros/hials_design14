@@ -61,7 +61,7 @@
                            'items', $tmp_utdanninger )}
     {set $utdanninger = $utdanninger|append($tmp_hash)}
 {/foreach}
-<aside class="col-sm-3">
+<aside class="col-sm-3 hidden-xs">
     <form id="education_filter" action={"content/action"|ezurl} method="post">
     <input type="hidden" name="DestinationURL" value="{$container_node.url_alias}" />
     <div class="panel panel-hials bg-darkgray">
