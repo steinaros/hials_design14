@@ -10,12 +10,14 @@
      $prev_node_depth = 10000
      $item_url = ''}
 {foreach $menu_tree as $item}
+<!-- {$item.node_id} {$node.node_id} -->   
     {if eq($item.node_id, $node.node_id)}
-        {set $selected_node_path_array = $selected_node_path_array|merge($item.path_array())}
+        <!--{$item.path_array()|attribute('show',2,'text')} -->
+        {def $selected_node_path_array = $item.path_array()}
         {break}
     {/if}
 {/foreach}
-
+{if is_unset($selected_node_path_array)}{def $selected_node_path_array = array()}{/if}
 {def $menu_level1 = fetch( 'content', 'list', hash( 'parent_node_id', $menu_root,
                                                     'depth', 1,
                                                     'class_filter_type', 'include',
@@ -46,6 +48,7 @@ Node_path: {$node.path_array|attribute('show',2,'text')}
     {if gt($item.children_count, 0)}
         {set $item_class = $item_class|append('hasSubitems')}
         <li {if $item_class|count()}class="{$item_class|implode(' ')}{/if}"><a href={$item_url|ezurl}>{$item.data_map.title.content|wash()}</a>
+        <!-- Childrencount: {$item.children_count} -->
         {if $selected_node_path_array|contains($item.node_id)}
             <!-- SUBMENU HERE -->
         {/if}
