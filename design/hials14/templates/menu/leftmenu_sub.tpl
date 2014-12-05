@@ -16,7 +16,7 @@
     {set $item_class = array()}
     {set $item_class = $item_class|append( concat( "level_", $item.depth ) )}
     {if eq( $item.class_name, "Link" )}
-        {set $item_class = $item_class|append( 'extLink' ) )}
+        {set $item_class = $item_class|append( 'extLink' ) }
         {set $item_url = $item.data_map.link.content}
         {set $item_text = $item.data_map.name.content}
     {else}

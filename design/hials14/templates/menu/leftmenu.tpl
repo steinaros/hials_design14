@@ -5,11 +5,6 @@
 {def $menu_tree=fetch( 'content', 'tree', hash( 'parent_node_id', $menu_root,
                                           'class_filter_type', 'include',
                                           'class_filter_array', $leftmenu_class_filter ) ) }
-{def $item_class = array()
-     $selected_node_path_array = array()
-     $subitems = array()
-     $item_url = ''
-     $item_text = ''}
 {foreach $menu_tree as $item}
 <!-- {$item.node_id} {$node.node_id} -->   
     {if eq($item.node_id, $node.node_id)}
