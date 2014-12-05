@@ -16,7 +16,7 @@
 <div class="leftmenu">
 <div class="leftmenu-heading"><a href="{$menu_root_node.url_alias|ezurl( 'no' )}">{$menu_root_node.data_map.title.content|wash()}</a></div>
 <div class="leftmenu-body">
-{include uri='design:menu/leftmenu_sub.tpl' name=concat('leftsubmenu', $menu_root.depth) 
+{include uri='design:menu/leftmenu_sub.tpl' name=concat('leftsubmenu', $menu_root_node.depth) 
                                             current_node=$node 
                                             root_item=$menu_root_node 
                                             selected_path=$selected_node_path_array 
