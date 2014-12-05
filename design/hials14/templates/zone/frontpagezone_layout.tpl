@@ -7,7 +7,7 @@
 		                {include uri='design:parts/zone_block.tpl' zone=$zones[0]}
 		            {/foreach}
 	            {/if}
-	            <div class="col-md-3 col-md-height bg-darkgray col-top boks">
+	            <div id="fronttool" class="col-md-3 col-md-height bg-darkgray col-top boks">
                     <div class="row">
 	                    <div class="col-md-12 col-xs-6">
                             {include uri='design:parts/frontpage_eventlist.tpl'}

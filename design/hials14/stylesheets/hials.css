@@ -446,6 +446,14 @@ footer .h-card p {
     font-weight: 900;
 }
 
+#fronttool a {
+	text-decoration: none;
+}
+
+#fronttool a:hover, #fronttool a:focus {
+    text-decoration: underline;
+}
+
 .toolmenu ul {
     list-style-type:none;
     padding-left:0;
