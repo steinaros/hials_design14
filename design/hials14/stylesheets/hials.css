@@ -983,7 +983,7 @@ p.leftmenu {
 
 /****************/ 
 
-.leftmenu, .leftmenu-body > li > a {
+.leftmenu, .leftmenu-body li > a {
     color: #333; 
     font-size: 14px;
     text-decoration: none;
@@ -998,7 +998,7 @@ p.leftmenu {
 }
 
 .leftmenu-heading a {
-    text-transform: none;
+    text-decoration: none;
     color: #7C1850; 
 }
 
@@ -1015,8 +1015,16 @@ p.leftmenu {
     padding-bottom: 5px;
 }
 
-.leftmenu-body > li > a:hover, .leftmenu-body > li > a:focus {
+.leftmenu-body li > a:hover, .leftmenu-body li > a:focus {
     text-decoration: underline;
+}
+
+.leftmenu-body ul ul {
+	padding-left: 20px;
+}
+
+.leftmenu-body .active {
+	color: #7C1850;
 }
 
 /*************************************************/
