@@ -19,10 +19,10 @@
     {set $item_class = $item_class|append( concat( "level_", $item.depth ) )}
     {if eq( $item.class_name, "Link" )}
         {set $item_class = $item_class|append( 'extLink' ) }
-        {set $item_url = $item.data_map.link.content}
+        {set $item_url = $item.data_map.location.content}
         {set $item_text = $item.data_map.name.content}
     {else}
-        {set $item_url = $item.url_alias|ezurl()}
+        {set $item_url = $item.url_alias|ezurl( 'no' )}
         {set $item_text = $item.data_map.title.content}
     {/if}
     {if eq($item.node_id, $current_node.node_id)}{set $item_class = $item_class|append('active')}{/if}
@@ -33,7 +33,7 @@
                                                     'sort_by', $item.sort_array ) ) }
         {if $subitem_count}
             {set $item_class = $item_class|append('hasSubitems')}
-            <li {if $item_class|count()}class="{$item_class|implode(' ')}{/if}"><a href={$item_url|ezurl}>{$item_text|wash()}</a>
+            <li {if $item_class|count()}class="{$item_class|implode(' ')}{/if}"><a href="{$item_url}">{$item_text|wash()}</a>
             
             {if $selected_path|contains($item.node_id)}
                 {include uri='design:menu/leftmenu_sub.tpl' name=concat('leftsubmenu', $item.depth) 
@@ -45,7 +45,7 @@
             </li>
         {/if}
     {else}
-        <li {if $item_class|count()}class="{$item_class|implode(' ')}{/if}"><a href={$item_url}>{$item_text|wash()}</a></li>
+        <li {if $item_class|count()}class="{$item_class|implode(' ')}{/if}"><a href="{$item_url}">{$item_text|wash()}</a></li>
     {/if}
 {/foreach}
 </ul>
