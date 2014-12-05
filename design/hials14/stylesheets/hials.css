@@ -1021,9 +1021,10 @@ p.leftmenu {
 
 .leftmenu-body ul ul {
 	padding-left: 20px;
+	padding-top: 5px;
 }
 
-.leftmenu-body .active {
+.leftmenu-body .active a {
 	color: #7C1850;
 }
 
