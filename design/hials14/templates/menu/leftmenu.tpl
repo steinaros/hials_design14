@@ -7,6 +7,7 @@
                                           'class_filter_array', $leftmenu_class_filter ) ) }
 {def $item_class = array()
      $selected_node_path_array = array()
+     $subitems = array()
      $prev_node_depth = 10000
      $item_url = ''}
 {foreach $menu_tree as $item}
@@ -46,18 +47,25 @@ Node_path: {$node.path_array|attribute('show',2,'text')}
     {/if}
     {if eq($item.node_id, $node.node_id)}{set $item_class = $item_class|append('active')}{/if}
     {if gt($item.children_count, 0)}
-        {set $item_class = $item_class|append('hasSubitems')}
-        <li {if $item_class|count()}class="{$item_class|implode(' ')}{/if}"><a href={$item_url|ezurl}>{$item.data_map.title.content|wash()}</a>
-        <!-- Childrencount: {$item.children_count} -->
-        {if $selected_node_path_array|contains($item.node_id)}
-            <!-- SUBMENU HERE -->
-        {/if}
-        </li>
+        {set $subitems = fetch( 'content', 'list', hash( 'parent_node_id', $item.node_id,
+                                                    'depth', 1,
+                                                    'class_filter_type', 'include',
+                                                    'class_filter_array', $leftmenu_class_filter,
+                                                    'sort_by', $item.sort_array ) ) }
+        {if $subitems|count()}
+	        {set $item_class = $item_class|append('hasSubitems')}
+	        <li {if $item_class|count()}class="{$item_class|implode(' ')}{/if}"><a href={$item_url|ezurl}>{$item.data_map.title.content|wash()}</a>
+	        <!-- Childrencount: {$subitems|count()} -->
+	        {if $selected_node_path_array|contains($item.node_id)}
+	            <!-- SUBMENU HERE -->
+	            {include uri='design:menu/leftmenu_sub.tpl' root_item=$item selected_path=$selected_node_path_array class_filter=$leftmenu_class_filter}
+	        {/if}
+	        </li>
+	    {/if}
     {else}
-        <li {if $item_class|count()}class="{$item_class|implode(' ')}{/if}"><a href={$item_url|ezurl}>{$item.data_map.title.content|wash()}</a>
+        <li {if $item_class|count()}class="{$item_class|implode(' ')}{/if}"><a href={$item_url|ezurl}>{$item.data_map.title.content|wash()}</a></li>
     {/if}
 {/foreach}
-{/if}
 </ul>
 </div>
 </div>
