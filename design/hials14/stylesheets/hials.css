@@ -1024,7 +1024,7 @@ p.leftmenu {
 	padding-top: 5px;
 }
 
-.leftmenu-body .active a {
+.leftmenu-body li.active > a {
 	color: #7C1850;
 }
 
