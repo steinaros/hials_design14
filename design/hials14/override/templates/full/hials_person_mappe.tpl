@@ -3,7 +3,7 @@
 {def $persons = fetch( 'content', 'tree', hash( 'parent_node_id', $mainnode_id,
                                                 'class_filter_type', 'include',
                                                 'class_filter_array', array( 'hials_person' ) ) )}
-<div class="content-view-full">
+<div class="content-view-full row">
     <article class="class-hials_person_mappe col-sm-9 col-sm-push-3">
         <h1>{$node.data_map.title.content|wash()}</h1>
                                                 
@@ -22,10 +22,10 @@
 		    <tr>
 		        <td>{concat($person.data_map.last_name.content, ', ', $person.data_map.first_name.content)|wash()}</td>
 		        <td>{$person.data_map.jobtitle.content|wash()}</td>
-		        <td>{$person.data_map.email|wash()}</td>
-		        <td>{$person.data_map.office|wash()}</td>
-		        <td>{$person.data_map.phone|wash()}</td>
-		        <td>{if $person.data_map.publish_mobile}{$person.data_map.mobile|wash()}{else}&nbsp;{/if}</td>
+		        <td>{$person.data_map.email.content|wash()}</td>
+		        <td>{$person.data_map.office.content|wash()}</td>
+		        <td>{$person.data_map.phone.content|wash()}</td>
+		        <td>{if $person.data_map.publish_mobile}{$person.data_map.mobile.content|wash()}{else}&nbsp;{/if}</td>
 		    </tr>
 {/foreach}
 		</tbody>
