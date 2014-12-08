@@ -684,6 +684,13 @@ ul.submenu {
 }
 
 /*************************************************/
+/*** TABLE ***************************************/
+
+.table > tbody > tr > th, .table > tbody > tr > td {
+	border: none;
+}
+
+/*************************************************/
 /*** TABLE - DEFAULT *****************************/
 
 table.default {
@@ -728,11 +735,19 @@ table.default td:last-child {
 /*************************************************/
 /*** TABLE - STRIPED *****************************/
 
-table.table-striped tr:nth-child(odd) {
+.table-striped > tbody > tr:nth-child(odd) {
 	background-color: #f1f1f1;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > th, .table-striped > tbody > tr:nth-child(odd) > td {
+    background-color: #f1f1f1;
+}
+
+.table-striped > tbody > tr:nth-child(even) {
+    background-color: #fff;
 } 
 
-table.table-striped tr:nth-child(even) {
+.table-striped > tbody > tr:nth-child(even) > th, .table-striped > tbody > tr:nth-child(even) > td {
     background-color: #fff;
 } 
 
