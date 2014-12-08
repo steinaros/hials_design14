@@ -2,7 +2,7 @@
 {def $mainnode_id = $node.main_node_id}
 {def $persons = fetch( 'content', 'tree', hash( 'parent_node_id', $mainnode_id,
                                                 'class_filter_type', 'include',
-                                                'class_filter_array', array( 'hials_person' )
+                                                'class_filter_array', array( 'hials_person' ),
                                                 'sort_by', array( 
                                                     array( 'attribute', false(), 'hials_person/last_name' ),
                                                     array( 'attribute', false(), 'hials_person/first_name' ) ) ) )}
