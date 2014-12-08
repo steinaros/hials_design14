@@ -4,8 +4,8 @@
                                                 'class_filter_type', 'include',
                                                 'class_filter_array', array( 'hials_person' ),
                                                 'sort_by', array( 
-                                                    array( 'attribute', false(), 'hials_person/last_name' ),
-                                                    array( 'attribute', false(), 'hials_person/first_name' ) ) ) )}
+                                                    array( 'attribute', true(), 'hials_person/last_name' ),
+                                                    array( 'attribute', true(), 'hials_person/first_name' ) ) ) )}
 <div class="content-view-full row">
     <article class="class-hials_person_mappe col-sm-9 col-sm-push-3">
         <h1>{$node.data_map.title.content|wash()}</h1>
