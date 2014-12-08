@@ -15,7 +15,7 @@
 		        <th scope="col" valign="top">{'Title'|i18n('hials/design/std')}</th>
 		        <th scope="col" valign="top">{'E-mail'|i18n('hials/design/std')}</th>
 		        <th scope="col" valign="top">{'Office'|i18n('hials/design/std')}</th>
-		        <th scope="col" valign="top">{'Phone'|i18n('hials/design/std')}</th>
+		        <th scope="col" valign="top">{'Telephone'|i18n('hials/design/std')}</th>
 		        <th scope="col" valign="top">{'Mobile'|i18n('hials/design/std')}</th>
 		    </tr>
 {foreach $persons as $person}
