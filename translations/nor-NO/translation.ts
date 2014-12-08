@@ -43,6 +43,30 @@
             <source>More...</source>
             <translation>Se flere</translation>
         </message>
+        <message>
+            <source>Name</source>
+            <translation>Navn</translation>
+        </message>
+        <message>
+            <source>Title</source>
+            <translation>Tittel</translation>
+        </message>
+        <message>
+            <source>E-mail</source>
+            <translation>E-post</translation>
+        </message>
+        <message>
+            <source>Office</source>
+            <translation>Kontor</translation>
+        </message>
+        <message>
+            <source>Telephone</source>
+            <translation>Telefon</translation>
+        </message>       
+        <message>
+            <source>Mobile</source>
+            <translation>Mobil</translation>
+        </message>       
     </context>
     <context>
         <name>hials/design/navigation</name>
