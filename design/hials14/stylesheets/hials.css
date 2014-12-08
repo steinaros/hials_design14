@@ -684,7 +684,7 @@ ul.submenu {
 }
 
 /*************************************************/
-/*** TABLE ***************************************/
+/*** TABLE - DEFAULT *****************************/
 
 table.default {
 	background-color: #ccc;
@@ -724,6 +724,17 @@ table.default td:first-child {
 table.default td:last-child {
     border-right: none;
 }
+
+/*************************************************/
+/*** TABLE - STRIPED *****************************/
+
+table.table-striped tr:nth-child(odd) {
+	background-color: #f1f1f1;
+} 
+
+table.table-striped tr:nth-child(even) {
+    background-color: #fff;
+} 
 
 /*************************************************/
 /**** BREADCRUMBS ********************************/
@@ -943,11 +954,11 @@ ul.line-list li > a {
 	padding: 5px 10px;
 }
 
-li.item-odd {
+.line-list li:nth-child(odd) {
 	background-color: #fff;
 }
 
-li.item-even {
+.line-list li:nth-child(even) {
 	background-color: #f1f1f1;
 }
 
