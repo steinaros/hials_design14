@@ -27,7 +27,7 @@
 {foreach $persons as $person}
     {set $tmp_office = $person.data_map.office.content|explode( ' ' )|implode('')
          $tmp_phone = $person.data_map.phone.content|explode( ' ' )|implode('')
-         $tmp_mobile = $person.data_map.mobile.content|explode( ' ' )|implode('')
+         $tmp_mobile = $person.data_map.mobile.content|explode( ' ' )|implode('')}
 		    <tr>
 		        <td>{concat($person.data_map.last_name.content, ', ', $person.data_map.first_name.content)|wash()}</td>
 		        <td>{$person.data_map.jobtitle.content|wash()}</td>
