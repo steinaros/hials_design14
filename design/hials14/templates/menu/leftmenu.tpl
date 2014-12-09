@@ -12,7 +12,7 @@
     {/if}
 {/foreach}
 {if is_unset($selected_node_path_array)}{def $selected_node_path_array = array()}{/if}
-     
+<!-- {$leftmenu_class_filter|attribute('show', 2, 'text')} -->     
 <div class="leftmenu">
 <div class="leftmenu-heading"><a href="{$menu_root_node.url_alias|ezurl( 'no' )}">{$menu_root_node.data_map.title.content|wash()}</a></div>
 <div class="leftmenu-body">
