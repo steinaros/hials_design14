@@ -1,11 +1,11 @@
 {* Persongruppering - Full view *}
-{def $menu_root = $node.path_array[4]}
-{def $class_filter = array( 'hials_person_mappe' )
-{def $menu_tree=fetch( 'content', 'list', hash( 'parent_node_id', $menu_root,
+{def $menu_root = $node.path_array[4]
+     $class_filter = array( 'hials_person_mappe' )
+     $menu_tree=fetch( 'content', 'list', hash( 'parent_node_id', $menu_root,
                                           'class_filter_type', 'include',
-                                          'class_filter_array', $class_filter ) ) }
-{def $mainnode_id = $node.main_node_id}
-{def $persons = fetch( 'content', 'tree', hash( 'parent_node_id', $mainnode_id,
+                                          'class_filter_array', $class_filter ) )
+     $mainnode_id = $node.main_node_id
+     $persons = fetch( 'content', 'tree', hash( 'parent_node_id', $mainnode_id,
                                                 'class_filter_type', 'include',
                                                 'class_filter_array', array( 'hials_person' ),
                                                 'sort_by', array( 
