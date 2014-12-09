@@ -13,17 +13,7 @@
     <div class="attribute-banner row equal">{attribute_view_gui attribute=$node.data_map.banner}</div>
     {/if}
     <div class="row">
-	    {if $node.data_map.image.has_content}
-	    <aside class="col-sm-6 col-left">
-	        {attribute_view_gui attribute=$node.data_map.image image_class=banner_half css_class=img-responsive}
-	        {include uri='design:menu/leftmenu.tpl'}
-	    </aside>
-	    {else}
-	    <aside class="col-sm-3 col-left">
-	       {include uri='design:menu/leftmenu.tpl'}
-	    </aside>
-	    {/if}
-	    <article class="class-hials_innholdsside col-sm-6 col-right" itemscope itemtype="http://schema.org/Article">
+	    <article class="class-hials_innholdsside col-sm-6 col-sm-push-6 col-right" itemscope itemtype="http://schema.org/Article">
 	        <h1>{$node.data_map.title.content|wash()}</h1>
 	        {if $node.data_map.tema_title.content}<h2 class="tematitle">{$node.data_map.tema_title.content|wash()}</h2>{/if}
 	
@@ -40,5 +30,15 @@
 	        </div>
 	        {/if}
 	    </article>
+        {if $node.data_map.image.has_content}
+        <aside class="col-sm-6 col-sm-pull-6 col-left">
+            {attribute_view_gui attribute=$node.data_map.image image_class=banner_half css_class=img-responsive}
+            {include uri='design:menu/leftmenu.tpl'}
+        </aside>
+        {else}
+        <aside class="col-sm-3 col-sm-pull-3 col-left">
+           {include uri='design:menu/leftmenu.tpl'}
+        </aside>
+        {/if}
 	</div>
 </div>
