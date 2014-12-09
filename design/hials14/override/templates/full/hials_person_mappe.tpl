@@ -5,9 +5,12 @@
                                                 'class_filter_array', array( 'hials_person' ),
                                                 'sort_by', array( 
                                                     array( 'attribute', true(), 'hials_person/last_name' ),
-                                                    array( 'attribute', true(), 'hials_person/first_name' ) ) ) )}
+                                                    array( 'attribute', true(), 'hials_person/first_name' ) ) ) )
+    $tmp_office = ''
+    $tmp_phone = ''
+    $tmp_mobile = ''}
 <div class="content-view-full row">
-    <article class="class-hials_person_mappe col-sm-9 col-sm-push-3">
+    <article class="class-hials_person_mappe col-sm-12">
         <h1>{$node.data_map.title.content|wash()}</h1>
                                                 
 {if $persons|count()}
@@ -22,20 +25,20 @@
 		        <th scope="col" valign="top">{'Mobile'|i18n('hials/design/std')}</th>
 		    </tr>
 {foreach $persons as $person}
+    {set $tmp_office = $person.data_map.office.content|explode( ' ' )|implode('')
+         $tmp_phone = $person.data_map.phone.content|explode( ' ' )|implode('')
+         $tmp_mobile = $person.data_map.mobile.content|explode( ' ' )|implode('')
 		    <tr>
 		        <td>{concat($person.data_map.last_name.content, ', ', $person.data_map.first_name.content)|wash()}</td>
 		        <td>{$person.data_map.jobtitle.content|wash()}</td>
 		        <td>{$person.data_map.email.content|wash()}</td>
-		        <td>{$person.data_map.office.content|simplify()|wash()}</td>
-		        <td>{$person.data_map.phone.content|wash()}</td>
-		        <td>{if $person.data_map.publish_mobile}{$person.data_map.mobile.content|wash()}{else}&nbsp;{/if}</td>
+		        <td>{$tmp_office|wash()}</td>
+		        <td>{$tmp_phone|wash()}</td>
+		        <td>{if $person.data_map.publish_mobile}{$tmp_mobile|wash()}{else}&nbsp;{/if}</td>
 		    </tr>
 {/foreach}
 		</tbody>
 		</table>
 {/if}
     </article>
-    <aside class="col-sm-3 col-sm-pull-9">
-        {include uri='design:menu/leftmenu.tpl'}
-    </aside>        
 </div>
