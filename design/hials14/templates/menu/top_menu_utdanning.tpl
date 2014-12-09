@@ -53,7 +53,7 @@
     {/if}
 {/foreach}                                                     
 <div class="col-sm-2">
-    <ul class="nav nav-pills nav-stacked" role="tablist">
+    <ul class="nav nav-pills nav-stacked hials-nav-pills" role="tablist">
 {foreach $nivaa_sortorder as $nivaa_id}    
     {if gt($utdanninger[$nivaa_id].antall, 0)}
         <li role="presentation"{if eq($nivaa_id,0)} class="active"{/if}><a href="{concat('#utdnivaa_', $nivaa_id)}" data-toggle="pill">{$utdanninger[$nivaa_id].nivaa|wash()}</a></li>

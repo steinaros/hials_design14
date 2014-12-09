@@ -784,7 +784,7 @@ table.default td:last-child {
 /*************************************************/
 /*** PILLS ***************************************/
 
-.nav-pills > li > a {
+.hials-nav-pills > li > a {
 	border-radius: 0;
 	background-color: #ccc;
 	color: #333;
@@ -792,18 +792,18 @@ table.default td:last-child {
 	font-weight: 700;
 }
 
-.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+.hials-nav-pills > li.active > a, .hials-nav-pills > li.active > a:hover, .hials-nav-pills > li.active > a:focus {
 	background-color: #7C1850;
 	color: #fff;
 	
 }
 
-ul.nav-pills.nav-stacked {
+ul.hials-nav-pills.nav-stacked {
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
 
-ul.nav-pills.nav-stacked>li+li {
+ul.hials-nav-pills.nav-stacked>li+li {
     margin-top: 8px;
 }
 
