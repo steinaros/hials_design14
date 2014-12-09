@@ -14,6 +14,7 @@
     $tmp_office = ''
     $tmp_phone = ''
     $tmp_mobile = ''}
+<!-- {$menu_root} {$menu_tree|attribute('show',2,'text')}-->  
 <div>
     <ul class="nav nav-pills hials-subnav-pills">
     {foreach $menu_tree as $item}
