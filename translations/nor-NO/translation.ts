@@ -89,6 +89,14 @@
     <context>
         <name>hials/design/pagelayout</name>
         <message>
+            <source>Skip to quicklinks</source>
+            <translation>Hopp til hurtiglenker</translation>
+        </message>
+        <message>
+            <source>Skip to main menu</source>
+            <translation>Hopp til hovedmeny</translation>
+        </message>
+        <message>
             <source>Skip to main content</source>
             <translation>Hopp til hovedinnhold</translation>
         </message>
