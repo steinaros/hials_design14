@@ -66,7 +66,11 @@
         <message>
             <source>Mobile</source>
             <translation>Mobil</translation>
-        </message>       
+        </message>
+        <message>
+            <source>Area</source>
+            <translation>Fagområde</translation>
+        </message>
     </context>
     <context>
         <name>hials/design/navigation</name>
