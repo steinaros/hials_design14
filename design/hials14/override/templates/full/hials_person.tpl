@@ -15,20 +15,30 @@
             <dl>
                 <dt class="pull-left">{'Name'|i18n('hials/design/std')}</dt>
                 <dd><span class="p-family-name">{$node.data_map.last_name.content|trim()|wash()}</span>, <span class="p-given-name">{$node.data_map.first_name.content|trim()|wash()}</span></dd>
+                {if $node.data_map.jobtitle.has_content}
                 <dt class="pull-left">{'Title'|i18n('hials/design/std')}</dt>
                 <dd class="p-job-title title">{$node.data_map.jobtitle.content|trim()|wash()}</dd>
+                {/if}
+                {if $tmp_office|count()}
                 <dt class="pull-left">{'Office'|i18n('hials/design/std')}</dt>
                 <dd>{$tmp_office|wash()}</dd>
+                {/if}
+                {if $node.data_map.email.has_content}
                 <dt class="pull-left">{'E-mail'|i18n('hials/design/std')}</dt>
                 <dd class="u-email email"><a href="mailto:{$node.data_map.email.content|trim()|wash()}">{$node.data_map.email.content|trim()|wash()}</a></dd>
+                {/if}
+                {if $tmp_phone|count()}
                 <dt class="pull-left">{'Telephone'|i18n('hials/design/std')}</dt>
                 <dd class="p-tel tel">{$tmp_phone|wash()}</dd>
-                {if $node.data_map.publish_mobile}
+                {/if}
+                {if and($node.data_map.publish_mobile, $tmp_mobile|count())}
                 <dt class="pull-left">{'Mobile'|i18n('hials/design/std')}</dt>
                 <dd class="p-tel tel">{$tmp_mobile|wash()}</dd>
                 {/if}
+                {if $node.data_map.area.has_content}
                 <dt class="pull-left">{'Area'|i18n('hials/design/std')}</dt>
                 <dd>{$node.data_map.area.content|wash()}</dd>
+                {/if}
             </dl>
         </div>
     </div>
