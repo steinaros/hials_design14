@@ -51,7 +51,7 @@
 		        <td><a href="{$person.url_alias|ezurl( 'no' )}">{concat($person.data_map.last_name.content|trim(), ', ', $person.data_map.first_name.content|trim())|wash()}</a></td>
 		        <td>{$person.data_map.jobtitle.content|trim()|wash()}</td>
 		        <td><a href="mailto:{$person.data_map.email.content|trim()|wash()}">{$person.data_map.email.content|trim()|wash()}</a></td>
-		        <td><a href="{$FINN_FRAM.url_alias|ezurl('no')">{$tmp_office|wash()}</a></td>
+		        <td><a href="{$FINN_FRAM.url_alias|ezurl('no')}">{$tmp_office|wash()}</a></td>
 		        <td>{$tmp_phone|wash()}</td>
 		        <td>{if $person.data_map.publish_mobile}{$tmp_mobile|wash()}{else}&nbsp;{/if}</td>
 		    </tr>
