@@ -479,7 +479,8 @@ article.headline h2.teaser-title {
     left: 10%;
 }
 
-.sr-only-focusable {
+.sr-only-focusable:active, .sr-only-focusable:focus {
+	position: absolute;
 	color: #fff;
     background: #333;
     border: 2px solid #ccc;
