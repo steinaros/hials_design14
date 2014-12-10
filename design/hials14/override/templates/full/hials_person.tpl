@@ -14,7 +14,7 @@
             {/if}
             <dl>
                 <dt class="pull-left">{'Name'|i18n('hials/design/std')}</dt>
-                <dd><span class="p-family-name">{$node.data_map.last_name.content|trim()}</span>, <span class="p-given-name">{$node.data_map.first_name.content|trim())|wash()}</span></dd>
+                <dd><span class="p-family-name">{$node.data_map.last_name.content|trim()|wash()}</span>, <span class="p-given-name">{$node.data_map.first_name.content|trim()|wash()}</span></dd>
                 <dt class="pull-left">{'Title'|i18n('hials/design/std')}</dt>
                 <dd class="p-job-title title">{$node.data_map.jobtitle.content|trim()|wash()}</dd>
                 <dt class="pull-left">{'Office'|i18n('hials/design/std')}</dt>
