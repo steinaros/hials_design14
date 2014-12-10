@@ -29,16 +29,16 @@
 <div class="hidden-xs">
     <ul class="nav nav-pills hials-subnav-pills">
     {foreach $menu_tree as $item}
-      <li role="presentation"{if eq($item.node_id, $node.node_id)} class="active"{/if}><a href="{$item.url_alias|ezurl( 'no' )}"><span class="text">{'Employees at'|i18n('hials/design/person')} {cond(is_array($item.data_map.menutitle), $item.data_map.menutitle.content|wash()|downcase(), $item.data_map.title.content|wash() )}</span><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+      <li role="presentation"{if eq($item.node_id, $node.node_id)} class="active"{/if}><a href="{$item.url_alias|ezurl( 'no' )}"><span class="text">{'Employees at'|i18n('hials/design/person')} {cond($item.data_map.menutitle.has_content, $item.data_map.menutitle.content|wash()|downcase(), $item.data_map.title.content|wash() )}</span><span class="glyphicon glyphicon-chevron-right"></span></a></li>
     {/foreach}
     </ul>           
 </div>
 <div class="content-view-full row">
     <article class="class-hials_person_mappe col-sm-12">
-        <h1>{cond(is_array($node.data_map.menutitle), $node.data_map.menutitle.content|wash(), $node.data_map.title.content|wash())}</h1>
+        <h1>{cond($item.data_map.menutitle.has_content, $node.data_map.menutitle.content|wash(), $node.data_map.title.content|wash())}</h1>
                                                 
 {if $persons|count()}
-    {if and( ne($menu_root, $node.node_id), is_array($node.data_map.menutitle))}
+    {if and( ne($menu_root, $node.node_id), $item.data_map.menutitle.has_content)}
         {set $table_summary = concat('Employees at'|i18n('hials/design/person'), ' ', $node.data_map.menutitle.content|wash()|downcase() )}
     {elseif ne($menu_root, $node.node_id)}
         {set $table_summary = concat('Employees at'|i18n('hials/design/person'), ' ', $node.name|wash()|downcase() )}
@@ -78,7 +78,7 @@
 <div>
     <ul class="nav nav-pills hials-subnav-pills">
     {foreach $menu_tree as $item}
-      <li role="presentation"{if eq($item.node_id, $node.node_id)} class="active"{/if}><a href="{$item.url_alias|ezurl( 'no' )}"><span class="text">{'Employees at'|i18n('hials/design/person')} {cond(is_array($item.data_map.menutitle), $item.data_map.menutitle.content|wash()|downcase(), $item.data_map.title.content|wash() )}</span><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+      <li role="presentation"{if eq($item.node_id, $node.node_id)} class="active"{/if}><a href="{$item.url_alias|ezurl( 'no' )}"><span class="text">{'Employees at'|i18n('hials/design/person')} {cond($item.data_map.menutitle.has_content, $item.data_map.menutitle.content|wash()|downcase(), $item.data_map.title.content|wash() )}</span><span class="glyphicon glyphicon-chevron-right"></span></a></li>
     {/foreach}
     </ul>           
 </div>
