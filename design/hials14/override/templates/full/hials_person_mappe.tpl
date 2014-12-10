@@ -20,16 +20,20 @@
 <div class="hidden-xs">
     <ul class="nav nav-pills hials-subnav-pills">
     {foreach $menu_tree as $item}
-      <li role="presentation"{if eq($item.node_id, $node.node_id)} class="active"{/if}><a href="{$item.url_alias|ezurl( 'no' )}"><span class="text">{'Employees at'|i18n('hials/design/person')} {$item.data_map.short_title.content|wash()|downcase()}</span><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+      <li role="presentation"{if eq($item.node_id, $node.node_id)} class="active"{/if}><a href="{$item.url_alias|ezurl( 'no' )}"><span class="text">{'Employees at'|i18n('hials/design/person')} {cond(is_set($node.data_map.menutitle), $node.data_map.menutitle.content|wash()|downcase(), $node.data_map.title.content|wash() )}</span><span class="glyphicon glyphicon-chevron-right"></span></a></li>
     {/foreach}
     </ul>           
 </div>
 <div class="content-view-full row">
     <article class="class-hials_person_mappe col-sm-12">
-        <h1>{$node.data_map.title.content|wash()}</h1>
+        <h1>{cond(is_set($node.data_map.menutitle), $node.data_map.menutitle.content|wash(), $node.data_map.title.content|wash()}</h1>
                                                 
 {if $persons|count()}
-    {if ne($menu_root, $node.node_id)}{set $table_summary = concat('Employees at'|i18n('hials/design/person'), ' ', $node.data_map.short_title.content|wash()|downcase() )}{/if}
+    {if and( ne($menu_root, $node.node_id), is_set($node.data_map.menutitle))}
+        {set $table_summary = concat('Employees at'|i18n('hials/design/person'), ' ', $node.data_map.menutitle.content|wash()|downcase() )}
+    {else}
+        {set $table_summary = concat('Employees at'|i18n('hials/design/person'), ' ', $node.name|wash()|downcase() )}
+    {/if}
         <div class="table-responsive">
 		<table class="table table-striped" summary="{$table_summary}" width="100%">
 		<tbody>
@@ -45,8 +49,8 @@
     {set $tmp_office = $person.data_map.office.content|explode( ' ' )|implode('')
          $tmp_phone = $person.data_map.phone.content|explode( ' ' )|implode('')
          $tmp_mobile = $person.data_map.mobile.content|explode( ' ' )|implode('')}
-    {if and( eq($tmp_phone|extract_left(1), '+'), gt($tmp_phone|count(), 5))}{set $tmp_phone = concat('+47', $tmp_phone)}{/if}
-    {if and( eq($tmp_mobile|extract_left(1), '+'), gt($tmp_mobile|count(), 5))}{set $tmp_mobile = concat('+47', $tmp_mobile)}{/if}
+    {if and( ne($tmp_phone|extract_left(1), '+'), gt($tmp_phone|count(), 5))}{set $tmp_phone = concat('+47', $tmp_phone)}{/if}
+    {if and( ne($tmp_mobile|extract_left(1), '+'), gt($tmp_mobile|count(), 5))}{set $tmp_mobile = concat('+47', $tmp_mobile)}{/if}
 		    <tr>
 		        <td><a href="{$person.url_alias|ezurl( 'no' )}">{concat($person.data_map.last_name.content|trim(), ', ', $person.data_map.first_name.content|trim())|wash()}</a></td>
 		        <td>{$person.data_map.jobtitle.content|trim()|wash()}</td>
@@ -65,7 +69,7 @@
 <div>
     <ul class="nav nav-pills hials-subnav-pills">
     {foreach $menu_tree as $item}
-      <li role="presentation"{if eq($item.node_id, $node.node_id)} class="active"{/if}><a href="{$item.url_alias|ezurl( 'no' )}"><span class="text">{'Employees at'|i18n('hials/design/person')} {$item.data_map.short_title.content|wash()|downcase()}</span><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+      <li role="presentation"{if eq($item.node_id, $node.node_id)} class="active"{/if}><a href="{$item.url_alias|ezurl( 'no' )}"><span class="text">{'Employees at'|i18n('hials/design/person')} {cond(is_set($node.data_map.menutitle), $node.data_map.menutitle.content|wash()|downcase(), $node.data_map.title.content|wash() )}</span><span class="glyphicon glyphicon-chevron-right"></span></a></li>
     {/foreach}
     </ul>           
 </div>
