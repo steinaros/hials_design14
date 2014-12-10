@@ -99,7 +99,7 @@
 				            <li>{foreach $level2_items as $level2key => $level2item}
 				                <div class="{if $level2key|eq(0)}col-sm-offset-2 col-sm-2{else}col-sm-2{/if}">
 				                    <ul class="submenu">
-				                        <li class="submenuhead"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $level2item.node_id)|ezurl}{else}{$level2item.url_alias|ezurl}{/if}>{$level2item.name|wash()}</a></li>
+				                        <li class="submenuhead"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $level2item.node_id)|ezurl}{else}{$level2item.url_alias|ezurl}{/if}>{if is_set($level2item.data_map.menutitle)}{$level2item.data_map.menutitle.content|wash()}{else}{$level2item.name|wash()}{/if}</a></li>
 				                    {set $level3_items = fetch( 'content', 'list', hash( 'parent_node_id', $level2item.node_id,
 					                                              'sort_by', $level2item.sort_array,
 					                                              'class_filter_type', 'include',
@@ -107,7 +107,7 @@
 					 					 $level3_items_count = $level3_items|count()}
 		                            {if $level3_items_count}
 		                                {foreach $level3_items as $level3key => $level3item}
-		                                    <li><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $level3item.node_id)|ezurl}{else}{$level3item.url_alias|ezurl}{/if}>{$level3item.name|wash()}</a></li>
+		                                    <li><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $level3item.node_id)|ezurl}{else}{$level3item.url_alias|ezurl}{/if}>{if is_set($level2item.data_map.menutitle)}{$level2item.data_map.menutitle.content|wash()}{else}{$level2item.name|wash()}{/if}</a></li>
 		                                {/foreach}
 		                            {/if}
 		                            </ul>
