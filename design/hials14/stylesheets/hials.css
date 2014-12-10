@@ -999,6 +999,30 @@ ul.links-center {
 
 /*************************************************/
 
+.panel-person-info {
+    background-color: #fff;
+    border-radius: 0;
+}
+
+.panel-person-info .person-image {
+    width: 33.3333333%; margin-right: 15px;
+}
+
+.panel-person-info .dummy-image {
+    width: 33.3333333%; margin-right: 15px;
+    font-size: 12em;
+    padding-bottom: 0.1em;
+    padding-top: 0.1em;
+    color: #565656;
+    background-color: #f1f1f1;
+}
+
+.panel-person-info dl > dt {
+    width: 20%;
+}
+
+/*************************************************/
+
 ul.line-list {
 	list-style: none;
 	padding-left: 0;
