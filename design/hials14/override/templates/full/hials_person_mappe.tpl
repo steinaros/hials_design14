@@ -18,7 +18,7 @@
 <div>
     <ul class="nav nav-pills hials-subnav-pills">
     {foreach $menu_tree as $item}
-      <li role="presentation"{if eq($item.node_id, $node.node_id)} class="active"{/if}><a href="{$item.url_alias|ezurl( 'no' )}"><span class="text">{$item.title.content|wash()}</span><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+      <li role="presentation"{if eq($item.node_id, $node.node_id)} class="active"{/if}><a href="{$item.url_alias|ezurl( 'no' )}"><span class="text">{'Employees at'|i18n('hials/design/person')} {$item.data_map.short_title.content|wash()}</span><span class="glyphicon glyphicon-chevron-right"></span></a></li>
     {/foreach}
     </ul>           
 </div>

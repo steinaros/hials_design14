@@ -80,6 +80,13 @@
         </message>
     </context>
     <context>
+        <name>hials/design/person</name>
+        <message>
+            <source>Employees at</source>
+            <translation>Ansatte ved</translation>
+        </message>
+    </context>    
+    <context>
         <name>hials/design/pagelayout</name>
         <message>
             <source>Skip to main content</source>
