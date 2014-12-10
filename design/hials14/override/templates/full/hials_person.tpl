@@ -20,15 +20,15 @@
                 <dt class="pull-left">{'Office'|i18n('hials/design/std')}</dt>
                 <dd>{$tmp_office|wash()}</dd>
                 <dt class="pull-left">{'E-mail'|i18n('hials/design/std')}</dt>
-                <dd class="u-email email"><a href="mailto:{$person.data_map.email.content|trim()|wash()}">{$person.data_map.email.content|trim()|wash()}</a></dd>
+                <dd class="u-email email"><a href="mailto:{$node.data_map.email.content|trim()|wash()}">{$node.data_map.email.content|trim()|wash()}</a></dd>
                 <dt class="pull-left">{'Telephone'|i18n('hials/design/std')}</dt>
                 <dd class="p-tel tel">{$tmp_phone|wash()}</dd>
-                {if $person.data_map.publish_mobile}
+                {if $node.data_map.publish_mobile}
                 <dt class="pull-left">{'Mobile'|i18n('hials/design/std')}</dt>
                 <dd class="p-tel tel">{$tmp_mobile|wash()}</dd>
                 {/if}
                 <dt class="pull-left">{'Area'|i18n('hials/design/std')}</dt>
-                <dd>{$node.data_map.area|wash()}</dd>
+                <dd>{$node.data_map.area.content|wash()}</dd>
             </dl>
         </div>
     </div>
