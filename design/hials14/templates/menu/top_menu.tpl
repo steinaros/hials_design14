@@ -107,7 +107,7 @@
 					 					 $level3_items_count = $level3_items|count()}
 		                            {if $level3_items_count}
 		                                {foreach $level3_items as $level3key => $level3item}
-		                                    <li><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $level3item.node_id)|ezurl}{else}{$level3item.url_alias|ezurl}{/if}>{if is_set($level2item.data_map.menutitle)}{$level2item.data_map.menutitle.content|wash()}{else}{$level2item.name|wash()}{/if}</a></li>
+		                                    <li><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $level3item.node_id)|ezurl}{else}{$level3item.url_alias|ezurl}{/if}>{if is_set($level3item.data_map.menutitle)}{$level3item.data_map.menutitle.content|wash()}{else}{$level3item.name|wash()}{/if}</a></li>
 		                                {/foreach}
 		                            {/if}
 		                            </ul>
