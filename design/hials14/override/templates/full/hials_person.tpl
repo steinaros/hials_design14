@@ -38,11 +38,11 @@
                 {/if}
                 {if $tmp_phone|count()}
                 <dt class="pull-left">{'Telephone'|i18n('hials/design/std')}</dt>
-                <dd class="p-tel tel"><a href="tel:{$tmp_phone|wash()}">{$tmp_phone_formatted|wash()}</a></dd>
+                <dd class="p-tel tel"><a href="tel:{$tmp_phone|wash()}">{$tmp_phone_formatted}</a></dd>
                 {/if}
                 {if and($node.data_map.publish_mobile, $tmp_mobile|count())}
                 <dt class="pull-left">{'Mobile'|i18n('hials/design/std')}</dt>
-                <dd class="p-tel tel"><a href="tel:{$tmp_mobile|wash()}">{$tmp_mobile_formatted|wash()}</a></dd>
+                <dd class="p-tel tel"><a href="tel:{$tmp_mobile|wash()}">{$tmp_mobile_formatted}</a></dd>
                 {/if}
                 {if $node.data_map.area.has_content}
                 <dt class="pull-left">{'Area'|i18n('hials/design/std')}</dt>

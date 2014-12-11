@@ -74,8 +74,8 @@
 		        <td>{$person.data_map.jobtitle.content|trim()|wash()}</td>
 		        <td><a href="mailto:{$person.data_map.email.content|trim()|wash()}">{$person.data_map.email.content|trim()|wash()}</a></td>
 		        <td><a href="{$FINN_FRAM.url_alias|ezurl('no')}">{$tmp_office|wash()}</a></td>
-		        <td>{if $tmp_phone|count()}<a href="tel:{$tmp_phone|wash()}">{$tmp_phone_formatted|wash()}</a>{else}&nbsp;{/if}</td>
-		        <td>{if $person.data_map.publish_mobile}<a href="tel:{$tmp_mobile|wash()}">{$tmp_mobile_formatted|wash()}</a>{else}&nbsp;{/if}</td>
+		        <td>{if $tmp_phone|count()}<a href="tel:{$tmp_phone|wash()}">{$tmp_phone_formatted}</a>{else}&nbsp;{/if}</td>
+		        <td>{if $person.data_map.publish_mobile}<a href="tel:{$tmp_mobile|wash()}">{$tmp_mobile_formatted}</a>{else}&nbsp;{/if}</td>
 		    </tr>
 {/foreach}
 		</tbody>
