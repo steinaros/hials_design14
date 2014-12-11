@@ -48,9 +48,7 @@ $('[data-toggle="pill"]').on('click', function(event) {
 // Prevent clicks on menu background from closing menu
 $('.dropdown-menu').on('click', function(event) {
 	var target = $( event.target );
-	if (!target.is( "a" )) {
-		// Avoid following the href location when clicking
-		event.preventDefault() 
+	if (target.is( "ul" ) || target.is( "li" ) || target.is( "div" )) {
 		// Avoid having the menu to close when clicking
 		event.stopPropagation()
 	}
