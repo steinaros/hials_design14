@@ -37,7 +37,7 @@
 </div>
 <div class="content-view-full row">
     <article class="class-hials_person_mappe col-sm-12">
-        <h1>{cond($item.data_map.menutitle.has_content, $node.data_map.menutitle.content|wash(), $node.data_map.title.content|wash())}</h1>
+        <h1>{cond($node.data_map.menutitle.has_content, $node.data_map.menutitle.content|wash(), $node.data_map.title.content|wash())}</h1>
                                                 
 {if $persons|count()}
     {if and( ne($menu_root, $node.node_id), $item.data_map.menutitle.has_content)}
