@@ -60,6 +60,8 @@
     {set $tmp_office = $person.data_map.office.content|explode( ' ' )|implode('')
          $tmp_phone = $person.data_map.phone.content|explode( ' ' )|implode('')
          $tmp_mobile = $person.data_map.mobile.content|explode( ' ' )|implode('')}
+    {set $tmp_mobile_formatted = $tmp_mobile
+         $tmp_phone_formatted = $tmp_phone}
     {if and( ne($tmp_phone|extract_left(1), '+'), eq($tmp_phone|count(), 8))}
         {set $tmp_phone = concat('+47', $tmp_phone)}
         {set $tmp_phone_formatted = concat($tmp_phone|extract(0,3), '&nbsp;', $tmp_phone|extract(3,2), '&nbsp;', $tmp_phone|extract(5,2), '&nbsp;', $tmp_phone|extract(7,2), '&nbsp;', $tmp_phone|extract(9,2) )} 

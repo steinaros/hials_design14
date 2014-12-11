@@ -1,8 +1,8 @@
 {def $tmp_office = $node.data_map.office.content|explode( ' ' )|implode('')
      $tmp_phone = $node.data_map.phone.content|explode( ' ' )|implode('')
      $tmp_mobile = $node.data_map.mobile.content|explode( ' ' )|implode('')
-     $tmp_phone_formatted = ''
-     $tmp_mobile_formatted = ''}
+     $tmp_phone_formatted = $tmp_phone
+     $tmp_mobile_formatted = $tmp_mobile}
      
     {if and( ne($tmp_phone|extract_left(1), '+'), eq($tmp_phone|count(), 8))}
         {set $tmp_phone = concat('+47', $tmp_phone)}
