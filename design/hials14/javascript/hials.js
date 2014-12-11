@@ -44,3 +44,14 @@ $('[data-toggle="pill"]').on('click', function(event) {
 	$menu.slideDown('fast', 'linear')
 	
 });
+
+// Prevent clicks on menu background from closing menu
+$('.dropdown-menu').on('click', function(event) {
+	var target = $( event.target );
+	if (!target.is( "a" )) {
+		// Avoid following the href location when clicking
+		event.preventDefault() 
+		// Avoid having the menu to close when clicking
+		event.stopPropagation()
+	}
+});
