@@ -1,8 +1,17 @@
 {def $tmp_office = $node.data_map.office.content|explode( ' ' )|implode('')
      $tmp_phone = $node.data_map.phone.content|explode( ' ' )|implode('')
-     $tmp_mobile = $node.data_map.mobile.content|explode( ' ' )|implode('')}
-    {if and( ne($tmp_phone|extract_left(1), '+'), gt($tmp_phone|count(), 5))}{set $tmp_phone = concat('+47', $tmp_phone)}{/if}
-    {if and( ne($tmp_mobile|extract_left(1), '+'), gt($tmp_mobile|count(), 5))}{set $tmp_mobile = concat('+47', $tmp_mobile)}{/if}
+     $tmp_mobile = $node.data_map.mobile.content|explode( ' ' )|implode('')
+     $tmp_phone_formatted = ''
+     $tmp_mobile_formatted = ''}
+     
+    {if and( ne($tmp_phone|extract_left(1), '+'), eq($tmp_phone|count(), 8))}
+        {set $tmp_phone = concat('+47', $tmp_phone)}
+        {set $tmp_phone_formatted = concat($tmp_phone|extract(0,3), '&nbsp;', $tmp_phone|extract(3,2), '&nbsp;', $tmp_phone|extract(5,2), '&nbsp;', $tmp_phone|extract(7,2), '&nbsp;', $tmp_phone|extract(9,2) )} 
+    {/if}
+    {if and( ne($tmp_mobile|extract_left(1), '+'), eq($tmp_mobile|count(), 8))}
+        {set $tmp_mobile = concat('+47', $tmp_mobile)}
+        {set $tmp_mobile_formatted = concat($tmp_mobile|extract(0,3), '&nbsp;', $tmp_mobile|extract(3,3), '&nbsp;', $tmp_mobile|extract(6,2), '&nbsp;', $tmp_mobile|extract(8,3) )}
+    {/if}
 <article class="h-card vcard">
     <h1 class="hidden">{$node.name}</h1>
     <div class="panel panel-person-info">
@@ -29,11 +38,11 @@
                 {/if}
                 {if $tmp_phone|count()}
                 <dt class="pull-left">{'Telephone'|i18n('hials/design/std')}</dt>
-                <dd class="p-tel tel">{$tmp_phone|wash()}</dd>
+                <dd class="p-tel tel"><a href="tel:{$tmp_phone|wash()}">{$tmp_phone_formatted|wash()}</a></dd>
                 {/if}
                 {if and($node.data_map.publish_mobile, $tmp_mobile|count())}
                 <dt class="pull-left">{'Mobile'|i18n('hials/design/std')}</dt>
-                <dd class="p-tel tel">{$tmp_mobile|wash()}</dd>
+                <dd class="p-tel tel"><a href="tel:{$tmp_mobile|wash()}">{$tmp_mobile_formatted|wash()}</a></dd>
                 {/if}
                 {if $node.data_map.area.has_content}
                 <dt class="pull-left">{'Area'|i18n('hials/design/std')}</dt>

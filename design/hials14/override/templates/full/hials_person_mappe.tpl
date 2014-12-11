@@ -16,6 +16,8 @@
     $tmp_office = ''
     $tmp_phone = ''
     $tmp_mobile = ''
+    $tmp_phone_formatted = ''
+    $tmp_mobile_formatted = ''
     $table_summary = concat('Employees at'|i18n('hials/design/person'), ' ', 'Aalesund University College'|i18n('hials/design/std'))}
     
 <!-- 
@@ -58,15 +60,22 @@
     {set $tmp_office = $person.data_map.office.content|explode( ' ' )|implode('')
          $tmp_phone = $person.data_map.phone.content|explode( ' ' )|implode('')
          $tmp_mobile = $person.data_map.mobile.content|explode( ' ' )|implode('')}
-    {if and( ne($tmp_phone|extract_left(1), '+'), gt($tmp_phone|count(), 5))}{set $tmp_phone = concat('+47', $tmp_phone)}{/if}
-    {if and( ne($tmp_mobile|extract_left(1), '+'), gt($tmp_mobile|count(), 5))}{set $tmp_mobile = concat('+47', $tmp_mobile)}{/if}
+    {if and( ne($tmp_phone|extract_left(1), '+'), eq($tmp_phone|count(), 8))}
+        {set $tmp_phone = concat('+47', $tmp_phone)}
+        {set $tmp_phone_formatted = concat($tmp_phone|extract(0,3), '&nbsp;', $tmp_phone|extract(3,2), '&nbsp;', $tmp_phone|extract(5,2), '&nbsp;', $tmp_phone|extract(7,2), '&nbsp;', $tmp_phone|extract(9,2) )} 
+    {/if}
+    {if and( ne($tmp_mobile|extract_left(1), '+'), eq($tmp_mobile|count(), 8))}
+        {set $tmp_mobile = concat('+47', $tmp_mobile)}
+        {set $tmp_mobile_formatted = concat($tmp_mobile|extract(0,3), '&nbsp;', $tmp_mobile|extract(3,3), '&nbsp;', $tmp_mobile|extract(6,2), '&nbsp;', $tmp_mobile|extract(8,3) )}
+    {/if}
+    
 		    <tr>
 		        <td><a href="{$person.url_alias|ezurl( 'no' )}">{concat($person.data_map.last_name.content|trim(), ', ', $person.data_map.first_name.content|trim())|wash()}</a></td>
 		        <td>{$person.data_map.jobtitle.content|trim()|wash()}</td>
 		        <td><a href="mailto:{$person.data_map.email.content|trim()|wash()}">{$person.data_map.email.content|trim()|wash()}</a></td>
 		        <td><a href="{$FINN_FRAM.url_alias|ezurl('no')}">{$tmp_office|wash()}</a></td>
-		        <td>{$tmp_phone|wash()}</td>
-		        <td>{if $person.data_map.publish_mobile}{$tmp_mobile|wash()}{else}&nbsp;{/if}</td>
+		        <td>{if $tmp_phone|count()}<a href="tel:{$tmp_phone|wash()}">{$tmp_phone_formatted|wash()}</a>{else}&nbsp;{/if}</td>
+		        <td>{if $person.data_map.publish_mobile}<a href="tel:{$tmp_mobile|wash()}">{$tmp_mobile_formatted|wash()}</a>{else}&nbsp;{/if}</td>
 		    </tr>
 {/foreach}
 		</tbody>
