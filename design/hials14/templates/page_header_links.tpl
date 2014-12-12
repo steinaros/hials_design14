@@ -1,8 +1,11 @@
 <nav class="col-sm-12" role="navigation" id="quicklinks">
-	<ul class="nav navbar-nav navbar-right">
+	<ul class="nav nav-pills pull-right">                
 	    <li id="contact"><a href={""|ezurl} title="{'Contact us'|i18n('hials/design/pagelayout')}">{'Contact us'|i18n('hials/design/pagelayout')}</a></li>
 	    <li id="positions"><a href={""|ezurl} title="{'Vacant positions'|i18n('hials/design/pagelayout')}">{'Vacant positions'|i18n('hials/design/pagelayout')}</a></li>
 	    <li id="sitemap"><a href={concat("/content/view/sitemap/", $pagedata.root_node)|ezurl} title="{'Site map'|i18n('hials/design/pagelayout')}">{'Site map'|i18n('hials/design/pagelayout')}</a></li>
+        <li id="langEng"><a href={"/eng"|ezurl} title="English">EN</a></li>
+        <li id="langNor"><a href={"/nor"|ezurl} title="Norsk">NO</a></li>
+{* Fjernet inntil vanlige brukere har en grunn til å logge på sidene...
 	{if $current_user.is_logged_in}
 	    <li id="myprofile"><a href={"/user/edit/"|ezurl} title="{'My profile'|i18n('hials/design/pagelayout')}">{'My profile'|i18n('hials/design/pagelayout')}</a></li>
 	    <li id="logout"><a href={"/user/logout"|ezurl} title="{'Logout'|i18n('hials/design/pagelayout')}">{'Logout'|i18n('hials/design/pagelayout')} ( {$current_user.contentobject.name|wash} )</a></li>
@@ -29,6 +32,6 @@
 	            <input type="hidden" name="RedirectURI" value="" />
 	        </form>
 	    </li>
-	{/if}
+	{/if} *}
 	</ul>
 </nav>
