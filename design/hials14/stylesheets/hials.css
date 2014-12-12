@@ -1132,3 +1132,102 @@ p.leftmenu {
 }
 
 /*************************************************/
+/* NAVBAR BUTTONS - SOCIAL/SEARCH ****************/
+
+.hials-btn > li > a {
+    border-radius: 0;
+}
+
+.hials-btn > li + li {
+    margin-left: 0;
+}
+
+.btnSocial, .navbar-toggle {
+    border-left: 1px solid #ccc;
+    margin: 0;
+    border-radius: 0;
+}
+
+#btnInsta > a {
+    padding: 13px 14px;
+}
+
+#btnInsta > a:hover, #btnInsta > a:focus {
+    background-image: url('../images/ext/insta-noice-1.png'), -webkit-gradient(linear, left top, left bottom, from(#517fa4), to(#306088));
+    background-image: url('../images/ext/insta-noice-1.png'), -webkit-linear-gradient(top, #517fa4, #306088);
+    background-image: url('../images/ext/insta-noice-1.png'), -moz-linear-gradient(top, #517fa4, #306088);
+    background-image: url('../images/ext/insta-noice-1.png'), -o-linear-gradient(top, #517fa4, #306088);
+    background-image: url('../images/ext/insta-noice-1.png'), -ms-linear-gradient(top, #517fa4, #306088);
+    background-image: url('../images/ext/insta-noice-1.png'), linear-gradient(top, #517fa4, #306088);  
+    background-color: #517fa4;
+    color: #fff;
+}
+
+#btnFace > a {
+    padding: 13px 18px;
+}
+
+#btnFace > a:hover, #btnFace > a:focus {
+    background-color: #3a5795; /* Facebook-blue */
+    color: #fff;
+}
+
+#btnTweet > a {
+    padding: 13px 13px;
+}
+
+#btnTweet > a:hover, #btnTweet > a:focus {
+    background-color: #55acee; /* Twitter-blue */
+    color: #fff;
+}
+
+#btnSearch > a {
+    padding: 13px 13px;
+    background-color: #4d4d4d;
+    color: #fff;
+}
+
+#btnSearch > a:hover, #btnSearch > a:focus {
+    background-color: #7C1850;
+}
+
+#btnSearch .dropdown-menu {
+    border-top: none;
+}
+
+.searchOptGroup {
+    padding-left: 15px; 
+    padding-right:15px;
+}
+
+
+@media (min-width: 768px) {
+    .searchOptGroup {
+        width: 75%; 
+        margin-left:25%; 
+        padding-left: 15px; 
+        padding-right:15px;
+    }
+}
+
+@media (min-width: 992px) {
+    .searchOptGroup {
+        width: 50%; 
+        margin-left:50%; 
+        padding-left: 15px; 
+        padding-right:15px;
+    }
+}
+
+#btnSearch fieldset > label {
+    width: 100%;
+    padding: 15px 0;
+}
+
+#btnSearchMobile {
+    padding: 13px 14px;
+}
+
+#btnMenu {
+    padding: 13px 15px;
+}
