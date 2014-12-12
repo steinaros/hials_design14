@@ -56,7 +56,7 @@
     <ul class="nav nav-pills nav-stacked hials-nav-pills" role="tablist">
 {foreach $nivaa_sortorder as $nivaa_id}    
     {if gt($utdanninger[$nivaa_id].antall, 0)}
-        <li role="presentation"{if eq($nivaa_id,0)} class="active"{/if}><a href="{concat('#utdnivaa_', $nivaa_id)}" data-toggle="pill">{$utdanninger[$nivaa_id].nivaa|wash()}</a></li>
+        <li role="presentation"{if eq($nivaa_id,0)} class="active"{/if}><a href="{concat('#utdnivaa_', $nivaa_id)}" data-toggle="pill" title="{$utdanninger[$nivaa_id].nivaa|wash()}">{$utdanninger[$nivaa_id].nivaa|wash()}</a></li>
     {/if}
 {/foreach}
 	</ul>
@@ -80,9 +80,9 @@
         {if gt($item.antall, 0)}
         <div class="col-sm-{$col_width}">
 	        <ul class="submenu">
-	            <li class="submenuhead"><a href={$item.url_alias|ezurl}>{$item.navn|wash()}</a></li>
+	            <li class="submenuhead"><a href={$item.url_alias|ezurl} title="{$item.navn|wash()}">{$item.navn|wash()}</a></li>
 	            {foreach $item.items as $utd_item}
-	            <li><a href={$utd_item.url_alias|ezurl}>{$utd_item.data_map.title.content|wash()}</a></li>
+	            <li><a href={$utd_item.url_alias|ezurl} title="{$utd_item.data_map.title.content|wash()}">{$utd_item.data_map.title.content|wash()}</a></li>
 	            {/foreach}
 	            
 	        </ul>
