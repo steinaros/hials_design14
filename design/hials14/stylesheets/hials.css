@@ -500,6 +500,7 @@ article.headline h2.teaser-title {
 #quicklinks a {
 	color: #333;
 	text-decoration: none;
+	padding: 8px 8px;
 }
 
 #quicklinks a:hover, #quicklinks a:focus {
@@ -627,10 +628,6 @@ ul.submenu {
     font-weight: 700;
 }
 
-.submenu > li {
-	margin-bottom: 5px;
-}
-
 .submenu > li > a {
     color: #333;
     text-decoration: none;
@@ -664,6 +661,9 @@ ul.submenu {
 }
 
 @media (min-width: 768px) {
+	.submenu > li {
+        margin-bottom: 5px;
+    }
 	
 	.submenu {
 	   padding: 10px 0;
@@ -856,14 +856,14 @@ ul.hials-nav-pills.nav-stacked>li+li {
 
 .carousel-caption {
 	text-shadow: none;
-	background-color: rgba(86,86,86,0.6);
+	background-color: rgba(86,86,86,0.8);
 	right: 0;
 	left: 0;
 	bottom: 0;
 	width: 100%;
 	text-align: left;
 	padding-left: 30px;
-	padding-bottom: 45px;
+	padding-bottom: 20px;
 	padding-top: 0;
 }
 
@@ -889,6 +889,10 @@ ul.hials-nav-pills.nav-stacked>li+li {
 
 .carousel-control, .carousel-control:hover, .carousel-control:focus {
 	color: #FDED00;
+}
+
+.carousel-control > span, .carousel-control:hover > span, .carousel-control:focus > span {
+	opacity: 1;
 }
 
 @media screen and (min-width: 768px) {
