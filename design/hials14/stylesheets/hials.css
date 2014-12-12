@@ -530,10 +530,6 @@ nav#mainnav {
     margin:0;
 }
 
-form.dropdown-menu {
-    padding: 5px 5px;
-}
-
 /*************************************************/
 /*** NAVBAR **************************************/
 
@@ -615,6 +611,11 @@ form.dropdown-menu {
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
 	text-decoration: underline;
 	background-color: transparent;
+}
+
+.submenu > li, .hials-nav-pills > li {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 ul.submenu {
