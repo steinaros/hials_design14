@@ -8,13 +8,13 @@
  
 <!-- BLOCK: START -->
 <div id="carousel-{$block.zone_id}-{$block.id}" class="carousel slide col-md-9 col-md-height nopadding" data-ride="carousel" data-interval="{$interval|wash()}"> 
-    <!-- Indicators -->
+{* Fjernet 2014.12.12 SSJ    <!-- Indicators -->
     <ol class="carousel-indicators">
     {foreach $valid_nodes as $key => $carousel_item}
         <li data-target="#carousel-{$block.zone_id}-{$block.id}" data-slide-to="{$key}"{if eq($key, 0)} class="active"{/if}></li>
     {/foreach}
     </ol>
-    
+*}    
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         {foreach $valid_nodes as $key => $carousel_item}       
