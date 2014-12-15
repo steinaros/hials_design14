@@ -892,7 +892,7 @@ ul.hials-nav-pills.nav-stacked>li+li {
 	color: #FDED00;
 }
 
-.carousel-control > span, .carousel-control:hover > span, .carousel-control:focus > span {
+.carousel-control > a > span, .carousel-control:hover > a > span, .carousel-control:focus > a > span {
 	opacity: 1;
 }
 
