@@ -1,4 +1,4 @@
-<nav class="col-sm-12" role="navigation" id="quicklinks">
+<nav class="col-sm-12" role="navigation">
 	<ul class="nav nav-pills pull-right">                
 	    <li id="contact"><a href={""|ezurl} title="{'Contact us'|i18n('hials/design/pagelayout')}">{'Contact us'|i18n('hials/design/pagelayout')}</a></li>
 	    <li id="positions"><a href={""|ezurl} title="{'Vacant positions'|i18n('hials/design/pagelayout')}">{'Vacant positions'|i18n('hials/design/pagelayout')}</a></li>
