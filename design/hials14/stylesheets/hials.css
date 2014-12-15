@@ -229,6 +229,10 @@ h2.teaser-title, h2.teaser-title a {
 	font-weight: 700;
 }
 
+.teaser-intro > div {
+display: inline;
+}
+
 .content-view-full.class-hials_portal_page .intro {
     padding-bottom: 2em;
 }
