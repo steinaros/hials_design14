@@ -1,10 +1,22 @@
+{def $lang_selector = array()
+     $avail_translation = array()}
+<!-- DesignKeys:used {$DesignKeys:used|attribute('show',2,'text')} -->     
+{set $avail_translation = language_switcher( $site.uri.original_uri )}
+     
 <nav class="col-sm-12" role="navigation">
 	<ul class="nav nav-pills pull-right">                
 	    <li id="contact"><a href={""|ezurl} title="{'Contact us'|i18n('hials/design/pagelayout')}">{'Contact us'|i18n('hials/design/pagelayout')}</a></li>
 	    <li id="positions"><a href={""|ezurl} title="{'Vacant positions'|i18n('hials/design/pagelayout')}">{'Vacant positions'|i18n('hials/design/pagelayout')}</a></li>
 	    <li id="sitemap"><a href={concat("/content/view/sitemap/", $pagedata.root_node)|ezurl} title="{'Site map'|i18n('hials/design/pagelayout')}">{'Site map'|i18n('hials/design/pagelayout')}</a></li>
-        <li id="langEng"><a href={"/eng"|ezurl} title="English">EN</a></li>
-        <li id="langNor"><a href={"/nor"|ezurl} title="Norsk">NO</a></li>
+{if $avail_translation|count|gt( 1 )}
+    {foreach $avail_translation as $siteaccess => $lang}
+        {if $siteaccess|eq( $access_type.name )}
+        <li id="lang{$siteaccess}" class="current disabled"><a href="#" title="{$lang.text|wash}">{$lang.text|wash|extract_left(2)|upcase}</a></li>
+        {else}
+        <li id="lang{$siteaccess}"><a href={$lang.url|ezurl} title="{$lang.text|wash}">{$lang.text|wash|extract_left(2)|upcase}</a></li>
+        {/if}
+    {/foreach}
+{/if}
 {* Fjernet inntil vanlige brukere har en grunn til å logge på sidene...
 	{if $current_user.is_logged_in}
 	    <li id="myprofile"><a href={"/user/edit/"|ezurl} title="{'My profile'|i18n('hials/design/pagelayout')}">{'My profile'|i18n('hials/design/pagelayout')}</a></li>
