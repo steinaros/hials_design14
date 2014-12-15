@@ -10,6 +10,6 @@
 {/switch}
 <div class="block-type-infoboks {$box_width_class}">
     <div class="embed-responsive {$video_aspectratio_class}">
-        <iframe class="embed-responsive-item" src="{$block.custom_attributes.source|wash()}" frameborder="0" allowfullscreen></iframe>
+        <iframe class="embed-responsive-item" src="{$block.custom_attributes.source|wash()}" allowfullscreen></iframe>
     </div>
 </div>
