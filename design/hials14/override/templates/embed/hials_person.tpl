@@ -17,6 +17,8 @@
 			<div class="col-xs-6 boks bg-white nopadding col-xs-height col-middle">
 			    {if $object.data_map.image.has_content}
 			        {attribute_view_gui attribute=$object.data_map.image image_class=contact css_class='u-photo photo img-responsive'}
+			    {else}
+			        <div class="dummy-image"><div class="text-center"><i class="fa fa-user"></i></div></div>    
 			    {/if}
 			</div>
 	    </div>
