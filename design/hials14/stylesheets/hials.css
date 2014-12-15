@@ -894,9 +894,6 @@ ul.hials-nav-pills.nav-stacked>li+li {
 
 .carousel-control, .carousel-control:hover, .carousel-control:focus {
 	color: #FDED00;
-}
-
-.carousel-control > a > span, .carousel-control:hover > a > span, .carousel-control:focus > a > span {
 	opacity: 1;
 }
 
