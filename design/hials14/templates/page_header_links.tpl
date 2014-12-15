@@ -1,8 +1,10 @@
 {def $lang_selector = array()
-     $avail_translation = array()}
-<!-- DesignKeys:used {$DesignKeys:used|attribute('show',2,'text')} -->     
+     $avail_translation = array()}  
 {set $avail_translation = language_switcher( $site.uri.original_uri )}
-     
+<!-- DesignKeys:used {$DesignKeys:used|attribute('show',2,'text')}
+     Site: {$site|attribute('show',2,'text')}
+     Translation: {$avail_translation|attribute('show',2,'text')}
+ -->     
 <nav class="col-sm-12" role="navigation">
 	<ul class="nav nav-pills pull-right">                
 	    <li id="contact"><a href={""|ezurl} title="{'Contact us'|i18n('hials/design/pagelayout')}">{'Contact us'|i18n('hials/design/pagelayout')}</a></li>
