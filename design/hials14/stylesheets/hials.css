@@ -1016,11 +1016,17 @@ ul.links-center {
 
 .panel-person-info .dummy-image {
     width: 33.3333333%; margin-right: 15px;
-    font-size: 12em;
+    font-size: 6em;
     padding-bottom: 0.1em;
     padding-top: 0.1em;
     color: #565656;
     background-color: #f1f1f1;
+}
+
+@media (min-width: 768px) { 
+
+.panel-person-info .dummy-image {
+    font-size: 12em;
 }
 
 .panel-person-info dl > dt {
