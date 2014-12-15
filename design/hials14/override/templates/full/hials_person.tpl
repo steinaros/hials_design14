@@ -17,7 +17,7 @@
     <div class="panel panel-person-info">
         <div class="panel-body">
             {if $node.data_map.image.has_content}
-            <div class="pull-left person-image">{attribute_view_gui attribute=$node.data_map.image image_class=contact css_class='u-photo photo img-responsive'}</div>
+            <div class="pull-left person-image">{attribute_view_gui attribute=$node.data_map.image image_class='contact2' css_class='u-photo photo img-responsive'}</div>
             {else}
             <div class="pull-left dummy-image"><div class="text-center"><i class="fa fa-user"></i></div></div>
             {/if}
