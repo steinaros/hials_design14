@@ -61,18 +61,6 @@ AllowedTypes[]=FrontpageLayout
 #AvailableForClasses[]=frontpage
 #AvailableForClasses[]=landing_page
 
-[3ZonesLayout1]
-ZoneTypeName=3 zones (layout 1)
-Zones[]=left
-Zones[]=right
-Zones[]=top
-ZoneName[left]=Left zone
-ZoneName[right]=Right zone
-ZoneName[bottom]=Top zone
-ZoneThumbnail=3zones_layout1.gif
-Template=3zoneslayout1.tpl
-AvailableForClasses[]=hials_portal_page
-
 #[3ZonesLayout2]
 #ZoneTypeName=3 zones (layout 2)
 #Zones[]=left
@@ -140,5 +128,18 @@ Template=frontpagezone_layout.tpl
 ZoneThumbnail=frontpagezone_layout.gif
 AvailableForClasses[]=hials_frontpage
 
+[3ZonesLayoutLRT]
+ZoneTypeName=3 zones (Left/Right/Top)
+Zones[]
+Zones[]=left
+Zones[]=right
+Zones[]=top
+ZoneName[]
+ZoneName[left]=Left zone
+ZoneName[right]=Right zone
+ZoneName[bottom]=Top zone
+ZoneThumbnail=3zones_layoutLRT.gif
+Template=3zoneslayoutLRT.tpl
+AvailableForClasses[]=hials_portal_page
 
 */ ?>
