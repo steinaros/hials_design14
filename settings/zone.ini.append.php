@@ -137,7 +137,7 @@ Zones[]=top
 ZoneName[]
 ZoneName[left]=Left zone
 ZoneName[right]=Right zone
-ZoneName[bottom]=Top zone
+ZoneName[top]=Top zone
 ZoneThumbnail=3zones_layoutLRT.gif
 Template=3zoneslayoutLRT.tpl
 AvailableForClasses[]=hials_portal_page
