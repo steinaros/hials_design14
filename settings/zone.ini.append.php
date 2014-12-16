@@ -10,7 +10,7 @@ AllowedTypes[]
 #AllowedTypes[]=2ZonesLayout1
 #AllowedTypes[]=2ZonesLayout2
 #AllowedTypes[]=2ZonesLayout3
-#AllowedTypes[]=3ZonesLayout1
+AllowedTypes[]=3ZonesLayout1
 #AllowedTypes[]=3ZonesLayout2
 #AllowedTypes[]=CallForActionLayout
 AllowedTypes[]=SingleZoneLayout
@@ -61,18 +61,17 @@ AllowedTypes[]=FrontpageLayout
 #AvailableForClasses[]=frontpage
 #AvailableForClasses[]=landing_page
 
-#[3ZonesLayout1]
-#ZoneTypeName=3 zones (layout 1)
-#Zones[]=left
-#Zones[]=right
-#Zones[]=bottom
-#ZoneName[left]=Left zone
-#ZoneName[right]=Right zone
-#ZoneName[bottom]=Bottom zone
-#ZoneThumbnail=3zones_layout1.gif
-#Template=3zoneslayout1.tpl
-#AvailableForClasses[]=frontpage
-#AvailableForClasses[]=landing_page
+[3ZonesLayout1]
+ZoneTypeName=3 zones (layout 1)
+Zones[]=left
+Zones[]=right
+Zones[]=top
+ZoneName[left]=Left zone
+ZoneName[right]=Right zone
+ZoneName[bottom]=Top zone
+ZoneThumbnail=3zones_layout1.gif
+Template=3zoneslayout1.tpl
+AvailableForClasses[]=hials_portal_page
 
 #[3ZonesLayout2]
 #ZoneTypeName=3 zones (layout 2)
@@ -103,13 +102,15 @@ ZoneThumbnail=utdanningsboks_layout.gif
 Template=utdanningsbokslayout.tpl
 AvailableForClasses[]=hials_utdanningstilbud
 
-[InnholdssideBoksLayout]
-ZoneTypeName=Innholsside zone layout
-Zones[]=main
-ZoneName[main]=Innholdssideboks zone
-ZoneThumbnail=hials_contentpage_layout.gif
-Template=hials_innholdssidelayout.tpl
-AvailableForClasses[]=hials_contentpage
+#[InnholdssideBoksLayout]
+#ZoneTypeName=Innholsside zone layout
+#Zones[]=left
+#Zones[]=top
+#ZoneName[left]=Left
+#ZoneName[top]=Top
+#ZoneThumbnail=hials_contentpage_layout.gif
+#Template=hials_innholdssidelayout.tpl
+#AvailableForClasses[]=hials_contentpage
 
 [SingleZoneLayout]
 ZoneTypeName=Single zone layout

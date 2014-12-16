@@ -24,7 +24,7 @@
         <div class="col-xs-12">
             {include uri='design:parts/frontpage_nav-links.tpl'}
 		</div>
-    </div>   
+    </div>
 	<div id="news" class="row bg-white">
         {if and( is_set( $zones[3].blocks ), $zones[3].blocks|count() )}
             {foreach $zones[3].blocks as $block}
