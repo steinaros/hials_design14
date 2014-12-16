@@ -1027,9 +1027,9 @@ ul.links-center {
 }
 
 @media (min-width: 768px) { 
-
-.panel-person-info .dummy-image {
-    font-size: 12em;
+	.panel-person-info .dummy-image {
+	    font-size: 12em;
+	}
 }
 
 .panel-person-info dl > dt {
@@ -1045,7 +1045,7 @@ ul.line-list {
 
 ul.line-list li > a {
 	display: block;
-	padding: 5px 10px;
+	padding: 8px;
 }
 
 .line-list li:nth-child(odd) {
