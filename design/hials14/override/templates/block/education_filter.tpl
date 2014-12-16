@@ -103,8 +103,8 @@
         <section class="education-search-result">
             <h2>{$utdanning.navn|wash()}</h2>
             <ul class="line-list">
-	        {foreach $utdanning.items as $item sequence array( 'item-odd', 'item-even' ) as $style}
-	            {if or(eq($sel_fagomr|count(),0), $sel_fagomr|contains($item.parent_node_id))}<li class="{$style}"><a href={$item.url_alias|ezurl}>{$item.data_map.title.content|wash()}</a></li>{/if}
+	        {foreach $utdanning.items as $item}
+	            {if or(eq($sel_fagomr|count(),0), $sel_fagomr|contains($item.parent_node_id))}<li><a href={$item.url_alias|ezurl}>{$item.data_map.title.content|wash()}</a></li>{/if}
 	        {/foreach}
             </ul>
         </section>
