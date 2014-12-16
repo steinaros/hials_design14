@@ -91,7 +91,7 @@
                     {case match=$UTDANNING_node_id}
                         <ul class="dropdown-menu">
                             {include uri='design:menu/top_menu_submenu_nav_links.tpl' menuitem=$item}
-                            <li id="utdanning_tabs">{include uri='design:menu/top_menu_utdanning.tpl' menunode=$UTDANNING_node_id}</li>
+                            <li id="utdanning_tabs" class="hidden-xs">{include uri='design:menu/top_menu_utdanning.tpl' menunode=$UTDANNING_node_id}</li>
                         </ul>                    
                     {/case}
                     {case}
