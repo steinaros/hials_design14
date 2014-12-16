@@ -3,7 +3,7 @@
                                            'extra_menu', false())}
 {def $article_extra_classes = array('col-sm-6')
      $aside_extra_classes = array()}
-{if or($node.data_map.leftboxes.has_content, $node.data_map.image.has_content)}
+{if $node.data_map.image.has_content}
     {set $article_extra_classes = $article_extra_classes|append('col-sm-push-6')}
     {set $aside_extra_classes = array('col-sm-6', 'col-sm-pull-6')}
 {else}
@@ -43,13 +43,7 @@
             {if $node.data_map.image.has_content}
             {attribute_view_gui attribute=$node.data_map.image image_class=banner_half css_class=img-responsive}
             {/if}
-            {if $node.data_map.leftboxes.has_content}
-            <div class="attribute-bokser">
-                {attribute_view_gui attribute=$node.data_map.leftboxes container_node=$node}
-            </div>
-            {else}
-                {include uri='design:menu/leftmenu.tpl'}
-            {/if}
+            {include uri='design:menu/leftmenu.tpl'}
         </aside>
 	</div>
 </div>
