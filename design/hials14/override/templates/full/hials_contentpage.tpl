@@ -1,11 +1,20 @@
 {* Contentpage - Full view *}
 {set scope=global persistent_variable=hash('left_menu', false(),
-                                           'extra_menu', false())}                                     
+                                           'extra_menu', false())}
+{def $article_extra_classes = array('col-sm-6')
+     $aside_extra_classes = array()}
+{if or($node.data_map.leftboxes.has_content, $node.data_map.image.has_content)}
+    {set $article_extra_classes = $article_extra_classes|append('col-sm-push-6')}
+    {set $aside_extra_classes = array('col-sm-6', 'col-sm-pull-6')}
+{else}
+    {set $article_extra_classes = $article_extra_classes|append('col-sm-push-3')}
+    {set $aside_extra_classes = array('col-sm-3', 'col-sm-pull-6')}
+{/if}
 <div class="content-view-full">
-    {if $node.data_map.bokser.has_content}
+    {if $node.data_map.topboxes.has_content}
     <aside>
         <div class="attribute-bokser">
-            {attribute_view_gui attribute=$node.data_map.bokser container_node=$node}
+            {attribute_view_gui attribute=$node.data_map.topboxes container_node=$node}
         </div>
     </aside>
     {/if}
@@ -13,7 +22,7 @@
     <div class="attribute-banner row equal">{attribute_view_gui attribute=$node.data_map.banner}</div>
     {/if}
     <div class="row">
-	    <article class="class-hials_innholdsside col-sm-6 col-sm-push-3 col-right" itemscope itemtype="http://schema.org/Article">
+	    <article class="class-hials_innholdsside {$article_extra_classes|implode(' ')} col-right" itemscope itemtype="http://schema.org/Article">
 	        <h1>{$node.data_map.title.content|wash()}</h1>
 	        {if $node.data_map.tema_title.content}<h2 class="tematitle">{$node.data_map.tema_title.content|wash()}</h2>{/if}
 	
@@ -30,15 +39,17 @@
 	        </div>
 	        {/if}
 	    </article>
-        {if $node.data_map.image.has_content}
-        <aside class="col-sm-6 col-sm-pull-6 col-left">
+	    <aside class="{$aside_extra_classes|implode(' ')} col-left">
+            {if $node.data_map.image.has_content}
             {attribute_view_gui attribute=$node.data_map.image image_class=banner_half css_class=img-responsive}
-            {include uri='design:menu/leftmenu.tpl'}
+            {/if}
+            {if $node.data_map.leftboxes.has_content}
+            <div class="attribute-bokser">
+                {attribute_view_gui attribute=$node.data_map.leftboxes container_node=$node}
+            </div>
+            {else}
+                {include uri='design:menu/leftmenu.tpl'}
+            {/if}
         </aside>
-        {else}
-        <aside class="col-sm-3 col-sm-pull-6 col-left">
-           {include uri='design:menu/leftmenu.tpl'}
-        </aside>
-        {/if}
 	</div>
 </div>
