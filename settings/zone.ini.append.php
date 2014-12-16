@@ -10,13 +10,13 @@ AllowedTypes[]
 #AllowedTypes[]=2ZonesLayout1
 #AllowedTypes[]=2ZonesLayout2
 #AllowedTypes[]=2ZonesLayout3
-AllowedTypes[]=3ZonesLayout1
 #AllowedTypes[]=3ZonesLayout2
 #AllowedTypes[]=CallForActionLayout
 AllowedTypes[]=SingleZoneLayout
 AllowedTypes[]=UtdanningBoksLayout
 AllowedTypes[]=InnholdssideBoksLayout
 AllowedTypes[]=FrontpageLayout
+AllowedTypes[]=3ZonesLayoutLRT
 
 #[GlobalZoneLayout]
 #ZoneTypeName=Global zone layout
