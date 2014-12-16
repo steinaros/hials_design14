@@ -11,10 +11,10 @@
     {set $aside_extra_classes = array('col-sm-3', 'col-sm-pull-6')}
 {/if}
 <div class="content-view-full">
-    {if $node.data_map.topboxes.has_content}
+    {if $node.data_map.layout.has_content}
     <aside>
         <div class="attribute-bokser">
-            {attribute_view_gui attribute=$node.data_map.topboxes container_node=$node}
+            {attribute_view_gui attribute=$node.data_map.layout container_node=$node}
         </div>
     </aside>
     {/if}
