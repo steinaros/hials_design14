@@ -1,5 +1,6 @@
 {* Persongruppering - Full view *}
-{def $menu_root = $node.path_array[4]
+{* Index i $node.path_array[5] bør gjøres dynamisk *}
+{def $menu_root = $node.path_array[5]
      $mainnode_id = $node.main_node_id
      $FINN_FRAM_nodeid = 345
      $class_filter = array( 'hials_person_mappe' )
