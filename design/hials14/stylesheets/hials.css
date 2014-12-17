@@ -873,6 +873,8 @@ ul.hials-nav-pills.nav-stacked>li+li {
     text-decoration: none;
     text-transform: uppercase;
     padding-right: 25px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
