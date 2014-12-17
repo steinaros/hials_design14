@@ -12,8 +12,7 @@
     {/if}
 {/foreach}
 {if is_unset($selected_node_path_array)}{def $selected_node_path_array = array()}{/if}
-<!-- {$leftmenu_class_filter|attribute('show', 2, 'text')} -->
-<div class="leftmenu">
+<nav class="leftmenu" role="navigation">
 <div class="leftmenu-heading"><a href="{$menu_root_node.url_alias|ezurl( 'no' )}">{$menu_root_node.data_map.title.content|wash()}</a></div>
 <div class="leftmenu-body">
 {include uri='design:menu/leftmenu_sub.tpl' name=concat('leftsubmenu', $menu_root_node.depth) 
@@ -22,5 +21,5 @@
                                             selected_path=$selected_node_path_array 
                                             class_filter=$leftmenu_class_filter}
 </div>
-</div>
+</nav>
 {undef $pagedata $menu_root $leftmenu_class_filter $tree_menu $menu_root_node $item_class $selected_node_path_array}

@@ -2,7 +2,7 @@
 {if is_unset($selected_path)}{def $selected_path = array()}{/if}
 {if is_unset($class_filter)}{def $class_filter = array()}{/if}
 {if is_unset($current_node)}{def $current_node = array()}{/if}
-<!-- {$class_filter|attribute('show', 2, 'text')} -->
+
 {def $submenu = fetch( 'content', 'list', hash( 'parent_node_id', $root_item.node_id,
                                                 'depth', 1,
                                                 'class_filter_type', 'include',
@@ -23,7 +23,7 @@
         {set $item_text = $item.data_map.name.content}
     {else}
         {set $item_url = $item.url_alias|ezurl( 'no' )}
-        {set $item_text = $item.data_map.title.content}
+        {set $item_text = cond($item.data_map.title.has_content, $item.data_map.title.content, $item.name )}
     {/if}
     {if eq($item.node_id, $current_node.node_id)}{set $item_class = $item_class|append('active')}{/if}
     {if gt($item.children_count, 0)}
