@@ -26,6 +26,7 @@
         {set $item_text = cond($item.data_map.title.has_content, $item.data_map.title.content, $item.name )}
     {/if}
     {if eq($item.node_id, $current_node.node_id)}{set $item_class = $item_class|append('active')}{/if}
+    <!-- CI: {$item.class_identifier} -->
     {if gt($item.children_count, 0)}
         {* Get filtered count - only children of correct contenttypes *}
         {set $subitem_count = fetch( 'content', 'list_count', hash( 'parent_node_id', $item.node_id,
@@ -43,10 +44,10 @@
                                                             class_filter=$class_filter}
             {/if}
             </li>
-        {elseif ne($item.class_identifier, 'hials_nyhetsmappe')} {* Don't show empty nyhetsmappe *}
+        {elseif not($item.class_identifier|compare('hials_nyhetsmappe'))} {* Don't show empty nyhetsmappe *}
             <li {if $item_class|count()}class="{$item_class|implode(' ')}{/if}"><a href="{$item_url}">{$item_text|wash()}</a></li>
         {/if}
-    {elseif ne($item.class_identifier, 'hials_nyhetsmappe')} {* Don't show empty nyhetsmappe *}
+    {elseif not($item.class_identifier|compare('hials_nyhetsmappe'))} {* Don't show empty nyhetsmappe *}
         <li {if $item_class|count()}class="{$item_class|implode(' ')}{/if}"><a href="{$item_url}">{$item_text|wash()}</a></li>
     {/if}
 {/foreach}
