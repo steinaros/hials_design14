@@ -853,7 +853,7 @@ ul.hials-nav-pills.nav-stacked>li+li {
     font-size: 20px;
 }
 
-.hials-link-buttons li + li {
+.hials-link-buttons > .nav-pills > li + li {
     margin-left: 0;
 }
 
