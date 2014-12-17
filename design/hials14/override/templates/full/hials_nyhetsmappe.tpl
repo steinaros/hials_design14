@@ -3,7 +3,7 @@
 
 <div class="content-view-full class-hials_nyhetsmapppe">
     <div class="row">
-        <div class="col-sm-offset-3 col-sm-6">
+        <div class="col-sm-6 col-sm-push-3">
             {if $rss_export}
             <div class="attribute-rss-icon">
                 <a href="{concat( '/rss/feed/', $rss_export.access_url )|ezurl( 'no' )}" title="{$rss_export.title|wash()}"><img src="{'rss-icon.gif'|ezimage( 'no' )}" alt="{$rss_export.title|wash()}" />RSS</a>
@@ -52,6 +52,9 @@
                          view_parameters=$view_parameters
                          item_limit=$page_limit}
         </div>
+        <aside class="col-sm-3 col-sm-pull-6">
+            {include uri='design:menu/leftmenu.tpl'}
+        </aside>
         <aside class="col-sm-3">
             {* 2 levels of hials_nyhetsmappe *}
 			{if eq($node.parent.class_identifier, 'hials_nyhetsmappe')}
