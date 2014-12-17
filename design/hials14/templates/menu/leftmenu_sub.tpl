@@ -14,6 +14,13 @@
      $item_text = ''
      $subitem_count = 0}
 <ul>
+<!--
+Root_item: {$root_item|attribute('show',2,'text')}
+selected_path: {$selected_path|attribute('show',2,'text')}
+class_filter: {$class_filter|attribute('show',2,'text')}
+current_node: {$current_node|attribute('show',2,'text')}
+submenu: {$submenu|attribute('show',2,'text')}
+-->
 {foreach $submenu as $item}
     {set $item_class = array()}
     {set $item_class = $item_class|append( concat( "level_", $item.depth ) )}
