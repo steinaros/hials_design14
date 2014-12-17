@@ -283,21 +283,12 @@ display: inline;
     float:none;
 }
 
-.row-sm-height {
+.row-sm-height, .row-md-height, .row-lg-height {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-.col-sm-height {
-    margin-bottom: 15px;
-}
-
-.row-md-height {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-.col-md-height {
+.col-sm-height, .col-md-height, .col-lg-height {
     margin-bottom: 15px;
 }
 
@@ -855,6 +846,56 @@ ul.hials-nav-pills.nav-stacked>li+li {
 	padding-right: 1em;
 }
 
+/*************************************************/
+
+.hials-link-buttons {
+    padding: 30px 15px;
+    font-size: 20px;
+}
+
+.hials-link-buttons li + li {
+    margin-left: 0;
+}
+
+.hials-link-buttons li > a {
+    color: #333;
+    font-weight: 500;
+    background-color: #fff;
+    border-radius: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.hials-link-buttons li > a:hover {
+    background-color: #7C1850;
+    color: #fff;
+}
+
+.hials-link-buttons li > a > span.glyphicon {
+    color: #FDED00;
+    float: right;
+    position:absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hials-link-buttons li > a > span.text {
+
+}
+
+.hials-link-buttons li {
+    margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+    .hials-link-buttons li {
+        margin-bottom: 0;
+    }
+}
 
 /*************************************************/
 /*** CAROUSEL ************************************/

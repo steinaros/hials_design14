@@ -20,10 +20,12 @@
 	        </div>
 	    </div>
 	</div>
-    <div id="fagomraade-links" class="row">
-        <div class="col-xs-12">
-            {include uri='design:parts/frontpage_nav-links.tpl'}
-		</div>
+    <div class="row">
+        {if and( is_set( $zones[1].blocks ), $zones[1].blocks|count() )}
+            {foreach $zones[1].blocks as $block}
+                {include uri='design:parts/zone_block.tpl' zone=$zones[1]}
+            {/foreach}
+        {/if}
     </div>
 	<div id="news" class="row bg-white">
         {if and( is_set( $zones[3].blocks ), $zones[3].blocks|count() )}

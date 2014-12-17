@@ -115,12 +115,12 @@ AvailableForClasses[]=hials_frontpage
 [FrontpageLayout]
 ZoneTypeName=Frontpage zone layout
 Zones[]=carousel
-Zones[]=top_side
+Zones[]=top
 Zones[]=box
 Zones[]=news
 Zones[]=misc
 ZoneName[carousel]=Carousel Zone
-ZoneName[top_side]=Top toolbox Zone
+ZoneName[top]=Top Zone
 ZoneName[box]=Box Zone
 ZoneName[news]=News Zone
 ZoneName[misc]=Misc Zone

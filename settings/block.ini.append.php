@@ -22,6 +22,7 @@ AllowedTypes[]=Carousel
 AllowedTypes[]=FrontpageNews
 AllowedTypes[]=ItemList
 AllowedTypes[]=EducationFilter
+AllowedTypes[]=LinkButtons
 
 [PushToBlock]
 # List of content classes using Layout datatype
@@ -279,6 +280,15 @@ ViewName[default]=Default
 [EducationFilter]
 Name=Education Filter
 ManualAddingOfItems=disabled
+ViewList[]
+ViewList[]=default
+ViewName[default]=Default
+
+[LinkButtons]
+Name=Link buttons
+NumberOfValidItems=4
+NumberOfArchivedItems=5
+ManualAddingOfItems=enabled
 ViewList[]
 ViewList[]=default
 ViewName[default]=Default
