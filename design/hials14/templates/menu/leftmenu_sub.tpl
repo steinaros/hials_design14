@@ -2,7 +2,7 @@
 {if is_unset($selected_path)}{def $selected_path = array()}{/if}
 {if is_unset($class_filter)}{def $class_filter = array()}{/if}
 {if is_unset($current_node)}{def $current_node = array()}{/if}
-
+<!-- {$class_filter|attribute('show', 2, 'text')} -->
 {def $submenu = fetch( 'content', 'list', hash( 'parent_node_id', $root_item.node_id,
                                                 'depth', 1,
                                                 'class_filter_type', 'include',
@@ -29,8 +29,7 @@
     {if gt($item.children_count, 0)}
         {set $subitem_count = fetch( 'content', 'list_count', hash( 'parent_node_id', $item.node_id,
                                                     'class_filter_type', 'include',
-                                                    'class_filter_array', $class_filter,
-                                                    'sort_by', $item.sort_array ) ) }
+                                                    'class_filter_array', $class_filter ) ) }
         {if $subitem_count}
             {set $item_class = $item_class|append('hasSubitems')}
             <li {if $item_class|count()}class="{$item_class|implode(' ')}{/if}"><a href="{$item_url}">{$item_text|wash()}</a>
