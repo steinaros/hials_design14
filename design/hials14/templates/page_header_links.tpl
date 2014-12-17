@@ -10,13 +10,8 @@
 	    <li id="contact"><a href={""|ezurl} title="{'Contact us'|i18n('hials/design/pagelayout')}">{'Contact us'|i18n('hials/design/pagelayout')}</a></li>
 	    <li id="positions"><a href={""|ezurl} title="{'Vacant positions'|i18n('hials/design/pagelayout')}">{'Vacant positions'|i18n('hials/design/pagelayout')}</a></li>
 	    <li id="sitemap"><a href={concat("/content/view/sitemap/", $pagedata.root_node)|ezurl} title="{'Site map'|i18n('hials/design/pagelayout')}">{'Site map'|i18n('hials/design/pagelayout')}</a></li>
-{if $avail_translation|count|gt( 1 )}
-    {foreach $avail_translation as $siteaccess => $lang}
-        {if $siteaccess|eq( $access_type.name )}
-        <li id="lang{$siteaccess}" class="current disabled"><a href="#" title="{$lang.text|wash}">{$lang.text|wash|extract_left(2)|upcase}</a></li>
-        {else}
-        <li id="lang{$siteaccess}"><a href={$lang.url|ezurl} title="{$lang.text|wash}">{$lang.text|wash|extract_left(2)|upcase}</a></li>
-        {/if}
+        <li id="langEng"><a href="/eng" title="English">EN</a></li>
+        <li id="langNor"><a href="/" title="Norsk">NO</a></li>
     {/foreach}
 {/if}
 {* Fjernet inntil vanlige brukere har en grunn til å logge på sidene...
