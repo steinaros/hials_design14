@@ -16,30 +16,30 @@
             'class_filter_type',  'include',
             'class_filter_array', array( 'hials_event' ),
                'attribute_filter',    array( 'or',
-                    array( 'event/from_time', '>=', $curr_ts  ),
-                    array( 'event/to_time', '>=', $curr_ts  )
+                    array( 'hials_event/from_time', '>=', $curr_ts  ),
+                    array( 'hials_event/to_time', '>=', $curr_ts  )
             )    ))
     $older_event_count = fetch( 'content', 'list_count', hash(
             'parent_node_id', $event_node,
             'class_filter_type',  'include',
             'class_filter_array', array( 'hials_event' ),
                'attribute_filter',
-            array( 'and', array( 'event/from_time', '<', $curr_ts  ),
-                    array( 'event/to_time', '<', $curr_ts  )
+            array( 'and', array( 'hials_event/from_time', '<', $curr_ts  ),
+                    array( 'hials_event/to_time', '<', $curr_ts  )
             )    ))
 }
 {if ge($temp_offset,0)}
 	{set $temp_offset = $temp_offset|abs}
 	{def $events = fetch( 'content', 'list', hash(
 	            'parent_node_id', $event_node,
-	            'sort_by', array( 'attribute', true(), 'event/from_time' ),
+	            'sort_by', array( 'attribute', true(), 'hials_event/from_time' ),
 	            'class_filter_type',  'include',
 	            'class_filter_array', array( 'hials_event' ),
 	            'limit', 15,
 	            'offset', $temp_offset|mul(15),
 	            'attribute_filter', array( 'or',
-	                    array( 'event/from_time', '>=', $curr_ts  ),
-	                    array( 'event/to_time', '>=', $curr_ts  )
+	                    array( 'hials_event/from_time', '>=', $curr_ts  ),
+	                    array( 'hials_event/to_time', '>=', $curr_ts  )
 	            )    ))}
 	{set $newer_event_count = $newer_event_count|sub( 15|mul( $temp_offset|inc ) )}
 {else}
@@ -47,14 +47,14 @@
 	     $direction = "-"}
 	{def $events = fetch( 'content', 'list', hash(
 	            'parent_node_id', $event_node,
-	            'sort_by', array( 'attribute', true(), 'event/from_time' ),
+	            'sort_by', array( 'attribute', true(), 'hials_event/from_time' ),
 	            'class_filter_type',  'include',
 	            'class_filter_array', array( 'hials_event' ),
 	            'limit', 15,
 	            'offset', $temp_offset|mul(15),
 	            'attribute_filter', array( 'and',
-	                    array( 'event/from_time', '<', $curr_ts  ),
-	                    array( 'event/to_time', '<', $curr_ts  )
+	                    array( 'hials_event/from_time', '<', $curr_ts  ),
+	                    array( 'hials_event/to_time', '<', $curr_ts  )
 	            )))}
 	{set $older_event_count = $older_event_count|sub( 15|mul( $temp_offset|inc ) )}
 {/if}
