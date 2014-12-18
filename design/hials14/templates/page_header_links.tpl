@@ -3,9 +3,7 @@
      $library_node_id = ezini( 'HialsContentNodeIDs', 'BibliotekID', 'content.ini' )}
 {def $contact_node = fetch( 'content', 'node', hash( 'node_id', $contact_node_id ) )
      $vacancy_node = fetch( 'content', 'node', hash( 'node_id', $vacancy_node_id ) )
-     $library_node = fetch( 'content', 'node', hash( 'node_id', $library_node_id ) )
-
-
+     $library_node = fetch( 'content', 'node', hash( 'node_id', $library_node_id ) )}
 <nav class="col-sm-12" role="navigation">
 	<ul class="nav nav-pills pull-right">                
 	    {if $contact_node}<li><a href={$contact_node.url_alias|ezurl} title="{'Contact us'|i18n('hials/design/pagelayout')}">{'Contact us'|i18n('hials/design/pagelayout')}</a></li>
