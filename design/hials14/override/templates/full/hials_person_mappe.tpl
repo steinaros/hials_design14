@@ -20,15 +20,7 @@
     $tmp_phone_formatted = ''
     $tmp_mobile_formatted = ''
     $table_summary = concat('Employees at'|i18n('hials/design/person'), ' ', 'Aalesund University College'|i18n('hials/design/std'))}
-    
-<!-- 
-{$node.data_map.menutitle|attribute('show',2,'text')}
-{is_set($node.data_map.menutitle)}
-{is_set($node.data_map.menutitle.content)}
-{is_array($node.data_map.menutitle)}
-{is_array($node.data_map.menutitle.content)}
-{is_object($node.data_map.menutitle)}
--->    
+   
 <div class="hidden-xs">
     <ul class="nav nav-pills hials-subnav-pills">
     {foreach $menu_tree as $item}
