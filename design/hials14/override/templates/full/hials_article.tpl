@@ -14,10 +14,7 @@
     </div>
     {/if}
     <div class="row">
-        <div class="col-sm-3 hidden-xs pubisheddatecol">
-            <time class="pull-right">{$node.object.published|l10n('shortdate')}</time>
-        </div>    
-	    <article class="class-hials_article col-sm-6 col-right" itemscope itemtype="http://schema.org/Article">
+	    <article class="class-hials_article col-sm-6 col-sm-push-3 col-right" itemscope itemtype="http://schema.org/Article">
 	        <h1 itemprop="name">{$node.data_map.title.content|wash()}</h1>
 	
 	        {if $node.data_map.intro.content.is_empty|not}
@@ -33,6 +30,9 @@
 	        </div>
 	        {/if}
 	    </article>
+        <div class="col-sm-3 col-sm-pull-6 hidden-xs pubisheddatecol">
+            <time class="pull-right">{$node.object.published|l10n('shortdate')}</time>
+        </div>        
 	    {if not($node.data_map.image.has_content)}{include uri='design:parts/latest_news_sidebar.tpl' root_node_id=$root_node_id}{/if}
 	</div>
 </div>
