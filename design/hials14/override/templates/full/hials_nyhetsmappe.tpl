@@ -55,8 +55,8 @@
         <aside class="col-sm-3 col-sm-pull-6">
             {include uri='design:menu/leftmenu.tpl'}
         </aside>
-        <aside class="col-sm-3">
-            {* 2 levels of hials_nyhetsmappe *}
+{*        <aside class="col-sm-3">
+            {/* 2 levels of hials_nyhetsmappe */} 
 			{if eq($node.parent.class_identifier, 'hials_nyhetsmappe')}
 			    {def $nyhet_root_node = fetch( 'content', 'node', hash( 'node_id', $node.parent_node_id ) )}
 			{else}
@@ -79,8 +79,8 @@
                 {/foreach}
             </ul>
             {/if}
-            {undef $nyhet_root_node $menu_items $menu_items_count}
-        </aside>
+            {undef $nyhet_root_node $menu_items $menu_items_count} 
+        </aside> *}
     </div>
 </div>
 {undef $rss_export}
