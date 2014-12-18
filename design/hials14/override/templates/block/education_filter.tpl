@@ -55,8 +55,8 @@
 	                                                    'class_filter_array', $classes,
 	                                                    'attribute_filter', array( array( 325, '=', $nivaa_id ) ) ) )}
     {set $tmp_item_count = $tmp_utdanninger|count()}
-    {set $tmp_hash = hash( 'navn', $nivaa_name,
-                           'nivaa_id', $nivaa_id,
+    {set $tmp_hash = hash( 'nivaa_id', $nivaa_id, 
+                           'navn', $nivaa_name,
                            'antall', $tmp_item_count,
                            'items', $tmp_utdanninger )}
     {set $utdanninger = $utdanninger|append($tmp_hash)}
