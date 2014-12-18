@@ -112,6 +112,10 @@
             <source>Vacant positions</source>
             <translation>Ledige stillinger</translation>
 	    </message>
+        <message>
+            <source>Library</source>
+            <translation>Biblioteket</translation>
+        </message>
 	    <message>
 			<source>Site map</source>
 			<translation>Nettstedskart</translation>

@@ -1,15 +1,17 @@
-{def $lang_selector = array()
-     $avail_translation = array()}  
-{set $avail_translation = language_switcher( $site.uri.original_uri )}
-<!-- DesignKeys:used {$DesignKeys:used|attribute('show',2,'text')}
-     Site: {$site|attribute('show',2,'text')}
-     Translation: {$avail_translation|attribute('show',2,'text')}
- -->     
+{def $contact_node_id = ezini( 'HialsContentNodeIDs', 'KontaktOssID', 'content.ini' )
+     $vacancy_node_id = ezini( 'HialsContentNodeIDs', 'LedigeStillingerID', 'content.ini' )
+     $library_node_id = ezini( 'HialsContentNodeIDs', 'BibliotekID', 'content.ini' )}
+{def $contact_node = fetch( 'content', 'node', hash( 'node_id', $contact_node_id ) )
+     $vacancy_node = fetch( 'content', 'node', hash( 'node_id', $vacancy_node_id ) )
+     $library_node = fetch( 'content', 'node', hash( 'node_id', $library_node_id ) )
+
+
 <nav class="col-sm-12" role="navigation">
 	<ul class="nav nav-pills pull-right">                
-	    <li id="contact"><a href={""|ezurl} title="{'Contact us'|i18n('hials/design/pagelayout')}">{'Contact us'|i18n('hials/design/pagelayout')}</a></li>
-	    <li id="positions"><a href={""|ezurl} title="{'Vacant positions'|i18n('hials/design/pagelayout')}">{'Vacant positions'|i18n('hials/design/pagelayout')}</a></li>
-	    <li id="sitemap"><a href={concat("/content/view/sitemap/", $pagedata.root_node)|ezurl} title="{'Site map'|i18n('hials/design/pagelayout')}">{'Site map'|i18n('hials/design/pagelayout')}</a></li>
+	    {if $contact_node}<li><a href={$contact_node.url_alias|ezurl} title="{'Contact us'|i18n('hials/design/pagelayout')}">{'Contact us'|i18n('hials/design/pagelayout')}</a></li>
+	    {if $vacancy_node}<li><a href={$vacancy_node.url_alias|ezurl} title="{'Vacant positions'|i18n('hials/design/pagelayout')}">{'Vacant positions'|i18n('hials/design/pagelayout')}</a></li>
+	    {if $library_node}<li><a href={$library_node.url_alias|ezurl} title="{'Library'|i18n('hials/design/pagelayout')}">{'Library'|i18n('hials/design/pagelayout')}</a></li>
+	    {*<li id="sitemap"><a href={concat("/content/view/sitemap/", $pagedata.root_node)|ezurl} title="{'Site map'|i18n('hials/design/pagelayout')}">{'Site map'|i18n('hials/design/pagelayout')}</a></li>*}
         <li id="langEng"><a href="/eng" title="English">EN</a></li>
         <li id="langNor"><a href="/" title="Norsk">NO</a></li>
 {* Fjernet inntil vanlige brukere har en grunn til å logge på sidene...
