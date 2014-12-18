@@ -92,6 +92,8 @@
         {else}
             (<time datetime="{$event.object.data_map.from_time.content.timestamp|datetime('custom', '%c')}">{$event.object.data_map.from_time.content.timestamp|l10n('shortdate')}</time> - <time datetime="{$event.object.data_map.to_time.content.timestamp|datetime('custom', '%c')}">{$event.object.data_map.to_time.content.timestamp|l10n('shortdate')}</time>)
         {/if}
+    {else}
+        (<time datetime="{$event.object.data_map.from_time.content.timestamp|datetime('custom', '%c')}">{$event.object.data_map.from_time.content.timestamp|l10n('shortdatetime')}</time>)
     {/if}
     </small></h4>
     {if $event.object.data_map.text.has_content}
@@ -133,7 +135,9 @@
             </ul>
         </nav>
     </div>
-    <aside class="col-sm-3 col-sm-pull-6"> </aside>
+    <aside class="col-sm-3 col-sm-pull-6">
+    {include uri='design:menu/leftmenu.tpl'}
+    </aside>
     <aside class="col-sm-3"> </aside>
 </div>
 {undef}
