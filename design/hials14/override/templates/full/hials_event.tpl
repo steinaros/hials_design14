@@ -9,14 +9,14 @@
     {/if}
     <div class="row">
         <article class="col-sm-6 col-sm-push-3">
-            <h1 itemprop="name">{if $node.data_map.title.has_content}{$node.data_map.title.content|wash()}{else}{$node.data_map.short_title.content|wash()}</h1>
-            {if $node.data_map.intro.content.is_empty|not}
+            <h1 itemprop="name">{cond($node.data_map.title.has_content, $node.data_map.title.content|wash(), $node.data_map.short_title.content|wash())}</h1>
+            {if $node.data_map.intro.has_content}
             <div class="intro" itemprop="description">
                 {attribute_view_gui attribute=$node.data_map.intro}
             </div>
             {/if}
             {include uri='design:parts/byline.tpl'}
-            {if $node.data_map.text.content.is_empty|not}
+            {if $node.data_map.text.has_content}
             <div class="bodytext" itemprop="text">
                 {attribute_view_gui attribute=$node.data_map.text}
             </div>
@@ -42,4 +42,3 @@
         </aside>
     </div>
 </div>
-{undef $extra_class}
