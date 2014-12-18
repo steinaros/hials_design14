@@ -62,7 +62,7 @@
                             <li>
                                 <div class="col-sm-offset-2 col-sm-3">
                                     <ul class="submenu">
-                                    <li class="submenuhead">{'Departments'|i18n('hials/design/std')}</li>
+                                    <li class="submenuhead"><a href={$item.url_alias|ezurl()}>{'Departments'|i18n('hials/design/std')}</a></li>
                                     {foreach $temp_items as $avd_item}
                                         <li><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $avd_item.node_id)|ezurl}{else}{$avd_item.url_alias|ezurl}{/if}>{$avd_item.name|wash()}</a></li>
                                     {/foreach}
