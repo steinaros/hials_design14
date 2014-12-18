@@ -29,36 +29,34 @@
             )    ))
 }
 {if ge($temp_offset,0)}
-{set $temp_offset = $temp_offset|abs}
-{def $events = fetch( 'content', 'list', hash(
-            'parent_node_id', $event_node,
-            'sort_by', array( 'attribute', true(), 'event/from_time' ),
-            'class_filter_type',  'include',
-            'class_filter_array', array( 'event' ),
-            'limit', 15,
-            'offset', $temp_offset|mul(15),
-            'attribute_filter', array( 'or',
-                    array( 'event/from_time', '>=', $curr_ts  ),
-                    array( 'event/to_time', '>=', $curr_ts  )
-            )    ))
-}
-{set $newer_event_count = $newer_event_count|sub( 15|mul( $temp_offset|inc ) )}
+	{set $temp_offset = $temp_offset|abs}
+	{def $events = fetch( 'content', 'list', hash(
+	            'parent_node_id', $event_node,
+	            'sort_by', array( 'attribute', true(), 'event/from_time' ),
+	            'class_filter_type',  'include',
+	            'class_filter_array', array( 'event' ),
+	            'limit', 15,
+	            'offset', $temp_offset|mul(15),
+	            'attribute_filter', array( 'or',
+	                    array( 'event/from_time', '>=', $curr_ts  ),
+	                    array( 'event/to_time', '>=', $curr_ts  )
+	            )    ))}
+	{set $newer_event_count = $newer_event_count|sub( 15|mul( $temp_offset|inc ) )}
 {else}
-{set $temp_offset = $temp_offset|abs|dec
-     $direction = "-"}
-{def $events = fetch( 'content', 'list', hash(
-            'parent_node_id', $event_node,
-            'sort_by', array( 'attribute', true(), 'event/from_time' ),
-            'class_filter_type',  'include',
-            'class_filter_array', array( 'event' ),
-            'limit', 15,
-            'offset', $temp_offset|mul(15),
-            'attribute_filter', array( 'and',
-                    array( 'event/from_time', '<', $curr_ts  ),
-                    array( 'event/to_time', '<', $curr_ts  )
-            )))
-}
-{set $older_event_count = $older_event_count|sub( 15|mul( $temp_offset|inc ) )}
+	{set $temp_offset = $temp_offset|abs|dec
+	     $direction = "-"}
+	{def $events = fetch( 'content', 'list', hash(
+	            'parent_node_id', $event_node,
+	            'sort_by', array( 'attribute', true(), 'event/from_time' ),
+	            'class_filter_type',  'include',
+	            'class_filter_array', array( 'event' ),
+	            'limit', 15,
+	            'offset', $temp_offset|mul(15),
+	            'attribute_filter', array( 'and',
+	                    array( 'event/from_time', '<', $curr_ts  ),
+	                    array( 'event/to_time', '<', $curr_ts  )
+	            )))}
+	{set $older_event_count = $older_event_count|sub( 15|mul( $temp_offset|inc ) )}
 {/if}
 
 {foreach $events as $event}
@@ -71,13 +69,12 @@
 {/foreach}
 
 {if eq($temp_oldest_event|datetime(custom,"%M"),  $temp_newest_event|datetime(custom,"%M"))}
-{set $daymode=true()}
+    {set $daymode=true()}
 {/if}
 
 <div class="content-view-full">
  <div class="class-event-calendar event-calendar-programview">
-
-<div class="row">
+   <div class="row">
     <div class="col-sm-6 col-sm-push-3">
         <h1>{$node.name|wash()}</h1>
         <dl class="hials-event-program">
@@ -86,6 +83,7 @@
     {if ne($event.object.data_map.from_time.content.timestamp|datetime('custom',"%j%M"), $prev_datemonth)}
     <dt><time>{$event.object.data_map.from_time.content.timestamp|datetime('custom', "%j %M")}</time></dt>
     {/if}
+    {set $prev_datemonth = $event.object.data_map.from_time.content.timestamp|datetime('custom',"%j%M")}
     <dd><h4><a href={$event.url_alias|ezurl}>{$event.name|wash}</a>
     <small>  
     {if $event.object.data_map.to_time.has_content}
