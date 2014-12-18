@@ -78,7 +78,7 @@
         <div class="panel-heading">Nivå</div> 
         <div class="panel-body">
 		    <ul>
-		    {foreach $nivaa_sortorder as as $nivaa_id} {* $utdanninger as $utdanning}  TODO: Use $nivaa_sortorder to get correct sortorder *}
+		    {foreach $nivaa_sortorder as $nivaa_id} {* $utdanninger as $utdanning}  TODO: Use $nivaa_sortorder to get correct sortorder *}
                 {if gt($utdanninger[$nivaa_id].antall, 0)}
 		        <li><div class="checkbox"><label><input type="checkbox" name="(s2)[]" onchange="$('#education_filter').submit();" value="{$nivaa_id}"{if $sel_nivaa|contains($nivaa_id)} checked{/if}>{$utdanninger[$nivaa_id].navn|wash()}</label></div></li>
 		        {/if}
