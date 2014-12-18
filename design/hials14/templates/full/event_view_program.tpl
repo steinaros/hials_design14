@@ -84,7 +84,7 @@
 {def $prev_datemonth = ''}        
 {foreach $events as $event}
     {if ne($event.object.data_map.from_time.content.timestamp|datetime('custom',"%j%M"), $prev_datemonth)}
-    <dt><time>{$event.object.data_map.from_time.content.timestamp|datetime('custom', "%j %M)}</time></dt>
+    <dt><time>{$event.object.data_map.from_time.content.timestamp|datetime('custom', "%j %M")}</time></dt>
     {/if}
     <dd><h4><a href={$event.url_alias|ezurl}>{$event.name|wash}</a>
     <small>  
