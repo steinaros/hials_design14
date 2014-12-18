@@ -14,7 +14,7 @@
     $newer_event_count = fetch( 'content', 'list_count', hash(
             'parent_node_id', $event_node,
             'class_filter_type',  'include',
-            'class_filter_array', array( 'event' ),
+            'class_filter_array', array( 'hials_event' ),
                'attribute_filter',    array( 'or',
                     array( 'event/from_time', '>=', $curr_ts  ),
                     array( 'event/to_time', '>=', $curr_ts  )
@@ -22,7 +22,7 @@
     $older_event_count = fetch( 'content', 'list_count', hash(
             'parent_node_id', $event_node,
             'class_filter_type',  'include',
-            'class_filter_array', array( 'event' ),
+            'class_filter_array', array( 'hials_event' ),
                'attribute_filter',
             array( 'and', array( 'event/from_time', '<', $curr_ts  ),
                     array( 'event/to_time', '<', $curr_ts  )
@@ -34,7 +34,7 @@
 	            'parent_node_id', $event_node,
 	            'sort_by', array( 'attribute', true(), 'event/from_time' ),
 	            'class_filter_type',  'include',
-	            'class_filter_array', array( 'event' ),
+	            'class_filter_array', array( 'hials_event' ),
 	            'limit', 15,
 	            'offset', $temp_offset|mul(15),
 	            'attribute_filter', array( 'or',
@@ -49,7 +49,7 @@
 	            'parent_node_id', $event_node,
 	            'sort_by', array( 'attribute', true(), 'event/from_time' ),
 	            'class_filter_type',  'include',
-	            'class_filter_array', array( 'event' ),
+	            'class_filter_array', array( 'hials_event' ),
 	            'limit', 15,
 	            'offset', $temp_offset|mul(15),
 	            'attribute_filter', array( 'and',
@@ -113,12 +113,16 @@
     <li class="next"><a href={concat("/content/view/full/",  $node.node_id, "/offset/-", $temp_offset)|ezurl}>{"Future events"|i18n("design/ezdemo/full/event_view_program")} <span aria-hidden="true">&rarr;</span></a></li>
     {elseif $newer_event_count|gt(0)}
     <li class="next"><a href={concat("/content/view/full/",  $node.node_id, "/offset/0")|ezurl}>{"Future events"|i18n("design/ezdemo/full/event_view_program")} <span aria-hidden="true">&rarr;</span></a></li>
+    {else}
+    <li class="next disabled"><a href="#">{"Future events"|i18n("design/ezdemo/full/event_view_program")} <span aria-hidden="true">&rarr;</span></a></li>
     {/if}
 {else}
     {if $temp_offset|gt(0)}
         <li class="previous"><a href={concat("/content/view/full/",  $node.node_id, "/offset/", $temp_offset|dec)|ezurl}><span aria-hidden="true">&larr;</span> {"Past events"|i18n("design/ezdemo/full/event_view_program")}</a></li>
     {elseif $older_event_count|gt(0)}
         <li class="previous"><a href={concat("/content/view/full/",  $node.node_id, "/offset/-1")|ezurl}><span aria-hidden="true">&larr;</span> {"Past events"|i18n("design/ezdemo/full/event_view_program")}</a></li>
+    {else}
+        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> {"Past events"|i18n("design/ezdemo/full/event_view_program")}</a></li>
     {/if}
     {if $newer_event_count|gt(0)}
         <li class="next"><a href={concat("/content/view/full/",  $node.node_id, "/offset/", $temp_offset|inc)|ezurl}>{"Future events"|i18n("design/ezdemo/full/event_view_program")} <span aria-hidden="true">&rarr;</span></a></li>
