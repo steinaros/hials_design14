@@ -1,8 +1,8 @@
 {def $UTDANNING_node_id = ezini( 'HialsContentNodeIDs', 'UtdanningRoot', 'content.ini' )
      $classes = array('hials_utdanningstilbud')
-     $nivaa_sortorder = array( '0', '1', '4', '2', '5', '3', '6' )}
+     $nivaa_sortorder = array( '0', '1', '2', '5', '6', '4', '3')}
      {* needs to be string-type so that contains-function works... *}
-{def $nivaa_names = hash( 0, 'Bachelor', 1, 'Master', 2, 'Videreutdanning', 3, 'Kurs', 4, 'Årsstudium', 5, 'Enkeltemne', 6, 'Maritime kurs' )
+{def $nivaa_names = hash( '0', 'Bachelor', '1', 'Master', '2', 'Videreutdanning', '3', 'Kurs', '4', 'Maritime kurs', '5', 'Årsstudium', '6', 'Enkeltemne' )
      $utdanninger = array()
      $fagomraader = array()
 
@@ -75,12 +75,12 @@
 	    </div>
     </div>
     <div class="panel panel-hials bg-darkgray">
-        <div class="panel-heading">Nivå</div> 
+        <div class="panel-heading">Nivå</div>
         <div class="panel-body">
 		    <ul>
-		    {foreach $nivaa_sortorder as $nivaa_id} {* $utdanninger as $utdanning}  TODO: Use $nivaa_sortorder to get correct sortorder *}
-                {if gt($utdanninger[$nivaa_id].antall, 0)}
-		        <li><div class="checkbox"><label><input type="checkbox" name="(s2)[]" onchange="$('#education_filter').submit();" value="{$nivaa_id}"{if $sel_nivaa|contains($nivaa_id)} checked{/if}>{$utdanninger[$nivaa_id].navn|wash()}</label></div></li>
+		    {foreach $utdanninger as $utdanning} {* TODO: Use $nivaa_sortorder to get correct sortorder *}
+		        {if ne($utdanning.antall, 0)}
+		        <li><div class="checkbox"><label><input type="checkbox" name="(s2)[]" onchange="$('#education_filter').submit();" value="{$utdanning.nivaa_id}"{if $sel_nivaa|contains($utdanning.nivaa_id)} checked{/if}>{$utdanning.navn|wash()}</label></div></li>
 		        {/if}
 		    {/foreach}
     	    </ul>
