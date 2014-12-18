@@ -228,4 +228,15 @@
             <translation>Verktøy</translation>
         </message>
     </context>
+    <context>
+        <name>hials/design/full/event_view_program</name>
+        <message>
+            <source>Past events</source>
+            <translation>Tidligere hendelser</translation>
+        </message>
+        <message>
+            <source>Future events</source>
+            <translation>Framtidige hendelser</translation>
+        </message>
+    </context>
 </TS>

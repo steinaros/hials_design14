@@ -104,30 +104,30 @@
             <ul class="pager">
 {if $direction}{* '-' direction  *}
     {if $older_event_count|gt(0)}
-    <li class="previous"><a href={concat("/content/view/full/",  $node.node_id, "/offset/-", $temp_offset|sum(2))|ezurl}><span aria-hidden="true">&larr;</span> {"Past events"|i18n("design/ezdemo/full/event_view_program")}</a></li>
+    <li class="previous"><a href={concat("/content/view/full/",  $node.node_id, "/offset/-", $temp_offset|sum(2))|ezurl}><span aria-hidden="true">&larr;</span> {"Past events"|i18n("hials/design/full/event_view_program")}</a></li>
     {else}
-    <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> {"Past events"|i18n("design/ezdemo/full/event_view_program")}</a></li>
+    <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> {"Past events"|i18n("hials/design/full/event_view_program")}</a></li>
     {/if}
 
     {if $temp_offset|gt(0)}
-    <li class="next"><a href={concat("/content/view/full/",  $node.node_id, "/offset/-", $temp_offset)|ezurl}>{"Future events"|i18n("design/ezdemo/full/event_view_program")} <span aria-hidden="true">&rarr;</span></a></li>
+    <li class="next"><a href={concat("/content/view/full/",  $node.node_id, "/offset/-", $temp_offset)|ezurl}>{"Future events"|i18n("hials/design/full/event_view_program")} <span aria-hidden="true">&rarr;</span></a></li>
     {elseif $newer_event_count|gt(0)}
-    <li class="next"><a href={concat("/content/view/full/",  $node.node_id, "/offset/0")|ezurl}>{"Future events"|i18n("design/ezdemo/full/event_view_program")} <span aria-hidden="true">&rarr;</span></a></li>
+    <li class="next"><a href={concat("/content/view/full/",  $node.node_id, "/offset/0")|ezurl}>{"Future events"|i18n("hials/design/full/event_view_program")} <span aria-hidden="true">&rarr;</span></a></li>
     {else}
-    <li class="next disabled"><a href="#">{"Future events"|i18n("design/ezdemo/full/event_view_program")} <span aria-hidden="true">&rarr;</span></a></li>
+    <li class="next disabled"><a href="#">{"Future events"|i18n("hials/design/full/event_view_program")} <span aria-hidden="true">&rarr;</span></a></li>
     {/if}
 {else}
     {if $temp_offset|gt(0)}
-        <li class="previous"><a href={concat("/content/view/full/",  $node.node_id, "/offset/", $temp_offset|dec)|ezurl}><span aria-hidden="true">&larr;</span> {"Past events"|i18n("design/ezdemo/full/event_view_program")}</a></li>
+        <li class="previous"><a href={concat("/content/view/full/",  $node.node_id, "/offset/", $temp_offset|dec)|ezurl}><span aria-hidden="true">&larr;</span> {"Past events"|i18n("hials/design/full/event_view_program")}</a></li>
     {elseif $older_event_count|gt(0)}
-        <li class="previous"><a href={concat("/content/view/full/",  $node.node_id, "/offset/-1")|ezurl}><span aria-hidden="true">&larr;</span> {"Past events"|i18n("design/ezdemo/full/event_view_program")}</a></li>
+        <li class="previous"><a href={concat("/content/view/full/",  $node.node_id, "/offset/-1")|ezurl}><span aria-hidden="true">&larr;</span> {"Past events"|i18n("hials/design/full/event_view_program")}</a></li>
     {else}
-        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> {"Past events"|i18n("design/ezdemo/full/event_view_program")}</a></li>
+        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> {"Past events"|i18n("hials/design/full/event_view_program")}</a></li>
     {/if}
     {if $newer_event_count|gt(0)}
-        <li class="next"><a href={concat("/content/view/full/",  $node.node_id, "/offset/", $temp_offset|inc)|ezurl}>{"Future events"|i18n("design/ezdemo/full/event_view_program")} <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href={concat("/content/view/full/",  $node.node_id, "/offset/", $temp_offset|inc)|ezurl}>{"Future events"|i18n("hials/design/full/event_view_program")} <span aria-hidden="true">&rarr;</span></a></li>
     {else}
-        <li class="next disabled"><a href="#">{"Future events"|i18n("design/ezdemo/full/event_view_program")} <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next disabled"><a href="#">{"Future events"|i18n("hials/design/full/event_view_program")} <span aria-hidden="true">&rarr;</span></a></li>
     {/if}
 {/if}
             </ul>
