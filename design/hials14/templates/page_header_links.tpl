@@ -12,8 +12,6 @@
 	    <li id="sitemap"><a href={concat("/content/view/sitemap/", $pagedata.root_node)|ezurl} title="{'Site map'|i18n('hials/design/pagelayout')}">{'Site map'|i18n('hials/design/pagelayout')}</a></li>
         <li id="langEng"><a href="/eng" title="English">EN</a></li>
         <li id="langNor"><a href="/" title="Norsk">NO</a></li>
-    {/foreach}
-{/if}
 {* Fjernet inntil vanlige brukere har en grunn til å logge på sidene...
 	{if $current_user.is_logged_in}
 	    <li id="myprofile"><a href={"/user/edit/"|ezurl} title="{'My profile'|i18n('hials/design/pagelayout')}">{'My profile'|i18n('hials/design/pagelayout')}</a></li>
