@@ -1,7 +1,7 @@
 {if not(is_set($menunode))}{def $menunode = 0}{/if}
 {def $classes = array('hials_utdanningstilbud')
-     $nivaa_sortorder = array( '0', '1', '5', '2', '6', '4', '3')
-     $nivaa_names = hash( 0, 'Bachelor', 1, 'Master', 2, 'Videreutdanning', 3, 'Kurs', 4, 'Maritime kurs', 5, 'Årsstudium', 6, 'Enkeltemne' )
+     $nivaa_sortorder = array( '0', '1', '4', '2', '5', '3', '6' )
+     $nivaa_names = hash( 0, 'Bachelor', 1, 'Master', 2, 'Videreutdanning', 3, 'Kurs', 4, 'Årsstudium', 5, 'Enkeltemne', 6, 'Maritime kurs' )
      $utdanninger = array()
      $utdanning_width = array()
      $fagomraader = array()
