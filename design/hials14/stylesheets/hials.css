@@ -210,6 +210,7 @@ blockquote p:after {
 .highlighted h2, .highlighted h2 a {
     font-size: 36px;
     text-transform: none;
+    text-decoration: none;
     color: #333;
     margin-top: 10px;
     margin-bottom: 10px;
