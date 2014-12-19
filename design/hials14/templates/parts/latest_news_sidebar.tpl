@@ -7,7 +7,7 @@
 <aside class="col-sm-3 col-right">
     {if $latest_news|count()}
     <p class="h3">{"Latest news"|i18n('hials/design/news')}</p>
-    <ul>
+    <ul class="list-unstyled">
     {foreach $latest_news as $news_item}
     <li><a href={$news_item.url_alias|ezurl}>{$news_item.name|wash()}</a></li>
     {/foreach}
