@@ -221,6 +221,11 @@ h2.teaser-title, h2.teaser-title a {
     color: #333;
 }
 
+.highlighted h2 a:hover, .highlighted h2 a:focus
+h2.teaser-title a:hover, h2.teaser-title a:focus  {
+    text-decoration: underline;
+}
+
 .teaser-image {
     margin-bottom: 15px;
 }
@@ -980,7 +985,7 @@ ul.hials-nav-pills.nav-stacked>li+li {
 
 .nav-links > li {
     float: left;
-    border-right: 1px solid #565656;
+    border-right: 1px solid #ccc;
     padding: 0 10px;
 }
 
