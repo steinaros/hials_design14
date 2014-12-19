@@ -21,7 +21,7 @@
             </article>
             {/foreach}
         </div>
-        <p class="text-right"><a href="{'Hoegskolen/Aktuelt/Nyhetsarkiv'|ezurl('no')}" title="{'More news'|i18n('hials/design/news')}">{'Newsarchive'|i18n('hials/design/news')}</a></p>
+        <div class="text-right"><a href="{'Hoegskolen/Aktuelt/Nyhetsarkiv'|ezurl('no')}" title="{'More news'|i18n('hials/design/news')}">{'Newsarchive'|i18n('hials/design/news')}</a></div>
     </div>
 </div>
 
