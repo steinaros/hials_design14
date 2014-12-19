@@ -222,7 +222,7 @@ h2.teaser-title, h2.teaser-title a {
     color: #333;
 }
 
-.highlighted h2 a:hover, .highlighted h2 a:focus
+.highlighted h2 a:hover, .highlighted h2 a:focus,
 h2.teaser-title a:hover, h2.teaser-title a:focus  {
     text-decoration: underline;
 }
