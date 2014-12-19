@@ -243,4 +243,35 @@
             <translation>Framtidige hendelser</translation>
         </message>
     </context>
+    <context>
+        <name>hials/design/parts/top_buttons</name>
+        <message>
+            <source>Instagram</source>
+            <translation>Instagram</translation>
+        </message>
+        <message>
+            <source>Facebook</source>
+            <translation>Facebook</translation>
+        </message>
+        <message>
+            <source>Twitter</source>
+            <translation>Twitter</translation>
+        </message>
+        <message>
+            <source>Search</source>
+            <translation>Søk</translation>
+        </message>
+        <message>
+            <source>Search no available yet</source>
+            <translation>Søk foreløpig ikke tilgjengelig</translation>
+        </message>
+        <message>
+            <source>hials.no</source>
+            <translation>Hele hials.no</translation>
+        </message>
+        <message>
+            <source>Employees</source>
+            <translation>Ansatte</translation>
+        </message>        
+    </context>
 </TS>
