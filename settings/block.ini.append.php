@@ -239,7 +239,7 @@ ViewName[default]=Default
 
 [Carousel]
 Name=Carousel
-NumberOfValidItems=5
+NumberOfValidItems=6
 NumberOfArchivedItems=5
 ManualAddingOfItems=enabled
 CustomAttributes[]=interval
