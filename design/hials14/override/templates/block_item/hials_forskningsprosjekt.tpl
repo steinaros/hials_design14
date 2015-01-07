@@ -7,7 +7,7 @@
     {if eq($node.parent.class_identifier,'hials_avdeling')}<p>{$node.parent.data_map.name.content|trim|wash}</p>{/if}
     <h2 class="teaser-title"><a href="{$node.url_alias|ezurl( 'no' )}" class="teaser-link">{$node.data_map.title.content|wash()}</a></h2>
     {if $node.data_map.intro.content.is_empty|not}
-    <div class="intro">
+    <div>
         {attribute_view_gui attribute=$node.data_map.intro}
     </div>
     {/if}
