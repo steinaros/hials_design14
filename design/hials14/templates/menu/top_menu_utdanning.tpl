@@ -21,10 +21,6 @@
 
 {* $utd_category er enten fagområde (norsk) eller utdanningsnivå (engelsk) *}
 
-<!--
-Sortorder: {$nivaa_sortorder|attribute('show', 2, 'text')}
--->
-
 {set $utd_category = fetch( 'content', 'list', hash( 'parent_node_id', $menunode,
                                                     'sort_by', array( 'attribute', true(), 315 ),
                                                     'class_filter_type', 'include',
@@ -36,13 +32,14 @@ Sortorder: {$nivaa_sortorder|attribute('show', 2, 'text')}
 	{set $utd_category = fetch( 'content', 'list', hash( 'parent_node_id', $menunode,
                                                     'class_filter_type', 'include',
                                                     'class_filter_array', array( 'hials_utdanningsniva' ) ) )}
+	
 	{foreach $utd_category as $key => $nivaa}
 		<div class="{if $key|eq(0)}col-sm-offset-2 col-sm-2{else}col-sm-2{/if}">
 			<ul class="submenu">
 			{set $tmp_itemTitle = cond($nivaa.data_map.menutitle.has_content, $nivaa.data_map.menutitle.content, $nivaa.name)}
 				<li class="submenuhead"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $nivaa.node_id)|ezurl}{else}{$nivaa.url_alias|ezurl}{/if} title="{$tmp_itemTitle|wash()}">{$tmp_itemTitle|wash()}</a></li>
-                {set $tmp_items = fetch( 'content', 'list', hash( 'parent_node_id', $level2item.node_id,
-                                         'sort_by', $level2item.sort_array,
+                {set $tmp_items = fetch( 'content', 'list', hash( 'parent_node_id', $nivaa.node_id,
+                                         'sort_by', $nivaa.sort_array,
                                          'class_filter_type', 'include',
                                          'class_filter_array', $classes ) )}
 				{if gt($tmp_items|count(), 0)}
@@ -84,10 +81,8 @@ Sortorder: {$nivaa_sortorder|attribute('show', 2, 'text')}
 	    {set $tmp_utd = hash('nivaa_id', $nivaa_id,
 	                         'nivaa', $nivaa_name,
 	                         'antall', $nivaa_item_count,
-	                         'fagomrade', $tmp_fagomrade )}
-	    {if gt($tmp_utd.antall, 0)}
-	    {set $utdanninger = $utdanninger|append($tmp_utd)}
-	    {/if}
+	                         'fagomrade', $tmp_fagomrade )
+	         $utdanninger = $utdanninger|append($tmp_utd)}
 	{/foreach}
 	<div class="col-sm-2">
 	    <ul class="nav nav-pills nav-stacked hials-nav-pills" role="tablist">

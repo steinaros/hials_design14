@@ -4,6 +4,7 @@
 
 UtdanningSubMenuIdentifierList[]
 UtdanningSubMenuIdentifierList[]=hials_fagomrade
+UtdanningSubMenuIdentifierList[]=hials_utdanningsniva
 UtdanningSubMenuIdentifierList[]=hials_utdanningstilbud
 
 RightIdentifierList[]=folder

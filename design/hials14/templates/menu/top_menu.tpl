@@ -16,7 +16,7 @@
      $FORSKNING_node_id = ezini( 'HialsContentNodeIDs', 'ForskningRoot', 'content.ini' )
      $temp_items = array()
      $tmp_itemTitle = ''} {* Utdanning/Forskning submenu needs special treatment *}
- 
+
 {if $top_menu_items_count}
 <div id="navbar-collapse-grid" class="navbar-collapse collapse">     
     <ul class="nav navbar-nav">
