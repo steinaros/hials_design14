@@ -100,7 +100,7 @@
 				            <li>{foreach $level2_items as $level2key => $level2item}
 				                <div class="{if $level2key|eq(0)}col-sm-offset-2 col-sm-2{else}col-sm-2{/if}">
 				                    <ul class="submenu">
-				                        {set $tmp_itemTitle = cond($level2item.data_map.menutitle.$item.data_map.menutitle.has_content, $level2item.data_map.menutitle.content, $level2item.name)}
+				                        {set $tmp_itemTitle = cond($level2item.data_map.menutitle.has_content, $level2item.data_map.menutitle.content, $level2item.name)}
 				                        <li class="submenuhead"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $level2item.node_id)|ezurl}{else}{$level2item.url_alias|ezurl}{/if} title="{$tmp_itemTitle|wash()}">{$tmp_itemTitle|wash()}</a></li>
 				                    {set $level3_items = fetch( 'content', 'list', hash( 'parent_node_id', $level2item.node_id,
 					                                              'sort_by', $level2item.sort_array,
