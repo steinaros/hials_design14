@@ -12,8 +12,8 @@
      $level2_items_count = 0
      $level3_items = 0
      $level3_items_count = 0
-     $UTDANNING_node_id = ezini( 'HialsContentNodeIDs', 'UtdanningRoot', 'content.ini' )
-     $FORSKNING_node_id = ezini( 'HialsContentNodeIDs', 'ForskningRoot', 'content.ini' )
+     $UTDANNING_node_id = ezini( 'HialsContentNodeIDs', 'UtdanningRoot', 'hials.ini' )
+     $FORSKNING_node_id = ezini( 'HialsContentNodeIDs', 'ForskningRoot', 'hials.ini' )
      $temp_items = array()
      $tmp_itemTitle = ''} {* Utdanning/Forskning submenu needs special treatment *}
  

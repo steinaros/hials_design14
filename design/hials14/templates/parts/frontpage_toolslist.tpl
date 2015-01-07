@@ -1,4 +1,4 @@
-{def $TOOLS_node_id = ezini( 'HialsContentNodeIDs', 'FrontpageTools', 'content.ini' )
+{def $TOOLS_node_id = ezini( 'HialsContentNodeIDs', 'FrontpageTools', 'hials.ini' )
      $toolbox = fetch( 'content', 'node', hash( 'node_id', $TOOLS_node_id ) )}
 {if $toolbox}     
 <div class="toolmenu">     

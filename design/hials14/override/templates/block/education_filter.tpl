@@ -1,4 +1,4 @@
-{def $UTDANNING_node_id = ezini( 'HialsContentNodeIDs', 'UtdanningRoot', 'content.ini' )
+{def $UTDANNING_node_id = ezini( 'HialsContentNodeIDs', 'UtdanningRoot', 'hials.ini' )
      $classes = array('hials_utdanningstilbud')
      $nivaa_sortorder = array( '0', '1', '2', '5', '6', '4', '3')}
      {* needs to be string-type so that contains-function works... *}

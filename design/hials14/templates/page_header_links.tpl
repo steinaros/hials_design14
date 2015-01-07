@@ -1,6 +1,6 @@
-{def $contact_node_id = ezini( 'HialsContentNodeIDs', 'KontaktOssID', 'content.ini' )
-     $vacancy_node_id = ezini( 'HialsContentNodeIDs', 'LedigeStillingerID', 'content.ini' )
-     $library_node_id = ezini( 'HialsContentNodeIDs', 'BibliotekID', 'content.ini' )}
+{def $contact_node_id = ezini( 'HialsContentNodeIDs', 'KontaktOssID', 'hials.ini' )
+     $vacancy_node_id = ezini( 'HialsContentNodeIDs', 'LedigeStillingerID', 'hials.ini' )
+     $library_node_id = ezini( 'HialsContentNodeIDs', 'BibliotekID', 'hials.ini' )}
 {def $contact_node = fetch( 'content', 'node', hash( 'node_id', $contact_node_id ) )
      $vacancy_node = fetch( 'content', 'node', hash( 'node_id', $vacancy_node_id ) )
      $library_node = fetch( 'content', 'node', hash( 'node_id', $library_node_id ) )}

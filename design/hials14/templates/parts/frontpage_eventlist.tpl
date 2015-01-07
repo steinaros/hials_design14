@@ -1,4 +1,4 @@
-{def $CALENDAR_node_id = ezini( 'HialsContentNodeIDs', 'FrontpageCalendar', 'content.ini' )
+{def $CALENDAR_node_id = ezini( 'HialsContentNodeIDs', 'FrontpageCalendar', 'hials.ini' )
      $calendar = fetch( 'content', 'node', hash( 'node_id', $CALENDAR_node_id ) )
 
      $eventlist = fetch( 'content', 'list', hash(

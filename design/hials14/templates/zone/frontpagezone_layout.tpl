@@ -20,32 +20,32 @@
 	        </div>
 	    </div>
 	</div>
+	{if and( is_set( $zones[1].blocks ), $zones[1].blocks|count() )}
     <div class="row">
-        {if and( is_set( $zones[1].blocks ), $zones[1].blocks|count() )}
-            {foreach $zones[1].blocks as $block}
-                {include uri='design:parts/zone_block.tpl' zone=$zones[1]}
-            {/foreach}
-        {/if}
+        {foreach $zones[1].blocks as $block}
+            {include uri='design:parts/zone_block.tpl' zone=$zones[1]}
+        {/foreach}
     </div>
+    {/if}
+    {if and( is_set( $zones[3].blocks ), $zones[3].blocks|count() )}
 	<div id="news" class="row bg-white">
-        {if and( is_set( $zones[3].blocks ), $zones[3].blocks|count() )}
-            {foreach $zones[3].blocks as $block}
-                {include uri='design:parts/zone_block.tpl' zone=$zones[3]}
-            {/foreach}
-        {/if}
+        {foreach $zones[3].blocks as $block}
+            {include uri='design:parts/zone_block.tpl' zone=$zones[3]}
+        {/foreach}        
     </div>
+    {/if}
+    {if and( is_set( $zones[2].blocks ), $zones[2].blocks|count() )}
     <div id="boxzone" class="row">
-        {if and( is_set( $zones[2].blocks ), $zones[2].blocks|count() )}
-            {foreach $zones[2].blocks as $block}
-                {include uri='design:parts/zone_block.tpl' zone=$zones[2]}
-            {/foreach}
-        {/if}
-    </div>    
+        {foreach $zones[2].blocks as $block}
+            {include uri='design:parts/zone_block.tpl' zone=$zones[2]}
+        {/foreach}
+    </div>
+    {/if}
+    {if and( is_set( $zones[4].blocks ), $zones[4].blocks|count() )}    
     <div id="bottomzone" class="row">
-        {if and( is_set( $zones[4].blocks ), $zones[4].blocks|count() )}
-            {foreach $zones[4].blocks as $block}
-                {include uri='design:parts/zone_block.tpl' zone=$zones[4]}
-            {/foreach}
-        {/if}
-    </div>    
+        {foreach $zones[4].blocks as $block}
+            {include uri='design:parts/zone_block.tpl' zone=$zones[4]}
+        {/foreach}
+    </div>
+    {/if}
 </div>
