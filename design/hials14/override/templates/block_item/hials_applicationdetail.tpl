@@ -11,7 +11,8 @@
     {/case}
     {case match=2} {* Høgskolen i Ålesund - lokalt opptak *}
         {set $soknad_text = $container_node.data_map.soknad_til.class_content.options[$soknad_selection].name|wash}
-        {set $soknad_link = "#"|ezurl}
+        {def $lokal_node = fetch( 'content', 'node', hash( 'node_id', ezini( 'HialsContentNodeIDs', 'LokaltOpptakID', 'hials.ini' ) )
+        {set $soknad_link = $lokal_node.url_alias|ezurl}
     {/case}
     {case match=3} {* Egendefinert objektreferanse *}
         {if $container_node.data_map.soknad_egendefinert.has_content}
