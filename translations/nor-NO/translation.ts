@@ -274,4 +274,19 @@
             <translation>Ansatte</translation>
         </message>        
     </context>
+    <context>
+        <name>hials/design/block/education_filter</name>
+        <message>
+            <source>Field of study</source>
+            <translation>Fagområde</translation>
+        </message>
+        <message>
+            <source>Level</source>
+            <translation>Nivå</translation>
+        </message>
+        <message>
+            <source>Search</source>
+            <translation>Søk</translation>
+        </message>
+    </context>
 </TS>
