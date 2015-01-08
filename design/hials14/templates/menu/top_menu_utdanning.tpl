@@ -38,7 +38,9 @@
 	{foreach $utd_category as $key => $nivaa}
 		<div class="{if $key|eq(0)}col-sm-offset-2 col-sm-2{else}col-sm-2{/if}">
 			<ul class="submenu">
-			{set $tmp_itemTitle = cond($nivaa.data_map.menutitle.has_content, $nivaa.data_map.menutitle.content, $nivaa.name)}
+			{set $tmp_itemTitle = cond($nivaa.data_map.short_title.has_content, $nivaa.data_map.short_title.content,
+									   $nivaa.data_map.title.has_content, $nivaa.data_map.title.content,
+									   $nivaa.name)}
 				<li class="submenuhead"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $nivaa.node_id)|ezurl}{else}{$nivaa.url_alias|ezurl}{/if} title="{$tmp_itemTitle|wash()}">{$tmp_itemTitle|wash()}</a></li>
                 {set $tmp_items = fetch( 'content', 'list', hash( 'parent_node_id', $nivaa.node_id,
                                          'sort_by', $nivaa.sort_array,
@@ -46,7 +48,9 @@
                                          'class_filter_array', merge( $classes, ezini( 'MenuContentSettings', 'TopIdentifierList', 'menu.ini' ) ) ) )}
 				{if gt($tmp_items|count(), 0)}
 					{foreach $tmp_items as $level3key => $level3item}
-                    	{set $tmp_itemTitle = cond($level3item.data_map.menutitle.has_content, $level3item.data_map.menutitle.content, $level3item.name)} 
+						{set $tmp_itemTitle = cond($level3item.data_map.short_title.has_content, $level3item.data_map.short_title.content,
+												   $level3item.data_map.title.has_content, $level3item.data_map.title.content,
+												   $level3item.name)}
 						<li><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $level3item.node_id)|ezurl}{else}{$level3item.url_alias|ezurl}{/if} title="{$tmp_itemTitle|wash()}">{$tmp_itemTitle|wash()}</a></li>
 					{/foreach}
 				{/if}
