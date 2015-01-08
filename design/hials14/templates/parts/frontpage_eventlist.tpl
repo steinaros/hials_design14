@@ -26,6 +26,6 @@
     {/foreach}
 </dl>
 
-<p><a href="{$calendar.url_alias|ezurl('no')}" title="{'More events'|i18n('hials/design/calendar')}">{'More...'|i18n('hials/design/std')}</a></p>
+{* <p><a href="{$calendar.url_alias|ezurl('no')}" title="{'More events'|i18n('hials/design/calendar')}">{'More...'|i18n('hials/design/std')}</a></p> *}
 {/if}
 {undef $CALENDAR_node_id $calendar $eventlist}
