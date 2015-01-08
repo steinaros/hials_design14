@@ -16,8 +16,8 @@
      
      $tmp_hash = hash()
      $tmp_fagomrade = array()
-     
-     $tmp_itemTitle = ''}
+     }
+     {* definert allerede $tmp_itemTitle = '' *}
 
 {* $utd_category er enten fagområde (norsk) eller utdanningsnivå (engelsk) *}
 
@@ -30,8 +30,10 @@
 	{* English menu *}
 	
 	{set $utd_category = fetch( 'content', 'list', hash( 'parent_node_id', $menunode,
+													'sort_by', array( 'priority', true() ),
                                                     'class_filter_type', 'include',
-                                                    'class_filter_array', array( 'hials_utdanningsniva' ) ) )}
+                                                    'class_filter_array', merge( array( 'hials_utdanningsniva' ),
+                                                    							 ezini( 'MenuContentSettings', 'TopIdentifierList', 'menu.ini' ) ) ) )}
 	
 	{foreach $utd_category as $key => $nivaa}
 		<div class="{if $key|eq(0)}col-sm-offset-2 col-sm-2{else}col-sm-2{/if}">
@@ -41,7 +43,7 @@
                 {set $tmp_items = fetch( 'content', 'list', hash( 'parent_node_id', $nivaa.node_id,
                                          'sort_by', $nivaa.sort_array,
                                          'class_filter_type', 'include',
-                                         'class_filter_array', $classes ) )}
+                                         'class_filter_array', merge( $classes, ezini( 'MenuContentSettings', 'TopIdentifierList', 'menu.ini' ) ) ) )}
 				{if gt($tmp_items|count(), 0)}
 					{foreach $tmp_items as $level3key => $level3item}
                     	{set $tmp_itemTitle = cond($level3item.data_map.menutitle.has_content, $level3item.data_map.menutitle.content, $level3item.name)} 
@@ -51,6 +53,7 @@
 			</ul>
 		</div>
 	{/foreach}
+	
 {else}
 
 	{* Norwegian menu *}
