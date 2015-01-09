@@ -66,7 +66,7 @@
     <input type="hidden" name="DestinationURL" value="{$container_node.url_alias}" />
     {if gt($fagomraader|count(),0)}
     <div class="panel panel-hials bg-darkgray">
-	    <div class="panel-heading">{'Field of study'|i18n('hials/design/block/education_filter'}</div>
+	    <div class="panel-heading">{'Field of study'|i18n('hials/design/block/education_filter')}</div>
 	    <div class="panel-body">
 		    <ul>
 		    {foreach $fagomraader as $fagomraade}
@@ -77,7 +77,7 @@
     </div>
     {/if}
     <div class="panel panel-hials bg-darkgray">
-        <div class="panel-heading">{'Level'|i18n('hials/design/block/education_filter'}</div>
+        <div class="panel-heading">{'Level'|i18n('hials/design/block/education_filter')}</div>
         <div class="panel-body">
 		    <ul>
 		    {foreach $utdanninger as $utdanning} {* TODO: Use $nivaa_sortorder to get correct sortorder *}
@@ -88,7 +88,7 @@
     	    </ul>
     	</div>
     </div>
-    <noscript><input type="submit" name="Submit" value="{'Search'|i18n('hials/design/block/education_filter'}" /></noscript>
+    <noscript><input type="submit" name="Submit" value="{'Search'|i18n('hials/design/block/education_filter')}" /></noscript>
     </form>
 </aside>
 <div class="col-sm-9">
