@@ -39,10 +39,10 @@
             {/if}
 {if $error}
 	{if $error_existing_data}
-	<p>{'You have already submitted feedback. The previously submitted data was:'|i18n('design/standard/content/feedback')}</p>
+	<div class="alert alert-danger" role="alert">{'You have already submitted feedback. The previously submitted data was:'|i18n('design/standard/content/feedback')}</div>
 	{/if}
 {else}
-<p>Takk for påmeldingen! En av våre studentambassadører vil ta kontakt med deg.</p>
+<div class="alert alert-success" role="alert"><strong>Takk for påmeldingen!</strong> En av våre studentambassadører vil ta kontakt med deg.</div>
 {/if}
         </article>
         <aside class="{$aside_extra_classes|implode(' ')} col-left">
