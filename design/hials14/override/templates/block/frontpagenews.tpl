@@ -23,7 +23,7 @@
             </article>
             {/foreach}
         </div>
-        {if $newsarchive_node}<div class="text-right"><a href="{$newarchive_node.url_alias|ezurl('no')}" title="{'More news'|i18n('hials/design/news')}">{'Newsarchive'|i18n('hials/design/news')}</a></div>{/if}
+        {if $newsarchive_node}<div class="text-right"><a href="{$newsarchive_node.url_alias|ezurl('no')}" title="{'More news'|i18n('hials/design/news')}">{'Newsarchive'|i18n('hials/design/news')}</a></div>{/if}
     </div>
 </div>
 {undef $valid_nodes $newsarchive_node_id $newsarchive_node}
