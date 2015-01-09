@@ -21,5 +21,3 @@
 {/foreach}
 </body>
 </html>
-
-
