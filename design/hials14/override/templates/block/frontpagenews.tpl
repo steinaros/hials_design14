@@ -1,4 +1,6 @@
-{def $valid_nodes = $block.valid_nodes}
+{def $valid_nodes = $block.valid_nodes
+     $newsarchive_node_id = ezini( 'HialsContentNodeIDs', 'NyhetsarkivID', 'hials.ini' )
+     $newsarchive_node = fetch( 'content', 'node', hash( 'node_id', $newsarchive_node_id ) )}
 <div class="block-type-content-grid block-view-{$block.view} row-wrapper">
     <div class="col-sm-6 highlighted-image">
     {if $valid_nodes.0.data_map.image.has_content}
@@ -21,8 +23,7 @@
             </article>
             {/foreach}
         </div>
-        <div class="text-right"><a href="{'Hoegskolen/Aktuelt/Nyhetsarkiv'|ezurl('no')}" title="{'More news'|i18n('hials/design/news')}">{'Newsarchive'|i18n('hials/design/news')}</a></div>
+        {if $newsarchive_node}<div class="text-right"><a href="{$newarchive_node.url_alias|ezurl('no')}" title="{'More news'|i18n('hials/design/news')}">{'Newsarchive'|i18n('hials/design/news')}</a></div>{/if}
     </div>
 </div>
-
-{undef $valid_nodes}
+{undef $valid_nodes $newsarchive_node_id $newsarchive_node}
