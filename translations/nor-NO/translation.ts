@@ -262,7 +262,7 @@
             <translation>Søk</translation>
         </message>
         <message>
-            <source>Search no available yet</source>
+            <source>Search not available yet</source>
             <translation>Søk foreløpig ikke tilgjengelig</translation>
         </message>
         <message>
