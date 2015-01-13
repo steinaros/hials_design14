@@ -116,6 +116,10 @@
             <source>Library</source>
             <translation>Biblioteket</translation>
         </message>
+        <message>
+            <source>For employees</source>
+            <translation>For ansatte</translation>
+        </message>
 	    <message>
 			<source>Site map</source>
 			<translation>Nettstedskart</translation>
