@@ -180,7 +180,7 @@
 	    <name>hials/design/meeting</name>
 	    <message>
 	        <source>Agenda</source>
-	        <translation>Sakliste</translation>
+	        <translation>Møteinnkalling med saksliste</translation>
 	    </message>
 	    <message>
 	        <source>Minutes</source>
