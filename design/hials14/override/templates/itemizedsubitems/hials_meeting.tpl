@@ -25,6 +25,7 @@
         {foreach $children as $child}
         <dt><time datetime="{$child.data_map.dato.content.timestamp|datetime('custom', '%Y-%m-%d')}">{$child.data_map.dato.content.timestamp|l10n('date')}</time></dt>
         <dd>
+        {if $child.data_map.intro.has_content}<div>{attribute_view_gui attribute=$child.data_map.intro}</div>{/if} 
         {if or($child.data_map.sakliste.has_content, $child.data_map.sakliste.has_content)}
             <ul>
             {def $file = $child.data_map.sakliste}        
