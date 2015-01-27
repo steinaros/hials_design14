@@ -39,7 +39,8 @@ Pagedata:
 <!-- Complete page area: START -->
 <a href="#quicklinks" class="sr-only sr-only-focusable" tabindex=1>{"Skip to quicklinks"|i18n('hials/design/pagelayout')}</a>
 <a href="#mainnav" class="sr-only sr-only-focusable" tabindex=2>{"Skip to main menu"|i18n('hials/design/pagelayout')}</a>
-<a href="#content" class="sr-only sr-only-focusable" tabindex=3>{"Skip to main content"|i18n('hials/design/pagelayout')}</a>
+<a href="#secondary_menu" class="sr-only sr-only-focusable" tabindex=3>{"Skip to secondary menu"|i18n('hials/design/pagelayout')}</a>
+<a href="#content" class="sr-only sr-only-focusable" tabindex=4>{"Skip to main content"|i18n('hials/design/pagelayout')}</a>
 
 <div id="page" class="container {$pagestyle}">
     <!-- Header area: START -->
