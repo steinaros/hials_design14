@@ -3,7 +3,7 @@
 {if eq($phone|count(),8)}
 	{set $phone = concat('+47 ', $phone|extract(0,2), ' ', $phone|extract(2,2), ' ', $phone|extract(4,2), ' ', $phone|extract(6,2))}
 {/if}
-<div class="row equal">
+<div class="row equal avoid-page-break">
 	<div class="content-view-embed container-xs-height wrapper">
 	    <div class="class-person row-xs-height h-card vcard">
 	        <div class="col-xs-6 boks bg-white col-xs-height">
