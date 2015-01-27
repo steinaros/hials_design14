@@ -21,6 +21,13 @@ main {
     padding-bottom: 15px;
 }
 
+@media (max-width: 767px) {
+	article {
+	   overflow-wrap: break-word;
+	   word-wrap: break-word;
+	}
+}
+
 h1, .h1 {
 	color: #7C1850;
 	text-transform: uppercase;
@@ -297,6 +304,15 @@ footer .institusjonsnavn {
 	font-weight: 700;
     text-transform: uppercase;
     font-size: 14px;
+}
+
+.avoid-page-break {
+	page-break-inside: avoid;
+}
+
+/* SHB */
+.block {
+	page-break-inside: avoid;
 }
 
 
@@ -1065,7 +1081,7 @@ ul.links-center {
 	
 }
 
-.panel-hials .panel-body {
+.panel-hials .panel-heading + .panel-body {
 	padding-top: 0;
 }
 
@@ -1212,6 +1228,11 @@ p.leftmenu {
 	color: #7C1850;
 }
 
+.leftmenu-body li {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 /*************************************************/
 /* NAVBAR BUTTONS - SOCIAL/SEARCH ****************/
 
@@ -1318,4 +1339,22 @@ p.leftmenu {
 
 #btnMenu {
     padding: 13px 15px;
+}
+
+/*************************************************/
+/* BUTTONS ***************************************/
+
+.btn-hials {
+    color: #333;
+    background-color: #fff;
+    border-radius: 0;
+    text-decoration: none;
+}
+
+.btn-hials:hover {
+    text-decoration: underline;
+}
+
+.btn-block + .btn-block {
+    margin-top: 15px;
 }
