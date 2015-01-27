@@ -6,8 +6,8 @@
     <nav id="mainnav" role="navigation" class="row">
         <div class="navbar navbar-hials yamm" id="mainDropdown">
             <div class="navbar-header">
-                <button type="button" data-toggle="collapse" data-target="#navbar-collapse-grid" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><i class="fa fa-bars fa-2x"></i></button>         
-                {include uri='design:page_header_logo.tpl'}
+                {*<button type="button" data-toggle="collapse" data-target="#navbar-collapse-grid" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><i class="fa fa-bars fa-2x"></i></button>*}         
+                {include uri='design:shb/page_header_logo.tpl'}
             </div>
             {include uri='design:shb/parts/top_buttons.tpl'}
             {*include uri='design:menu/top_menu.tpl'*}
