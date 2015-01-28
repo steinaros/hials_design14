@@ -68,6 +68,10 @@
             <translation>Mobil</translation>
         </message>
         <message>
+            <source>Homepage</source>
+            <translation>Hjemmeside</translation>
+        </message>
+        <message>
             <source>Area</source>
             <translation>Fagområde</translation>
         </message>

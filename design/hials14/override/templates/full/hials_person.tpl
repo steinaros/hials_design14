@@ -44,6 +44,10 @@
                 <dt class="pull-left">{'Mobile'|i18n('hials/design/std')}</dt>
                 <dd class="p-tel tel"><a href="tel:{$tmp_mobile|wash()}">{$tmp_mobile_formatted}</a></dd>
                 {/if}
+                {if $node.data_map.homepage.has_content}
+                <dt class="pull-left">{'Homepage'|i18n('hials/design/std')}</dt>
+                <dd><a href="{$node.data_map.homepage.content|wash|ezurl('no')}">{if gt($node.data_map.homepage.data_text|count(), 0)}{$node.data_map.homepage.data_text|wash}{else}{$node.data_map.homepage.content|wash()}{/if}</a></dd>
+                {/if}
                 {if $node.data_map.area.has_content}
                 <dt class="pull-left">{'Area'|i18n('hials/design/std')}</dt>
                 <dd>{$node.data_map.area.content|wash()}</dd>
