@@ -105,6 +105,10 @@
             <translation>Hopp til hovedmeny</translation>
         </message>
         <message>
+            <source>Skip to secondary menu</source>
+            <translation>Hopp til sekundær meny</translation>
+        </message>
+        <message>
             <source>Skip to main content</source>
             <translation>Hopp til hovedinnhold</translation>
         </message>
@@ -295,6 +299,68 @@
         <message>
             <source>Search</source>
             <translation>Søk</translation>
+        </message>
+    </context>
+    <context>
+        <name>hials/design/shb</name>
+        
+        <message>
+            <source><![CDATA[You are now displaying <strong>archived information</strong>. You find the latest information in the <a class="alert-link" href="%url">current edition of the studyguide</a>.]]></source>
+            <translation><![CDATA[Du ser nå på <strong>arkivert informasjon</strong>. Du finner oppdatert informasjon i den <a class="alert-link" href="%url">siste utgaven av studiehåndboken</a>.]]></translation>
+        </message>
+        <message>
+            <source>Også tilgjengelig på norsk</source>
+            <translation>Also available in english</translation>
+        </message>
+        <message>
+            <source>Kun tilgjengelig på engelsk</source>
+            <translation>Only available in norwegian</translation>
+        </message>
+    </context>
+    <context>
+        <name>hials/design/shb/studie</name>
+        <message>
+            <source>Print with courses</source>
+            <translation>Utskrift med emner</translation>
+        </message>
+    </context>
+    <context>
+        <name>hials/design/shb/ezsemestermatrix</name>
+        <message>
+            <source>Code</source>
+            <translation>Emnekode</translation>
+        </message>
+        <message>
+            <source>Coursename</source>
+            <translation>Emnets navn</translation>
+        </message>
+        <message>
+            <source>Credits</source>
+            <translation>Omfang</translation>
+        </message>
+        <message>
+            <source>Mandatory course</source>
+            <translation>Obligatorisk emne</translation>
+        </message>
+        <message>
+            <source>M</source>
+            <translation>O</translation>
+        </message>
+        <message>
+            <source>Optional course</source>
+            <translation>Valgbart emne</translation>
+        </message>
+        <message>
+            <source>O</source>
+            <translation>V</translation>
+        </message>
+        <message>
+            <source>Credits pr. semester</source>
+            <translation>Omfang pr. semester</translation>
+        </message>
+        <message>
+            <source>Total</source>
+            <translation>Sum</translation>
         </message>
     </context>
 </TS>

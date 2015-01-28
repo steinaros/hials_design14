@@ -29,22 +29,16 @@
 
 </head>
 <body>
-<!-- ########### DEBUG ############
-Site:
-{$site|attribute( 'show', 2, 'text')}
-Pagedata:
-{$pagedata|attribute('show', 2, 'text')}
-     ######### END DEBUG ##########
--->
 <!-- Complete page area: START -->
 <a href="#quicklinks" class="sr-only sr-only-focusable" tabindex=1>{"Skip to quicklinks"|i18n('hials/design/pagelayout')}</a>
-<a href="#mainnav" class="sr-only sr-only-focusable" tabindex=2>{"Skip to main menu"|i18n('hials/design/pagelayout')}</a>
-<a href="#secondary_menu" class="sr-only sr-only-focusable" tabindex=3>{"Skip to secondary menu"|i18n('hials/design/pagelayout')}</a>
-<a href="#content" class="sr-only sr-only-focusable" tabindex=4>{"Skip to main content"|i18n('hials/design/pagelayout')}</a>
+<a href="#secondary_menu" class="sr-only sr-only-focusable" tabindex=2>{"Skip to main menu"|i18n('hials/design/pagelayout')}</a>
+{*<a href="#mainnav" class="sr-only sr-only-focusable" tabindex=2>{"Skip to main menu"|i18n('hials/design/pagelayout')}</a>
+<a href="#secondary_menu" class="sr-only sr-only-focusable" tabindex=3>{"Skip to secondary menu"|i18n('hials/design/pagelayout')}</a>*}
+<a href="#content" class="sr-only sr-only-focusable" tabindex=3>{"Skip to main content"|i18n('hials/design/pagelayout')}</a>
 
 <div id="page" class="container {$pagestyle}">
     <!-- Header area: START -->
-    {include uri='design:page_header.tpl'}
+    {include uri='design:shb/page_header_shb.tpl'}
     <!-- Header area: END -->
 
     {cache-block keys=array( $module_result.uri, $user_hash, $extra_cache_key )}
@@ -60,7 +54,7 @@ Pagedata:
     </div>*}
     <!-- Path area: START -->
     {if $pagedata.show_path}
-        {include uri='design:page_toppath.tpl'}
+        {include uri='design:shb/page_toppath.tpl'}
     {/if}
     <!-- Path area: END -->
     <!-- Toolbar area: START -->
@@ -68,31 +62,13 @@ Pagedata:
         {include uri='design:page_toolbar.tpl'}
     {/if}
     <!-- Toolbar area: END -->
-{*
-    <!-- Columns area: START -->
-    <div class="container">
-        <div class="row">
-            <!-- Side menu area: START -->
-            {if $pagedata.left_menu}
-                {include uri='design:page_leftmenu.tpl'}
-            {/if}
-            <!-- Side menu area: END -->*}
+
     {/cache-block}
     {/cache-block}
             <!-- Main area: START -->
             {include uri='design:page_mainarea.tpl'}
             <!-- Main area: END -->
             {cache-block keys=array( $module_result.uri, $user_hash, $access_type.name, $extra_cache_key )}
-{*
-            <!-- Extra area: START -->
-            {if $pagedata.extra_menu}
-                {include uri='design:page_extramenu.tpl'}
-            {/if}
-            <!-- Extra area: END -->
-        </div>
-    </div>
-    <!-- Columns area: END -->
-*}
     <!-- Footer area: START -->
     {include uri='design:page_footer.tpl'}
     <!-- Footer area: END -->
@@ -101,7 +77,7 @@ Pagedata:
 <!-- Complete page area: END -->
 
 <!-- Footer script area: START -->
-{include uri='design:page_footer_script.tpl'}
+{*include uri='design:page_footer_script.tpl'*}
 <!-- Footer script area: END -->
 
 {/cache-block}
