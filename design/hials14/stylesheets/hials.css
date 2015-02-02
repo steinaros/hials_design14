@@ -1137,7 +1137,7 @@ ul.line-list {
 	padding-left: 0;
 }
 
-ul.line-list li > a {
+ul.line-list li > a, ul.line-list li > div {
 	display: block;
 	padding: 8px;
 }
@@ -1153,6 +1153,10 @@ ul.line-list li > a {
 .education-search-result h2 {
 	text-transform: none;
 	color: #7C1850; 
+}
+
+ul.line-list li h4 {
+	margin-top: 0;
 }
 
 /*************************************************/
