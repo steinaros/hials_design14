@@ -1,5 +1,5 @@
 <header role="banner">
-    <div id="quicklinks" class="row hidden-xs">
+    <div id="quicklinks" class="row hidden-xs" style="height: 30px;">
     {*include uri='design:shb/page_header_links.tpl'*}
     </div>
     
