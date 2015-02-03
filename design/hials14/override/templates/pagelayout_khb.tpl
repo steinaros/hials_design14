@@ -38,7 +38,7 @@
 
 <div id="page" class="container {$pagestyle}">
     <!-- Header area: START -->
-    {include uri='design:shb/page_header_shb.tpl'}
+    {include uri='design:khb/page_header_khb.tpl'}
     <!-- Header area: END -->
 
     {cache-block keys=array( $module_result.uri, $user_hash, $extra_cache_key )}
