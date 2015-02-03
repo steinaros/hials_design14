@@ -29,13 +29,6 @@
 
 </head>
 <body>
-<!-- ########### DEBUG ############
-Site:
-{$site|attribute( 'show', 2, 'text')}
-Pagedata:
-{$pagedata|attribute('show', 2, 'text')}
-     ######### END DEBUG ##########
--->
 <!-- Complete page area: START -->
 <a href="#quicklinks" class="sr-only sr-only-focusable" tabindex=1>{"Skip to quicklinks"|i18n('hials/design/pagelayout')}</a>
 <a href="#mainnav" class="sr-only sr-only-focusable" tabindex=2>{"Skip to main menu"|i18n('hials/design/pagelayout')}</a>
