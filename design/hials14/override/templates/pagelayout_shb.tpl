@@ -77,7 +77,7 @@
 <!-- Complete page area: END -->
 
 <!-- Footer script area: START -->
-{*include uri='design:page_footer_script.tpl'*}
+{include uri='design:shb/page_footer_script.tpl'}
 <!-- Footer script area: END -->
 
 {/cache-block}
