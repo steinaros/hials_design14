@@ -12,7 +12,7 @@
 {if not($leftmenu_class_filter|contains( $node.class_identifier ) )}
     {set $current_node=$node.parent}
 {/if}
-{cache-block keys=array($menu_root_node.urlalias) subtree_expiry=$menu_root}
+{*cache-block keys=array($menu_root_node.urlalias) subtree_expiry=$menu_root*}
 <nav id="secondary_menu" class="leftmenu hidden-print" role="navigation">
 <div class="leftmenu-heading"><a href="{$menu_root_node.url_alias|ezurl( 'no' )}">{$menu_root_node.name|wash()}</a></div>
 <div class="leftmenu-body">
@@ -23,5 +23,5 @@
                                             class_filter=$leftmenu_class_filter}
 </div>
 </nav>
-{/cache-block}
+{*/cache-block*}
 {undef $menu_root $leftmenu_class_filter $menu_root_node $selected_node_path_array $current_node}
