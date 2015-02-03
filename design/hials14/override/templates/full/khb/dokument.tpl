@@ -15,7 +15,7 @@
 		    </div>
 
 	        {if $node.data_map.file.has_content}
-	           {attribute_view_gui view='line' attribute=$node.data_map.file}
+	           {attribute_view_gui attribute=$node.data_map.file}
 	        {/if}
         </article>
         <aside class="col-sm-3 col-sm-pull-9 hidden-print">
