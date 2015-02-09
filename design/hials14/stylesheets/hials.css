@@ -69,7 +69,7 @@ a:hover, a:focus {
 	padding-top: 20px;
 }
 
-.pubisheddatecol time {
+.pubisheddatecol time, .pubisheddatecol div {
 	color: #333;
 	font-size: 36px;
 	font-weight: 500;

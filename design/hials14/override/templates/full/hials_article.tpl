@@ -31,7 +31,7 @@
 	        {/if}
 	    </article>
         <div class="col-sm-3 col-sm-pull-6 hidden-xs pubisheddatecol">
-            <time class="pull-right">{$node.object.published|l10n('shortdate')}</time>
+            <div class="pull-right">{$node.object.published|l10n('shortdate')}</div>
         </div>        
 	    {if not($node.data_map.image.has_content)}{include uri='design:parts/latest_news_sidebar.tpl' root_node_id=$root_node_id}{/if}
 	</div>
