@@ -27,12 +27,12 @@
                 <dt>Tid</dt>
 	            {if $node.data_map.to_time.has_content}
 	                {if $node.data_map.to_time.content.day|int()|eq( $node.data_map.from_time.content.day|int() )}
-	                    <dd><time datetime="{$node.data_map.from_time.content.timestamp|datetime('custom', '%c')}">{$node.data_map.from_time.content.timestamp|l10n('shortdatetime')}</time> - <time datetime="{$node.data_map.to_time.content.timestamp|datetime('custom', '%c')}">{$node.data_map.to_time.content.timestamp|l10n('shorttime')}</time></dd>
+	                    <dd><time datetime="{$node.data_map.from_time.content.timestamp|datetime('custom', '%c')}" itemprop="startDate">{$node.data_map.from_time.content.timestamp|l10n('shortdatetime')}</time> - <time datetime="{$node.data_map.to_time.content.timestamp|datetime('custom', '%c')}" itemprop="endDate">{$node.data_map.to_time.content.timestamp|l10n('shorttime')}</time></dd>
 	                {else}
-	                    <dd><time datetime="{$node.data_map.from_time.content.timestamp|datetime('custom', '%c')}">{$node.data_map.from_time.content.timestamp|l10n('shortdate')}</time> - <time datetime="{$node.data_map.to_time.content.timestamp|datetime('custom', '%c')}">{$node.data_map.to_time.content.timestamp|l10n('shortdate')}</time></dd>
+	                    <dd><time datetime="{$node.data_map.from_time.content.timestamp|datetime('custom', '%c')}" itemprop="startDate">{$node.data_map.from_time.content.timestamp|l10n('shortdate')}</time> - <time datetime="{$node.data_map.to_time.content.timestamp|datetime('custom', '%c')}" itemprop="endDate">{$node.data_map.to_time.content.timestamp|l10n('shortdate')}</time></dd>
 	                {/if}
 			    {else}
-			        <dd><time datetime="{$node.data_map.from_time.content.timestamp|datetime('custom', '%c')}">{$node.data_map.from_time.content.timestamp|l10n('shortdatetime')}</time></dd>
+			        <dd><time datetime="{$node.data_map.from_time.content.timestamp|datetime('custom', '%c')}" itemprop="startDate">{$node.data_map.from_time.content.timestamp|l10n('shortdatetime')}</time></dd>
 			    {/if}
 			    {if $node.data_map.place.has_content}
 			    <dt>Sted</dt>

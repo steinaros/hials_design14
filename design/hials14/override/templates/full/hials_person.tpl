@@ -23,7 +23,7 @@
             {/if}
             <dl>
                 <dt class="pull-left">{'Name'|i18n('hials/design/std')}</dt>
-                <dd><span class="p-family-name">{$node.data_map.last_name.content|trim()|wash()}</span>, <span class="p-given-name">{$node.data_map.first_name.content|trim()|wash()}</span></dd>
+                <dd class="fn"><span class="p-family-name">{$node.data_map.last_name.content|trim()|wash()}</span>, <span class="p-given-name">{$node.data_map.first_name.content|trim()|wash()}</span></dd>
                 {if $node.data_map.jobtitle.has_content}
                 <dt class="pull-left">{'Title'|i18n('hials/design/std')}</dt>
                 <dd class="p-job-title title">{$node.data_map.jobtitle.content|trim()|wash()}</dd>
