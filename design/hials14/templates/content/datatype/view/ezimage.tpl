@@ -47,7 +47,7 @@ Input:
         {if $title|not}
             {set $title = $alt_text}
         {/if}
-        {set $tag_attributes = $tag_attributes|append( hash( 'name', 'title', 'value' $alt_text ))}
+        {set $tag_attributes = $tag_attributes|append( hash( 'name', 'title', 'value', $alt_text ))}
         {if $border_size|trim|ne('')}
             {set $inline_style = concat( $inline_style, 'border: ', $border_size, 'px ', $border_style, ' ', $border_color, ';' )}
         {/if}
