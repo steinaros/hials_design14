@@ -23,6 +23,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{include uri='design:opengraph.tpl'}    
 {include uri='design:page_head.tpl'}
 {include uri='design:page_head_style.tpl'}
 {include uri='design:page_head_script.tpl'}
