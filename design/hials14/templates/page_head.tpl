@@ -39,8 +39,11 @@
     {/if}
     {/foreach}
     {foreach $site.meta as $key => $item}
-    {if is_set( $module_result.content_info.persistent_variable[$key] )}<meta name="{$key|wash}" content="{$module_result.content_info.persistent_variable[$key]|wash}">
-    {else}<meta name="{$key|wash}" content="{$item|wash}">{/if}
+    {if and(is_set( $module_result.content_info.persistent_variable[$key], $module_result.content_info.persistent_variable[$key]|count() )}
+    <meta name="{$key|wash}" content="{$module_result.content_info.persistent_variable[$key]|wash}">
+    {else}
+    <meta name="{$key|wash}" content="{$item|wash}">
+    {/if}
     {/foreach}
 
 {if $canonical_link}
