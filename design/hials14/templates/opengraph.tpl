@@ -18,8 +18,7 @@
 {switch match=$pagedata.class_identifier}
     {case match='hials_frontpage'}
         {set $type = 'website'}
-        {*set $url = "/"|ezurl('no', 'full')*}
-        {set $url = "https://www.hials.no/"}
+        {set $url = "/"|ezurl('no', 'full')}
     {/case}
     {case}
         {set $type = 'article'}
@@ -40,6 +39,6 @@
     <meta property="og:article:modified_time" content="{$node_info.object.modified|datetime('custom', '%c')}">
     {/if}
     {if $image|count()}<meta property="og:image" content={$image}>{/if}
-    {if $fb_app_id|count()}<meta property="fb:app_id" content="{$fb_app_id|wash}">{/if}
+    {*if $fb_app_id|count()}<meta property="fb:app_id" content="{$fb_app_id|wash}">{/if*}
 {/if}
 {undef $type $title $url $image $desc $node_info}
