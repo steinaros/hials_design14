@@ -18,7 +18,8 @@
 {switch match=$pagedata.class_identifier}
     {case match='hials_frontpage'}
         {set $type = 'website'}
-        {set $url = "/"|ezurl('no', 'full')}
+        {*set $url = "/"|ezurl('no', 'full')*}
+        {set $url = "https://www.hials.no/"}
     {/case}
     {case}
         {set $type = 'article'}
