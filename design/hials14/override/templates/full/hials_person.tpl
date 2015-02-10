@@ -12,21 +12,21 @@
         {set $tmp_mobile = concat('+47', $tmp_mobile)}
         {set $tmp_mobile_formatted = concat($tmp_mobile|extract(0,3), '&nbsp;', $tmp_mobile|extract(3,3), '&nbsp;', $tmp_mobile|extract(6,2), '&nbsp;', $tmp_mobile|extract(8,3) )}
     {/if}
-<article class="h-card vcard">
-    <h1 class="hidden">{$node.name}</h1>
+<article class="h-card vcard" itemscope itemtype="http://schema.org/Person">
+    <h1 itemprop="name" class="hidden">{$node.name}</h1>
     <div class="panel panel-person-info">
         <div class="panel-body">
             {if $node.data_map.image.has_content}
-            <div class="pull-left person-image">{attribute_view_gui attribute=$node.data_map.image image_class='contact2' css_class='u-photo photo img-responsive'}</div>
+            <div itemprop="image" class="pull-left person-image">{attribute_view_gui attribute=$node.data_map.image image_class='contact2' css_class='u-photo photo img-responsive'}</div>
             {else}
             <div class="pull-left dummy-image"><div class="text-center"><i class="fa fa-user"></i></div></div>
             {/if}
             <dl>
                 <dt class="pull-left">{'Name'|i18n('hials/design/std')}</dt>
-                <dd class="fn"><span class="p-family-name">{$node.data_map.last_name.content|trim()|wash()}</span>, <span class="p-given-name">{$node.data_map.first_name.content|trim()|wash()}</span></dd>
+                <dd class="fn"><span itemprop="familyName" class="p-family-name">{$node.data_map.last_name.content|trim()|wash()}</span>, <span itemprop="givenName" class="p-given-name">{$node.data_map.first_name.content|trim()|wash()}</span></dd>
                 {if $node.data_map.jobtitle.has_content}
                 <dt class="pull-left">{'Title'|i18n('hials/design/std')}</dt>
-                <dd class="p-job-title title">{$node.data_map.jobtitle.content|trim()|wash()}</dd>
+                <dd itemprop="jobTitle" class="p-job-title title">{$node.data_map.jobtitle.content|trim()|wash()}</dd>
                 {/if}
                 {if $tmp_office|count()}
                 <dt class="pull-left">{'Office'|i18n('hials/design/std')}</dt>
@@ -34,19 +34,19 @@
                 {/if}
                 {if $node.data_map.email.has_content}
                 <dt class="pull-left">{'E-mail'|i18n('hials/design/std')}</dt>
-                <dd class="u-email email"><a href="mailto:{$node.data_map.email.content|trim()|wash()}">{$node.data_map.email.content|trim()|wash()}</a></dd>
+                <dd itemprop="email" class="u-email email"><a href="mailto:{$node.data_map.email.content|trim()|wash()}">{$node.data_map.email.content|trim()|wash()}</a></dd>
                 {/if}
                 {if $tmp_phone|count()}
                 <dt class="pull-left">{'Telephone'|i18n('hials/design/std')}</dt>
-                <dd class="p-tel tel"><a href="tel:{$tmp_phone|wash()}">{$tmp_phone_formatted}</a></dd>
+                <dd itemprop="telephone" class="p-tel tel"><a href="tel:{$tmp_phone|wash()}">{$tmp_phone_formatted}</a></dd>
                 {/if}
                 {if and($node.data_map.publish_mobile, $tmp_mobile|count())}
                 <dt class="pull-left">{'Mobile'|i18n('hials/design/std')}</dt>
-                <dd class="p-tel tel"><a href="tel:{$tmp_mobile|wash()}">{$tmp_mobile_formatted}</a></dd>
+                <dd itemprop="telephone" class="p-tel tel"><a href="tel:{$tmp_mobile|wash()}">{$tmp_mobile_formatted}</a></dd>
                 {/if}
                 {if $node.data_map.homepage.has_content}
                 <dt class="pull-left">{'Homepage'|i18n('hials/design/std')}</dt>
-                <dd><a href="{$node.data_map.homepage.content|wash|ezurl('no')}">{if gt($node.data_map.homepage.data_text|count(), 0)}{$node.data_map.homepage.data_text|wash}{else}{$node.data_map.homepage.content|wash()}{/if}</a></dd>
+                <dd><a href="{$node.data_map.homepage.content|wash|ezurl('no')}" itemprop="url">{if gt($node.data_map.homepage.data_text|count(), 0)}{$node.data_map.homepage.data_text|wash}{else}{$node.data_map.homepage.content|wash()}{/if}</a></dd>
                 {/if}
                 {if $node.data_map.area.has_content}
                 <dt class="pull-left">{'Area'|i18n('hials/design/std')}</dt>
