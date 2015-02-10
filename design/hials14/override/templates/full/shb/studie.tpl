@@ -29,7 +29,11 @@
             </div>
 {foreach $content_version.contentobject_attributes as $attribute}
     {if $attributes_in_box|contains( $attribute.contentclass_attribute.identifier )}{skip}{/if}
-    {if or(eq($attribute.content, ''), not($attribute.has_content), eq( $attribute.data_text|striptags|wstrim, ''))}{skip}{/if}
+    {if eq($attribute.contentclass_attribute.identifier, 'identifier')}{skip}{/if}
+    {if eq($attribute.contentclass_attribute.identifier, 'publiser')}{skip}{/if}
+    {if eq($attribute.contentclass_attribute.identifier, 'revidert_og_klar_for_oversendelse_til_studieutvalg')}{skip}{/if}   
+    {if or(eq($attribute.content, ''), not($attribute.has_content))}{skip}{/if}
+    {if and(eq($attribute.contentclass_attribute.data_type_string, 'ezxmltext'), eq($attribute.data_text|striptags|wstrim,'') )}{skip}{/if}
     {if and(eq($attribute.contentclass_attribute.data_type_string, 'ezdate'), or(is_null( $attribute.data_int), eq( $attribute.data_int, 0) ) )}{skip}{/if}
     <h3>{description($attribute.contentclass_attribute.id, $attribute.language_code)|wash}</h3>
     {switch match=$attribute.is_a}
