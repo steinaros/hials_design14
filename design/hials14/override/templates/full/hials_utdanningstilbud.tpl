@@ -4,13 +4,13 @@
 {def $spesialiseringer = fetch_alias('children', hash( 'parent_node_id', $node.node_id,
                                               'class_filter_type', 'include',
                                               'class_filter_array', array( 'hials_spesialisering' ) ) )}
-<div class="content-view-full">
+<div class="content-view-full" itemscope itemtype="http://schema.org/Article">
     {if $node.data_map.banner.has_content}
-    <div class="attribute-banner row">{attribute_view_gui attribute=$node.data_map.banner}</div>
+    <div itemprop="image" class="attribute-banner row">{attribute_view_gui attribute=$node.data_map.banner}</div>
     {/if}
     
     <div class="row">
-	    <article class="class-hials_utdanningstilbud col-sm-6 col-left" itemscope itemtype="http://schema.org/Article">
+	    <article class="class-hials_utdanningstilbud col-sm-6 col-left">
 	        <h2><span class="utdanningsnivaa">{$node.data_map.nivaa.class_content.options[$node.data_map.nivaa.content[0]].name|wash()}</span>{if eq($node.parent.class_identifier,'hials_fagomrade')} {"in"|i18n('hials/design/utdanning')} <span class="fagomraade">{$node.parent.data_map.name.content|wash()}</span>{/if}</h2>
 	        <h1 itemprop="name">{$node.data_map.title.content|wash()}</h1>
 	
@@ -29,7 +29,7 @@
 	        {/if}
 	        
 	        {if $spesialiseringer|count()}
-	        <h3>Tilgjengelige spesialiseringer:</h3>
+	        <h3>{'Areas of specialization'|i18n('hials/design/utdanning')}</h3>
 	        <ul>
 	        {foreach $spesialiseringer as $item}
 	            <li><a href="{$item.url_alias|ezurl( 'no' )}">{$item.name|wash()}</a></li>

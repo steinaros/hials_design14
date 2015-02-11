@@ -75,6 +75,10 @@
             <source>Area</source>
             <translation>Fagområde</translation>
         </message>
+        <message>
+            <source>Affiliation</source>
+            <translation>Tilhørighet</translation>
+        </message>
     </context>
     <context>
         <name>hials/design/navigation</name>
@@ -88,12 +92,19 @@
         </message>
     </context>
     <context>
+        <name>hials/design/utdanning</name>
+        <message>
+            <source>Areas of specialization</source>
+            <translation>Tilgjengelige spesialiseringer</translation>
+        </message>
+    </context>
+    <context>
         <name>hials/design/person</name>
         <message>
             <source>Employees at</source>
             <translation>Ansatte ved</translation>
         </message>
-    </context>    
+    </context>
     <context>
         <name>hials/design/pagelayout</name>
         <message>
