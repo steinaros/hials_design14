@@ -53,3 +53,11 @@ $('.dropdown-menu').on('click', function(event) {
 		event.stopPropagation()
 	}
 });
+
+// Focus searchfield when opening search menu
+$('#mainDropdown').on('shown.bs.dropdown', function (e) {
+	var target = $( e.target );
+	if (target.is( "#btnSearch" )) {
+		$('#gsc-i-id1').focus()
+	}
+});
