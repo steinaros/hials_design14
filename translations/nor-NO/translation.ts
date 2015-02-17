@@ -124,6 +124,10 @@
             <translation>Hopp til hovedinnhold</translation>
         </message>
         <message>
+            <source>Toggle navigation</source>
+            <translation>Vis navigasjon</translation>
+        </message>       
+        <message>
             <source>Contact us</source>
             <translation>Kontakt oss</translation>
         </message>
