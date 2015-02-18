@@ -1,26 +1,16 @@
-{def $soknad_selection = $container_node.data_map.soknad_til.content.0}
-{def $soknad_link = false()}
+{def $ctoa_link = false()}
+{def $ctoa_object = false()}
 {*def $css_class=false()*}
-
-{switch match=$soknad_selection}
-    {case match=1} {* Samordna opptak *}
-        {set $soknad_link = "http://www.samordnaopptak.no"|ezurl}
-    {/case}
-    {case match=2} {* Høgskolen i Ålesund - lokalt opptak *}
-        {set $soknad_link = "#"|ezurl}
-    {/case}
-    {case match=3} {* Egendefinert objektreferanse *}
-        {if $container_node.data_map.soknad_egendefinert.has_content}
-            {def $file = $container_node.data_map.soknad_egendefinert.content.data_map.file}
-            {set $soknad_link = concat("content/download/", $file.contentobject_id, "/", $file.id, "/file/", $file.content.original_filename)|ezurl}
-            {undef $file}
-        {/if}  
-    {/case}
-{/switch}
-
+{if $node.data_map.internal_link.has_content}
+    {set $ctoa_object = $node.data_map.internal_link.content}
+{elseif $node.data_map.external_link.has_content}
+    {set $ctoa_link = $node.data_map.external_link.content}
+{/if}
 <div class="{concat($css_class,' textcenter')|wash}">
 	<div class="class-hials_calltoaction">
-	    <p class="call-to-action"><a href={$soknad_link}>{$node.name|wash()}</a></p>
+<span class="call-to-action">{if $ctoa_object}{content_view_gui content_object=$ctoa_object view=text_linked object_name=$node.name}
+{elseif $ctoa_link}<a href={$ctoa_link}>{$node.name|wash()}</a>
+{else}{$node.name|wash()}{/if}</span>
 	</div>
 </div>	
-{undef $soknad_selection $soknad_link}
+{undef $ctoa_link $ctoa_object}
