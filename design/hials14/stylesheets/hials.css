@@ -92,8 +92,17 @@ a:hover, a:focus {
     font-size: 1.8rem;
 }
 
+.call-to-action {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
 .call-to-action a, .textcenter a {
 	color: #333;
+	text-decoration: none;
+}
+.call-to-action a:hover, .textcenter a:hover, .call-to-action a:focus, .textcenter a:focus {
+    text-decoration: underline;
 }
 	    
 .bg-white {
@@ -192,9 +201,11 @@ blockquote p:after {
     content:close-quote;
 }
 
-.height90 {
-    height: 90px;
-    min-height: 90px;
+@media (min-width: 768px) {
+	.height90 {
+	    height: 90px;
+	    min-height: 90px;
+	}
 }
 
 @media (min-width: 768px) {
