@@ -2,11 +2,9 @@
 {def $color_selection = false()}
 {def $color_class='bg-white'}
 {def $cell_class = false()}
-
 <div class="block-type-content-grid block-view-{$block.view}">
-
     {foreach $valid_nodes as $valid_node max 2}
-    <div class="row equal">
+    <div class="row">
         {set $color_selection = $valid_node.data_map.boxcolor.content.0}
         {switch match=$color_selection}
 	        {case match=0}{set $color_class='bg-white'}{/case}
@@ -22,11 +20,6 @@
 	    </div>
     </div>
     {set $cell_class = false()}
-    {delimiter}
-    </div>
-    <div class="row equal">
-    {/delimiter}        
     {/foreach}
 </div>
-
 {undef $valid_nodes $color_selection $color_class $cell_class}
