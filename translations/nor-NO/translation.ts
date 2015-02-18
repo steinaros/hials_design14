@@ -203,6 +203,21 @@
             <translation>innen</translation>
         </message>                          
 	</context>
+    <context>
+        <name>hials/design/forskning</name>
+        <message>
+            <source>Read more about this project</source>
+            <translation>Mer om dette prosjektet</translation>
+        </message>
+        <message>
+            <source>All projects</source>
+            <translation>Alle prosjekter</translation>
+        </message>
+        <message>
+            <source>at</source>
+            <translation>ved</translation>
+        </message>
+    </context>
 	<context>
 	    <name>hials/design/meeting</name>
 	    <message>

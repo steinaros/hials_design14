@@ -11,6 +11,6 @@
         {attribute_view_gui attribute=$node.data_map.intro}
     </div>
     {/if}
-    <p><a href="{$node.url_alias|ezurl( 'no' )}">Mer om dette prosjektet</a></p>
-    <p><a href="{$node.parent.url_alias|ezurl( 'no' )}">Alle prosjekter {if eq($node.parent.class_identifier,'hials_avdeling')}ved {$node.parent.data_map.name.content|wash()}{/if}</a></p> 
+    <p><a href="{$node.url_alias|ezurl( 'no' )}">{'Read more about this project'|i18n('hials/design/forskning')}</a></p>
+    <p><a href="{$node.parent.url_alias|ezurl( 'no' )}">{'All projects'|i18n('hials/design/forskning')} {if eq($node.parent.class_identifier,'hials_avdeling')}{'at'|i18n('hials/design/forskning')} {$node.parent.data_map.name.content|wash()}{/if}</a></p> 
 </article>
