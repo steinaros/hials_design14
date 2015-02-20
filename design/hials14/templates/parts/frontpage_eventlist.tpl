@@ -20,7 +20,7 @@
 <dl>
     {foreach $eventlist as $event}
     <dt>
-        <a href="{$event.url_alias|ezurl('no')}" title="{$event.data_map.title.content|wash()} - {$event.data_map.from_time.content.timestamp|l10n('shortdate')}"><time datetime="{$event.data_map.from_time.content.timestamp|datetime('custom', '%c')}">{$event.data_map.from_time.content.timestamp|datetime(custom,"%d.%m.%y")}</time></a>
+        <time datetime="{$event.data_map.from_time.content.timestamp|datetime('custom', '%c')}">{$event.data_map.from_time.content.timestamp|datetime(custom,"%d.%m.%y")}</time>
     </dt>
     <dd><a href="{$event.url_alias|ezurl('no')}" title="{$event.data_map.title.content|wash()} - {$event.data_map.from_time.content.timestamp|l10n('shortdate')}">{$event.data_map.short_title.content|wash()}</a></dd>
     {/foreach}
