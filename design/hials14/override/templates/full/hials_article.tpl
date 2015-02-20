@@ -10,7 +10,9 @@
 	    <div class="col-sm-6 col-sm-offset-3 col-left">
 	        {attribute_view_gui attribute=$node.data_map.image image_class=banner_half css_class=img-responsive}
 	    </div>
+	    <aside class="col-sm-3 col-right hidden-xs">
 	    {include uri='design:parts/latest_news_sidebar.tpl' root_node_id=$root_node_id}
+	    </aside>
     </div>
     {/if}
     <div class="row">
@@ -33,7 +35,15 @@
         <div class="col-sm-3 col-sm-pull-6 hidden-xs pubisheddatecol">
             <div class="pull-right">{$node.object.published|l10n('shortdate')}</div>
         </div>        
-	    {if not($node.data_map.image.has_content)}{include uri='design:parts/latest_news_sidebar.tpl' root_node_id=$root_node_id}{/if}
+	    {if not($node.data_map.image.has_content)}
+	    <aside class="col-sm-3 col-right">
+	       {include uri='design:parts/latest_news_sidebar.tpl' root_node_id=$root_node_id}
+	    </aside>
+	    {else}
+        <aside class="col-sm-3 col-right visible-xs">
+           {include uri='design:parts/latest_news_sidebar.tpl' root_node_id=$root_node_id}
+        </aside>
+	    {/if}
 	</div>
 </div>
 {undef $root_node_id}
