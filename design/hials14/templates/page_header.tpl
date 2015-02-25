@@ -6,7 +6,7 @@
     <nav id="mainnav" role="navigation" class="row">
         <div class="navbar navbar-hials yamm" id="mainDropdown">
             <div class="navbar-header">
-                <button type="button" data-toggle="collapse" data-target="#navbar-collapse-grid" class="navbar-toggle collapsed" aria-expanded="false" aria-controls="navbar-collapse-grid"><span class="sr-only">{'Toggle navigation'|i18n('hials/design/pagelayou')}</span><i class="fa fa-bars fa-2x"></i></button>
+                <button type="button" data-toggle="collapse" data-target="#navbar-collapse-grid" class="navbar-toggle collapsed" aria-expanded="false" aria-controls="navbar-collapse-grid"><span class="sr-only">{'Toggle navigation'|i18n('hials/design/pagelayout')}</span><i class="fa fa-bars fa-2x"></i></button>
                 <button type="button" data-toggle="collapse" data-target="#searchMenu" class="navbar-toggle collapsed" aria-expanded="false" aria-controls="searchMenu"><i class="fa fa-search fa-2x"></i></button>         
                 {include uri='design:page_header_logo.tpl'}
             </div>
