@@ -1000,6 +1000,13 @@ ul.hials-nav-pills.nav-stacked>li+li {
     margin-bottom: 15px;
 }
 
+@media (max-width: 767px) {
+    .hials-link-buttons {
+        padding: 15px 0;
+        margin-bottom: 0;
+    }
+}
+
 @media (min-width: 768px) {
     .hials-link-buttons li {
         margin-bottom: 0;
@@ -1320,6 +1327,15 @@ p.leftmenu {
     border-left: 1px solid #ccc;
     margin: 0;
     border-radius: 0;
+}
+
+.navbar-toggle {
+    padding: 14px 13px;
+}
+
+.navbar-toggle:hover {
+    color: #fff;
+    background-color: #7c1850;
 }
 
 #btnInsta > a {
