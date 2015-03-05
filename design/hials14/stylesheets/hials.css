@@ -26,6 +26,10 @@ main {
 	   overflow-wrap: break-word;
 	   word-wrap: break-word;
 	}
+	
+	#boxzone {
+	   padding-top: 15px;
+	}
 }
 
 h1, .h1 {
@@ -85,11 +89,19 @@ a:hover, a:focus {
 	vertical-align: middle;
 }
 
-.call-to-action, .textcenter {
+.call-to-action, .textcenter, .block_item_simple {
     text-align: center;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 1.8rem;
+}
+
+@media (max-width: 767px) {
+	.block_item_simple {
+	   display: block;
+	   padding: 15px 0;
+	   margin-top: 0;
+	}
 }
 
 .call-to-action {
@@ -98,15 +110,28 @@ a:hover, a:focus {
 }
 
 .call-to-action a, .textcenter a {
-	color: #333;
+	/*color: #333;*/
 	text-decoration: none;
 }
 .call-to-action a:hover, .textcenter a:hover, .call-to-action a:focus, .textcenter a:focus {
     text-decoration: underline;
 }
+
+a.block_item_simple {
+	text-decoration: none;
+}
+
+a.block_item_simple:hover,  a.block_item_simple:focus {
+    text-decoration: underline;
+}
 	    
 .bg-white {
     background-color: #fff;
+}
+
+.bg-white a, .bg-white a:hover, .bg-white a:focus,
+a.bg-white, a.bg-white:hover, a.bg-white:focus {
+    color: #333;
 }
 
 .bg-lightgray {
@@ -122,12 +147,9 @@ a:hover, a:focus {
     color: #fff;
 }
 
-.bg-darkgray a {
-	color: #fff;
-}
-
-.bg-darkgray a:hover, .bg-darkgray a:focus {
-    color: #ccc;
+.bg-darkgray a, .bg-darkgray a:hover, .bg-darkgray a:focus,
+a.bg-darkgray, a.bg-darkgray:hover, a.bg-darkgray:focus {
+    color: #fff;
 }
 
 .bg-yellow {
@@ -137,6 +159,11 @@ a:hover, a:focus {
 
 .bg-red {
     background-color: #7C1850;
+    color: #fff;
+}
+
+.bg-red a, .bg-red a:hover, .bg-red a:focus,
+a.bg-red, a.bg-red:hover, a.bg-red:focus {
     color: #fff;
 }
 
@@ -202,17 +229,32 @@ blockquote p:after {
 }
 
 @media (min-width: 768px) {
-	.height90 {
-	    height: 90px;
-	    min-height: 90px;
-	}
-}
+    .height90 {
+        height: 90px;
+        min-height: 90px;
+    }
 
-@media (min-width: 768px) {
-    .height180 {
+	.height180 {
 	    height: 180px;
 	    min-height: 180px;
 	}
+
+    .height180-responsive {
+        height: 112px;
+        min-height: 112px;
+    }
+}
+@media (min-width: 992px) {
+    .height180-responsive {
+        height: 148px;
+        min-height: 148px;
+    }
+}
+@media (min-width: 1200px) {
+    .height180-responsive {
+        height: 180px;
+        min-height: 180px;
+    }
 }
 
 .highlighted {
@@ -290,6 +332,10 @@ display: inline;
 
 .boks dl dd {
     margin-bottom: 3px;
+}
+
+.hv-borderspacing {
+	border-spacing: 15px;
 }
 
 .colspacing {
