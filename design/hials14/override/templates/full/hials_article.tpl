@@ -8,7 +8,13 @@
     {if $node.data_map.image.has_content}
     <div class="row">
 	    <div class="col-sm-6 col-sm-offset-3 col-left">
+            <figure>
 	        {attribute_view_gui attribute=$node.data_map.image image_class=banner_half css_class=img-responsive}
+	        {if $node.data_map.caption.has_content}
+	        <figcaption>
+	           {attribute_view_gui attribute=$node.data_map.caption}
+	        </figcaption>
+	        </figure>
 	    </div>
 	    <aside class="col-sm-3 col-right hidden-xs">
 	    {include uri='design:parts/latest_news_sidebar.tpl' root_node_id=$root_node_id}
