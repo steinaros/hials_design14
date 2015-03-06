@@ -76,8 +76,8 @@ ViewName[1_column_2_rows]=1 column 2 rows
 ViewName[4_columns_1_row]=4 columns 1 row (box)
 ViewName[4_columns_1_row_reg]=4 columns 1 row
 #ViewName[4_columns_2_rows]=4 columns 2 rows
-ViewName[3_columns_2_rows_2_2]=3 columns 2 rows (1 v/image)
-ViewName[3_columns_2_rows_3_0]=3 columns 2 rows (2 v/image)
+ViewName[3_columns_2_rows_2_2]=3 columns 2 rows (1 w/image)
+ViewName[3_columns_2_rows_3_0]=3 columns 2 rows (2 w/image)
 
 [Gallery]
 Name=Gallery
