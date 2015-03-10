@@ -7,7 +7,7 @@
 <div class="content-view-full">
     {if $node.data_map.image.has_content}
     <div class="row">
-	    <div class="col-sm-6 col-sm-offset-3 col-left">
+	    <div class="col-sm-6 col-sm-offset-3">
             <figure>
 	        {attribute_view_gui attribute=$node.data_map.image image_class=banner_half css_class=img-responsive}
 	        {if $node.data_map.caption.has_content}
@@ -22,7 +22,7 @@
     </div>
     {/if}
     <div class="row">
-	    <article class="class-hials_article col-sm-6 col-sm-push-3 col-right" itemscope itemtype="http://schema.org/Article">
+	    <article class="class-hials_article col-sm-6 col-sm-push-3" itemscope itemtype="http://schema.org/Article">
 	        <h1 itemprop="name">{$node.data_map.title.content|wash()}</h1>
 	
 	        {if $node.data_map.intro.content.is_empty|not}
