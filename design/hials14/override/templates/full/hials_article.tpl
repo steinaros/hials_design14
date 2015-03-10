@@ -14,6 +14,7 @@
 	        <figcaption>
 	           {attribute_view_gui attribute=$node.data_map.caption}
 	        </figcaption>
+	        {/if}
 	        </figure>
 	    </div>
 	    <aside class="col-sm-3 col-right hidden-xs">
