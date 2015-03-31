@@ -275,6 +275,37 @@
         </message>
     </context>
     <context>
+        <name>hials/design/library</name>
+        <message>
+            <source>Search</source>
+            <translation>Søk</translation>
+        </message>
+        <message>
+            <source>Brage</source>
+            <translation>Brage</translation>
+        </message>
+        <message>
+            <source>BibsysAsk</source>
+            <translation>BibsysAsk</translation>
+        </message>
+        <message>
+            <source>Log on BibsysAsk</source>
+            <translation>Min side</translation>
+        </message>
+        <message>
+            <source>Log on Oria</source>
+            <translation>Min side</translation>
+        </message>
+        <message>
+            <source>Advanced search</source>
+            <translation>Avansert søk</translation>
+        </message>
+        <message>
+            <source>Search for title, author etc.</source>
+            <translation>Søk etter tittel, forfatter m.m.</translation>
+        </message>
+    </context>
+    <context>
         <name>hials/design/full/event_view_program</name>
         <message>
             <source>Past events</source>
