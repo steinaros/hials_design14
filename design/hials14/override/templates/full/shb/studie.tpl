@@ -12,7 +12,7 @@
     {if $language_switch_url}{set $language_switch_url = concat('/', $siteaccessName, '/', $language_switch_url)}{/if}
     {/if}
 {/foreach}
-{if $node.class_name = 'studie'}{* Classdefinition ->2013 *}
+{if $node.class_identifier = 'studie'}{* Classdefinition ->2013 *}
     {def $attributes_in_box = array('studieprogramkode','navn','lengde','omfang_studiepoeng','heltid_deltid','nivaa','grad')}
 {else}{* Classdefiniton 2014-> *}
     {def $attributes_in_box = array('studieprogramkode','navn','kull','lengde2','omfang_studiepoeng','heltid_deltid','nivaa','grad','opptakskrav_kode')}
