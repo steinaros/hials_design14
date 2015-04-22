@@ -1,7 +1,7 @@
 {* Emne - Full view *}
 {def $content_version=$node.contentobject_version_object
      $language_code=$node.object.default_language}
-{if $node.class_identifier = 'emne'}
+{if eq($node.class_identifier, 'emne')}
     {def $attributes_in_box = array('kode','navn','erstatter','fagnivaa','poeng','varighet_semester','varighet_annen','spraak','fagansvarlig')}
 {else}
     {def $attributes_in_box = array('kode','navn','erstatter','fagnivaa','poeng','varighet_semester','varighet_annen','spraak','fagansvarlig')}
