@@ -30,10 +30,15 @@
             {foreach $attribute.content.rows as $row}
             {if or(and(eq($row.type, 'course'), is_numeric($row.nodeid)), $row.error|ne(''))}
             <tr>
-                {set $coursenode=fetch( 'content', 'node', hash('node_id', $row.nodeid))}
-                {set $emnemap=fetch('handbok', 'data_map', hash('object_id', $coursenode.contentobject_id, 'language', $attribute.language_code))}
                 <td>{$row.code}</td>
-                {if and( is_set( $row.error ), $row.error|ne('') )}<td class="danger">{$row.error}</td>{else}<td><a href={concat("/content/view/full/",$coursenode.node_id,"/language/",$attribute.language_code)|ezurl}>{$emnemap['navn'].content}</a></td>{/if}
+                {set $coursenode=fetch( 'content', 'node', hash('node_id', $row.nodeid))}
+                {if $coursenode.object.language_codes|contains( $attribute.language_code )}
+                    {set $emnemap=fetch('handbok', 'data_map', hash('object_id', $coursenode.contentobject_id, 'language', $attribute.language_code))}
+                    {if and( is_set( $row.error ), $row.error|ne('') )}<td class="danger">{$row.error}</td>{else}<td><a href={concat("/content/view/full/",$coursenode.node_id,"/language/",$attribute.language_code)|ezurl}>{$emnemap['navn'].content}</a></td>{/if}
+                {else}
+                    {set $emnemap=fetch('handbok', 'data_map', hash('object_id', $coursenode.contentobject_id, 'language', $coursenode.object.language_codes.0))}
+                    {if and( is_set( $row.error ), $row.error|ne('') )}<td class="danger">{$row.error}</td>{else}<td><a href={concat("/content/view/full/",$coursenode.node_id,"/language/",$coursenode.object.language_codes.0)|ezurl} hreflang="{$coursenode.object.language_codes.0}">{$emnemap['navn'].content}</a></td>{/if}
+                {/if}
                 <td class="text-right">{attribute_view_gui attribute=$coursenode.data_map['poeng']}</td>
                 {if ne($attribute.content.viewmode, 'list')}
                 <td class="text-center">{if eq($row['optional'],'true')}<abbr title="{'Optional course'|i18n('hials/design/shb/ezsemestermatrix')}">{'O'|i18n('hials/design/shb/ezsemestermatrix')}</abbr>{else}<abbr title="{'Mandatory course'|i18n('hials/design/shb/ezsemestermatrix')}">{'M'|i18n('hials/design/shb/ezsemestermatrix')}</abbr>{/if}</td>
