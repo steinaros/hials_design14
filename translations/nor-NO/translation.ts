@@ -374,8 +374,12 @@
             <translation>Also available in english</translation>
         </message>
         <message>
-            <source>Kun tilgjengelig på engelsk</source>
-            <translation>Only available in norwegian</translation>
+            <source>Only available in norwegian</source>
+            <translation>Kun tilgjengelig på norsk</translation>
+        </message>
+        <message>
+            <source>Only available in english</source>
+            <translation>Kun tilgjengelig på engelsk</translation>
         </message>
     </context>
     <context>
