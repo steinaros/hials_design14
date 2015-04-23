@@ -53,7 +53,7 @@
 {include uri='design:shb/parts/shb_box.tpl'}
                 </div>
             </div>
-            <a class="btn btn-hials btn-lg btn-block{if not($language_switch_url)} disabled{/if}" {if $language_switch_url}rel="alternate" hreflang="{$alt_lang_code}" href="{$language_switch_url}"{else}href="#"{/if} role="button">{if $language_switch_url}{'Også tilgjengelig på norsk'|i18n('hials/design/shb')}{else}{switch match=$language_code}{case match='nor-NB'}{'Only available in norwegian'|i18n('hials/design/shb')}{/case}{case}{'Only available in english'|i18n('hials/design/shb')}{/case}{/if}</a>
+            <a class="btn btn-hials btn-lg btn-block{if not($language_switch_url)} disabled{/if}" {if $language_switch_url}rel="alternate" hreflang="{$alt_lang_code}" href="{$language_switch_url}"{else}href="#"{/if} role="button">{if $language_switch_url}{'Også tilgjengelig på norsk'|i18n('hials/design/shb')}{else}{switch match=$language_code}{case match='nor-NB'}{'Only available in norwegian'|i18n('hials/design/shb')}{/case}{case}{'Only available in english'|i18n('hials/design/shb')}{/case}{/switch}{/if}</a>
             {include uri='design:menu/leftmenu.tpl'}
         </aside>
     </div>
