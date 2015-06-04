@@ -5,17 +5,6 @@
      $url = ''
      $item_class = ''}
 
-    
-        {set $item_class = $item_class|append( 'extLink' ) }
-        {* cond because we have different "Link" classes in WWW and SHB/KHB installations *}
-        
-        {set $item_text = cond(is_set($item.data_map.name.content), $item.data_map.name.content, $item.data_map.title.content)}
-    {else}
-        {set $item_url = $item.url_alias|ezurl( 'no' )}
-        {set $item_text = cond($item.data_map.title.has_content, $item.data_map.title.content, $item.name )}
-    {/if}
-
-
 {if gt($no_valid_nodes, 0)}
 <div class="hials-link-buttons">
     <ul class="nav nav-pills">
