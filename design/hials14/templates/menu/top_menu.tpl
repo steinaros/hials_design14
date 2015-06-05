@@ -8,6 +8,7 @@
                                                        'class_filter_array', $top_menu_class_filter ) )
      $top_menu_items_count = $top_menu_items|count()
      $item_class = array()
+     $extra_class = array()
      $level2_items = 0
      $level2_items_count = 0
      $level3_items = 0
@@ -62,16 +63,19 @@
                             <li>
                                 <div class="col-sm-offset-2 col-sm-3">
                                     <ul class="submenu">
-                                    <li class="submenuhead"><a href={$item.url_alias|ezurl()}>{'Departments'|i18n('hials/design/std')}</a></li>
+                                    {set $extra_class = array("submenuhead")
+                                         $tmp_itemTitle = 'Departments'|i18n('hials/design/std')}
+                                    {node_view_gui view='main_menu_item' content_node=$item css_class=$extra_class title=$tmp_itemTitle}
                                     {foreach $temp_items as $avd_item}
-                                        <li><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $avd_item.node_id)|ezurl}{else}{$avd_item.url_alias|ezurl}{/if}>{$avd_item.name|wash()}</a></li>
+                                        {node_view_gui view='main_menu_item' content_node=$avd_item}
                                     {/foreach}
                                     </ul>
                                 </div>
                                 {foreach $level2_items as $level2key => $level2item}
                                     <div class="col-sm-2">
                                     <ul class="submenu">
-                                        <li class="submenuhead"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $level2item.node_id)|ezurl}{else}{$level2item.url_alias|ezurl}{/if} title="{$level2item.name|wash()}">{$level2item.name|wash()}</a></li>
+                                        {set $extra_class = array("submenuhead")}
+                                        {node_view_gui view='main_menu_item' content_node=$level2item css_class=$extra_class}
                                     {set $level3_items = fetch( 'content', 'list', hash( 'parent_node_id', $level2item.node_id,
                                                                   'sort_by', $level2item.sort_array,
                                                                   'class_filter_type', 'include',
@@ -79,11 +83,11 @@
                                          $level3_items_count = $level3_items|count()}
                                     {if $level3_items_count}
                                         {foreach $level3_items as $level3key => $level3item}
-                                            <li><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $level3item.node_id)|ezurl}{else}{$level3item.url_alias|ezurl}{/if} title="{$level3item.name|wash()}">{$level3item.name|wash()}</a></li>
+                                            {node_view_gui view='main_menu_item' content_node=$level3item}
                                         {/foreach}
                                     {/if}
                                     </ul>
-                                </div>                                
+                                </div>
                                 {/foreach}
                             </li>
                         </ul>
@@ -100,8 +104,7 @@
 				            <li>{foreach $level2_items as $level2key => $level2item}
 				                <div class="{if $level2key|eq(0)}col-sm-offset-2 col-sm-2{else}col-sm-2{/if}">
 				                    <ul class="submenu">
-				                        {set $tmp_itemTitle = cond($level2item.data_map.menutitle.has_content, $level2item.data_map.menutitle.content, $level2item.name)}
-				                        <li class="submenuhead"><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $level2item.node_id)|ezurl}{else}{$level2item.url_alias|ezurl}{/if} title="{$tmp_itemTitle|wash()}">{$tmp_itemTitle|wash()}</a></li>
+				                        {node_view_gui view='main_menu_item' content_node=$level2item css_class=array("submenuhead")}
 				                    {set $level3_items = fetch( 'content', 'list', hash( 'parent_node_id', $level2item.node_id,
 					                                              'sort_by', $level2item.sort_array,
 					                                              'class_filter_type', 'include',
@@ -109,8 +112,7 @@
 					 					 $level3_items_count = $level3_items|count()}
 		                            {if $level3_items_count}
 		                                {foreach $level3_items as $level3key => $level3item}
-                                            {set $tmp_itemTitle = cond($level3item.data_map.menutitle.has_content, $level3item.data_map.menutitle.content, $level3item.name)} 
-		                                    <li><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $level3item.node_id)|ezurl}{else}{$level3item.url_alias|ezurl}{/if} title="{$tmp_itemTitle|wash()}">{$tmp_itemTitle|wash()}</a></li>
+                                            {node_view_gui view='main_menu_item' content_node=$level3item}
 		                                {/foreach}
 		                            {/if}
 		                            </ul>
@@ -130,5 +132,5 @@
     </ul>
 </div>
 {/if}
-{undef $level2_items $level2_items_count $level3_items $level3_items_count $root_node $top_menu_items $item_class $top_menu_items_count $UTDANNING_node_id}
+{undef $level2_items $level2_items_count $level3_items $level3_items_count $root_node $top_menu_items $item_class $top_menu_items_count $UTDANNING_node_id $extra_class}
 <!-- Top menu content: END -->
