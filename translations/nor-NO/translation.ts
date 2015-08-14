@@ -370,16 +370,16 @@
             <translation><![CDATA[Du ser nå på <strong>arkivert informasjon</strong>. Du finner oppdatert informasjon i den <a class="alert-link" href="%url">siste utgaven av studiehåndboken</a>.]]></translation>
         </message>
         <message>
-            <source>Også tilgjengelig på norsk</source>
-            <translation>Also available in english</translation>
+            <source>Beskrivelse også på norsk</source>
+            <translation>Description also in english</translation>
         </message>
         <message>
-            <source>Kun tilgjengelig på norsk</source>
-            <translation>Only available in norwegian</translation>
+            <source>Beskrivelse kun på norsk</source>
+            <translation>Description only in norwegian</translation>
         </message>
         <message>
-            <source>Kun tilgjengelig på engelsk</source>
-            <translation>Only available in english</translation>
+            <source>Beskrivelse kun på engelsk</source>
+            <translation>Description only in english</translation>
         </message>
     </context>
     <context>
