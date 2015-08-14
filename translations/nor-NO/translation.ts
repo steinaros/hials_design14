@@ -374,12 +374,12 @@
             <translation>Also available in english</translation>
         </message>
         <message>
-            <source>Only available in norwegian</source>
-            <translation>Kun tilgjengelig på norsk</translation>
+            <source>Kun tilgjengelig på norsk</source>
+            <translation>Only available in norwegian</translation>
         </message>
         <message>
-            <source>Only available in english</source>
-            <translation>Kun tilgjengelig på engelsk</translation>
+            <source>Kun tilgjengelig på engelsk</source>
+            <translation>Only available in english</translation>
         </message>
     </context>
     <context>
