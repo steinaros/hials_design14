@@ -259,6 +259,7 @@ AllowedClasses[]=hials_forskningsprosjekt
 AllowedClasses[]=hials_contentpage
 AllowedClasses[]=hials_utdanningstilbud
 AllowedClasses[]=hials_signup_tour_form
+AllowedClasses[]=hials_event
 
 [FrontpageNews]
 Name=Frontpage News
