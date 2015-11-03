@@ -304,6 +304,10 @@
             <source>Search for title, author etc.</source>
             <translation>Søk etter tittel, forfatter m.m.</translation>
         </message>
+        <message>
+            <source>Privacypolicy for ORIA</source>
+            <translation>Personvernerklæring for ORIA</translation>
+        </message>
     </context>
     <context>
         <name>hials/design/full/event_view_program</name>

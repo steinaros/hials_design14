@@ -20,7 +20,7 @@
                 <button type="submit" value="Søk" class="btn btn-default">{'Search'|i18n('hials/design/library')}</button>
             </div>
         </form>
-        <p><a href="http://bibsys-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/myAccountMenu.do?vid=HAL">{'Log on Oria'|i18n('hials/design/library')}</a> | <a href="http://bibsys-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&ct=AdvancedSearch">{'Advanced search'|i18n('hials/design/library')}</a></p>
+        <p><a href="http://bibsys-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/myAccountMenu.do?vid=HAL">{'Log on Oria'|i18n('hials/design/library')}</a> | <a href="http://bibsys-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&ct=AdvancedSearch">{'Advanced search'|i18n('hials/design/library')}</a> | <a href="http://www.bibsys.no/produkter-tjenester/produkter/soketjenesten-oria/personvernerklaering-oria/">{'Privacypolicy for ORIA'|i18n('hials/design/library')}</a></p>
     </div>
     <div role="tabpanel" class="tab-pane" id="bib_brage">
         <p>{'Search for title, author etc.'|i18n('hials/design/library')}</p>
