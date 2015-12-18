@@ -1,5 +1,5 @@
 <header role="banner">
-    {if ge(currentdate()|datetime( 'custom', '%Y' ), 2015)}<div id="pagealert" class="row"><div class="alert alert-danger" role="alert">{'January 1st 2016 we merged with NTNU. <strong>This page will no longer be updated.</strong> You will find updated information at <a href="http://www.ntnu.no/">www.ntnu.no</a>.'|i18n('hials/design/pagelayout')}</div></div>{/if}
+    {if ge(currentdate()|datetime( 'custom', '%Y' ), 2016)}<div id="pagealert" class="row"><div class="alert alert-danger" role="alert">{'January 1st 2016 we merged with NTNU. <strong>This page will no longer be updated.</strong> You will find updated information at <a href="http://www.ntnu.no/">www.ntnu.no</a>.'|i18n('hials/design/pagelayout')}</div></div>{/if}
     <div id="quicklinks" class="row hidden-xs">
     {include uri='design:page_header_links.tpl'}
     </div>
