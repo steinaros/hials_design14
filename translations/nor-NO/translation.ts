@@ -108,6 +108,10 @@
     <context>
         <name>hials/design/pagelayout</name>
         <message>
+            <source><![CDATA[January 1st 2016 we merged with NTNU. <strong>This page will no longer be updated.</strong> You will find updated information at <a href="http://www.ntnu.no/">www.ntnu.no</a>.]]></source>
+            <translation><![CDATA[Vi har fusjonert med NTNU 1.1.2016. <strong>Denne siden vil ikke lenger bli oppdatert.</strong> Du vil finne oppdatert informasjon på <a href="http://www.ntnu.no/">www.ntnu.no</a>.]]></translation>
+        </message>
+        <message>
             <source>Skip to quicklinks</source>
             <translation>Hopp til hurtiglenker</translation>
         </message>

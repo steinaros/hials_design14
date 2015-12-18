@@ -591,6 +591,16 @@ article.headline h2.teaser-title {
 /*************************************************/
 /*** HEADER **************************************/
 
+#pagealert { 
+	background-color: #fff;
+	padding-top: 1em;
+	font-size: 1.3em; 
+}
+
+#pagealert > .alert {
+	padding: 1.5em;
+}
+
 #quicklinks {
     background-color: #fff;
     font-size: 12px;
@@ -1441,6 +1451,16 @@ p.leftmenu {
 
 .btn-block + .btn-block {
     margin-top: 15px;
+}
+
+.btn-red {
+	background-color: #7C1850;
+	color: #fff;
+}
+
+.btn-red:hover {
+    background-color: #ccc;
+    color: #333;
 }
 
 /*************************************************/
