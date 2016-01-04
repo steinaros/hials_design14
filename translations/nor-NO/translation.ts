@@ -371,8 +371,7 @@
         </message>
     </context>
     <context>
-        <name>hials/design/shb</name>
-        
+        <name>hials/design/shb</name>   
         <message>
             <source><![CDATA[You are now displaying <strong>archived information</strong>. You find the latest information in the <a class="alert-link" href="%url">current edition of the studyguide</a>.]]></source>
             <translation><![CDATA[Du ser nå på <strong>arkivert informasjon</strong>. Du finner oppdatert informasjon i den <a class="alert-link" href="%url">siste utgaven av studiehåndboken</a>.]]></translation>
