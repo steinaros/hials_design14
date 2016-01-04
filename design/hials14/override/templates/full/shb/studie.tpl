@@ -70,7 +70,7 @@
                 </div>
             </div>
             <div style="margin-bottom:15px;">
-	            <a class="btn btn-hials btn-lg btn-block{if not($language_switch_url)} disabled{/if}" {if $language_switch_url}rel="alternate" hreflang="{$alt_lang_code}" href="{$language_switch_url}"{else}href="#"{/if} role="button">{if $language_switch_url}{'Også tilgjengelig på norsk'|i18n('hials/design/shb')}{else}{switch match=$language_code}{case match='nor-NB'}{'Only available in norwegian'|i18n('hials/design/shb')}{/case}{case}{'Only available in english'|i18n('hials/design/shb')}{/case}{/switch}{/if}</a>
+	            <a class="btn btn-hials btn-lg btn-block{if not($language_switch_url)} disabled{/if}" {if $language_switch_url}rel="alternate" hreflang="{$alt_lang_code}" href="{$language_switch_url}"{else}href="#"{/if} role="button">{if $language_switch_url}{'Beskrivelse også på norsk'|i18n('hials/design/shb')}{else}{switch match=$language_code}{case match='nor-NO'}{'Beskrivelse kun på norsk'|i18n('hials/design/shb')}{/case}{case}{'Beskrivelse kun på engelsk'|i18n('hials/design/shb')}{/case}{/switch}{/if}</a>
 	            <a class="btn btn-hials btn-lg btn-block" href="{concat("/content/view/complete/", $node.node_id, "/language/", $language_code)|ezurl(no)}" role="button no-follow"><i class="fa fa-print"></i><span>{'Print with courses'|i18n('hials/design/shb/studie')}</span></a>
             </div>
             {include uri='design:menu/leftmenu.tpl'}
