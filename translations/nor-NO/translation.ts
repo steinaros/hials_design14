@@ -108,8 +108,8 @@
     <context>
         <name>hials/design/pagelayout</name>
         <message>
-            <source><![CDATA[January 1st 2016 we merged with NTNU. <strong>This page will no longer be updated.</strong> You will find updated information at <a href="http://www.ntnu.no/">www.ntnu.no</a>.]]></source>
-            <translation><![CDATA[Vi har fusjonert med NTNU 1.1.2016. <strong>Denne siden vil ikke lenger bli oppdatert.</strong> Du vil finne oppdatert informasjon på <a href="http://www.ntnu.no/">www.ntnu.no</a>.]]></translation>
+            <source><![CDATA[January 1st 2016 we merged with NTNU. <strong>This page will no longer be updated.</strong> You will find updated information at <a href="http://www.ntnu.no/">www.ntnu.no</a>. Currently a student in Ålesund? Bookmark the new <a href="https://innsida.ntnu.no/studenter-i-alesund?p_p_id=82&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=3&_82_struts_action=%2Flanguage%2Fview&_82_redirect=%2Fstudenter-i-alesund&_82_languageId=en_GB">page for student information and tools</a>.]]></source>
+            <translation><![CDATA[Vi har fusjonert med NTNU 1.1.2016. <strong>Denne siden vil ikke lenger bli oppdatert.</strong> Du vil finne oppdatert informasjon på <a href="http://www.ntnu.no/">www.ntnu.no</a>. Er du student i Ålesund? Legg inn et bokmerke til den nye <a href="https://innsida.ntnu.no/studenter-i-alesund">siden for meldinger, nyttig informasjon og lenker til verktøy.</a>]]></translation>
         </message>
         <message>
             <source>Skip to quicklinks</source>
