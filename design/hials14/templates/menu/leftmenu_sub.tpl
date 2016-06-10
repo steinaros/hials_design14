@@ -17,6 +17,8 @@
 {foreach $submenu as $item}
     {set $item_class = array()}
     {set $item_class = $item_class|append( concat( "level_", $item.depth ) )}
+    {* SHB: skip "nettvisning" systemmappe *}
+    {if and(eq($item.class_identifier, "systemmappe"), eq($item.data_map.identifier.content, "nettvisning"))}{continue}{/if}
     {if eq( $item.class_name, "Link" )}
         {set $item_class = $item_class|append( 'extLink' ) }
         {* cond because we have different "Link" classes in WWW and SHB/KHB installations *}
