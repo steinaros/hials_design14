@@ -51,6 +51,8 @@
 		<li id="node_id_{$item.node_id}"{if $item_class} class="{$item_class|implode(" ")}"{/if}><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.data_map.location.content|ezurl}{if and( is_set( $item.data_map.open_in_new_window ), $item.data_map.open_in_new_window.data_int )} target="_blank"{/if}{/if}{if $pagedata.is_edit} onclick="return false;"{/if} title="{$item.data_map.location.data_text|wash}" class="menu-item-link" rel={$item.url_alias|ezurl}><span class="topmenuitem-wrapper">{if $item.data_map.location.data_text}{$item.data_map.location.data_text|wash()}{else}{$item.name|wash()}{/if}</span></a></li>
 		{else}
 		<li id="node_id_{$item.node_id}"{if $item_class} class="{$item_class|implode(" ")}"{/if}><a href={if eq( $ui_context, 'browse' )}{concat("content/browse/", $item.node_id)|ezurl}{else}{$item.url_alias|ezurl}{/if}{if $pagedata.is_edit} onclick="return false;"{/if} data-target="#" data-toggle="dropdown" class="dropdown-toggle"><span class="topmenuitem-wrapper">{$item.name|wash()}</span></a>
+{* REMOVE DROPDOWN MENU - NTNU-merger *}		
+{*		
 		    {if $level2_items_count}
                 {switch match=$item.node_id}
                     {case match=$FORSKNING_node_id}
@@ -125,7 +127,8 @@
                 <ul class="dropdown-menu">
                     {include uri='design:menu/top_menu_submenu_nav_links.tpl' menuitem=$item}
                 </ul>
-		    {/if}
+		    {/if} 
+*} {* END REMOVE DROPDOWN MENU *}
 		</li>
 		{/if}
 	{/foreach}
