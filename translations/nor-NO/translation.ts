@@ -388,6 +388,14 @@
             <source>Beskrivelse kun på engelsk</source>
             <translation>Description only in english</translation>
         </message>
+        <message>
+        	<source>Studyprograms</source>
+        	<translation>Studieprogram</translation>
+        </message>
+        <message>
+        	<source>Courses</source>
+        	<translation>Emner</translation>
+        </message>
     </context>
     <context>
         <name>hials/design/shb/studie</name>

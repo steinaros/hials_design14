@@ -26,6 +26,9 @@
                 {case match='studier'}
                     {set $classes = array('studie', 'studie_2014_2')}
                 {/case}
+                {case match='andrekurs'}
+                	{set $classes = arrya('kurs')}
+                {/case}
                 {case}{/case}
             {/switch}
 

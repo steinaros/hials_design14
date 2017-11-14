@@ -1,6 +1,6 @@
 {def $content_version=$node.contentobject_version_object
      $language_code=$node.object.default_language}
-<h1>{$node.name}</h1>
+<a id={concat("node_id_",$node.node_id,"_",$language_code)}></a><h1>{$node.name}</h1>
 
 {foreach $content_version.contentobject_attributes as $attribute}
     {*if $attributes_in_box|contains( $attribute.contentclass_attribute.identifier )}{skip}{/if*}
