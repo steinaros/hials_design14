@@ -443,4 +443,19 @@
             <translation>Sum</translation>
         </message>
     </context>
+    <context>
+        <name>hials/design/shb/booklist</name>
+        <message>
+            <source>Literature</source>
+            <translation>Litteratur</translation>
+        </message>
+        <message>
+            <source>Mandatory</source>
+            <translation>Obligatorisk</translation>
+        </message>
+        <message>
+            <source>Supplementary</source>
+            <translation>Supplerende</translation>
+        </message>
+    </context>    
 </TS>

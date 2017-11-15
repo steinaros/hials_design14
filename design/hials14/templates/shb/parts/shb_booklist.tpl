@@ -8,13 +8,13 @@
                                                'class_filter_type', "include", 
                                                'class_filter_array', array(ezini('Studiehandbokklasser','bok') ) ) ) }
     {if and(ne(count($books),0), eq($headingswitch, false()))}
-        <h2>{"Literature"|i18n('design/hials/booklist')}</h2>
+        <h2>{"Literature"|i18n('hials/design/shb/booklist')}</h2>
         {set $headingswitch=true()}
     {/if}
     {if and(ne(count($books),0), eq($filter, true()))}
-        <h3>{"Mandatory"|i18n('design/hials/booklist')}</h3>
+        <h3>{"Mandatory"|i18n('hials/design/shb/booklist')}</h3>
     {elseif and(ne(count($books),0), eq($filter, false()))}
-        <h3>{"Supplementary"|i18n('design/hials/booklist')}</h3>
+        <h3>{"Supplementary"|i18n('hials/design/shb/booklist')}</h3>
     {/if}
   
     {if ne(count($books),0)}
