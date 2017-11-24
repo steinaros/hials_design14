@@ -1,0 +1,8 @@
+@page :first {
+	font-family: 'Roboto', sans-serif;
+    size: a4 portrait;
+    margin: 2.0cm;
+	
+    @bottom-left { content: ''; }
+    @top-right { content: ''; }
+}

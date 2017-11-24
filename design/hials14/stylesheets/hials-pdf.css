@@ -1,0 +1,95 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 10pt;
+	margin: 0;
+	padding: 0;
+}
+
+#header {
+    display: block;
+    position: running(header);
+    font-variant: small-caps;
+    border-bottom: 1px solid black;
+}
+
+#footer {
+    margin-top: 0.5cm;
+    display: block;
+    position: running(footer);
+    border-top: 1px solid black; 
+}
+
+#titlepage {
+	
+}
+
+#sitetitle {
+	border-bottom: #90aac5 1px solid;
+    text-align:center;
+}
+
+#line2 {
+	/*border-bottom: #90aac5 1px solid;*/
+	font-size: 6pt;
+}
+
+#edition {
+	float:left;
+}
+#article {
+	float:left;
+    margin-left: 3cm;
+    background-color: gray;
+}
+#date {
+	/*border-left: #90aac5 solid 1px;*/
+    margin-left: 6cm;
+    /*background-color: silver;*/
+    text-align: right;
+}
+
+
+div.content {
+    display: block;
+}
+
+#pagenumber:before {
+    content: counter(page);
+}
+
+#pagecount:before {
+    content: counter(pages);
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 12pt;
+    margin-bottom: 0pt;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 6pt;
+}
+
+h1 {
+	border-bottom: 1px solid black;
+	font-weight: bold;
+	font-size: 16pt;
+}
+
+
+
+/* Used for generating Table of content */
+#toc a::after { content: leader('.') target-counter(attr(href), page); }
+/* Use this class for first level titles */
+.page_break_before { page-break-before: always; }
+
+/* Use this class for forcing page break inside pdf */
+.page_breaker { page-break-after:always; }
+/*

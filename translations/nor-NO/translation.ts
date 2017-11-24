@@ -79,6 +79,10 @@
             <source>Affiliation</source>
             <translation>Tilhørighet</translation>
         </message>
+        <message>
+            <source>Page</source>
+            <translation>Side</translation>
+        </message>        
     </context>
     <context>
         <name>hials/design/navigation</name>
