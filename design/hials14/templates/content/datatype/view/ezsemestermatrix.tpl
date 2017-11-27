@@ -1,7 +1,9 @@
 {def $coursenode = array()
      $emnemap = array()
      $semesterstring = ''
-     $colspan=$attribute.content.semestercount}
+     $colspan=$attribute.content.semestercount
+     $langcode = ''
+     $emneurl = ''}
 <div class="table-responsive">
     <table  class="table table-striped">
         <thead>
@@ -33,12 +35,13 @@
                 <td>{$row.code}</td>
                 {set $coursenode=fetch( 'content', 'node', hash('node_id', $row.nodeid))}
                 {if $coursenode.object.language_codes|contains( $attribute.language_code )}
-                    {set $emnemap=fetch('handbok', 'data_map', hash('object_id', $coursenode.contentobject_id, 'language', $attribute.language_code))}
-                    {if and( is_set( $row.error ), $row.error|ne('') )}<td class="danger">{$row.error}</td>{else}<td><a href={concat("/content/view/full/",$coursenode.node_id,"/language/",$attribute.language_code)|ezurl}>{$emnemap['navn'].content}</a></td>{/if}
+                	{set $langcode = $attribute.language_code}
                 {else}
-                    {set $emnemap=fetch('handbok', 'data_map', hash('object_id', $coursenode.contentobject_id, 'language', $coursenode.object.language_codes.0))}
-                    {if and( is_set( $row.error ), $row.error|ne('') )}<td class="danger">{$row.error}</td>{else}<td><a href={concat("/content/view/full/",$coursenode.node_id,"/language/",$coursenode.object.language_codes.0)|ezurl} hreflang="{$coursenode.object.language_codes.0}">{$emnemap['navn'].content}</a></td>{/if}
+                	{set $langcode = $coursenode.object.language_codes.0}
                 {/if}
+                {set $emneurl = concat("/content/view/full/",$coursenode.node_id,"/language/",$langcode)|ezurl}
+                {set $emnemap=fetch('handbok', 'data_map', hash('object_id', $coursenode.contentobject_id, 'language', $langcode))}
+                {if and( is_set( $row.error ), $row.error|ne('') )}<td class="danger">{$row.error}</td>{else}<td><a href={$emneurl} hreflang="{$langcode}">{$emnemap['navn'].content}</a></td>{/if}
                 <td class="text-right">{attribute_view_gui attribute=$coursenode.data_map['poeng']}</td>
                 {if ne($attribute.content.viewmode, 'list')}
                 <td class="text-center">{if eq($row['optional'],'true')}<abbr title="{'Optional course'|i18n('hials/design/shb/ezsemestermatrix')}">{'O'|i18n('hials/design/shb/ezsemestermatrix')}</abbr>{else}<abbr title="{'Mandatory course'|i18n('hials/design/shb/ezsemestermatrix')}">{'M'|i18n('hials/design/shb/ezsemestermatrix')}</abbr>{/if}</td>
@@ -73,4 +76,4 @@
 {*section show=ne($attribute.content.viewmode, 'list')}
 <span class="emnetabell">{fetch('handbok', 'language', hash('identifier','*) O - Obligatorisk emne, V - Valgbare emne','lang_code',$attribute.language_code,'context', 'emnetabell'))}</span>
 {/section*}
-{undef $coursenode $emnemap $semesterstring $colspan}
+{undef $coursenode $emnemap $semesterstring $colspan $langcode $emneurl}
