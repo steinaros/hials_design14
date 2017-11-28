@@ -1,21 +1,37 @@
+{def $node_id = $module_result.content_info.main_node_id
+	 $language_code = $module_result.content_info.current_language
+	 $node = fetch('content', 'node', hash( 'node_id', $node_id,
+	 										'language_code', $language_code))
+	 $emner = array()
+	 $bookmark_tree = array()
+	 $class_filter = array()
+	 $prev_depth = $node.depth}
 {switch match=$module_result.content_info.class_identifier}
 	{case match='studiehandbok'}
+{set $class_filter = ezini( 'MenuContentSettings', 'BookmarkIdentifierList', 'hials.ini' ) )}	
+<bookmarks>
+	<bookmark name="{'Studyguide'|i18n('hials/design/shb')} {$node.name|wash()}" href="">
+		{include uri='design:shb/parts/shb_pdf_bookmarks_sub.tpl' 
+			root_item=$node 
+			class_filter=$class_filter
+			language_code=$language_code}		
+	</bookmark>
+</bookmarks>
 	{/case}
-	{case match='studie'}
+	{case in=array('studie', 'studie_2014_2')}
+		{set $emner = fetch('handbok', 'emne_noder_for_studie', hash('studie_node_id',$node_id,
+																	 'language',$language_code))}
+<bookmarks>
+	<bookmark name="{$node.name}" href="{concat("node_id_",$node_id,"_",$language_code)}">
+		<bookmark name="{'Courses'|i18n('hials/design/shb')}" href="{concat("courses_node_id_",$node.node_id,"_",$language_code)}">
+      	{foreach $emner as $emne}
+      		{node_view_gui view=bookmarkitem content_node=$emne.node language_code=$language_code}
+	  	{/foreach}
+       	</bookmark>
+    </bookmark>
+</bookmarks>
 	{/case}
 	{case}{/case}
 {/switch}
-{*
-<bookmarks>
-    <bookmark name="Chapter Title 1" href="#link_1">
-      <bookmark name="Chapter Title 1.1" href="#link_1_1" />
-      <bookmark name="Chapter Title 1.2" href="#link_1_2" />
-      <bookmark name="Chapter Title 1.3" href="#link_1_3">
-        <bookmark name="Chapter Title 1.3.1" href="#link_1_3_1" />
-        <bookmark name="Chapter Title 1.3.2" href="#link_1_3_2" />
-       </bookmark>
-    </bookmark>
-    <bookmark name="Chapter Title 2" href="#link_2" />
-    <bookmark name="Chapter Title 3" href="#link_3" />
-</bookmarks>
-*}
+<!-- Switch bookmarks {$module_result.content_info.class_identifier} -->
+{undef $emner $node_id $language_code $node $bookmark_tree $prev_depth $class_filter}
