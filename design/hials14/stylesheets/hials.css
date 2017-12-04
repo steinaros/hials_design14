@@ -840,7 +840,6 @@ table.default td:last-child {
 }
 
 /*************************************************/
-/*** TABLE - STRIPED *****************************/
 
 .table-striped > tbody > tr:nth-child(odd) {
 	background-color: #f1f1f1;
@@ -857,6 +856,17 @@ table.default td:last-child {
 .table-striped > tbody > tr:nth-child(even) > th, .table-striped > tbody > tr:nth-child(even) > td {
     background-color: #fff;
 } 
+
+/*************************************************/
+
+.renderedtable {
+	width: 100%;
+}
+
+.renderedtable td {
+	vertical-align: top;
+}
+
 
 /*************************************************/
 /**** BREADCRUMBS ********************************/
