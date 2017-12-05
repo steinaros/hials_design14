@@ -1,7 +1,7 @@
 {* Kurs - PDF view *}
 {def $content_version=$node.contentobject_version_object
      $language_code=$node.object.default_language}
-<article>
+<div class="page_break_after">
 	<a id="{concat("node_id_",$node.node_id,"_",$language_code)}"></a><h3>{$node.name}</h3>
 {foreach $content_version.contentobject_attributes as $attribute}
     {if $attributes_in_box|contains( $attribute.contentclass_attribute.identifier )}{skip}{/if}
@@ -13,5 +13,5 @@
         {case}<p>{attribute_view_gui attribute=$attribute}</p>{/case}
     {/switch}
 {/foreach}
-</article>
+</div>
 {undef $content_version $attributes_in_box $language_code}
