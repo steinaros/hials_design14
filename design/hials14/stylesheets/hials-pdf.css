@@ -177,6 +177,9 @@ ol#toc a {
 
 /*************************************************/
 
+.table-striped {
+	-fs-table-paginate: paginate;}
+
 .table-striped > tbody > tr:nth-child(odd) {
 	background-color: #f1f1f1;
 }
@@ -201,4 +204,11 @@ ol#toc a {
 
 .renderedtable td {
 	vertical-align: top;
+}
+
+/*************************************************/
+
+.hold-sammen {
+	orphans: 4;
+	widows: 4;
 }
