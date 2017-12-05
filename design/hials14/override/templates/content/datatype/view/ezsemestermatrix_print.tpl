@@ -20,7 +20,6 @@
                 {if ne($attribute.content.viewmode, 'list')}
                 <th scope="col" class="text-center"><abbr title="{'Mandatory course'|i18n('hials/design/shb/ezsemestermatrix')}">{'M'|i18n('hials/design/shb/ezsemestermatrix')}</abbr>/<abbr title="{'Optional course'|i18n('hials/design/shb/ezsemestermatrix')}">{'O'|i18n('hials/design/shb/ezsemestermatrix')}</abbr></th> 
                 {def $semesterHeader = $attribute.content.semesterheader}
-                <!-- {$attribute.content.semestercount} -->
                 {for 1 to $attribute.content.semestercount as $semester sequence array(fetch('handbok', 'language', hash('identifier','H','lang_code',$attribute.language_code,'context', 'emnetabell')), fetch('handbok', 'language', hash('identifier','V','lang_code',$attribute.language_code,'context', 'emnetabell'))) as $seq}
                 <th scope="col" class="text-right">{if is_set($semesterHeader[$semester])}{$semesterHeader[$semester]}{else}S{$semester}({$seq}){/if}</th>
                 {/for}
@@ -53,7 +52,6 @@
             </tr>
             {elseif eq($row.type,'text')}
             <tr class="info">
-                <!-- {$attribute.content.viewmode} -->
                 {if eq($attribute.content.viewmode, 'list')}{set $colspan=3}{else}{set $colspan=sum($attribute.content.semestercount, 4)}{/if}
                 <td colspan="{$colspan}">{$row.text|wash( xhtml )|nl2br}</td>
             </tr>
@@ -69,11 +67,14 @@
                 <td class="text-right">{$attribute.content.sums[$semesterstring]}</td>
                 {/for}
             </tr>
+            <tr>
+            	<td colspan="{sum(4,$attribute.content.semestercount)}" class="text-right">
+            	{"M"|i18n('hials/design/shb/ezsemestermatrix')} = {"Mandatory course"|i18n('hials/design/shb/ezsemestermatrix')}, 
+            	{"O"|i18n('hials/design/shb/ezsemestermatrix')} = {"Optional course"|i18n('hials/design/shb/ezsemestermatrix')}
+            	</td>
+            </tr>
         </tfoot>
             {/if}
     </table>
 </div>
-{*section show=ne($attribute.content.viewmode, 'list')}
-<span class="emnetabell">{fetch('handbok', 'language', hash('identifier','*) O - Obligatorisk emne, V - Valgbare emne','lang_code',$attribute.language_code,'context', 'emnetabell'))}</span>
-{/section*}
 {undef $coursenode $emnemap $semesterstring $colspan $langcode $emneurl}

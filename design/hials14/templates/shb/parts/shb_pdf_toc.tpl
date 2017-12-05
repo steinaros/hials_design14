@@ -1,30 +1,23 @@
-{switch match=$module_result.content_info.class_identifier}
+{def $toc_node_id = $node.main_node_id
+	 $toc_node = fetch('content', 'node', hash( 'node_id', $toc_node_id,
+	 										'language_code', $language_code))
+	 $toc_class_filter = array()}
+{switch match=$toc_node.class_identifier}
 	{case match='studiehandbok'}
+{set $toc_class_filter = ezini( 'MenuContentSettings', 'BookmarkIdentifierList', 'hials.ini' ) )}
+<a id="tableofcontents"></a><h1>{"Table of contents"|i18n('hials/design/std')}</h1>
+<ol id="toc" class="page_break_right">
+	<li><a class="toc_heading" href="{concat("#node_id_",$toc_node_id,"_",$language_code)}">{'Studyguide'|i18n('hials/design/shb')} {$toc_node.name|wash()}</a>
+		<li><a class="toc_heading" href="#tableofcontents">{"Table of contents"|i18n('hials/design/std')}</a></li>
+		{include uri='design:shb/parts/shb_pdf_toc_sub.tpl' 
+			root_item=$toc_node 
+			class_filter=$toc_class_filter
+			language_code=$language_code}
+	</li>
+</ol>
 	{/case}
 	{case match='studie'}
 	{/case}
 	{case}{/case}
 {/switch}
-{*
-<ol id="toc">
-  <li><a href="#link_1">Chapter Title 1</a>
-     <ol>
-      <li><a href="#link_1_1">Chapter Title 1.1</a></li>
-      <li><a href="#link_1_2">Chapter Title 1.2</a></li>
-      <li><a href="#link_1_3">Chapter Title 1.3</a>
-        <ol>
-          <li><a href="#link_1_3_1">Chapter Title 1.3.1</a></li>
-          <li><a href="#link_1_3_2">Chapter Title 1.3.2</a></li>
-        </ol>
-      </li>
-     </ol>
-  </li>
-  <li><a href="#link_2">Chapter Title 2</a></li>
-  <li><a href="#link_3">Chapter Title 3</a></li>
-</ol>
-
-
-eks
-<h2><a name="link_1">Chapter Title 1</a></h2>
-<h3><a name="link_1_1">Chapter Title 1.1</a></h3>
-*}
+{undef $toc_node_id $toc_node $toc_class_filter}

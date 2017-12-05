@@ -1,18 +1,91 @@
-@page {
+/*@page {
 	font-family: 'Roboto', sans-serif;
     size: a4 portrait;
-    margin: 2.0cm;
+	margin-left: 2.5cm;
+	margin-right: 2.5cm;
+	margin-top: 2cm;
+	margin-bottom: 2cm;
 	
-    @bottom-left {            
-        content: element(footer);  
-        vertical-align: top;
-        padding-top: 10px;
-    }
-
     @top-center {
         content: element(header); 
         vertical-align: bottom;
         padding-bottom: 10px;
     }
+	
+	@bottom-center {            
+        content: element(footer);  
+        vertical-align: top;
+        padding-top: 10px;
+    }
+}*/
+
+@page {
+	font-family: 'Roboto', sans-serif;
+    size: a4 portrait;
+	margin-top: 2cm;
+	margin-bottom: 2cm;
 }
 
+@page :left {
+	margin-left: 1cm;
+	margin-right: 2.5cm;
+}
+@page :left { 
+	@bottom-left {
+		margin-top: 0.5cm;
+		border-top: 1px solid black;	
+		content: counter(page) " | " string(heading);
+        vertical-align: top;
+        padding-top: 0.5cm;
+	}
+}
+/*
+@page :left {	
+	@bottom-right { 
+		margin-top: 0.5cm;
+		border-top: 1px solid black;
+        content: "right ";
+        vertical-align: top;
+        padding-top: 0.5cm;
+    }
+}
+*/
+@page :right {
+	margin-left: 2.5cm;
+	margin-right: 1cm;
+}
+/*
+@page :right {
+	@bottom-left {
+		margin-top: 0.5cm;
+		border-top: 1px solid black;
+        content: "left "; 
+        vertical-align: top;
+        padding-top: 0.5cm;
+    }
+}
+*/
+@page :right {
+	@bottom-right {
+		margin-top: 0.5cm;
+		border-top: 1px solid black;	            
+        content: string(heading) " | " counter(page);
+        vertical-align: top;
+        padding-top: 0.5cm;
+    }
+}
+
+@page :blank {
+	@left-middle { content: "This page is intentionally left blank" }
+}
+
+h1 {
+	string-set: heading content();
+}
+h2{
+	string-set: heading self;
+}
+
+h3 {
+	string-set: heading content();
+}

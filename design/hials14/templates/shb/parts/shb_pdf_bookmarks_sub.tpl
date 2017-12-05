@@ -6,16 +6,18 @@
                                                 'class_filter_type', 'include',
                                                 'class_filter_array', $class_filter,
                                                 'sort_by', $root_item.sort_array ) ) }
-{def $subitem_count = 0}
+{def $subitem_count = 0
+     $hassubitems = false()}
 {foreach $bookmarks as $item}
-	<!-- N:{$item.node_id} D:{$item.depth} CC:{$item.children_count} -->
 	{if and(eq($item.class_identifier, "systemmappe"), or(eq($item.children_count, 0), eq($item.data_map.identifier.content, "nettvisning")))}{continue}{/if}
 	{* Get filtered count - only children of correct contenttypes *}
     {set $subitem_count = fetch( 'content', 'list_count', hash( 'parent_node_id', $item.node_id,
                                                     'class_filter_type', 'include',
                                                     'class_filter_array', $class_filter ) ) }
-	{node_view_gui view=bookmarkitem content_node=$item language_code=$language_code has_subitems=gt($subitem_count, 0)}
-	{if gt($subitem_count, 0)}
+	{if gt($subitem_count, 0)}{set $hassubitems = true()}{else}{set $hassubitems = false()}{/if}
+<!-- Subitemcount: {$subitem_count} {$hassubitems} -->
+	{node_view_gui view=bookmarkitem content_node=$item language_code=$language_code has_subitems=$hassubitems}
+	{if $hassubitems}
 		{include uri='design:shb/parts/shb_pdf_bookmarks_sub.tpl' 
 			root_item=$item 
 			class_filter=$class_filter 
@@ -23,3 +25,4 @@
 </bookmark>
 	{/if}
 {/foreach}
+{undef $bookmarks $subitem_count}

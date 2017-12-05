@@ -2,7 +2,7 @@
      
 {cache-block keys=array($node.node_id,'complete')}
 <article>
-<h1>{$node.name}</h1>
+<a id={concat("node_id_",$node.node_id,"_",$language_code)}></a><h1>{$node.name}</h1>
 
 {foreach $content_version.contentobject_attributes as $attribute}
     {*if $attributes_in_box|contains( $attribute.contentclass_attribute.identifier )}{skip}{/if*}
@@ -35,7 +35,6 @@
 {include uri='design:shb/parts/shb_booklist.tpl'}
 
 {def $emner = fetch('handbok', 'emne_noder_for_studie', hash('studie_node_id',$node.main_node_id,language,$language_code))}
-<!-- {$emner|attribute('show',2,'text')} -->
 {foreach $emner as $emne}
 <section>
     {node_view_gui view=print content_node=$emne.node language_code=$language_code}
@@ -43,6 +42,7 @@
 {/foreach}
 
 </article>
+
 {/cache-block}
 
 {undef $content_version $blocks $emner $rowattributes}

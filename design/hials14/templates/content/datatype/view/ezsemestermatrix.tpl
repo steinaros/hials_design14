@@ -4,6 +4,8 @@
      $colspan=$attribute.content.semestercount
      $langcode = ''
      $emneurl = ''}
+{if is_unset($doc_view)}{def $doc_view = ''}{/if}
+<!-- {$doc_view} -->     
 <div class="table-responsive">
     <table  class="table table-striped">
         <thead>

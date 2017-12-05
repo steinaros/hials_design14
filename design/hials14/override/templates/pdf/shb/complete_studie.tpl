@@ -2,7 +2,7 @@
      
 {cache-block keys=array($node.node_id,'complete')}
 <article>
-<h1>{$node.name}</h1>
+<a id={concat("node_id_",$node.node_id,"_",$language_code)}></a><h1>{$node.name}</h1>
 
 {foreach $content_version.contentobject_attributes as $attribute}
     {*if $attributes_in_box|contains( $attribute.contentclass_attribute.identifier )}{skip}{/if*}
@@ -25,7 +25,7 @@
     {set $rowattributes = fetch( 'handbok', 'attributes', hash('object_id', $block.contentobject_id, 'version', $block.contentobject_version, 'language', $language_code) )}
     {foreach $rowattributes as $row}
         {switch match=$row.is_a}
-            {case match='ezstring'}{if ne($row.content, '')}<h3>{attribute_view_gui attribute=$row}</h3>{/if}{/case}
+            {case match='ezstring'}{if ne($row.content, '')}<h2>{attribute_view_gui attribute=$row}</h2>{/if}{/case}
             {case}{attribute_view_gui attribute=$row language_code=$language_code}{/case}
         {/switch}
     {/foreach}
@@ -33,9 +33,8 @@
 {/foreach}
 
 {include uri='design:shb/parts/shb_booklist.tpl'}
-
+<a id={concat("courses_node_id_",$node.node_id,"_",$language_code)}></a><h2>{'Courses'|i18n('hials/design/shb')}</h2>
 {def $emner = fetch('handbok', 'emne_noder_for_studie', hash('studie_node_id',$node.main_node_id,language,$language_code))}
-<!-- {$emner|attribute('show',2,'text')} -->
 {foreach $emner as $emne}
 <section class="page_break_before">
     {node_view_gui view=full content_node=$emne.node language_code=$language_code}

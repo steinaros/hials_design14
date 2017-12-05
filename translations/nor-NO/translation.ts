@@ -83,6 +83,10 @@
             <source>Page</source>
             <translation>Side</translation>
         </message>        
+        <message>
+            <source>Table of contents</source>
+            <translation>Innholdsfortegnelse</translation>
+        </message> 
     </context>
     <context>
         <name>hials/design/navigation</name>
@@ -178,7 +182,15 @@
 		<message>
 			<source>Forgot your password?</source>
 			<translation>Glemt passordet ditt?</translation>
-		</message>        
+		</message>
+		<message>
+			<source>Edition</source>
+			<translation>Utgave</translation>
+		</message>
+		<message>
+			<source>PDF generated</source>
+			<translation>PDF generert</translation>
+		</message>
     </context>
 	<context>
 	    <name>hials/design/utdanning</name>
@@ -399,6 +411,10 @@
         <message>
         	<source>Courses</source>
         	<translation>Emner</translation>
+        </message>
+        <message>
+        	<source>Studyguide</source>
+        	<translation>Studiehåndbok</translation>
         </message>
     </context>
     <context>
