@@ -416,6 +416,10 @@
         	<source>Studyguide</source>
         	<translation>Studiehåndbok</translation>
         </message>
+        <message>
+        	<source>PDF version</source>
+        	<translation>PDF versjon</translation>
+        </message>
     </context>
     <context>
         <name>hials/design/shb/studie</name>
