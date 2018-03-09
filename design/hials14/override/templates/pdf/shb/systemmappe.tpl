@@ -1,7 +1,7 @@
 {* Systemmappe - PDF view *}
 {def $language_code=$node.object.default_language}
 
-<a id="{concat("node_id_",$node.node_id,"_",$language_code)}"></a><h2>{attribute_view_gui attribute=$node.data_map.navn}</h2>
+<a id="{concat("node_id_",$node.node_id,"_",$language_code)}"></a><h1>{attribute_view_gui attribute=$node.data_map.navn}</h1>
 <div class="intro">
     {attribute_view_gui attribute=$node.data_map.info}
 </div>   
@@ -29,7 +29,9 @@
                                          'sort_by', $node.sort_array,
                                          'class_filter_type', 'include',
                                          'class_filter_array', $classes ) ) as $child }
+<div class="page_break_after">
 {node_view_gui view=full content_node=$child}
+</div>
 {/foreach}
 
 {undef $classes $language_code}
