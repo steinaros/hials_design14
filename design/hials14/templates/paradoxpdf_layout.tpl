@@ -11,7 +11,7 @@
      	$module_result.content_info.url_alias|explode('/')|reverse|extract(0)[0], "_",
         $module_result.content_info.current_language)}
 {if eq($pagedata.class_identifier,'studiehandbok')}
-	{$pdf_file_name = concat('Studyguide'|i18n('hials/design/shb'), "_", $current_shb_name, "_", $module_result.content_info.current_language)} 
+	{set $pdf_file_name = concat('Studyguide'|i18n('hials/design/shb'), "_", $current_shb_name, "_", $module_result.content_info.current_language)} 
 {/if}
 
 {*<!--
