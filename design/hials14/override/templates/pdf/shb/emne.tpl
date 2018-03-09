@@ -6,7 +6,7 @@
     {def $attributes_in_box = array('kode','navn','erstatter','fagnivaa','poeng','varighet_semester','varighet_annen','spraak','fagansvarlig','revidert_dato','revidert_av','justert_dato')}
 {/if}
 <div>
-<a id="{concat("node_id_",$node.node_id,"_",$language_code)}"></a><h2>{$node.name}</h2>
+<a id="{concat("node_id_",$node.node_id)}"></a><h2>{$node.name}</h2>
 <div class="panel">
     <div class="panel-body">
 {include uri='design:shb/parts/shb_box.tpl'}

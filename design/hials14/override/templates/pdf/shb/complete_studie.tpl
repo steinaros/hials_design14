@@ -7,7 +7,7 @@
     {def $attributes_in_box = array('studieprogramkode','navn','kull','lengde2','omfang_studiepoeng','heltid_deltid','nivaa','grad','opptakskrav_kode')}
 {/if}
 <div>
-	<a id="{concat("node_id_",$node.node_id,"_",$language_code)}"></a><h3>{$node.name}</h3>
+	<a id="{concat("node_id_",$node.node_id)}"></a><h3>{$node.name}</h3>
     <div class="panel">
     	<div class="panel-body">
 {include uri='design:shb/parts/shb_box.tpl'}
@@ -51,7 +51,7 @@
 {include uri='design:shb/parts/shb_booklist.tpl'}
 </div>
 <div class="page_break_before">
-<a id="{concat("courses_node_id_",$node.node_id,"_",$language_code)}"></a><h2>{'Courses'|i18n('hials/design/shb')}</h2>
+<a id="{concat("courses_node_id_",$node.node_id)}"></a><h2>{'Courses'|i18n('hials/design/shb')}</h2>
 {def $emner = fetch('handbok', 'emne_noder_for_studie', hash('studie_node_id',$node.main_node_id,language,$language_code))}
 {foreach $emner as $emne}
 <div class="page_break_before">

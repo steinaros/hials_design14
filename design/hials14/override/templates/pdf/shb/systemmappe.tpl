@@ -1,7 +1,7 @@
 {* Systemmappe - PDF view *}
 {def $language_code=$node.object.default_language}
 
-<a id="{concat("node_id_",$node.node_id,"_",$language_code)}"></a><h1>{attribute_view_gui attribute=$node.data_map.navn}</h1>
+<a id="{concat("node_id_",$node.node_id)}"></a><h1>{attribute_view_gui attribute=$node.data_map.navn}</h1>
 <div class="intro">
     {attribute_view_gui attribute=$node.data_map.info}
 </div>   
