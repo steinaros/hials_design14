@@ -6,10 +6,18 @@
 {def $pagedata         = ezpagedata()}
 {def $locales          = fetch( 'content', 'translation_list' )
      $current_node_id  = $pagedata.node_id
-     $current_shb_name = $module_result.title_path[3].text}
+     $current_shb_name = $module_result.title_path[3].text
+     $pdf_file_name = concat($current_shb_name|wash(), "_", 
+     	$module_result.content_info.url_alias|explode('/')|reverse|extract(0)[0], "_",
+        $module_result.content_info.current_language)}
+{if eq($pagedata.class_identifier,'studiehandbok')}
+	{$pdf_file_name = concat('Studyguide'|i18n('hials/design/shb'), "_", $current_shb_name, "_", $module_result.content_info.current_language)} 
+{/if}
+
 {*<!--
 Pagedata:
 {$pagedata|attribute( 'show', 2, 'text' )}
+{$locales|attribute( 'show', 2, 'text' )}
 Module_result.content_info:
 {$module_result.content_info|attribute( 'show', 2, 'text' )}
 -->*}
@@ -80,6 +88,6 @@ Module_result.content_info:
 {*$xhtml*}
 {* END DEBUG *}
 {def $paradoxpdf_params = hash('xhtml', $xhtml,
-                               'pdf_file_name',concat($current_shb_name|wash(), "_", $module_result.content_info.url_alias|explode('/')|reverse|extract(0)[0], "_"),
+                               'pdf_file_name', $pdf_file_name,
                                'subtree_expiry',$module_result.node_id )}
 {paradoxpdf($paradoxpdf_params)}
