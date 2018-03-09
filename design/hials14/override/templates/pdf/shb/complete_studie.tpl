@@ -1,31 +1,47 @@
-{def $content_version = $node.contentobject_version_object}
-     
-{cache-block keys=array($node.node_id,'complete')}
-<article>
-<a id={concat("node_id_",$node.node_id,"_",$language_code)}></a><h1>{$node.name}</h1>
-
+{* Studie komplett med emnebeskrivelser - PDF view *}
+{def $content_version=$node.contentobject_version_object
+     $language_code=$node.object.default_language}
+{if eq($node.class_identifier, 'studie')}{* Classdefinition ->2013 *}
+    {def $attributes_in_box = array('studieprogramkode','navn','lengde','omfang_studiepoeng','heltid_deltid','nivaa','grad')}
+{else}{* Classdefiniton 2014-> *}
+    {def $attributes_in_box = array('studieprogramkode','navn','kull','lengde2','omfang_studiepoeng','heltid_deltid','nivaa','grad','opptakskrav_kode')}
+{/if}
+<div>
+	<a id="{concat("node_id_",$node.node_id,"_",$language_code)}"></a><h3>{$node.name}</h3>
+    <div class="panel">
+    	<div class="panel-body">
+{include uri='design:shb/parts/shb_box.tpl'}
+        </div>
+    </div>
 {foreach $content_version.contentobject_attributes as $attribute}
-    {*if $attributes_in_box|contains( $attribute.contentclass_attribute.identifier )}{skip}{/if*}
-    {if or(eq($attribute.content, ''), not($attribute.has_content), eq( $attribute.data_text|striptags|wstrim, ''))}{skip}{/if}
+    {if $attributes_in_box|contains( $attribute.contentclass_attribute.identifier )}{skip}{/if}
+    {if eq($attribute.contentclass_attribute.identifier, 'identifier')}{skip}{/if}
+    {if eq($attribute.contentclass_attribute.identifier, 'publiser')}{skip}{/if}
+    {if eq($attribute.contentclass_attribute.identifier, 'revidert_og_klar_for_oversendelse_til_studieutvalg')}{skip}{/if}   
+    {if or(eq($attribute.content, ''), not($attribute.has_content))}{skip}{/if}
+    {if and(eq($attribute.contentclass_attribute.data_type_string, 'ezxmltext'), eq($attribute.data_text|striptags|wstrim,'') )}{skip}{/if}
     {if and(eq($attribute.contentclass_attribute.data_type_string, 'ezdate'), or(is_null( $attribute.data_int), eq( $attribute.data_int, 0) ) )}{skip}{/if}
-    <h3>{description($attribute.contentclass_attribute.id, $attribute.language_code)|wash}</h3>
+    {if and(eq($attribute.contentclass_attribute.data_type_string, 'ezinteger'), or(is_null( $attribute.data_int), eq( $attribute.data_int, 0) ) )}{skip}{/if}
+    <div class="hold-sammen">
+    <h4>{description($attribute.contentclass_attribute.id, $attribute.language_code)|wash}</h4>
     {switch match=$attribute.is_a}
         {case match='ezxmltext'}<div class="ezxmltext">{attribute_view_gui attribute=$attribute}</div>{/case}
         {case}<p>{attribute_view_gui attribute=$attribute}</p>{/case}
     {/switch}
+    </div>
 {/foreach}
 
 {def $blocks = fetch('content', 'list', hash('parent_node_id', $node.node_id, 
                                              'sort_by', array("priority", true()),
                                              'class_filter_type', "include",
                                              'class_filter_array', array(ezini('Studiehandbokklasser', 'fagblokk'), ezini('Studiehandbokklasser', 'tekstblokk'))))
-     $rowattributes = array()}                                         
+     $rowattributes = array()}                                      
 {foreach $blocks as $block}
-<div class="block">
+<div class="block hold-sammen">
     {set $rowattributes = fetch( 'handbok', 'attributes', hash('object_id', $block.contentobject_id, 'version', $block.contentobject_version, 'language', $language_code) )}
     {foreach $rowattributes as $row}
         {switch match=$row.is_a}
-            {case match='ezstring'}{if ne($row.content, '')}<h2>{attribute_view_gui attribute=$row}</h2>{/if}{/case}
+            {case match='ezstring'}{if ne($row.content, '')}<h4>{attribute_view_gui attribute=$row}</h4>{/if}{/case}
             {case}{attribute_view_gui attribute=$row language_code=$language_code}{/case}
         {/switch}
     {/foreach}
@@ -33,15 +49,14 @@
 {/foreach}
 
 {include uri='design:shb/parts/shb_booklist.tpl'}
-<a id={concat("courses_node_id_",$node.node_id,"_",$language_code)}></a><h2>{'Courses'|i18n('hials/design/shb')}</h2>
+</div>
+<div class="page_break_before">
+<a id="{concat("courses_node_id_",$node.node_id,"_",$language_code)}"></a><h2>{'Courses'|i18n('hials/design/shb')}</h2>
 {def $emner = fetch('handbok', 'emne_noder_for_studie', hash('studie_node_id',$node.main_node_id,language,$language_code))}
 {foreach $emner as $emne}
-<section class="page_break_before">
+<div class="page_break_before">
     {node_view_gui view=full content_node=$emne.node language_code=$language_code}
-</section>    
+</div>    
 {/foreach}
-
-</article>
-{/cache-block}
-
-{undef $content_version $blocks $emner $rowattributes}
+</div>
+{undef $content_version $attributes_in_box $language_code $blocks $rowattributes $emner}
