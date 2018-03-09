@@ -37,7 +37,7 @@
             {else}
             	{set $langcode = $coursenode.object.language_codes.0}
             {/if}
-            {set $emneurl = concat("#node_id_",$coursenode.node_id,"_",$langcode)}
+            {set $emneurl = concat("#node_id_",$coursenode.node_id)}
             {set $emnemap=fetch('handbok', 'data_map', hash('object_id', $coursenode.contentobject_id, 'language', $langcode))}
             {if and( is_set( $row.error ), $row.error|ne('') )}<td class="danger">{$row.error}</td>{else}<td><a href="{$emneurl}" hreflang="{$langcode}">{$emnemap['navn'].content}</a></td>{/if}                
             <td class="text-right">{attribute_view_gui attribute=$coursenode.data_map['poeng']}</td>
