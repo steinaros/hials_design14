@@ -1,7 +1,7 @@
 {* Kurs - PDF view *}
 {def $content_version=$node.contentobject_version_object
      $language_code=$node.object.default_language}
-<div class="page_break_after">
+<div>
 	<a id="{concat("node_id_",$node.node_id,"_",$language_code)}"></a><h3>{$node.name}</h3>
 {foreach $content_version.contentobject_attributes as $attribute}
     {if $attributes_in_box|contains( $attribute.contentclass_attribute.identifier )}{skip}{/if}

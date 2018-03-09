@@ -27,15 +27,14 @@ body {
     text-align:center;
 }
 
-#line2 {
-	font-size: 6pt;
+#dategenerated_l {
+	display: block;
+	position: running(dategenerated_l);
 }
-
-#date {
-    margin-left: 6cm;
-    text-align: right;
+#dategenerated_r {
+	display: block;
+	position: running(dategenerated_r);
 }
-
 
 div.content {
     display: block;
@@ -209,6 +208,7 @@ ol#toc a {
 /*************************************************/
 
 .hold-sammen {
-	orphans: 4;
-	widows: 4;
+	page-break-inside: avoid;
+	orphans: 2;
+	widows: 2;
 }

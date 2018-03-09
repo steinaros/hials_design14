@@ -1,24 +1,3 @@
-/*@page {
-	font-family: 'Roboto', sans-serif;
-    size: a4 portrait;
-	margin-left: 2.5cm;
-	margin-right: 2.5cm;
-	margin-top: 2cm;
-	margin-bottom: 2cm;
-	
-    @top-center {
-        content: element(header); 
-        vertical-align: bottom;
-        padding-bottom: 10px;
-    }
-	
-	@bottom-center {            
-        content: element(footer);  
-        vertical-align: top;
-        padding-top: 10px;
-    }
-}*/
-
 @page {
 	font-family: 'Roboto', sans-serif;
     size: a4 portrait;
@@ -26,59 +5,70 @@
 	margin-bottom: 2cm;
 }
 
+@page {
+	@top-center {
+        content: element(header); 
+        vertical-align: bottom;
+        padding-bottom: 10px;
+    }
+}
+
 @page :left {
+	font-family: 'Roboto', sans-serif;
 	margin-left: 1cm;
 	margin-right: 2.5cm;
 }
 @page :left { 
 	@bottom-left {
+		font-family: 'Roboto', sans-serif;
 		margin-top: 0.5cm;
 		border-top: 1px solid black;	
-		content: counter(page) " | " string(heading);
+		/*content: counter(page) " | " string(heading);*/
+		content: counter(page);
+        vertical-align: top;
+        padding-top: 0.5cm;
+	}
+	@bottom-right {
+		font-family: 'Roboto', sans-serif;    
+		margin-top: 0.5cm;
+		border-top: 1px solid black;	            
+		content: element(dategenerated_r);
         vertical-align: top;
         padding-top: 0.5cm;
 	}
 }
-/*
-@page :left {	
-	@bottom-right { 
-		margin-top: 0.5cm;
-		border-top: 1px solid black;
-        content: "right ";
-        vertical-align: top;
-        padding-top: 0.5cm;
-    }
-}
-*/
+
 @page :right {
+	font-family: 'Roboto', sans-serif;
 	margin-left: 2.5cm;
 	margin-right: 1cm;
 }
-/*
-@page :right {
-	@bottom-left {
-		margin-top: 0.5cm;
-		border-top: 1px solid black;
-        content: "left "; 
-        vertical-align: top;
-        padding-top: 0.5cm;
-    }
-}
-*/
+
 @page :right {
 	@bottom-right {
+		font-family: 'Roboto', sans-serif;
 		margin-top: 0.5cm;
-		border-top: 1px solid black;	            
-        content: string(heading) " | " counter(page);
+		border-top: 1px solid black;
+        content: counter(page);
         vertical-align: top;
         padding-top: 0.5cm;
     }
+    @bottom-left {
+		font-family: 'Roboto', sans-serif;    
+		margin-top: 0.5cm;
+		border-top: 1px solid black;	            
+		content: element(dategenerated_l);
+        vertical-align: top;
+        padding-top: 0.5cm;
+	}
 }
 
 @page :blank {
-	@left-middle { content: "This page is intentionally left blank" }
+	@left-middle { 
+		content: "This page is intentionally left blank"; 
+	}
 }
-
+/*
 h1 {
 	string-set: heading content();
 }
@@ -89,3 +79,4 @@ h2{
 h3 {
 	string-set: heading content();
 }
+*/

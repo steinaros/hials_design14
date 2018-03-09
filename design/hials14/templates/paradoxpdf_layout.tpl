@@ -26,15 +26,9 @@ Module_result.content_info:
 <body>
 <div id="header">
     <div id="sitetitle">{$site.title} ({$current_shb_name|wash()})</div>
-    <div id="line2">
-      <div id="date">{'PDF generated'|i18n('hials/design/pagelayout')}: {currentdate()|l10n( 'shortdate' )}</div>
-    </div>
 </div>
-{*
-<div id="footer">
-	{"Page"|i18n('hials/design/std')} <span id="pagenumber"/>
-</div>
-*}
+<div id="dategenerated_l"><p>{'PDF generated'|i18n('hials/design/pagelayout')}: {currentdate()|l10n( 'shortdate' )}</p></div>
+<div id="dategenerated_r"><p class="text-right">{'PDF generated'|i18n('hials/design/pagelayout')}: {currentdate()|l10n( 'shortdate' )}</p></div>
 {$module_result.content}
 </body>
 </html>
@@ -84,8 +78,8 @@ Module_result.content_info:
 *******************************************************************************************************}
 {* DEBUG *}
 {*$xhtml*}
+{* END DEBUG *}
 {def $paradoxpdf_params = hash('xhtml', $xhtml,
-                               'pdf_file_name',$module_result.content_info.url_alias|explode('/')|reverse|extract(0)[0],
+                               'pdf_file_name',concat($current_shb_name|wash(), "_", $module_result.content_info.url_alias|explode('/')|reverse|extract(0)[0], "_"),
                                'subtree_expiry',$module_result.node_id )}
-
 {paradoxpdf($paradoxpdf_params)}
