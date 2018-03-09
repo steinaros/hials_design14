@@ -1,6 +1,7 @@
 {def $books=array()
      $literature_filter=array( true(), false() )
      $headingswitch=false()}
+<div>
 {foreach $literature_filter as $filter}
     {set $books=fetch('content', 'list', hash( 'parent_node_id', $node.main_node_id, 
                                                'sort_by', array("name", true()),
@@ -39,4 +40,5 @@
     </ul>
     {/if}
 {/foreach}
+</div>
 {undef $books $litterature_filter $headingswitch}
