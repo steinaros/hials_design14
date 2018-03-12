@@ -15,7 +15,7 @@
                                                     'class_filter_type', 'include',
                                                     'class_filter_array', $class_filter ) ) }
 	{if gt($subitem_count, 0)}{set $hassubitems = true()}{else}{set $hassubitems = false()}{/if}
-<!-- Subitemcount: {$subitem_count} {$hassubitems} -->
+{*<!-- Subitemcount: {$subitem_count} {$hassubitems} -->*}
 	{node_view_gui view=bookmarkitem content_node=$item language_code=$language_code has_subitems=$hassubitems}
 	{if $hassubitems}
 		{include uri='design:shb/parts/shb_pdf_bookmarks_sub.tpl' 

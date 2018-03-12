@@ -4,7 +4,6 @@
 	 
 	 $node = fetch('content', 'node', hash( 'node_id', $node_id,
 	 										'language_code', $language_code))}
-	 
 {switch match=$node.class_identifier}
 	{case match='studiehandbok'}
 {set $class_filter = ezini( 'MenuContentSettings', 'BookmarkIdentifierList', 'hials.ini' ) )}	
@@ -33,5 +32,5 @@
 	{/case}
 	{case}{/case}
 {/switch}
-<!-- Switch bookmarks {$module_result.content_info.class_identifier} -->
+{*<!-- Switch bookmarks {$module_result.content_info.class_identifier} -->*}
 {undef $emner $class_filter}
