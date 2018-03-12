@@ -1,7 +1,7 @@
 {* Studiehandbok - PDF view *}
 {def $language_code=$node.object.default_language}
 <div id="titlepage" class="page_break_right">
-	<a id="{concat("node_id_",$node.node_id)}"></a><p class="h1">{'Studyguide'|i18n('hials/design/shb')} {attribute_view_gui attribute=$node.data_map.tittel}</p>
+	<a id="{concat("node_id_",$node.node_id)}"></a><p>{'Studyguide'|i18n('hials/design/shb')} {attribute_view_gui attribute=$node.data_map.tittel}</p>
 	<div class="intro">
 	    {attribute_view_gui attribute=$node.data_map.nettsidetekst}
 	</div>

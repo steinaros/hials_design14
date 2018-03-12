@@ -19,7 +19,7 @@ body {
 
 #titlepage p {
 	font-weight: bold;
-	font-size: 16pt;
+	font-size: 32pt;
 	margin-top: 10cm;
 }
 
@@ -64,17 +64,23 @@ p {
 	margin-bottom: 6pt;
 }
 
-h2 {
-	font-weight: bold;
-	font-size: 16pt;
+h1, .h1 {
+	font-weight: 700;
+	font-size: 24pt;
 }
 
-h3 {
+h2, .h2 {
+	font-size: 20pt;
+}
+
+h3, .h3 {
+	font-size: 16pt;
 	border-bottom: 1px solid black;
 }
 
-h4 {
+h4, .h4 {
 	font-weight: 700;
+	font-size: 12pt;
 }
 
 .toc_heading {
