@@ -214,7 +214,7 @@ ol#toc a {
 /*************************************************/
 
 .hold-sammen {
-	page-break-inside: avoid;
-	orphans: 2;
+	page-break-inside: auto;
+	orphans: 5;
 	widows: 2;
 }
