@@ -420,6 +420,10 @@
         	<source>PDF version</source>
         	<translation>PDF versjon</translation>
         </message>
+        <message>
+        	<source>Download PDF version</source>
+        	<translation>Last ned PDF versjon</translation>
+        </message>
     </context>
     <context>
         <name>hials/design/shb/studie</name>
