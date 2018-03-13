@@ -7,8 +7,8 @@
                                                 'class_filter_array', $class_filter,
                                                 'sort_by', $root_item.sort_array ) ) }
 {def $subitem_count = 0}
-<!-- {$class_filter|attribute( 'show', 2, 'text' )} -->
-<!-- {$language_code|attribute( 'show', 2, 'text' )} -->
+{*<!-- {$class_filter|attribute( 'show', 2, 'text' )} -->
+<!-- {$language_code|attribute( 'show', 2, 'text' )} -->*}
 <ol>
 {foreach $toc as $item}
 	{if and(eq($item.class_identifier, "systemmappe"), or(eq($item.children_count, 0), eq($item.data_map.identifier.content, "nettvisning")))}{continue}{/if}
