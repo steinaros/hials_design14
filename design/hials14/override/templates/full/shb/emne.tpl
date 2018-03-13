@@ -21,7 +21,7 @@
 <div class="content-view-full class-emne">
     <div class="row">
         <article class="col-sm-9 col-right col-sm-push-3">
-            <h1>{$node.name}</h1>
+            <h1>{$node.name|wash}</h1>
             {include uri='design:shb/parts/archived_info_warning.tpl'}
             <div class="panel panel-hials visible-xs">
                 <div class="panel-body">

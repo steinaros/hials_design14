@@ -15,7 +15,7 @@
 <div class="content-view-full class-kurs">
     <div class="row">
         <article class="col-sm-9 col-right col-sm-push-3">
-            <h1>{$node.name}</h1>
+            <h1>{$node.name|wash}</h1>
             {include uri='design:shb/parts/archived_info_warning.tpl'}
 {foreach $content_version.contentobject_attributes as $attribute}
     {if $attributes_in_box|contains( $attribute.contentclass_attribute.identifier )}{skip}{/if}

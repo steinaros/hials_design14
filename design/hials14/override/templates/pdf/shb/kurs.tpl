@@ -2,7 +2,7 @@
 {def $content_version=$node.contentobject_version_object
      $language_code=$node.object.default_language}
 <div>
-	<a id="{concat("node_id_",$node.node_id)}"></a><h2>{$node.name}</h2>
+	<a id="{concat("node_id_",$node.node_id)}"></a><h2>{$node.name|wash}</h2>
 {foreach $content_version.contentobject_attributes as $attribute}
     {if $attributes_in_box|contains( $attribute.contentclass_attribute.identifier )}{skip}{/if}
     {if or(eq($attribute.content, ''), not($attribute.has_content), eq( $attribute.data_text|striptags|wstrim, ''))}{skip}{/if}

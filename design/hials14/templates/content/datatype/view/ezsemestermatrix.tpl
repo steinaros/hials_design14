@@ -43,7 +43,7 @@
                 {/if}
                 {set $emneurl = concat("/content/view/full/",$coursenode.node_id,"/language/",$langcode)|ezurl}
                 {set $emnemap=fetch('handbok', 'data_map', hash('object_id', $coursenode.contentobject_id, 'language', $langcode))}
-                {if and( is_set( $row.error ), $row.error|ne('') )}<td class="danger">{$row.error}</td>{else}<td><a href={$emneurl} hreflang="{$langcode}">{$emnemap['navn'].content}</a></td>{/if}
+                {if and( is_set( $row.error ), $row.error|ne('') )}<td class="danger">{$row.error}</td>{else}<td><a href={$emneurl} hreflang="{$langcode}">{$emnemap['navn'].content|wash}</a></td>{/if}
                 <td class="text-right">{attribute_view_gui attribute=$coursenode.data_map['poeng']}</td>
                 {if ne($attribute.content.viewmode, 'list')}
                 <td class="text-center">{if eq($row['optional'],'true')}<abbr title="{'Optional course'|i18n('hials/design/shb/ezsemestermatrix')}">{'O'|i18n('hials/design/shb/ezsemestermatrix')}</abbr>{else}<abbr title="{'Mandatory course'|i18n('hials/design/shb/ezsemestermatrix')}">{'M'|i18n('hials/design/shb/ezsemestermatrix')}</abbr>{/if}</td>
