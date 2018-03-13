@@ -21,7 +21,7 @@
 		{set $emner = fetch('handbok', 'emne_noder_for_studie', hash('studie_node_id',$node_id,
 																	 'language',$language_code))}
 <bookmarks>
-	<bookmark name="{$node.name}" href="{concat("#node_id_",$node_id,"_",$language_code)}">
+	<bookmark name="{$node.name|wash}" href="{concat("#node_id_",$node_id,"_",$language_code)}">
 		<bookmark name="{'Courses'|i18n('hials/design/shb')}" href="{concat("#courses_node_id_",$node.node_id,"_",$language_code)}">
       	{foreach $emner as $emne}
       		{node_view_gui view=bookmarkitem content_node=$emne.node language_code=$language_code}
