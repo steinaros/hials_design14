@@ -29,7 +29,7 @@
 {/foreach}
         </article>
         <aside class="col-sm-3 col-sm-pull-9 hidden-print">
-            <a class="btn btn-hials btn-lg btn-block{if not($language_switch_url)} disabled{/if}" {if $language_switch_url}rel="alternate" hreflang="{$alt_lang_code}" href="{$language_switch_url}"{else}href="#"{/if} role="button">{if $language_switch_url}{'Også tilgjengelig på norsk'|i18n('hials/design/shb')}{else}{'Kun tilgjengelig på engelsk'|i18n('hials/design/shb')}{/if}</a>
+            <a class="btn btn-hials btn-lg btn-block{if not($language_switch_url)} disabled{/if}" {if $language_switch_url}rel="alternate" hreflang="{$alt_lang_code}" href="{$language_switch_url}"{else}href="#"{/if} role="button">{if $language_switch_url}{'Beskrivelse også på norsk'|i18n('hials/design/shb')}{else}{switch match=$language_code}{case match='nor-NO'}{'Beskrivelse kun på norsk'|i18n('hials/design/shb')}{/case}{case}{'Beskrivelse kun på engelsk'|i18n('hials/design/shb')}{/case}{/switch}{/if}</a>
             <a class="btn btn-hials btn-lg btn-block" href="{concat('/layout/set/pdf/content/view/full/', $node.node_id, '/language/', $language_code)|ezurl(no)}" role="button no-follow"><i class="fa fa-file-pdf-o"></i><span>{'PDF version'|i18n('hials/design/shb')}</span></a>
             {include uri='design:menu/leftmenu.tpl'}
         </aside>
